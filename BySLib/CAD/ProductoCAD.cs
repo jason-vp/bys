@@ -27,8 +27,8 @@ namespace BySLib.CAD
 		/// <returns>Lista de todos los producto</returns>
 		static public ProductoEN[] obtenerTodosProductos()
 		{
-		
-			return ;
+            ProductoEN[] productos = null;
+			return productos;
 		}
 
 		/// <summary>
@@ -38,8 +38,9 @@ namespace BySLib.CAD
 		/// <returns>producto por el id</returns>
 		static public ProductoEN obtenerProductoById(int id)
 		{
-			
-			return ;
+            ProductoEN producto = null;
+
+			return producto;
 		}
 
 		/// <summary>
