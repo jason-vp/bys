@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BySLib;
 
 
-namespace BySLib
+namespace BySLib.EN
 {
     /// <summary>
     /// Esta clase representa un Compra de la aplicacion (Entidad de Negocio)

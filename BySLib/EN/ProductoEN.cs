@@ -1,5 +1,7 @@
 ﻿using System;
 using BySLib.Utilities;
+using BySLib;
+using System.Collections.Generic;
 
 namespace BySLib.EN
 {
@@ -13,7 +15,7 @@ namespace BySLib.EN
         #region Private Properties
 
         private int id = -1; 
-		private UsuarioEn propietario;
+		private UsuarioEN propietario;
         private string nombre = "";
         private string descripcion = "";
         private decimal precioSalida = 0;
@@ -22,7 +24,7 @@ namespace BySLib.EN
         private string estado = "";
         private int cantidadInicial = 0;
         private int cantidadRestante = 0;
-        private FechaGPS fechaFin = new FechaGPS();
+        private DateTime fechaFin = new DateTime();
 		private List<PujaEN> pujas = new List<PujaEN>();
 		private List<CompraEN> compras  = new List<CompraEN>();
 		private SubcategoriaEN subcategoria  = new List<PujaEN>();
@@ -40,7 +42,7 @@ namespace BySLib.EN
 		/// <summary>
 		/// Propiedad del propietario del producto
 		/// </summary>
-        public UsuarioEn Propietario;
+        public UsuarioEN Propietario
         {
             get { return propietario; }
             set { propietario = value; }
@@ -48,10 +50,10 @@ namespace BySLib.EN
 		/// <summary>
 		/// Propiedad de la fecha del producto
 		/// </summary>
-        public FechaGPS Fecha
+        public DateTime FechaFin
         {
-            get { return fecha; }
-            set { fecha = value; }
+            get { return fechaFin; }
+            set { fechaFin = value; }
         }
 		
 		/// <summary>
@@ -114,7 +116,7 @@ namespace BySLib.EN
 		/// Propiedad de las pujas del producto
 		/// </summary>
 		public int List<PujaEN> Pujas
-		{
+        {
 			get { return pujas; }
 			set { pujas = value; }
 		}
@@ -197,7 +199,7 @@ namespace BySLib.EN
 		/// <param name="compras">La fecha de fin de la subasta del producto</param>
 		/// <param name="subcategoria">La subcategoria del producto</param>
 
-        public ProductoEN(int id,UsuarioEn propietario, string nombre, string descripcion, decimal precioSalida, List<string> fotos, string estado, int cantidadInicial,
+        public ProductoEN(int id,UsuarioEN propietario, string nombre, string descripcion, decimal precioSalida, List<string> fotos, string estado, int cantidadInicial,
 							int cantidadRestante,decimal precioCompra, DateTime fechaFin,List<PujaEN> pujas,List<CompraEN> compras,SubcategoriaEN subcategoria)
         {
 
