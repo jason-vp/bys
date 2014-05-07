@@ -294,3 +294,29 @@ div.accountInfo
     text-align: right;
     padding-right: 10px;
 }
+
+.imgportada
+{
+    float: left;
+    width: 24%;
+    margin-right: 15px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.imgportada img 
+{
+    width: 80%;
+    max-height: 200px;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+
+
+.tituloh2
+{
+    text-align: center;
+    margin-top: 10px;
+}
+    

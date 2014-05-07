@@ -71,6 +71,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Portada.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -139,6 +140,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Portada.aspx.cs">
+      <DependentUpon>Portada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portada.aspx.designer.cs">
+      <DependentUpon>Portada.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
