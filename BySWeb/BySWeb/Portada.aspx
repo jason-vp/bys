@@ -3,71 +3,134 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PlaceholderSidebar" runat="server">
     
+    <h2 class = "tituloh2">
+        Ultimos Articulos
+    </h2>
+
+    <a href = ""><div><p> Ultimos articulos 
+        <q class = "precioUltimos">0,00<q>€</q></q>
+    </p></div></a>
+
+    <a href = ""><div><p> Ultimos articulos 
+        <q class = "precioUltimos">0,00<q>€</q></q>
+    </p></div></a>
+
+    <a href = ""><div><p> Ultimos articulos 
+        <q class = "precioUltimos">0,00<q>€</q></q>
+    </p></div></a>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-<h2>Productos palote</h2>
+<h2 class = "tituloh2">Productos que Alex no quiere que llame PALOTE</h2>
     <a href = ""><div class = "imgportada">
-        <img src="C:\Users\Mario\Pictures\boobs.png" alt="Alternate Text" />
-        <h3 >Producto 1 con imagen 1 equisde</h3>
+        <img src="C:\Users\Mario\Pictures\ralph.jpg" alt="Alternate Text" />
+        <h3>Producto 1 con imagen 1 equisde</h3>
+        <p class = "precioPortadas">
+            0,00<q>€</q>
+        </p>
     </div></a>
     <a href = ""><div class = "imgportada">
-        <img src="C:\Users\Mario\Pictures\boobs.png" alt="Alternate Text" />
-        <h3 >Producto 1 con imagen 1 equisde</h3>
+        <img src="C:\Users\Mario\Pictures\ralph.jpg" alt="Alternate Text" />
+        <h3>Producto 1 con imagen 1 equisde</h3>
+        <p class = "precioPortadas">
+            0,00<q>€</q>
+        </p>
     </div></a>
     <a href = ""><div class = "imgportada">
-        <img src="C:\Users\Mario\Pictures\boobs.png" alt="Alternate Text" />
+        <img src="C:\Users\Mario\Pictures\ralph.jpg" alt="Alternate Text" />
         <h3 >Producto 1 con imagen 1 equisde</h3>
+        <p class = "precioPortadas">
+            0,00<q>€</q>
+        </p>
     </div></a>
     <a href = ""><div class = "imgportada">
-        <img src="C:\Users\Mario\Pictures\boobs.png" alt="Alternate Text" />
+        <img src="C:\Users\Mario\Pictures\ralph.jpg" alt="Alternate Text" />
         <h3 >Producto 1 con imagen 1 equisde</h3>
+        <p class = "precioPortadas">
+            0,00<q>€</q>
+        </p>
     </div></a>
-    <div class = "imgportada">
-        <img src="C:\Users\Mario\Pictures\boobs.png" alt="Alternate Text" />
+    <a href = ""><div class = "imgportada">
+        <img src="C:\Users\Mario\Pictures\ralph.jpg" alt="Alternate Text" />
         <h3 >Producto 1 con imagen 1 equisde</h3>
+        <p class = "precioPortadas">
+            0,00<q>€</q>
+        </p>
+    </div></a>
+    <a href = ""><div class = "imgportada">
+        <img src="C:\Users\Mario\Pictures\ralph.jpg" alt="Alternate Text" />
+        <h3>Producto 1 con imagen 1 equisde</h3>
+        <p class = "precioPortadas">
+            0,00<q>€</q>
+        </p>
     </div>
-    <div class = "imgportada">
-        <img src="C:\Users\Mario\Pictures\boobs.png" alt="Alternate Text" />
+    <a href = ""><div class = "imgportada">
+        <img src="C:\Users\Mario\Pictures\ralph.jpg" alt="Alternate Text" />
         <h3 >Producto 1 con imagen 1 equisde</h3>
-    </div>
-    <div class = "imgportada">
-        <img src="C:\Users\Mario\Pictures\boobs.png" alt="Alternate Text" />
-        <h3 >Producto 1 con imagen 1 equisde</h3>
-    </div>
-    <div class = "imgportada">
-        <img src="C:\Users\Mario\Pictures\boobs.png" alt="Alternate Text" />
-        <h3 >Producto 1 con imagen 1 equisde</h3>
-    </div>
-    <div class = "imgportada">
-        <img src="C:\Users\Mario\Pictures\boobs.png" alt="Alternate Text" />
-        <h3 >Producto 1 con imagen 1 equisde</h3>
-    </div>
-    <div class = "imgportada">
-        <img src="C:\Users\Mario\Pictures\boobs.png" alt="Alternate Text" />
-        <h3 >Producto 1 con imagen 1 equisde</h3>
-    </div>
-    <div class = "imgportada">
-        <img src="C:\Users\Mario\Pictures\boobs.png" alt="Alternate Text" />
-        <h3 >Producto 1 con imagen 1 equisde</h3>
-    </div>
-    <div class = "imgportada">
-        <img src="C:\Users\Mario\Pictures\boobs.png" alt="Alternate Text" />
-        <h3 >Producto 1 con imagen 1 equisde</h3>
-    </div>
-    <div class = "imgportada">
-        <img src="C:\Users\Mario\Pictures\boobs.png" alt="Alternate Text" />
-        <h3 >Producto 1 con imagen 1 equisde</h3>
-    </div>
-    <div class = "imgportada">
-        <img src="C:\Users\Mario\Pictures\boobs.png" alt="Alternate Text" />
-        <h3 >Producto 1 con imagen 1 equisde</h3>
-    </div>
-    <div class = "imgportada">
-        <img src="C:\Users\Mario\Pictures\boobs.png" alt="Alternate Text" />
-        <h3 >Producto 1 con imagen 1 equisde</h3>
-    </div>
-    <div class = "imgportada">
-        <img src="C:\Users\Mario\Pictures\boobs.png" alt="Alternate Text" />
-        <h3 >Producto 1 con imagen 1 equisde</h3>
-    </div>
+        <p class = "precioPortadas">
+            0,00<q>€</q>
+        </p>
+    </div></a>
+    <a href = ""><div class = "imgportada">
+        <img src="C:\Users\Mario\Pictures\ralph.jpg" alt="Alternate Text" />
+        <h3>Producto 1 con imagen 1 equisde</h3>
+        <p class = "precioPortadas">
+            0,00<q>€</q>
+        </p>
+    </div></a>
+    <a href = ""><div class = "imgportada">
+        <img src="C:\Users\Mario\Pictures\ralph.jpg" alt="Alternate Text" />
+        <h3>Producto 1 con imagen 1 equisde</h3>
+        <p class = "precioPortadas">
+            0,00<q>€</q>
+        </p>
+    </div></a>
+    <a href = ""><div class = "imgportada">
+        <img src="C:\Users\Mario\Pictures\ralph.jpg" alt="Alternate Text" />
+        <h3>Producto 1 con imagen 1 equisde</h3>
+        <p class = "precioPortadas">
+            0,00<q>€</q>
+        </p>
+    </div></a>
+    <a href = ""><div class = "imgportada">
+        <img src="C:\Users\Mario\Pictures\ralph.jpg" alt="Alternate Text" />
+        <h3>Producto 1 con imagen 1 equisde</h3>
+        <p class = "precioPortadas">
+            0,00<q>€</q>
+        </p>
+    </div></a>
+    <a href = ""><div class = "imgportada">
+        <img src="C:\Users\Mario\Pictures\ralph.jpg" alt="Alternate Text" />
+        <h3>Producto 1 con imagen 1 equisde</h3>
+        <p class = "precioPortadas">
+            0,00<q>€</q>
+        </p>
+    </div></a>
+    <a href = ""><div class = "imgportada">
+        <img src="C:\Users\Mario\Pictures\ralph.jpg" alt="Alternate Text" />
+        <h3>Producto 1 con imagen 1 equisde</h3>
+        <p class = "precioPortadas">
+            0,00<q>€</q>
+        </p>
+    </div></a>
+    <a href = ""><div class = "imgportada">
+        <img src="C:\Users\Mario\Pictures\ralph.jpg" alt="Alternate Text" />
+        <h3>Producto 1 con imagen 1 equisde</h3>
+        <p class = "precioPortadas">
+            0,00<q>€</q>
+        </p>
+    </div></a>
+    <a href = ""><div class = "imgportada">
+        <img src="C:\Users\Mario\Pictures\ralph.jpg" alt="Alternate Text" />
+        <h3>Producto 1 con imagen 1 equisde</h3>
+        <p class = "precioPortadas">
+            0,00<q>€</q>
+        </p>
+    </div></a>
+    <a href = ""><div class = "imgportada">
+        <img src="C:\Users\Mario\Pictures\ralph.jpg" alt="Alternate Text" />
+        <h3>Producto 1 con imagen 1 equisde</h3>
+        <p class = "precioPortadas">
+            0,00<q>€</q>
+        </p>
+    </div></a>
 </asp:Content>
