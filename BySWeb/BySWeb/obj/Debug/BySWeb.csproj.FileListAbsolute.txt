@@ -2,14 +2,8 @@ C:\Users\Jose\Documents\GitHub\bys\BySWeb\BySWeb\bin\BySWeb.dll
 C:\Users\Jose\Documents\GitHub\bys\BySWeb\BySWeb\bin\BySWeb.pdb
 C:\Users\Jose\Documents\GitHub\bys\BySWeb\BySWeb\obj\Debug\BySWeb.dll
 C:\Users\Jose\Documents\GitHub\bys\BySWeb\BySWeb\obj\Debug\BySWeb.pdb
-<<<<<<< HEAD
 C:\Users\TT\Documents\websubastas\BySWeb\BySWeb\bin\BySWeb.dll
 C:\Users\TT\Documents\websubastas\BySWeb\BySWeb\bin\BySWeb.pdb
 C:\Users\TT\Documents\websubastas\BySWeb\BySWeb\obj\Debug\BySWeb.dll
 C:\Users\TT\Documents\websubastas\BySWeb\BySWeb\obj\Debug\BySWeb.pdb
-=======
-C:\Users\Mario\Desktop\BYS\BySWeb\BySWeb\bin\BySWeb.dll
-C:\Users\Mario\Desktop\BYS\BySWeb\BySWeb\bin\BySWeb.pdb
-C:\Users\Mario\Desktop\BYS\BySWeb\BySWeb\obj\Debug\BySWeb.dll
-C:\Users\Mario\Desktop\BYS\BySWeb\BySWeb\obj\Debug\BySWeb.pdb
->>>>>>> a9be008492595401a89f31ac9b8a863e8680f855
+
