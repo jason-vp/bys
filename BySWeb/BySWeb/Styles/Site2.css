@@ -88,28 +88,34 @@ first child of the left and right table columns */
 
 .page
 {
-    width: 960px;
+    width: 1000px;
     background-color: #fff;
-    margin: 20px auto 0px auto;
+    margin: 20px auto;
     border: 1px solid #496077;
 }
 
 .header
 {
-    position: relative;
+    position: static;
     margin: 0px;
     padding: 0px;
-    background: #4b6c9e;
+    background: #33CCFF;
     width: 100%;
-    top: 0px;
-    left: 2px;
+    height: 150px;
+
+}
+
+.fixedwidth
+{
+    width: 1000px;
+    margin: 0px auto 0px auto;
 }
 
 .header h1
 {
     font-weight: 700;
     margin: 0px;
-    padding: 0px 0px 0px 20px;
+    padding: 0px 0px 0px 0px;
     color: #f9f9f9;
     border: none;
     line-height: 2em;
@@ -118,8 +124,8 @@ first child of the left and right table columns */
 
 .main
 {
-    padding: 0px 12px;
-    margin: 12px 8px 8px 8px;
+    padding: 0px 6px;
+    margin: 20px 5px;
     min-height: 420px;
 }
 
@@ -138,6 +144,14 @@ first child of the left and right table columns */
     margin: 0px auto;
     text-align: center;
     line-height: normal;
+    background: #33CCFF;
+    border-top: 1px solid black;
+}
+
+.footer a
+{
+    text-decoration: none;
+    color: White;
 }
 
 
@@ -295,3 +309,41 @@ div.accountInfo
     padding-right: 10px;
 }
 
+#logo 
+{
+    background: #fff;
+    margin: 25px 0px;
+    width: 200px;
+    border: 2px solid yellow;
+}
+
+#logo img
+{
+    width: 200px;
+    margin-top: 10px;
+}
+
+.imgportada
+{
+    float: left;
+    width: 22%;
+    margin: 10px 5px;
+    text-align: center;
+}
+
+.imgportada img 
+{
+    width: 80%;
+    max-height: 200px;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+
+
+.tituloh2
+{
+    text-align: center;
+    margin-top: 10px;
+}
+    

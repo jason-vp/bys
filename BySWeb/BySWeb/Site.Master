@@ -6,39 +6,74 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/Site2.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form runat="server">
-    <div class="page">
-        <div class="header">
-            <div class="title">
-                <h1>
-                    Subastas y Barcos
-                </h1>
-            </div>
-            <div class="loginDisplay">
-                <div style="float: right;">
-                    <asp:Login ID="Login1" runat="server">
-                    </asp:Login>
+    <form id="Form1" runat="server">
+         <div class="header">
+             <div class="fixedwidth">
+                <div class="title">
+                    <div id="logo" >
+                    <h1>
+                        <a href="/"> <img src="/images/logo.png" alt="Subastas y barcos" /> </a>
+                    </h1>
+                    </div>
+                </div>
+                <div class="loginDisplay">
+                        <div style="float:right;">
+                            <asp:Login ID="Login1" runat="server">
+                            </asp:Login>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="clear hideSkiplink">
-                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                <div class="fixedwidth">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">       
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Página principal"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="Acerca de"/>
-                    </Items>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="Categoría 1" Value="Categoría 1">
+                            <asp:MenuItem Text="Subcategoría 1" Value="Subcategoría 1"></asp:MenuItem>
+                            <asp:MenuItem Text="Subcategoría 2" Value="Subcategoría 2"></asp:MenuItem>
+                            <asp:MenuItem Text="Subcategoría 3" Value="Subcategoría 3"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Categoría 2" Value="Categoría 2">
+                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Categoría 3" Value="Categoría 3">
+                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Categoría 4" Value="Categoría 4">
+                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Categoría 5" Value="Categoría 5">
+                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Categoría 6" Value="Categoría 6">
+                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>    
                 </asp:Menu>
+                </div>
             </div>
-        </div>
+        <!--</div>-->
+
+    <div class="page">
+
         <div class="main">
-            <div style="float: right; width: 15%;">
+            <div style="float: right; width: 180px;">
                 <asp:ContentPlaceHolder ID="PlaceholderSidebar" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
-            <div style="width: 82%;">
+            <div style="width: 785px; border-right: solid 1px black;">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
@@ -47,8 +82,10 @@
         </div>
     </div>
     <div class="footer">
-        
-        Pruebaa</div>
+        <div class="fixedwidth">
+            <a href="http://pages.ebay.es/help/policies/user-agreement.html">Términos y condiciones de uso</a>
+        </div>
+    </div>
     </form>
 </body>
 </html>
