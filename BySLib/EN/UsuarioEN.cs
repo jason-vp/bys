@@ -1,6 +1,8 @@
 ﻿using System;
+using BySLib;
 
-namespace BySLib
+
+namespace BySLib.EN
 {
 
     /// <summary>

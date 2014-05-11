@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using BySLib.EN;
 
 namespace BySLib
 {
@@ -20,18 +21,13 @@ namespace BySLib
         //private const string ConnectionString = "Data Source=Videoclub.sqlite;Version=3;New=False;Compress=True;";
         private const string ConnectionString = "data source=.\\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\\Videoclub.mdf;User Instance=true";
 
-        /// <summary>
-        /// Representa la entidad de negocio relacionada con el CAD
-        /// </summary>
-        private UsuarioEN usuario;
 
         /// <summary>
         /// Constructor con parámetros
         /// </summary>
-        /// <param name="usuario">Es la entidad de negocio relacionada con este usuario</param>
-        public UsuarioCAD(UsuarioEN usuario)
+        public UsuarioCAD()
         {
-            this.usuario = usuario;
+            
         }
 
         /// <summary>
@@ -41,7 +37,7 @@ namespace BySLib
         public static UsuarioEN[] obtenerTodosUsuarios()
         {
             List<UsuarioEN> usuarios = new List<UsuarioEN>();
-
+            /*
             SqlConnection c = new SqlConnection(ConnectionString);
             c.Open();
             SqlCommand com = new SqlCommand("Select * from usuario", c);
@@ -51,20 +47,20 @@ namespace BySLib
                 usuarios.Add(new UsuarioEN(dr["dni"].ToString(), dr["password"].ToString(), dr["nombre"].ToString(), dr["apellidos"].ToString(),dr["fechaAlta"].ToString()));
             }
             dr.Close();
-            c.Close(); 
+            c.Close(); */
 
             return usuarios.ToArray();
         }
 
         /// <summary>
-        /// Obtiene un usuario de la DB por el dni
+        /// Obtiene un usuario de la DB por el id
         /// </summary>
         /// <param name="dni">Es el dni del usuario que se va a obtener</param>
         /// <returns>Devuelve el usuario cuyo dni se pasó por parámetro</returns>
-        public static UsuarioEN obtenerUsuarioDni(string dni)
+        public static UsuarioEN obtenerUsuarioDni(int id)
         {
             UsuarioEN usuario = null;
-
+            /*
             SqlConnection c = new SqlConnection(ConnectionString);
             c.Open();
             SqlCommand com = new SqlCommand("Select * from usuario where dni="+dni, c);
@@ -78,7 +74,7 @@ namespace BySLib
 
             if (usuario == null)
                 throw new Exception("No existe ningun usuario por ese dni");
-
+            */
             return usuario;
         }
 
@@ -112,7 +108,7 @@ namespace BySLib
         public bool insertarActualizar()
         {
             bool aR = false;
-
+            /*
             SqlConnection conexion = new SqlConnection(ConnectionString);
             conexion.Open();
 
@@ -148,7 +144,7 @@ namespace BySLib
                 conexion2.Close();
             }
 
-
+            */
             return aR;
         }
 
@@ -160,7 +156,7 @@ namespace BySLib
         {
             bool aR = false;
 
-
+            /*
             SqlConnection conexion = new SqlConnection(ConnectionString);
             conexion.Open();
 
@@ -172,7 +168,7 @@ namespace BySLib
                 aR = true;
 
             conexion.Close();
-
+            */
             return aR;
         }
     }
