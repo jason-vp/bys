@@ -58,6 +58,7 @@
     <Content Include="DetallesUsuario.aspx" />
     <Content Include="Listar.aspx" />
     <Content Include="images\logo.png" />
+    <Content Include="MiProducto.aspx" />
     <Content Include="Producto.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
@@ -127,6 +128,13 @@
     </Compile>
     <Compile Include="Listar.aspx.designer.cs">
       <DependentUpon>Listar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MiProducto.aspx.cs">
+      <DependentUpon>MiProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MiProducto.aspx.designer.cs">
+      <DependentUpon>MiProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Producto.aspx.cs">
       <DependentUpon>Producto.aspx</DependentUpon>
