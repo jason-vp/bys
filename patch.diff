@@ -1,0 +1,235 @@
+From 84640dc2b41d85f37c76f0a35c3b768ca6df807e Mon Sep 17 00:00:00 2001
+From: Alejandro Rosales Rey <darkman146@gmail.com>
+Date: Thu, 17 Apr 2014 20:30:40 +0200
+Subject: [PATCH] =?UTF-8?q?A=C3=B1adida=20la=20Entidad=20Compra?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ BySLib/CAD/CompraCAD.cs |  63 +++++++++++++++++++++
+ BySLib/EN/CompraEN.cs   | 142 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 205 insertions(+)
+ create mode 100644 BySLib/CAD/CompraCAD.cs
+ create mode 100644 BySLib/EN/CompraEN.cs
+
+diff --git a/BySLib/CAD/CompraCAD.cs b/BySLib/CAD/CompraCAD.cs
+new file mode 100644
+index 0000000..1222330
+--- /dev/null
++++ b/BySLib/CAD/CompraCAD.cs
+@@ -0,0 +1,63 @@
++﻿using System;
++using System.Collections.Generic;
++using System.Linq;
++using System.Text;
++
++namespace BySLib
++{
++    /// <summary>
++    /// Esta clase representa la capa de acceso a datos de compras
++    /// </summary>
++    class CompraCAD
++    {
++        /// <summary>
++        /// Constante que indica los parametros de conexion de la BD
++        /// </summary>
++        private const string ConnectionString = "data source=.\\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\\Videoclub.mdf;User Instance=true";
++
++        /// <summary>
++        /// Representa la entidad de negocio relacionada con el CAD
++        /// </summary>
++        private CompraEN compra;
++
++        /// <summary>
++        /// Constructor con parámetros
++        /// </summary>
++        /// <param name="compra">Es la entidad de negocio relacionada con esta compra</param>
++        public CompraCAD(CompraEN compra)
++        {
++            this.compra = compra;
++        }
++
++        /// <summary>
++        /// Funcion para Insertar las compras
++        /// </summary>
++        public void Insertar()
++        { }
++
++        /// <summary>
++        /// Funcion para Actualizar las compras
++        /// </summary>
++        public void Actualizar()
++        { }
++
++        /// <summary>
++        /// Funcion para Borrar las compras
++        /// </summary>
++        public void Borrar()
++        { }
++
++        /// <summary>
++        /// Funcion para Borrar las compras
++        /// </summary>
++        public CompraEN ObtenerPorId()
++        { }
++
++        /// <summary>
++        /// Funcion Listar las Compras
++        /// </summary>
++        public CompraEN[] listarCompra() 
++        { }       
++
++    }
++}
+diff --git a/BySLib/EN/CompraEN.cs b/BySLib/EN/CompraEN.cs
+new file mode 100644
+index 0000000..c37460d
+--- /dev/null
++++ b/BySLib/EN/CompraEN.cs
+@@ -0,0 +1,142 @@
++﻿using System;
++using System.Collections.Generic;
++using System.Linq;
++using System.Text;
++
++
++namespace BySLib
++{
++    /// <summary>
++    /// Esta clase representa un Compra de la aplicacion (Entidad de Negocio)
++    /// </summary>
++    public class CompraEN
++    {
++
++        #region Private Properties
++        private UsuarioEN pujador;
++        private ProductoEN producto;
++        private TimeSpan fecha;
++        private string comentario = "";
++        private int puntuacion = 0;
++        #endregion
++
++        public CompraEN(UsuarioEN pujador, ProductoEN producto, TimeSpan fecha, string comentario, int puntuacion)
++        {
++            this.pujador = pujador;
++            this.producto = producto;
++            this.fecha = fecha;
++            this.comentario = comentario;
++            this.puntuacion = puntuacion;
++        }
++
++        public void Insertar(CompraEN compra_nueva)
++        { }
++
++        public void Borrar(CompraEN compra)
++        { }
++
++        public void Actualizar(CompraEN compra)
++        { }     
++
++        #region Getter y Setters
++
++        /// <summary>
++        /// Obtiene al puajador actual
++        /// </summary>
++        /// <returns>Devuelve el Usuario</returns>
++        public UsuarioEN getPujador()
++        {
++            return pujador;
++        }
++
++
++        /// <summary>
++        /// Obtiene el producto actual
++        /// </summary>
++        /// </returns>Devuelve el Producto</returns>
++        public ProductoEN getProducto()
++        {
++            return producto;
++        }
++
++
++        /// <summary>
++        /// Obtiene la fecha de la compra actual
++        /// </summary>
++        /// </returns>Devuelve la fecha</returns>
++        public TimeSpan getFecha()
++        {
++            return fecha;
++        }
++
++
++        /// <summary>
++        /// Obtiene el comentario de la compra
++        /// </summary>
++        /// </returns>Devuelve el comentario</returns>
++        public string getComentario()
++        {
++            return comentario;
++        }
++
++
++        /// <summary>
++        /// Obtiene la puntuacion de la compra
++        /// </summary>
++        /// </returns>Devuelve la puntuacion</returns>
++        public int getPuntuacion()
++        {
++            return puntuacion;
++        }
++
++        /// <summary>
++        /// Cambia el pujador de la compra
++        /// </summary>
++        /// <param name="pujador">Es el nuevo pujador</param>
++        public void setUsuario(UsuarioEN pujador)
++        {
++            this.pujador = pujador;
++        }
++
++        /// <summary>
++        /// Cambia el producto de la compra
++        /// </summary>
++        /// <param name="producto">Es el nuevo producto</param>
++        public void setProducto(ProductoEN producto)
++        {
++            this.producto = producto;
++        }
++
++        /// <summary>
++        /// Cambia la fecha de la compra
++        /// </summary>
++        /// <param name="fecha">Es la nueva fecha</param>
++        public void setFecha(TimeSpan fecha)
++        {
++            this.fecha = fecha;
++        }
++
++        /// <summary>
++        /// Cambia el comentario de la compra
++        /// </summary>
++        /// <param name="comentario">Es el nuevo comentario</param>
++        public void setComentario(string comentario)
++        {
++            this.comentario = comentario;
++        }
++        
++
++        /// <summary>
++        /// Cambia la puntuacion de la compra
++        /// </summary>
++        /// <param name="puntuacion">Es la nueva puntuacion</param>
++        public void setPuntuacion(int puntuacion)
++        {
++            this.puntuacion = puntuacion;
++        }
++
++
++        #endregion
++
++    }
++}
+-- 
+1.8.3.msysgit.0
+
