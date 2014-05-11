@@ -59,20 +59,21 @@
     <Content Include="images\bic.jpg" />
     <Content Include="images\casco.jpeg" />
     <Content Include="images\cascos.jpg" />
-    <Content Include="images\dildo.jpg" />
     <Content Include="images\entrada.JPG" />
     <Content Include="images\mac.jpg" />
     <Content Include="images\mechon.jpg" />
     <Content Include="images\popeye.jpg" />
+    <Content Include="images\puerros.jpg" />
     <Content Include="images\sartenes.jpg" />
     <Content Include="images\Tgrafica.jpg" />
     <Content Include="images\travelo.jpg" />
     <Content Include="images\washer.jpg" />
     <Content Include="Listar.aspx" />
     <Content Include="images\logo.png" />
+    <Content Include="MiProducto.aspx" />
+    <Content Include="MiUsuario.aspx" />
     <Content Include="Producto.aspx" />
     <Content Include="Styles\Site.css" />
-    <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
@@ -85,7 +86,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Portada.aspx" />
+    <Content Include="Default.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\ChangePassword.aspx.cs">
@@ -116,13 +117,6 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="DetallesUsuario.aspx.cs">
       <DependentUpon>DetallesUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -140,6 +134,20 @@
     <Compile Include="Listar.aspx.designer.cs">
       <DependentUpon>Listar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MiProducto.aspx.cs">
+      <DependentUpon>MiProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MiProducto.aspx.designer.cs">
+      <DependentUpon>MiProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MiUsuario.aspx.cs">
+      <DependentUpon>MiUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MiUsuario.aspx.designer.cs">
+      <DependentUpon>MiUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Producto.aspx.cs">
       <DependentUpon>Producto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -155,12 +163,12 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Portada.aspx.cs">
-      <DependentUpon>Portada.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Portada.aspx.designer.cs">
-      <DependentUpon>Portada.aspx</DependentUpon>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

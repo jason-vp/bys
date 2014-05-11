@@ -14,10 +14,7 @@
             <asp:ListItem>Descendente</asp:ListItem>
         </asp:DropDownList>
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <p>Filtrar por:</p>
         <asp:CheckBoxList ID="CheckBoxList1" runat="server" Width="151px">
             <asp:ListItem>Nuevo con etiquetas</asp:ListItem>
             <asp:ListItem>Nuevo sin etiquetas</asp:ListItem>
@@ -25,136 +22,104 @@
             <asp:ListItem>Usado</asp:ListItem>
             <asp:ListItem>Sin especificar</asp:ListItem>
         </asp:CheckBoxList>
+        <asp:Button ID="Button1" runat="server" Text="Filtrar" style="margin: auto"/>
         <br />
         <br />
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:LinkButton ID="LinkButton1" runat="server" BorderColor="#666699" 
-            BorderStyle="Outset" Height="26px">TODOS</asp:LinkButton>
-        <asp:LinkButton ID="LinkButton2" runat="server" BorderColor="#666699" 
-            BorderStyle="Outset" Height="25px">SUBASTAS</asp:LinkButton>
-        <asp:LinkButton ID="LinkButton3" runat="server" BorderColor="#666699" 
-            BorderStyle="Outset" Height="26px">¡COMPRARLO YA!</asp:LinkButton>
-        <br />
-    </p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp; Nombre de la busqueda:<br />
-&nbsp;
-        <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True">
-            <asp:ListItem>Producto</asp:ListItem>
-            <asp:ListItem>Categoria</asp:ListItem>
-            <asp:ListItem>Usuario</asp:ListItem>
-            <asp:ListItem>Precio</asp:ListItem>
-        </asp:DropDownList>
-    </p>
-    <p>
-        &nbsp;&nbsp;&nbsp;<asp:Image ID="Image1" runat="server" Width="200px" 
-            BorderStyle="Outset" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Image ID="Image2" runat="server" Width="200px" BorderStyle="Outset" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Image ID="Image3" runat="server" Width="200px" BorderStyle="Outset" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
-    <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button runat="server" Text="Descripcion" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button2" runat="server" Text="Descripcion" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button3" runat="server" Text="Descripcion" />
-    </p>
-    <p>
-        &nbsp;&nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Image ID="Image4" runat="server" Width="200px" BorderStyle="Outset" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Image ID="Image5" runat="server" Width="200px" BorderStyle="Outset" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Image ID="Image6" runat="server" Width="200px" BorderStyle="Outset" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <br />
-&nbsp;&nbsp;&nbsp; </p>
-    <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:Button 
-            ID="Button4" runat="server" Text="Descripcion" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button5" runat="server" Text="Descripcion" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button6" runat="server" Text="Descripcion" />
-    </p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;&nbsp; &nbsp;<asp:Image ID="Image7" runat="server" Width="200px" 
-            BorderStyle="Outset" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Image ID="Image8" runat="server" Width="200px" BorderStyle="Outset" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Image ID="Image9" runat="server" Width="200px" BorderStyle="Outset" />
-    </p>
-    <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button7" runat="server" Text="Descripcion" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button8" runat="server" Text="Descripcion" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button9" runat="server" Text="Descripcion" />
-    </p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;&nbsp; &nbsp;<asp:Image ID="Image10" runat="server" Width="200px" 
-            BorderStyle="Outset" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Image ID="Image11" runat="server" Width="200px" BorderStyle="Outset" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Image ID="Image12" runat="server" Width="200px" BorderStyle="Outset" />
-    </p>
-    <p align="left">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button10" runat="server" Text="Descripcion" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button11" runat="server" Text="Descripcion" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button12" runat="server" Text="Descripcion" />
-    </p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;&nbsp; &nbsp;<asp:Image ID="Image13" runat="server" style="margin-left: 0px" 
-            Width="200px" BorderStyle="Outset" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Image ID="Image14" runat="server" Width="200px" BorderStyle="Outset" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Image ID="Image15" runat="server" Width="200px" BorderStyle="Outset" />
-    </p>
-    <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:Button 
-            ID="Button13" runat="server" Text="Descripcion" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button14" runat="server" Text="Descripcion" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button15" runat="server" Text="Descripcion" />
-    </p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
+    <div style="min-height: 1100px">
+    <h2 class = "tituloh2">Resultados de: </h2>
+    <div style="height: 30px;">
+    <p>Buscar por:&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id="Text1" type="text" />&nbsp;&nbsp;
+        <asp:Button ID="Button2" runat="server" Text="Buscar" />
+        </p>
+    </div>
+    <a href = "/Producto.aspx"><div class = "imgportada">
+        <img src="images/bic.jpg" alt="Alternate Text" />
+        <h3>Boligrafo Bic, de los buenos</h3>
+        <p class = "precioPortadas">
+            <q>2,27 €</q>
+        </p>
+    </div></a>
+    <a href = "/Producto.aspx"><div class = "imgportada">
+        <img src="images/casco.jpeg" alt="Alternate Text" />
+        <h3>Casco integral ortera</h3>
+        <p class = "precioPortadas">
+            <q>57,50 €</q>
+        </p>
+    </div></a>
+    <a href = "/Producto.aspx"><div class = "imgportada">
+        <img src="images/cascos.jpg" alt="Alternate Text" />
+        <h3 >Steelseries Icemat Siberia V2 Negros</h3>
+        <p class = "precioPortadas">
+            <q>34,76 €</q>
+        </p>
+    </div></a>
+    <a href = "/Producto.aspx"><div class = "imgportada">
+        <img src="images/puerros.jpg" alt="Alternate Text" />
+        <h3 >Puerros de la huerta</h3>
+        <p class = "precioPortadas">
+            <q>1,44 €</q>
+        </p>
+    </div></a>
+    <a href = "/Producto.aspx"><div class = "imgportada">
+        <img src="images/entrada.jpg" alt="Alternate Text" />
+        <h3 >Entrada TomorrowLand 2014 Maletin</h3>
+        <p class = "precioPortadas">
+            1367,99<q>€</q>
+        </p>
+    </div></a>
+    <a href = "/Producto.aspx"><div class = "imgportada">
+        <img src="images/mac.jpg" alt="Alternate Text" />
+        <h3>Pisapapeles muy caro</h3>
+        <p class = "precioPortadas">
+            <q>1102,23 €</q>
+        </p>
+    </div></a>
+    <a href = "/Producto.aspx"><div class = "imgportada">
+        <img src="images/mechon.jpg" alt="Alternate Text" />
+        <h3 >Pelo de Megan Fox</h3>
+        <p class = "precioPortadas">
+            <q>34980,50 €</q>
+        </p>
+    </div></a>
+    <a href = "/Producto.aspx"><div class = "imgportada">
+        <img src="images/popeye.jpg" alt="Alternate Text" />
+        <h3>Embarcacion recreativa de lujo para bañera</h3>
+        <p class = "precioPortadas">
+            <q>3,13 €</q>
+        </p>
+    </div></a>
+    <a href = "/Producto.aspx"><div class = "imgportada">
+        <img src="images/sartenes.jpg" alt="Alternate Text" />
+        <h3>Sartenes de ceramica marca Gayer</h3>
+        <p class = "precioPortadas">
+            <q>21,30 €</q>
+        </p>
+    </div></a>
+    <a href = "/Producto.aspx"><div class = "imgportada">
+        <img src="images/Tgrafica.jpg" alt="Alternate Text" />
+        <h3>AMD Radeon R9-295x2 de Review</h3>
+        <p class = "precioPortadas">
+            <q>1098,45 €</q>
+        </p>
+    </div></a>
+    <a href = "/Producto.aspx"><div class = "imgportada">
+        <img src="images/travelo.jpg" alt="Alternate Text" />
+        <h3>Concierto privado de mujer barbuda</h3>
+        <p class = "precioPortadas">
+            No hay pujas
+        </p>
+    </div></a>
+    <a href = "/Producto.aspx"><div class = "imgportada">
+        <img src="images/washer.jpg" alt="Alternate Text" />
+        <h3>Lavadora portal alternativo a Narnia</h3>
+        <p class = "precioPortadas">
+            <q>6,79 €</q>
+        </p>
+    </div></a>
+    <div style="height: 30px;">1&nbsp;<a href="">2</a>&nbsp;<a href="">3</a>&nbsp;<a href="">4</a>&nbsp;<a href="">5</a>&nbsp;<a href="">6</a>&nbsp;<a href="">7</a>&nbsp;<a href="">8</a>&nbsp;<a href="">6</a>&nbsp;<a href="">9</a>&nbsp;<a href="">10</a>&nbsp;<a href="">>></a>&nbsp;</div>
+    </div>
     </asp:Content>

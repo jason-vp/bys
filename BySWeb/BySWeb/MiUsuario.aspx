@@ -11,59 +11,41 @@
     <p>
         Mis Pujas</p>
     <p>
-        -
-        <asp:HyperLink ID="HyperLink3" runat="server">HyperLink</asp:HyperLink>
-&nbsp;<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <a href="/Producto.aspx">Producto 1</a>
     </p>
     <p>
-        -
-        <asp:HyperLink ID="HyperLink4" runat="server">HyperLink</asp:HyperLink>
-&nbsp;<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+        <a href="/Producto.aspx">Producto 1</a>
     </p>
     <p>
-        -
-        <asp:HyperLink ID="HyperLink5" runat="server">HyperLink</asp:HyperLink>
-&nbsp;<asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+        <a href="/Producto.aspx">Producto 1</a>
     </p>
     <p>
-        -
-        <asp:HyperLink ID="HyperLink6" runat="server">HyperLink</asp:HyperLink>
-&nbsp;<asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+        <a href="/Producto.aspx">Producto 1</a>
     </p>
     <p>
-        -
-        <asp:HyperLink ID="HyperLink7" runat="server">HyperLink</asp:HyperLink>
-&nbsp;<asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+        <a href="/Producto.aspx">Producto 1</a>
     </p>
+    <p><a href="Listar.aspx">Ver más...</a></p>
     <p>
         &nbsp;</p>
     <p>
         Mis Productos</p>
     <p>
-        -
-        <asp:HyperLink ID="HyperLink8" runat="server">HyperLink</asp:HyperLink>
-&nbsp;<asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+        <a href="/MiProducto.aspx">Producto 1</a>
     </p>
     <p>
-        -
-        <asp:HyperLink ID="HyperLink9" runat="server">HyperLink</asp:HyperLink>
-&nbsp;<asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
+        <a href="/MiProducto.aspx">Producto 1</a>
     </p>
     <p>
-        -
-        <asp:HyperLink ID="HyperLink10" runat="server">HyperLink</asp:HyperLink>
-&nbsp;<asp:Label ID="Label8" runat="server" Text="Label"></asp:Label>
+        <a href="/MiProducto.aspx">Producto 1</a>
     </p>
     <p>
-        -
-        <asp:HyperLink ID="HyperLink11" runat="server">HyperLink</asp:HyperLink>
-&nbsp;<asp:Label ID="Label9" runat="server" Text="Label"></asp:Label>
+        <a href="/MiProducto.aspx">Producto 1</a>
     </p>
     <p>
-        -
-        <asp:HyperLink ID="HyperLink12" runat="server">HyperLink</asp:HyperLink>
-&nbsp;<asp:Label ID="Label10" runat="server" Text="Label"></asp:Label>
+        <a href="/MiProducto.aspx">Producto 1</a>
     </p>
+    <p><a href="Listar.aspx">Ver más...</a></p>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <p class="style1">
@@ -136,6 +118,11 @@
             ID="Credito" runat="server" TextMode="Number"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp; <strong>Añadir Credito&nbsp;&nbsp;&nbsp;&nbsp; </strong>&nbsp;<asp:Button 
             ID="Boton_Añadir_Credito" runat="server" Text="Añadir" />
+    &nbsp;&nbsp;
+    </p>
+    <p>
+        Imagen perfil:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:FileUpload ID="FileUpload1" runat="server" />
     </p>
     <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -151,22 +138,38 @@
         &nbsp;</asp:Panel>
     <p class="style1">
         <strong>COMENTARIOS</strong></p>
+        <div class="comentario">
     <p>
-        Producto:
-        <asp:HyperLink ID="HyperLink1" runat="server">HyperLink</asp:HyperLink>
-&nbsp;</p>
-    <p>
-        <asp:TextBox ID="TextBox1" runat="server" Height="83px" Width="748px" 
-            TextMode="MultiLine"></asp:TextBox>
-    </p>
-    <p>
-        Producto:
-        <asp:HyperLink ID="HyperLink2" runat="server">HyperLink</asp:HyperLink>
-    </p>
-    <p>
-        <asp:TextBox ID="TextBox2" runat="server" Height="83px" Width="748px" 
-            TextMode="MultiLine"></asp:TextBox>
-    </p>
-    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
+              <a href="/DetallesUsuario.aspx">Perico90</a>
+        &nbsp;&nbsp;&nbsp;
+
+         Producto:
+              <a href="/Producto.aspx">Barco velero</a>
+        &nbsp;&nbsp; Puntuación:&nbsp;<asp:TextBox ID="TextBox18" 
+            runat="server" Width="34px" Value="10"></asp:TextBox>
+            </p>
+            <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;<asp:TextBox 
+            ID="TextBox19" runat="server" Height="100px" Width="700px" style="margin-left:20px" Value="Entregadas en mano y pagado en negro, muy buen servicio."></asp:TextBox>
+        &nbsp;&nbsp;&nbsp; 
         &nbsp;</p>
+        </div>
+        <div class="comentario">
+            <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
+              <a href="/DetallesUsuario.aspx">Perico90</a>
+        &nbsp;&nbsp;&nbsp;
+
+         Producto:
+              <a href="/Producto.aspx">Barco velero</a>
+        &nbsp;&nbsp; Puntuación:&nbsp;<asp:TextBox ID="TextBox2" 
+            runat="server" Width="34px" Value="10"></asp:TextBox>
+            </p>
+            <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;<asp:TextBox 
+            ID="TextBox3" runat="server" Height="100px" Width="700px" style="margin-left:20px" Value="Entregadas en mano y pagado en negro, muy buen servicio."></asp:TextBox>
+        &nbsp;&nbsp;&nbsp; 
+        &nbsp;</p>
+        </div>
 </asp:Content>

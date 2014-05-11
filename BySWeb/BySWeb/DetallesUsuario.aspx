@@ -1,90 +1,142 @@
-﻿<%@ Page Title="Detalles de Usuario" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DetallesUsuario.aspx.cs" Inherits="BySWeb.DetallesUsuario" %>
+﻿<%@ Page Title="Detalles de Usuario" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MiProducto.aspx.cs" Inherits="BySWeb.DetallesUsuario" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .style1
+        {
+            text-align: center;
+        }
+        .style2
+        {
+            color: #FF0000;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="DetalleUsuario" ContentPlaceHolderID="PlaceholderSidebar" 
     runat="server">
+    &nbsp;<h2 class="style2">
+        <strong>Ultimos articulos</strong></h2>
+    <a href="">
+    <div>
+        <p>
+            Ultimos articulos <q class="precioUltimos">0,00<q>€</q></q>
+        </p>
+    </div>
+    <div>
+        <p>
+            Ultimos articulos <q class="precioUltimos">0,00<q>€</q></q>
+        </p>
+    </div>
+    <div>
+        <p>
+            Ultimos articulos <q class="precioUltimos">0,00<q>€</q></q></p>
+    </div>
+    </a>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+  
+    <p class="style1" style="font-size: xx-large; font-family: Arial">
+        &nbsp;&nbsp;&nbsp;Información Personal</p>
+
+          <div style="float: right; height: 309px; width: 345px; margin-top: 1px;">
+
+          <p style="width: 99%">
+              Nick:&nbsp;
+              <asp:TextBox ID="TextBox10" runat="server" Width="170px" Value="LatinLover69"></asp:TextBox>
+        </p>
+              <p style="width: 100%">
+                  Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <asp:TextBox ID="TextBox12" runat="server" Width="166px" Value="tugatito@hhh.com"></asp:TextBox>
+        </p>
+              <p style="width: 100%">
+                  Localidad:
+                  <asp:TextBox ID="TextBox15" runat="server" Width="166px" Value="Puerto Parranda"></asp:TextBox>
+        </p>
+              <p style="width: 100%">
+                  Puntuación:
+                  <asp:TextBox ID="TextBox14" runat="server" Width="34px" Value="-10"></asp:TextBox>
+        </p>
+              <p style="width: 100%">
+                  &nbsp;</p>
+              <p style="width: 100%">
+                  &nbsp;</p>
+              <br />
+              <br />
+    </div>
+    <div style="float: left;">
+        <asp:Image ID="Image1" runat="server" BorderColor="#666666" Height="252px" 
+            Width="309px" ImageUrl="~/images/popeye.jpg" style="margin-left: 61px" />
+    </div>
     <p>
+        &nbsp;</p>
+ <p>
 &nbsp;&nbsp;
-        <asp:Image ID="Image1" runat="server" BorderColor="#666666" Height="65px" 
-            Width="79px" />
-    </p>
+        
+        <br />
+        <br />
+        
+        </p>
     <p>
-        &nbsp;&nbsp;&nbsp; INFORMACION &nbsp;PERSONAL</p>
-    <p dir="ltr">
-        Nombre&nbsp;&nbsp;&nbsp;&nbsp; 
-        <asp:TextBox ID="TextBox7" runat="server" Width="191px"></asp:TextBox>
-    </p>
-    <p dir="ltr">
-       Apellidos&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox2" runat="server" style="margin-top: 5px" Width="191px"></asp:TextBox>
-    </p>
-    <p dir="ltr">
-        Email&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox3" runat="server" style="margin-left: 19px" 
-            Width="191px"></asp:TextBox>
-    </p>
-    <p dir="ltr">
-        Pais&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:DropDownList ID="DropDownList1" runat="server">
-            <asp:ListItem>Alemania</asp:ListItem>
-            <asp:ListItem>Austria</asp:ListItem>
-            <asp:ListItem>Bélgica</asp:ListItem>
-            <asp:ListItem>Bulgaria</asp:ListItem>
-            <asp:ListItem>Chipre</asp:ListItem>
-            <asp:ListItem>Croacia</asp:ListItem>
-            <asp:ListItem>Dinamarca</asp:ListItem>
-            <asp:ListItem>Eslovaquia</asp:ListItem>
-            <asp:ListItem>Eslovenia</asp:ListItem>
-            <asp:ListItem>España</asp:ListItem>
-            <asp:ListItem>Estonia</asp:ListItem>
-            <asp:ListItem>Finlandia</asp:ListItem>
-            <asp:ListItem>Francia</asp:ListItem>
-            <asp:ListItem>Grecia</asp:ListItem>
-            <asp:ListItem>Hungria</asp:ListItem>
-            <asp:ListItem>Irlanda</asp:ListItem>
-            <asp:ListItem>Italia</asp:ListItem>
-            <asp:ListItem>Letonia</asp:ListItem>
-            <asp:ListItem>Lituania</asp:ListItem>
-            <asp:ListItem>luxemburgo</asp:ListItem>
-            <asp:ListItem>Malta</asp:ListItem>
-            <asp:ListItem>Países Bajos</asp:ListItem>
-            <asp:ListItem>Polonia</asp:ListItem>
-            <asp:ListItem>Portugal</asp:ListItem>
-            <asp:ListItem>Reino Unido</asp:ListItem>
-            <asp:ListItem>República Checa</asp:ListItem>
-            <asp:ListItem>Rumania</asp:ListItem>
-            <asp:ListItem>Suecia</asp:ListItem>
-        </asp:DropDownList>
-    </p>
-    <p dir="ltr">
-        Localidad&nbsp;&nbsp; 
-        <asp:TextBox ID="TextBox4" runat="server" style="margin-bottom: 0px" 
-            Width="191px"></asp:TextBox>
-    </p>
-    <p dir="ltr">
-        Puntuación Usuario&nbsp; 
-        <asp:TextBox ID="TextBox5" runat="server" Width="87px"></asp:TextBox>
-    </p>
-    <p dir="ltr">
-        Comentarios&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <br />
-        <asp:TextBox ID="TextBox6" runat="server" Height="121px" Width="843px"></asp:TextBox>
-        <br />
-    </p>
-    <p dir="ltr">
         &nbsp;</p>
-    <p dir="ltr">
-&nbsp;&nbsp;&nbsp;&nbsp;
-    </p>
-    <p dir="ltr">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button1" runat="server" Text="Enviar" />
-    </p>
-    <p dir="ltr">
+    <p>
         &nbsp;</p>
-    <p dir="ltr">
+    <p>
         &nbsp;</p>
-</asp:Content>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;COMENTARIOS:</strong></p> </br>
+        <div class="comentario">
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
+              <a href="/DetallesUsuario.aspx">Perico90</a>
+        &nbsp;&nbsp;&nbsp;
+
+         Producto:
+              <a href="/Producto.aspx">Llantas robadas</a>
+        &nbsp;&nbsp; Puntuación:&nbsp;<asp:TextBox ID="TextBox18" 
+            runat="server" Width="34px" Value="10"></asp:TextBox>
+            </p>
+            <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;<asp:TextBox 
+            ID="TextBox19" runat="server" Height="100px" Width="700px" style="margin-left:20px" Value="Entregadas en mano y pagado en negro, muy buen servicio."></asp:TextBox>
+        &nbsp;&nbsp;&nbsp; 
+        &nbsp;</p>
+        </div>
+                <div class="comentario">
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
+              <a href="/DetallesUsuario.aspx">Perico90</a>
+        &nbsp;&nbsp;&nbsp;
+
+         Producto:
+              <a href="/Producto.aspx">Llantas robadas</a>
+        &nbsp;&nbsp; Puntuación:&nbsp;<asp:TextBox ID="TextBox1" 
+            runat="server" Width="34px" Value="10"></asp:TextBox>
+            </p>
+            <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;<asp:TextBox 
+            ID="TextBox2" runat="server" Height="100px" Width="700px" style="margin-left:20px" Value="Entregadas en mano y pagado en negro, muy buen servicio."></asp:TextBox>
+        &nbsp;&nbsp;&nbsp; 
+        &nbsp;</p>
+        </div>
+                <div class="comentario">
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
+              <a href="/DetallesUsuario.aspx">Perico90</a>
+        &nbsp;&nbsp;&nbsp;
+
+         Producto:
+              <a href="/Producto.aspx">Llantas robadas</a>
+        &nbsp;&nbsp; Puntuación:&nbsp;<asp:TextBox ID="TextBox3" 
+            runat="server" Width="34px" Value="10"></asp:TextBox>
+            </p>
+            <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;<asp:TextBox 
+            ID="TextBox4" runat="server" Height="100px" Width="700px" style="margin-left:20px" Value="Entregadas en mano y pagado en negro, muy buen servicio."></asp:TextBox>
+        &nbsp;&nbsp;&nbsp; 
+        &nbsp;</p>
+        </div>
+    </asp:Content>
+

@@ -327,22 +327,41 @@ div.accountInfo
 {
     float: left;
     height: 300px;
-    width: 22%;
+    width: 185px;
     margin: 10px 5px;
     text-align: center;
 }
 
 .imgportada img 
 {
-    width: 80%;
+    width: 90%;
     height: 170px;
-    margin-right: 10%;
-    margin-left: 10%;
+    margin: auto;
 }
 
-.tituloh2
-{
+#MainC h2 {
     text-align: center;
     margin-top: 10px;
+    margin-bottom: 20px;
 }
     
+#Sidebar ul 
+{   
+    list-style-type: none;
+    padding: 10px 0px;
+}
+
+#Sidebar li a
+{
+    display: block;
+    width: 130px;
+    height: 20px;
+    overflow: hidden;
+    margin-left: 3px;
+    float: left;
+}
+
+.comentario 
+{
+    border: 1px solid black;
+}

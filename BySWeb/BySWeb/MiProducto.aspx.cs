@@ -9,7 +9,7 @@ namespace BySWeb
 {
     public partial class DetallesUsuario : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load2(object sender, EventArgs e)
         {
 
         }

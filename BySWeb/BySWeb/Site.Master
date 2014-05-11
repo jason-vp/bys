@@ -34,31 +34,31 @@
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">       
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Página principal"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="Categoría 1" Value="Categoría 1">
-                            <asp:MenuItem Text="Subcategoría 1" Value="Subcategoría 1"></asp:MenuItem>
-                            <asp:MenuItem Text="Subcategoría 2" Value="Subcategoría 2"></asp:MenuItem>
-                            <asp:MenuItem Text="Subcategoría 3" Value="Subcategoría 3"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Categoría 1" Value="Categoría 1">
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Subcategoría 1" Value="Subcategoría 1"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Subcategoría 2" Value="Subcategoría 2"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Subcategoría 3" Value="Subcategoría 3"></asp:MenuItem>
                         </asp:MenuItem>
-                        <asp:MenuItem Text="Categoría 2" Value="Categoría 2">
-                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
-                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
-                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Categoría 2" Value="Categoría 2">
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
                         </asp:MenuItem>
-                        <asp:MenuItem Text="Categoría 3" Value="Categoría 3">
-                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
-                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Categoría 3" Value="Categoría 3">
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
                         </asp:MenuItem>
-                        <asp:MenuItem Text="Categoría 4" Value="Categoría 4">
-                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
-                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Categoría 4" Value="Categoría 4">
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
                         </asp:MenuItem>
-                        <asp:MenuItem Text="Categoría 5" Value="Categoría 5">
-                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
-                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Categoría 5" Value="Categoría 5">
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
                         </asp:MenuItem>
-                        <asp:MenuItem Text="Categoría 6" Value="Categoría 6">
-                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
-                            <asp:MenuItem Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Categoría 6" Value="Categoría 6">
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
                         </asp:MenuItem>
                     </Items>    
                 </asp:Menu>
@@ -69,11 +69,11 @@
     <div class="page">
 
         <div class="main">
-            <div style="float: right; width: 180px;">
+            <div style="float: right; width: 180px;" id="Sidebar">
                 <asp:ContentPlaceHolder ID="PlaceholderSidebar" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
-            <div style="width: 785px; border-right: solid 1px black;">
+            <div style="width: 785px; border-right: solid 1px black;" id="MainC">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
