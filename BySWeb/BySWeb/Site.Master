@@ -60,6 +60,10 @@
                             <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
                             <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
                         </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="/Listar.aspx" Text="Buscar" Value="Buscar">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="/Registro.aspx" Text="Registro" Value="Registro">
+                        </asp:MenuItem>
                     </Items>    
                 </asp:Menu>
                 </div>

@@ -63,7 +63,7 @@
               <br />
     </div>
     <div style="float: left;">
-        <asp:Image ID="Image1" runat="server" BorderColor="#666666" Height="252px" 
+        <asp:Image ID="UserLogo" runat="server" BorderColor="#666666" Height="252px" 
             Width="309px" ImageUrl="~/images/popeye.jpg" style="margin-left: 61px" />
     </div>
     <p>
@@ -117,7 +117,9 @@
             </p>
             <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;<asp:TextBox 
-            ID="TextBox2" runat="server" Height="100px" Width="700px" style="margin-left:20px" Value="Entregadas en mano y pagado en negro, muy buen servicio."></asp:TextBox>
+            ID="TextBox20" runat="server" Height="100px" Width="700px" 
+                    style="margin-left:20px" 
+                    Value="Entregadas en mano y pagado en negro, muy buen servicio."></asp:TextBox>
         &nbsp;&nbsp;&nbsp; 
         &nbsp;</p>
         </div>
@@ -129,12 +131,14 @@
 
          Producto:
               <a href="/Producto.aspx">Llantas robadas</a>
-        &nbsp;&nbsp; Puntuación:&nbsp;<asp:TextBox ID="TextBox3" 
+        &nbsp;&nbsp; Puntuación:&nbsp;<asp:TextBox ID="TextBox30" 
             runat="server" Width="34px" Value="10"></asp:TextBox>
             </p>
             <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;<asp:TextBox 
-            ID="TextBox4" runat="server" Height="100px" Width="700px" style="margin-left:20px" Value="Entregadas en mano y pagado en negro, muy buen servicio."></asp:TextBox>
+            ID="TextBox21" runat="server" Height="100px" Width="700px" 
+                    style="margin-left:20px" 
+                    Value="Entregadas en mano y pagado en negro, muy buen servicio."></asp:TextBox>
         &nbsp;&nbsp;&nbsp; 
         &nbsp;</p>
         </div>
