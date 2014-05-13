@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BySWeb", "..\BySWeb\BySWeb\BySWeb.csproj", "{F00BCE41-2701-4BD4-B8B8-79E5E5BEBA7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BySLib", "..\BySLib\BySLib.csproj", "{AD59616B-C599-4F90-9E7E-4340B31981FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F00BCE41-2701-4BD4-B8B8-79E5E5BEBA7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F00BCE41-2701-4BD4-B8B8-79E5E5BEBA7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F00BCE41-2701-4BD4-B8B8-79E5E5BEBA7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F00BCE41-2701-4BD4-B8B8-79E5E5BEBA7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD59616B-C599-4F90-9E7E-4340B31981FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD59616B-C599-4F90-9E7E-4340B31981FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD59616B-C599-4F90-9E7E-4340B31981FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD59616B-C599-4F90-9E7E-4340B31981FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
