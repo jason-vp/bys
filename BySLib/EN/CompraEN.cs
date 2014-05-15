@@ -20,7 +20,14 @@ namespace BySLib.EN
         private string comentario = "";
         private int puntuacion = 0;
         #endregion
-
+        /// <summary>
+        /// Constructor con parametros
+        /// </summary>
+        /// <param name="pujador">El usuario que compra</param>
+        /// <param name="producto">El producto que se compra</param>
+        /// <param name="fecha">Fecha de la compra del producto</param>
+        /// <param name="comentario">El comentario que se hace sobre el producto</param>
+        /// <param name="puntuacion">La puntacion que se da al producto</param>
         public CompraEN(UsuarioEN pujador, ProductoEN producto, TimeSpan fecha, string comentario, int puntuacion)
         {
             this.pujador = pujador;
@@ -29,13 +36,22 @@ namespace BySLib.EN
             this.comentario = comentario;
             this.puntuacion = puntuacion;
         }
-
+        /// <summary>
+        /// Para insertar una compra
+        /// </summary>
+        /// <param name="compra_nueva"></param>
         public void Insertar(CompraEN compra_nueva)
         { }
-
+        /// <summary>
+        /// Borra una compra
+        /// </summary>
+        /// <param name="compra"></param>
         public void Borrar(CompraEN compra)
         { }
-
+        /// <summary>
+        /// Actualia la compra
+        /// </summary>
+        /// <param name="compra"></param>
         public void Actualizar(CompraEN compra)
         { }     
 
