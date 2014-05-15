@@ -55,6 +55,10 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="App_Data\BySBD.mdf" />
+    <Content Include="App_Data\BySBD_log.ldf">
+      <DependentUpon>BySBD.mdf</DependentUpon>
+    </Content>
     <Content Include="DetallesUsuario.aspx" />
     <Content Include="images\bic.jpg" />
     <Content Include="images\casco.jpeg" />
@@ -179,9 +183,7 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Account\Web.config" />
   </ItemGroup>
