@@ -115,7 +115,7 @@ namespace BySLib.EN
 		/// <summary>
 		/// Propiedad de las pujas del producto
 		/// </summary>
-		public int List<PujaEN> Pujas
+		public List<PujaEN> Pujas
         {
 			get { return pujas; }
 			set { pujas = value; }

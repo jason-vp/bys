@@ -11,27 +11,30 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="DetalleUsuario" ContentPlaceHolderID="PlaceholderSidebar" 
-    runat="server">
-    &nbsp;<h2 class="style2">
-        <strong>Ultimos articulos</strong></h2>
-    <a href="">
-    <div>
-        <p>
-            Ultimos articulos <q class="precioUltimos">0,00<q>€</q></q>
-        </p>
-    </div>
-    <div>
-        <p>
-            Ultimos articulos <q class="precioUltimos">0,00<q>€</q></q>
-        </p>
-    </div>
-    <div>
-        <p>
-            Ultimos articulos <q class="precioUltimos">0,00<q>€</q></q></p>
-    </div>
-    </a>
+<asp:Content ID="Content2" ContentPlaceHolderID="PlaceholderSidebar" runat="server">
+    
+    <h2 class = "tituloh2">
+        Ultimos Articulos
+    </h2>
+    <ul>
+    <li><p><a href = "/Producto.aspx"><asp:Label ID="nombreUltimoProducto1" runat="server" Text="Label">Pecera</asp:Label></a>
+        <asp:Label ID="precioUltimoProducto1" runat="server" Text="Label">0,00 €</asp:Label>
+    </p></li>
+    <li><p><a href = "/Producto.aspx"><asp:Label ID="nombreUltimoProducto2" runat="server" Text="Label">Algo raro que había por casa</asp:Label></a>
+        <asp:Label ID="precioUltimoProducto2" runat="server" Text="Label">0,00 €</asp:Label>
+    </p></li>
+    <li><p><a href = "/Producto.aspx"><asp:Label ID="nombreUltimoProducto3" runat="server" Text="Label">Experimento 23</asp:Label></a>
+        <asp:Label ID="precioUltimoProducto3" runat="server" Text="Label">0,00 €</asp:Label>
+    </p></li>
+        <li><p><a href = "/Producto.aspx"><asp:Label ID="nombreUltimoProducto4" runat="server" Text="Label">Pecera con peces</asp:Label></a>
+        <asp:Label ID="precioUltimoProducto4" runat="server" Text="Label">0,00 €</asp:Label>
+    </p></li>
+        <li><p><a href = "/Producto.aspx"><asp:Label ID="nombreUltimoProducto5" runat="server" Text="Label">Pecera con peces muertos</asp:Label></a>
+        <asp:Label ID="precioUltimoProducto5" runat="server" Text="Label">0,00 €</asp:Label>
+    </p></li>
+    </ul>
 </asp:Content>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
   
     <p class="style1" style="font-size: xx-large; font-family: Arial">
@@ -53,7 +56,7 @@
         </p>
               <p style="width: 100%">
                   Puntuación:
-                  <asp:TextBox ID="TextBox14" runat="server" Width="34px" Value="-10"></asp:TextBox>
+                  <strong><asp:Label ID="Label1" runat="server" Text="-10"></asp:Label></strong>
         </p>
               <p style="width: 100%">
                   &nbsp;</p>

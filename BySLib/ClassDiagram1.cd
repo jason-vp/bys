@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BySLib.CAD.CategoriaCAD" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAACAAAAAAAAAAIAAAAAIACAAEQAAAAA=</HashCode>
+      <FileName>CAD\CategoriaCAD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BySLib.CAD.ProductoCAD" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAgAAAAAAAAAgAAAAAAAAAAAACBACgAAEAA=</HashCode>
+      <FileName>CAD\ProductoCAD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BySLib.CAD.SubcategoriaCAD" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAACAAAAAAAAAAIAAIAAIASAAAAAAAAA=</HashCode>
+      <FileName>CAD\SubcategoriaCAD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BySLib.CompraCAD" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAACAAAAAAAAAAIAAAAQIACAAAAQAAAA=</HashCode>
+      <FileName>CAD\CompraCAD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BySLib.UsuarioCAD" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAAAAAAAAAAAAAAAAAAAAAAAABAAAACAAQAAAEAA=</HashCode>
+      <FileName>CAD\UsuarioCAD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BySLib.Class1" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BySLib.EN.CategoriaEN" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAACAAAAAIAIAAAAAIAAAAAQIAAgA=</HashCode>
+      <FileName>EN\CategoriaEN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BySLib.EN.CompraEN" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABQAAEBBQBAAgAAAAAAAAQEAIAIAAAJIAAAAAAAAAA=</HashCode>
+      <FileName>EN\CompraEN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BySLib.EN.PujaEN" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABACQIAAQBAAAEQQAAAAAAEAAAABAAABAAAAAAAEgA=</HashCode>
+      <FileName>EN\PujaEN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BySLib.EN.SubcategoriaEN" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAACAAAAAIEIAAAQAIAAAAAQIAEgA=</HashCode>
+      <FileName>EN\SubcategoriaEN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BySLib.EN.UsuarioEN" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAQAAABAQQAAACAAAAIwAAIAAAAAAFABAAAAgAEEIA=</HashCode>
+      <FileName>EN\UsuarioEN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BySLib.Utilities.DBConnectionManager" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Utilities\DBConnectionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BySLib.Utilities.FechaGPS" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoCAAEAAWACAAQEAAAQYAMIAAAAAAgAAJIEAAAgAAQ=</HashCode>
+      <FileName>Utilities\FechaGPS.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BySLib.Utilities.NumeroNif" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQhQCACBQAAAAEAACAAAAAAAAAAEBAAgEASAABAAA=</HashCode>
+      <FileName>Utilities\NumeroNif.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

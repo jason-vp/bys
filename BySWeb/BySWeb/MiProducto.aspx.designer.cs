@@ -13,6 +13,96 @@ namespace BySWeb {
     public partial class DetallesUsuario {
         
         /// <summary>
+        /// Control nombreUltimoProducto1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label nombreUltimoProducto1;
+        
+        /// <summary>
+        /// Control precioUltimoProducto1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label precioUltimoProducto1;
+        
+        /// <summary>
+        /// Control nombreUltimoProducto2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label nombreUltimoProducto2;
+        
+        /// <summary>
+        /// Control precioUltimoProducto2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label precioUltimoProducto2;
+        
+        /// <summary>
+        /// Control nombreUltimoProducto3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label nombreUltimoProducto3;
+        
+        /// <summary>
+        /// Control precioUltimoProducto3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label precioUltimoProducto3;
+        
+        /// <summary>
+        /// Control nombreUltimoProducto4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label nombreUltimoProducto4;
+        
+        /// <summary>
+        /// Control precioUltimoProducto4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label precioUltimoProducto4;
+        
+        /// <summary>
+        /// Control nombreUltimoProducto5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label nombreUltimoProducto5;
+        
+        /// <summary>
+        /// Control precioUltimoProducto5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label precioUltimoProducto5;
+        
+        /// <summary>
         /// Control TextBox10.
         /// </summary>
         /// <remarks>
@@ -40,13 +130,13 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.TextBox TextBox15;
         
         /// <summary>
-        /// Control TextBox14.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox14;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// Control UserLogo.
