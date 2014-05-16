@@ -5,11 +5,7 @@
         {
             text-align: center;
         }
-        .style2
-        {
-            color: #FF0000;
-        }
-    </style>
+        </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PlaceholderSidebar" runat="server">
     
@@ -17,21 +13,34 @@
         Ultimos Articulos
     </h2>
     <ul>
-    <li><p><a href = "/Producto.aspx"><asp:Label ID="nombreUltimoProducto1" runat="server" Text="Label">Pecera</asp:Label></a>
-        <asp:Label ID="precioUltimoProducto1" runat="server" Text="Label">0,00 €</asp:Label>
-    </p></li>
-    <li><p><a href = "/Producto.aspx"><asp:Label ID="nombreUltimoProducto2" runat="server" Text="Label">Algo raro que había por casa</asp:Label></a>
-        <asp:Label ID="precioUltimoProducto2" runat="server" Text="Label">0,00 €</asp:Label>
-    </p></li>
-    <li><p><a href = "/Producto.aspx"><asp:Label ID="nombreUltimoProducto3" runat="server" Text="Label">Experimento 23</asp:Label></a>
-        <asp:Label ID="precioUltimoProducto3" runat="server" Text="Label">0,00 €</asp:Label>
-    </p></li>
-        <li><p><a href = "/Producto.aspx"><asp:Label ID="nombreUltimoProducto4" runat="server" Text="Label">Pecera con peces</asp:Label></a>
-        <asp:Label ID="precioUltimoProducto4" runat="server" Text="Label">0,00 €</asp:Label>
-    </p></li>
-        <li><p><a href = "/Producto.aspx"><asp:Label ID="nombreUltimoProducto5" runat="server" Text="Label">Pecera con peces muertos</asp:Label></a>
-        <asp:Label ID="precioUltimoProducto5" runat="server" Text="Label">0,00 €</asp:Label>
-    </p></li>
+        <li><p><asp:HyperLink ID="ultimoProducto1" runat="server"><asp:Label ID="nombreUltimoProducto1" runat="server" Text="Label">Pecera</asp:Label></asp:HyperLink>
+            <asp:Label ID="precioUltimoProducto1" runat="server" Text="Label">0,00 €</asp:Label>
+            </p>
+        </li>
+
+        <li>
+            <p><asp:HyperLink ID="ultimoProducto2" runat="server"><asp:Label ID="nombreUltimoProducto2" runat="server" Text="Label">Algo raro que había por casa</asp:Label></asp:HyperLink>
+                <asp:Label ID="precioUltimoProducto2" runat="server" Text="Label">0,00 €</asp:Label>
+            </p>
+        </li>
+
+        <li>
+            <p><asp:HyperLink ID="ultimoProducto3" runat="server"><asp:Label ID="nombreUltimoProducto3" runat="server" Text="Label">Experimento 23</asp:Label></asp:HyperLink>
+                <asp:Label ID="precioUltimoProducto3" runat="server" Text="Label">0,00 €</asp:Label>
+            </p>
+        </li>
+
+        <li>
+            <p><asp:HyperLink ID="ultimoProducto4" runat="server"><asp:Label ID="nombreUltimoProducto4" runat="server" Text="Label">Pecera con peces</asp:Label></asp:HyperLink>
+                <asp:Label ID="precioUltimoProducto4" runat="server" Text="Label">0,00 €</asp:Label>
+            </p>
+        </li>
+
+        <li>
+            <p><asp:HyperLink ID="ultimoProducto5" runat="server"><asp:Label ID="nombreUltimoProducto5" runat="server" Text="Label">Pecera con peces muertos</asp:Label></asp:HyperLink>
+                <asp:Label ID="precioUltimoProducto5" runat="server" Text="Label">0,00 €</asp:Label>
+            </p>
+        </li>
     </ul>
 </asp:Content>
 
@@ -43,21 +52,20 @@
           <div style="float: right; height: 309px; width: 345px; margin-top: 1px;">
 
           <p style="width: 99%">
-              Nick:&nbsp;
-              <asp:TextBox ID="TextBox10" runat="server" Width="170px" Value="LatinLover69"></asp:TextBox>
+              Nick:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <asp:Label ID="nickDetUsuario" runat="server" Text="LatinLover69"></asp:Label>
         </p>
               <p style="width: 100%">
-                  Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <asp:TextBox ID="TextBox12" runat="server" Width="166px" Value="tugatito@hhh.com"></asp:TextBox>
+                  Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                  <asp:Label ID="emailDetUsuario" runat="server" Text="tugatito@hhh.com"></asp:Label>
         </p>
               <p style="width: 100%">
-                  Localidad:
-                  <asp:TextBox ID="TextBox15" runat="server" Width="166px" Value="Puerto Parranda"></asp:TextBox>
+                 Localidad:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <asp:Label ID="localidadDetUsuario" runat="server" Text="Puerto Parranda"></asp:Label>
+        </p><p style="width: 100%">
+                  Puntuación:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><asp:Label ID="puntuacionDetallesUsuario" runat="server" Text="-10"></asp:Label></strong>
         </p>
-              <p style="width: 100%">
-                  Puntuación:
-                  <strong><asp:Label ID="Label1" runat="server" Text="-10"></asp:Label></strong>
-        </p>
+              
               <p style="width: 100%">
                   &nbsp;</p>
               <p style="width: 100%">
@@ -66,7 +74,7 @@
               <br />
     </div>
     <div style="float: left;">
-        <asp:Image ID="UserLogo" runat="server" BorderColor="#666666" Height="252px" 
+        <asp:Image ID="userLogo" runat="server" BorderColor="#666666" Height="252px" 
             Width="309px" ImageUrl="~/images/popeye.jpg" style="margin-left: 61px" />
     </div>
     <p>
@@ -93,7 +101,7 @@
         <div class="comentario">
     <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
-              <a href="/DetallesUsuario.aspx">Perico90</a>
+                <a href="/DetallesUsuario.aspx">Perico90</a>
         &nbsp;&nbsp;&nbsp;
 
          Producto:

@@ -69,22 +69,22 @@
     <div id="contenedor">
         <h2 class="tiuloh2">Producto</h2>
         <div id="lateral">
-            <asp:Image ID="Image1" runat="server" Width="212px" Height="226px" 
+            <asp:Image ID="imagenProducto" runat="server" Width="212px" Height="226px" 
                 ImageUrl="~/images/popeye.jpg" />
         </div>
         <div id="principal">
             <div class="divInfoProd">
                 <p>
-                    <h3><asp:Label ID="Lblnombre" runat="server" Text="Barco velero"></asp:Label></h3></p>
+                    <h3><asp:Label ID="nombreProducto" runat="server" Text="Barco velero"></asp:Label></h3></p>
                     <div class="divLblDescrip" align="left">
                 <p style="height:80px">
-                    <asp:Label ID="LblDescrip" runat="server" Text="Barco de 12 metros de eslora. Solo 3 años de uso. Muy cuidado.Barco de 12 metros de eslora. Solo 3 años de uso. Muy cuidadoBarco de 12 metros de eslora. Solo 3 años de uso. Muy cuidado"></asp:Label>
+                    <asp:Label ID="descriProducto" runat="server" Text="Barco de 12 metros de eslora. Solo 3 años de uso. Muy cuidado.Barco de 12 metros de eslora. Solo 3 años de uso. Muy cuidadoBarco de 12 metros de eslora. Solo 3 años de uso. Muy cuidado"></asp:Label>
                 </p>
                 </div>
                 
                 <p>
                     Fecha de fin:
-                    <asp:Label ID="LblFechafin" runat="server" Text="12/12/2014"></asp:Label>
+                    <asp:Label ID="fechaFinProducto" runat="server" Text="12/12/2014"></asp:Label>
                 </p>
                 <div class="divLblDescrip" align="left">
                 <div id="DivFondogris">
@@ -130,17 +130,18 @@
         <div class="comentario">
     <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
-              <a href="/DetallesUsuario.aspx">Perico90</a>
+              <asp:HyperLink ID="usuarioComentario1" runat="server">Perico90</asp:HyperLink>
         &nbsp;&nbsp;&nbsp;
 
          Producto:
               <a href="/Producto.aspx">Barco velero</a>
-        &nbsp;&nbsp; Puntuación:&nbsp;<asp:TextBox ID="TextBox18" 
-            runat="server" Width="34px" Value="10"></asp:TextBox>
+        &nbsp;&nbsp; Puntuación:&nbsp;<asp:Label ID="puntuacionComentario1" runat="server"
+                Text="10"></asp:Label>
             </p>
             <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;<asp:TextBox 
-            ID="TextBox19" runat="server" Height="100px" Width="700px" style="margin-left:20px" Value="Entregadas en mano y pagado en negro, muy buen servicio."></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;
+            <asp:Label ID="descripcionComentario1" runat="server"
+                Text="Entregadas en mano y pagado en negro, muy buen servicio."></asp:Label>
         &nbsp;&nbsp;&nbsp; 
         &nbsp;</p>
         </div>

@@ -40,40 +40,40 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Control Image1.
+        /// Control imagenProducto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.Image imagenProducto;
         
         /// <summary>
-        /// Control Lblnombre.
+        /// Control nombreProducto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lblnombre;
+        protected global::System.Web.UI.WebControls.Label nombreProducto;
         
         /// <summary>
-        /// Control LblDescrip.
+        /// Control descriProducto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblDescrip;
+        protected global::System.Web.UI.WebControls.Label descriProducto;
         
         /// <summary>
-        /// Control LblFechafin.
+        /// Control fechaFinProducto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblFechafin;
+        protected global::System.Web.UI.WebControls.Label fechaFinProducto;
         
         /// <summary>
         /// Control PnlPuja.
@@ -184,22 +184,31 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.Label lbError;
         
         /// <summary>
-        /// Control TextBox18.
+        /// Control usuarioComentario1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox18;
+        protected global::System.Web.UI.WebControls.HyperLink usuarioComentario1;
         
         /// <summary>
-        /// Control TextBox19.
+        /// Control puntuacionComentario1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox19;
+        protected global::System.Web.UI.WebControls.Label puntuacionComentario1;
+        
+        /// <summary>
+        /// Control descripcionComentario1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label descripcionComentario1;
         
         /// <summary>
         /// Control TextBox2.
