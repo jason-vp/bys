@@ -101,55 +101,54 @@
         <div class="comentario">
     <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
-                <a href="/DetallesUsuario.aspx">Perico90</a>
+              <asp:HyperLink ID="usuarioComentario1" runat="server">Perico90</asp:HyperLink>
         &nbsp;&nbsp;&nbsp;
 
          Producto:
-              <a href="/Producto.aspx">Llantas robadas</a>
-        &nbsp;&nbsp; Puntuación:&nbsp;<asp:TextBox ID="TextBox18" 
-            runat="server" Width="34px" Value="10"></asp:TextBox>
+              <asp:HyperLink ID="productoComentario1" runat="server">Barco velero</asp:HyperLink>
+        &nbsp;&nbsp; Puntuación:&nbsp;<asp:Label ID="puntuacionComentario1" runat="server"
+                Text="10"></asp:Label>
             </p>
             <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;<asp:TextBox 
-            ID="TextBox19" runat="server" Height="100px" Width="700px" style="margin-left:20px" Value="Entregadas en mano y pagado en negro, muy buen servicio."></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;
+            <asp:Label ID="descripcionComentario1" runat="server"
+                Text="Entregadas en mano y pagado en negro, muy buen servicio."></asp:Label>
         &nbsp;&nbsp;&nbsp; 
         &nbsp;</p>
         </div>
                 <div class="comentario">
     <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
-              <a href="/DetallesUsuario.aspx">Perico90</a>
+              <asp:HyperLink ID="usuarioComentario2" runat="server">Perico90</asp:HyperLink>
         &nbsp;&nbsp;&nbsp;
 
          Producto:
-              <a href="/Producto.aspx">Llantas robadas</a>
-        &nbsp;&nbsp; Puntuación:&nbsp;<asp:TextBox ID="TextBox1" 
-            runat="server" Width="34px" Value="10"></asp:TextBox>
+              <asp:HyperLink ID="productoComentario2" runat="server">Barco velero</asp:HyperLink>
+        &nbsp;&nbsp; Puntuación:&nbsp;<asp:Label ID="Label1" runat="server"
+                Text="10"></asp:Label>
             </p>
             <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;<asp:TextBox 
-            ID="TextBox20" runat="server" Height="100px" Width="700px" 
-                    style="margin-left:20px" 
-                    Value="Entregadas en mano y pagado en negro, muy buen servicio."></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;
+            <asp:Label ID="descripcionComentario2" runat="server"
+                Text="Entregadas en mano y pagado en negro, muy buen servicio."></asp:Label>
         &nbsp;&nbsp;&nbsp; 
         &nbsp;</p>
         </div>
                 <div class="comentario">
     <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
-              <a href="/DetallesUsuario.aspx">Perico90</a>
+              <asp:HyperLink ID="usuarioComentario3" runat="server">Perico90</asp:HyperLink>
         &nbsp;&nbsp;&nbsp;
 
          Producto:
-              <a href="/Producto.aspx">Llantas robadas</a>
-        &nbsp;&nbsp; Puntuación:&nbsp;<asp:TextBox ID="TextBox30" 
-            runat="server" Width="34px" Value="10"></asp:TextBox>
+              <asp:HyperLink ID="productoComentario3" runat="server">Barco velero</asp:HyperLink>
+        &nbsp;&nbsp; Puntuación:&nbsp;<asp:Label ID="Label3" runat="server"
+                Text="10"></asp:Label>
             </p>
             <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;<asp:TextBox 
-            ID="TextBox21" runat="server" Height="100px" Width="700px" 
-                    style="margin-left:20px" 
-                    Value="Entregadas en mano y pagado en negro, muy buen servicio."></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;
+            <asp:Label ID="descripcionComentario3" runat="server"
+                Text="Entregadas en mano y pagado en negro, muy buen servicio."></asp:Label>
         &nbsp;&nbsp;&nbsp; 
         &nbsp;</p>
         </div>

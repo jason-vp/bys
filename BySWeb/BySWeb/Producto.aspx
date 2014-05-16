@@ -80,6 +80,10 @@
                 <p style="height:80px">
                     <asp:Label ID="descriProducto" runat="server" Text="Barco de 12 metros de eslora. Solo 3 años de uso. Muy cuidado.Barco de 12 metros de eslora. Solo 3 años de uso. Muy cuidadoBarco de 12 metros de eslora. Solo 3 años de uso. Muy cuidado"></asp:Label>
                 </p>
+                        <p __designer:mapid="66">
+                            Cantidad Restante:<asp:Label ID="LblCantidadRest" runat="server"
+                                Text="20"></asp:Label>
+                        </p>
                 </div>
                 
                 <p>
@@ -92,6 +96,8 @@
                         <p>
                             Puja actual:
                             <asp:Label ID="LblPujaActual" runat="server" Text="30"></asp:Label>
+                            &nbsp;<asp:ImageButton ID="ImageButton1" runat="server" 
+                                ImageUrl="~/images/refresh.gif" />
                         </p>
                         <p>
                             <asp:TextBox ID="TextBoxPuja" runat="server" Width="63px"></asp:TextBox>
@@ -105,15 +111,7 @@
                             <asp:Label ID="LblPrecio" runat="server" Text="50"></asp:Label>
                         </p>
                         <p>
-                            Cantidad Total:
-                            <asp:Label ID="LblCantidadTotal" runat="server" Text="100"></asp:Label>
-                            &nbsp;&nbsp;&nbsp; Cantidad Restante:<asp:Label ID="LblCantidadRest" runat="server"
-                                Text="20"></asp:Label>
-                        </p>
-                        <p>
-                            <asp:TextBox ID="TextBox1" runat="server" Width="63px"></asp:TextBox>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:Button ID="ButtonCompra" runat="server" Text="Comprar" Height="25px" /></p>
+                            &nbsp;<asp:Button ID="ButtonCompra" runat="server" Text="Comprar ahora!" Height="25px" /></p>
                     </asp:Panel>
                     </div>
                 </div>
@@ -134,7 +132,7 @@
         &nbsp;&nbsp;&nbsp;
 
          Producto:
-              <a href="/Producto.aspx">Barco velero</a>
+              <asp:HyperLink ID="productoComentario1" runat="server">Barco velero</asp:HyperLink>
         &nbsp;&nbsp; Puntuación:&nbsp;<asp:Label ID="puntuacionComentario1" runat="server"
                 Text="10"></asp:Label>
             </p>
@@ -146,19 +144,20 @@
         &nbsp;</p>
         </div>
         <div class="comentario">
-            <p>
+    <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
-              <a href="/DetallesUsuario.aspx">Perico90</a>
+              <asp:HyperLink ID="HyperLink1" runat="server">Perico90</asp:HyperLink>
         &nbsp;&nbsp;&nbsp;
 
          Producto:
-              <a href="/Producto.aspx">Barco velero</a>
-        &nbsp;&nbsp; Puntuación:&nbsp;<asp:TextBox ID="TextBox2" 
-            runat="server" Width="34px" Value="10"></asp:TextBox>
+              <asp:HyperLink ID="HyperLink2" runat="server">Barco velero</asp:HyperLink>
+        &nbsp;&nbsp; Puntuación:&nbsp;<asp:Label ID="Label3" runat="server"
+                Text="10"></asp:Label>
             </p>
             <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;<asp:TextBox 
-            ID="TextBox3" runat="server" Height="100px" Width="700px" style="margin-left:20px" Value="Entregadas en mano y pagado en negro, muy buen servicio."></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;
+            <asp:Label ID="Label4" runat="server"
+                Text="Entregadas en mano y pagado en negro, muy buen servicio."></asp:Label>
         &nbsp;&nbsp;&nbsp; 
         &nbsp;</p>
         </div>
