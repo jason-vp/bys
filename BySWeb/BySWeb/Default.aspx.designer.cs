@@ -157,6 +157,33 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.HyperLink productoDestacado1;
         
         /// <summary>
+        /// Control imagenDestacados1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imagenDestacados1;
+        
+        /// <summary>
+        /// Control nombreProDestacado1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label nombreProDestacado1;
+        
+        /// <summary>
+        /// Control precioDestacados1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label precioDestacados1;
+        
+        /// <summary>
         /// Control productoDestacado2.
         /// </summary>
         /// <remarks>
