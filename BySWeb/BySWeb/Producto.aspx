@@ -60,7 +60,7 @@
             ImageUrl="~/images/travelo.jpg" /></a>
     </div>
     <p>
-        <a href="/DetallesUsuario.aspx"><asp:Label ID="Label1" runat="server" Text="Pedrito"></asp:Label></a></p>
+        <a href="/DetallesUsuario.aspx"><asp:Label ID="Label1" runat="server" Text="Pedrito" NavigateUrl="~/DetallesUsuario.aspx"></asp:Label></a></p>
     <p>
         Puntuación:
         <asp:Label ID="Label2" runat="server" Text="8"></asp:Label></p>
@@ -128,7 +128,7 @@
         <div class="comentario">
     <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
-              <asp:HyperLink ID="usuarioComentario1" runat="server">Perico90</asp:HyperLink>
+              <asp:HyperLink ID="usuarioComentario1" runat="server" NavigateUrl="~/DetallesUsuario.aspx">Perico90</asp:HyperLink>
         &nbsp;&nbsp;&nbsp;
 
          Producto:
@@ -146,7 +146,7 @@
         <div class="comentario">
     <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
-              <asp:HyperLink ID="HyperLink1" runat="server">Perico90</asp:HyperLink>
+              <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/DetallesUsuario.aspx">Perico90</asp:HyperLink>
         &nbsp;&nbsp;&nbsp;
 
          Producto:

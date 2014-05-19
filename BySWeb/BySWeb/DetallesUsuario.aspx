@@ -13,31 +13,31 @@
         Ultimos Articulos
     </h2>
     <ul>
-        <li><p><asp:HyperLink ID="ultimoProducto1" runat="server"><asp:Label ID="nombreUltimoProducto1" runat="server" Text="Label">Pecera</asp:Label></asp:HyperLink>
+        <li><p><asp:HyperLink ID="ultimoProducto1" runat="server" NavigateUrl="~/Producto.aspx"><asp:Label ID="nombreUltimoProducto1" runat="server" Text="Label">Pecera</asp:Label></asp:HyperLink>
             <asp:Label ID="precioUltimoProducto1" runat="server" Text="Label">0,00 €</asp:Label>
             </p>
         </li>
 
         <li>
-            <p><asp:HyperLink ID="ultimoProducto2" runat="server"><asp:Label ID="nombreUltimoProducto2" runat="server" Text="Label">Algo raro que había por casa</asp:Label></asp:HyperLink>
+            <p><asp:HyperLink ID="ultimoProducto2" runat="server" NavigateUrl="~/Producto.aspx"><asp:Label ID="nombreUltimoProducto2" runat="server" Text="Label" >Algo raro que había por casa</asp:Label></asp:HyperLink>
                 <asp:Label ID="precioUltimoProducto2" runat="server" Text="Label">0,00 €</asp:Label>
             </p>
         </li>
 
         <li>
-            <p><asp:HyperLink ID="ultimoProducto3" runat="server"><asp:Label ID="nombreUltimoProducto3" runat="server" Text="Label">Experimento 23</asp:Label></asp:HyperLink>
+            <p><asp:HyperLink ID="ultimoProducto3" runat="server" NavigateUrl="~/Producto.aspx"><asp:Label ID="nombreUltimoProducto3" runat="server" Text="Label" >Experimento 23</asp:Label></asp:HyperLink>
                 <asp:Label ID="precioUltimoProducto3" runat="server" Text="Label">0,00 €</asp:Label>
             </p>
         </li>
 
         <li>
-            <p><asp:HyperLink ID="ultimoProducto4" runat="server"><asp:Label ID="nombreUltimoProducto4" runat="server" Text="Label">Pecera con peces</asp:Label></asp:HyperLink>
+            <p><asp:HyperLink ID="ultimoProducto4" runat="server" NavigateUrl="~/Producto.aspx"><asp:Label ID="nombreUltimoProducto4" runat="server" Text="Label" >Pecera con peces</asp:Label></asp:HyperLink>
                 <asp:Label ID="precioUltimoProducto4" runat="server" Text="Label">0,00 €</asp:Label>
             </p>
         </li>
 
         <li>
-            <p><asp:HyperLink ID="ultimoProducto5" runat="server"><asp:Label ID="nombreUltimoProducto5" runat="server" Text="Label">Pecera con peces muertos</asp:Label></asp:HyperLink>
+            <p><asp:HyperLink ID="ultimoProducto5" runat="server" NavigateUrl="~/Producto.aspx"><asp:Label ID="nombreUltimoProducto5" runat="server" Text="Label" >Pecera con peces muertos</asp:Label></asp:HyperLink>
                 <asp:Label ID="precioUltimoProducto5" runat="server" Text="Label">0,00 €</asp:Label>
             </p>
         </li>
@@ -105,7 +105,7 @@
         &nbsp;&nbsp;&nbsp;
 
          Producto:
-              <asp:HyperLink ID="productoComentario1" runat="server">Barco velero</asp:HyperLink>
+              <asp:HyperLink ID="productoComentario1" runat="server" NavigateUrl="~/Producto.aspx">Barco velero</asp:HyperLink>
         &nbsp;&nbsp; Puntuación:&nbsp;<asp:Label ID="puntuacionComentario1" runat="server"
                 Text="10"></asp:Label>
             </p>
@@ -123,7 +123,7 @@
         &nbsp;&nbsp;&nbsp;
 
          Producto:
-              <asp:HyperLink ID="productoComentario2" runat="server">Barco velero</asp:HyperLink>
+              <asp:HyperLink ID="productoComentario2" runat="server" NavigateUrl="~/Producto.aspx">Barco velero</asp:HyperLink>
         &nbsp;&nbsp; Puntuación:&nbsp;<asp:Label ID="Label1" runat="server"
                 Text="10"></asp:Label>
             </p>
@@ -141,7 +141,7 @@
         &nbsp;&nbsp;&nbsp;
 
          Producto:
-              <asp:HyperLink ID="productoComentario3" runat="server">Barco velero</asp:HyperLink>
+              <asp:HyperLink ID="productoComentario3" runat="server" NavigateUrl="~/Producto.aspx">Barco velero</asp:HyperLink>
         &nbsp;&nbsp; Puntuación:&nbsp;<asp:Label ID="Label3" runat="server"
                 Text="10"></asp:Label>
             </p>

@@ -13,13 +13,13 @@ namespace BySWeb {
     public partial class WebForm1 {
         
         /// <summary>
-        /// Control HyperLink1.
+        /// Control ultimoProducto1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        protected global::System.Web.UI.WebControls.HyperLink ultimoProducto1;
         
         /// <summary>
         /// Control nombreUltimoProducto1.
@@ -40,13 +40,13 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.Label precioUltimoProducto1;
         
         /// <summary>
-        /// Control HyperLink2.
+        /// Control ultimoProducto2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
+        protected global::System.Web.UI.WebControls.HyperLink ultimoProducto2;
         
         /// <summary>
         /// Control nombreUltimoProducto2.
@@ -67,13 +67,13 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.Label precioUltimoProducto2;
         
         /// <summary>
-        /// Control HyperLink3.
+        /// Control ultimoProducto3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
+        protected global::System.Web.UI.WebControls.HyperLink ultimoProducto3;
         
         /// <summary>
         /// Control nombreUltimoProducto3.
@@ -94,13 +94,13 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.Label precioUltimoProducto3;
         
         /// <summary>
-        /// Control HyperLink4.
+        /// Control ultimoProducto4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink4;
+        protected global::System.Web.UI.WebControls.HyperLink ultimoProducto4;
         
         /// <summary>
         /// Control nombreUltimoProducto4.
@@ -121,13 +121,13 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.Label precioUltimoProducto4;
         
         /// <summary>
-        /// Control HyperLink5.
+        /// Control ultimoProducto5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink5;
+        protected global::System.Web.UI.WebControls.HyperLink ultimoProducto5;
         
         /// <summary>
         /// Control nombreUltimoProducto5.
