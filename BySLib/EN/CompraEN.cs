@@ -10,7 +10,7 @@ namespace BySLib.EN
     /// <summary>
     /// Esta clase representa un Compra de la aplicacion (Entidad de Negocio)
     /// </summary>
-    public class CompraEN
+    class CompraEN
     {
 
         #region Private Properties

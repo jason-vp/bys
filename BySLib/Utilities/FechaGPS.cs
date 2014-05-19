@@ -154,7 +154,7 @@ namespace BySLib.Utilities
         public FechaGPS(string gpsString)
         {
             DateTime res;
-            if ((gpsString.Length != 14) || (!Information.IsNumeric(gpsString)))
+            if ((gpsString.Length != 14) /*|| (!Information.IsNumeric(gpsString))*/)
             {
                 throw new ArgumentException("La cadena '" + gpsString + "' no es una Fecha GPS válida.");
             }

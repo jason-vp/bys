@@ -35,7 +35,7 @@ namespace BySLib.CAD
         /// <returns>categoria con el mismo id que el pasado por parametro</returns>
         public CategoriaEN ObtenerPorID(int id)
         {
-
+            return null;
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace BySLib.CAD
         /// <returns>lista de todas las categorias</returns>
         public CategoriaEN[] listarCategorias()
         {
-
+            return null;
         }
 
         /// <summary>

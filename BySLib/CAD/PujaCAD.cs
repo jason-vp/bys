@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using BySLib.EN;
+using BySLib.CAD;
 
 namespace BySLib.CAD
 {
     /// <summary>
     /// Clase de la puja que conecta con la BBDD
     /// </summary>
-    public class ProductoCAD
+    class PujaCAD
     {
         /// <summary>
         /// Constante de la conexión a la BBDD
@@ -18,14 +19,22 @@ namespace BySLib.CAD
 
 
         /// <summary>
+        /// Constructor con parámetros
+        /// </summary>
+        public PujaCAD()
+        {
+            
+        }
+        
+        /// <summary>
         /// Obtenemos todos los producto  en un array
         /// </summary>
         /// <returns>Lista de todos los producto</returns>
-        static public PujaEN[] obtenerTodosProductos()
+        static public PujaEN[] obtenerTodasPujas()
         {
-            PujaEN[] puja = null;
+            List<PujaEN> puja = new List<PujaEN>();
 
-            return puja;
+            return puja.ToArray();
         }
 
         /// <summary>
@@ -34,7 +43,7 @@ namespace BySLib.CAD
         /// <param name="idProducto">Id del producto de la puja</param>
         /// <param name="idPujador">Id del producto de la puja</param>
         /// <returns>producto por el id</returns>
-        static public PujaEN obtenerProductoById(int idProducto, int idPujador)
+        static public PujaEN obtenerPujaById(int idProducto, int idPujador)
         {
             PujaEN producto = null;
 

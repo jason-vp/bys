@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BySLib.EN;
 
 namespace BySLib
 {
@@ -51,13 +52,13 @@ namespace BySLib
         /// Funcion para Borrar las compras
         /// </summary>
         public CompraEN ObtenerPorId()
-        { }
+        { return null; }
 
         /// <summary>
         /// Funcion Listar las Compras
         /// </summary>
-        public CompraEN[] listarCompra() 
-        { }       
+        public CompraEN[] listarCompra()
+        { return null; }       
 
     }
 }
