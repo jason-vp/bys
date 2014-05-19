@@ -13,7 +13,7 @@ namespace BySLib.CAD
 	/// <summary>
 	/// Clase del producto que conecta con la BBDD
 	/// </summary>
-	public class ProductoCAD
+	class ProductoCAD
 	{
 		/// <summary>
 		/// Constante de la conexión a la BBDD

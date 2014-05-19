@@ -43,6 +43,7 @@
     <h2 class = "tituloh2">Productos destacados</h2>
 
 
+<<<<<<< HEAD
      <asp:HyperLink ID="productoDestacado1" runat="server" NavigateUrl="~/Producto.aspx"><div class = "imgportada">
    
         <asp:Image ID="imagenDestacados1" runat="server" ImageUrl="~/images/bic.jpg" />
@@ -51,6 +52,9 @@
 
         <p><asp:Label ID="precioDestacados1" runat="server" Text="Label">2.27 €</asp:Label></p>
     </div></asp:HyperLink>
+=======
+     <asp:HyperLink ID="productoDestacado1" runat="server" NavigateUrl="/Producto.aspx">[productoDestacado1]</asp:HyperLink>
+>>>>>>> 4c23166ae65ab45f823659a12a3ac15bb5b7e062
 
 
     <asp:HyperLink ID="productoDestacado2" runat="server" NavigateUrl="~/Producto.aspx"><div class = "imgportada">

@@ -8,7 +8,7 @@ namespace BySLib.EN
     /// <summary>
     /// Esta clase representa un Usuario de la aplicacion (Entidad de negocio)
     /// </summary>
-    public class UsuarioEN
+    class UsuarioEN
     {
 
         #region Private Properties
@@ -37,7 +37,7 @@ namespace BySLib.EN
         static public UsuarioEN getUsuario(string dni)
         {
             // busca el usuario por el DNIen la DB
-            return UsuarioCAD.obtenerUsuarioDni(dni);
+            return null;// UsuarioCAD.obtenerUsuarioDni(dni);
         }
 
         // <summary>
@@ -176,8 +176,8 @@ namespace BySLib.EN
         public bool commitDB()
         {
             // Inserta en la DB si no existe y lo actualiza si ya existía
-            UsuarioCAD cad = new UsuarioCAD(this);
-            return cad.insertarActualizar();
+           // UsuarioCAD cad = new UsuarioCAD(this);
+            return false;// cad.insertarActualizar();
         }
 
         /// <summary>
@@ -187,8 +187,8 @@ namespace BySLib.EN
         public bool borrarDB()
         {
             // Borra el usuario actual de la DB
-            UsuarioCAD cad = new UsuarioCAD(this);
-            return cad.borrar();
+           // UsuarioCAD cad = new UsuarioCAD(this);
+            return false;// cad.borrar();
         }
 
     }

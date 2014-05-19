@@ -1,6 +1,7 @@
 ﻿using System;
 using BySLib.Utilities;
-using BySLib;
+using BySLib.EN;
+using BySLib.CAD;
 using System.Collections.Generic;
 
 namespace BySLib.EN
@@ -9,7 +10,7 @@ namespace BySLib.EN
     /// <summary>
     /// Esta clase representa un Producto de la aplicacion (Entidad de negocio)
     /// </summary>
-    public class ProductoEN
+    class ProductoEN
     {
 
         #region Private Properties
@@ -27,7 +28,7 @@ namespace BySLib.EN
         private DateTime fechaFin = new DateTime();
 		private List<PujaEN> pujas = new List<PujaEN>();
 		private List<CompraEN> compras  = new List<CompraEN>();
-		private SubcategoriaEN subcategoria  = new List<PujaEN>();
+		private SubcategoriaEN subcategoria ;
         #endregion
 		
 		#region Public Properties
@@ -227,8 +228,8 @@ namespace BySLib.EN
         public bool commitDB()
         {
             // Inserta en la DB si no existe y lo actualiza si ya existía
-            ProductoCAD cad = new ProductoCAD(this);
-            return cad.insertarActualizar();
+           // ProductoCAD cad = new ProductoCAD(this);
+            return false;// cad.insertarActualizar();
         }
 
         /// <summary>
@@ -238,8 +239,8 @@ namespace BySLib.EN
         public bool borrarDB()
         {
             // Borra el Producto actual de la DB
-            ProductoCAD cad = new ProductoCAD(this);
-            return cad.borrar();
+           // ProductoCAD cad = new ProductoCAD(this);
+            return false;// cad.borrar();
         }
 
     }

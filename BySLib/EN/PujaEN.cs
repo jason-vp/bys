@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BySLib;
+using BySLib.CAD;
+using BySLib.EN;
 
 namespace BySLib.EN
 {
@@ -68,7 +69,7 @@ namespace BySLib.EN
         static public PujaEN[] getPujas()
         {
             // Lee los productos de la DB y los devuelve
-            return PujaCAD.obtenerTodosPujas();
+            return null;// PujaCAD.obtenerTodasPujas();
         }
 
         /// <summary>
@@ -80,7 +81,7 @@ namespace BySLib.EN
         static public PujaEN getPuja(int idProducto, int idPujador)
         {
             // busca la puja por los id en la DB
-            return PujaCAD.obtenerPujaById(idProducto, idPujador);
+            return null;// PujaCAD.obtenerPujaById(idProducto, idPujador);
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace BySLib.EN
         /// <returns>Devuelve verdadero si la puja existe en la BD</returns>
         public static bool esPuja(int idProducto, int idPujador)
         {
-            return PujaCAD.esPuja(id);
+            return false;// PujaCAD.esPuja(id);
         }
 
         /// <summary>
@@ -121,8 +122,8 @@ namespace BySLib.EN
         public bool commitDB()
         {
             // Inserta en la DB si no existe y lo actualiza si ya existía
-            PujaCAD cad = new PujaCAD(this);
-            return cad.insertarActualizar();
+           // PujaCAD cad = new PujaCAD(this);
+            return false;// cad.insertarActualizar();
         }
 
         /// <summary>
@@ -132,8 +133,8 @@ namespace BySLib.EN
         public bool borrarDB()
         {
             // Borra el Producto actual de la DB
-            PujaCAD cad = new PujaCAD(this);
-            return cad.borrar();
+            //PujaCAD cad = new PujaCAD(this);
+            return false;//cad.borrar();
         }
 
     }
