@@ -25,6 +25,7 @@
                         <div style="float:right;">
                             <asp:Login ID="Login1" runat="server">
                             </asp:Login>
+                            <a href="/MiUsuario.aspx">Panel Usuario</a>
                         </div>
                     </div>
                 </div>

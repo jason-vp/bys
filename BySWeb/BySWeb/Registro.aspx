@@ -84,5 +84,5 @@
     <p class="style1">
         <asp:Button ID="Button_Enviar" runat="server" OnClick="Button_Enviar_Click" Text="Enviar" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input id="Reset1" type="reset" value="reset" /></p>
+        <input id="Reset1" type="reset" value="Reset" /></p>
     </asp:Content>

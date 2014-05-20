@@ -88,7 +88,13 @@
                 
                 <p>
                     Fecha de fin:
-                    <asp:Label ID="fechaFinProducto" runat="server" Text="12/12/2014"></asp:Label>
+                    <asp:Label ID="fechaFinProducto" runat="server" Text="12/12/2014 12:34"></asp:Label>
+
+                </p>
+                <p>
+                                    
+                    Estado: 
+                    <asp:Label ID="EstadoProducto" runat="server" Text="Disponible"></asp:Label>
                 </p>
                 <div class="divLblDescrip" align="left">
                 <div id="DivFondogris">
@@ -162,4 +168,33 @@
         &nbsp;</p>
         </div>
     </div>
+    <div id="hacer comentario">
+    <p><h3>Realizar comentario:</h3></p>
+            <div class="comentario">
+            <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
+              <a href="/DetallesUsuario.aspx">Perico90</a>
+        &nbsp;&nbsp;&nbsp;
+
+         Producto:
+              <a href="/Producto.aspx">Barco velero</a>
+        &nbsp;&nbsp; Puntuación:&nbsp;
+                <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:ListItem>1</asp:ListItem>
+                    <asp:ListItem>2</asp:ListItem>
+                    <asp:ListItem>3</asp:ListItem>
+                    <asp:ListItem>4</asp:ListItem>
+                    <asp:ListItem>5</asp:ListItem>
+                </asp:DropDownList>
+            </p>
+            <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;<asp:TextBox 
+            ID="TextBox3" runat="server" Height="100px" Width="700px" style="margin-left:20px" Value=""></asp:TextBox>
+        &nbsp;&nbsp;&nbsp; 
+        &nbsp;</p>
+        <asp:Button ID="Button_Editar_Comentario_3" runat="server" Text="Enviar" 
+            Width="100px"  />
+            </div>
+        </div>
+        </div>
 </asp:Content>

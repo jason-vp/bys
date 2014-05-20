@@ -46,6 +46,24 @@
         <a href="/MiProducto.aspx">Producto 1</a>
     </p>
     <p><a href="Listar.aspx">Ver más...</a></p>
+        <p>
+        Mis Compras</p>
+    <p>
+        <a href="/Producto.aspx">Producto 1</a>
+    </p>
+    <p>
+        <a href="/Producto.aspx">Producto 1</a>
+    </p>
+    <p>
+        <a href="/Producto.aspx">Producto 1</a>
+    </p>
+    <p>
+        <a href="/Producto.aspx">Producto 1</a>
+    </p>
+    <p>
+        <a href="/Producto.aspx">Producto 1</a>
+    </p>
+    <p><a href="Listar.aspx">Ver más...</a></p>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <p class="style1">
@@ -137,7 +155,7 @@
             ID="lbError" runat="server" style="text-align: center" Text="lbError"></asp:Label>
         &nbsp;</asp:Panel>
     <p class="style1">
-        <strong>COMENTARIOS</strong></p>
+        <strong>COMENTARIOS REALIZADOS</strong></p>
         <div class="comentario">
     <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
@@ -146,14 +164,21 @@
 
          Producto:
               <a href="/Producto.aspx">Barco velero</a>
-        &nbsp;&nbsp; Puntuación:&nbsp;<asp:TextBox ID="TextBox18" 
-            runat="server" Width="34px" Value="10"></asp:TextBox>
+        &nbsp;&nbsp; Puntuación:&nbsp;                <asp:DropDownList ID="DropDownList2" runat="server">
+                    <asp:ListItem>1</asp:ListItem>
+                    <asp:ListItem>2</asp:ListItem>
+                    <asp:ListItem>3</asp:ListItem>
+                    <asp:ListItem>4</asp:ListItem>
+                    <asp:ListItem>5</asp:ListItem>
+                </asp:DropDownList>
             </p>
             <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;<asp:TextBox 
             ID="TextBox19" runat="server" Height="100px" Width="700px" style="margin-left:20px" Value="Entregadas en mano y pagado en negro, muy buen servicio."></asp:TextBox>
         &nbsp;&nbsp;&nbsp; 
         &nbsp;</p>
+                <asp:Button ID="Button_Editar_Comentario_1" runat="server" Text="Editar" 
+            Width="100px" onclick="Boton_Editar_Datos_Click" />
         </div>
         <div class="comentario">
             <p>
@@ -163,13 +188,21 @@
 
          Producto:
               <a href="/Producto.aspx">Barco velero</a>
-        &nbsp;&nbsp; Puntuación:&nbsp;<asp:TextBox ID="TextBox2" 
-            runat="server" Width="34px" Value="10"></asp:TextBox>
+        &nbsp;&nbsp; Puntuación:&nbsp;
+                <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:ListItem>1</asp:ListItem>
+                    <asp:ListItem>2</asp:ListItem>
+                    <asp:ListItem>3</asp:ListItem>
+                    <asp:ListItem>4</asp:ListItem>
+                    <asp:ListItem>5</asp:ListItem>
+                </asp:DropDownList>
             </p>
             <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;<asp:TextBox 
             ID="TextBox3" runat="server" Height="100px" Width="700px" style="margin-left:20px" Value="Entregadas en mano y pagado en negro, muy buen servicio."></asp:TextBox>
         &nbsp;&nbsp;&nbsp; 
         &nbsp;</p>
+        <asp:Button ID="Button_Editar_Comentario_2" runat="server" Text="Editar" 
+            Width="100px" onclick="Boton_Editar_Datos_Click" />
         </div>
 </asp:Content>
