@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\CompraBL.cs" />
     <Compile Include="BL\ProductoBL.cs" />
+    <Compile Include="BL\PujaBL.cs" />
     <Compile Include="BL\UsuarioBL.cs" />
     <Compile Include="CAD\CategoriaCAD.cs" />
     <Compile Include="CAD\CompraCAD.cs" />
