@@ -37,16 +37,26 @@ public class PoblacionEN : Object, IDisposable
     #endregion
 
     #region Getters Setters
+    /// <summary>
+    /// Atributo Código de provincia + getter/setter
+    /// </summary>
     public int Cod_provincia
     {
         get { return cod_provincia; }
         set { cod_provincia = value; }
     }
+    /// <summary>
+    /// Atributo Código postal + getter/setter
+    /// </summary>
     public int Cod_postal
     {
         get { return cod_postal; }
         set { cod_postal = value; }
     }
+
+    /// <summary>
+    /// Atributo nombre + getter/setter
+    /// </summary>
     public string Nombre
     {
         get { return nombrePoblacion; }

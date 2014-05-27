@@ -16,6 +16,7 @@ namespace BySLib.EN
         #region IDisposable Members
 
         private bool disposed = false;
+
         public void Dispose()
         {
             this.Dispose(true);
@@ -42,12 +43,17 @@ namespace BySLib.EN
         private string nombre = "";
         #endregion
         #region public Properties
-
+        /// <summary>
+        /// Identificador de la categoria + getter/setter
+        /// </summary>
         public int Id
         {
             get { return id; }
             set { id = value; }
         }
+        /// <summary>
+        /// Nombre categoria + getter/setter
+        /// </summary>
         public string Nombre
         {
             get { return nombre; }

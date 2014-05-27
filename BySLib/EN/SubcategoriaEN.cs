@@ -48,20 +48,27 @@ namespace BySLib.EN
 
         #region Getters Setters
 
+        /// <summary>
+        /// Atributo ID de las subcategorias
+        /// </summary>
         public int Id
         {
             get { return id; }
             set { id = value; }
         }
 
-
+        /// <summary>
+        /// Atributo Nombre de subcategoria
+        /// </summary>
         public string Nombre
         {
             get { return nombre; }
             set { nombre = value; }
         }
 
-
+        /// <summary>
+        /// Atributo ID padre de la subcategoria
+        /// </summary>
         public int Padre
         {
             get { return padre; }

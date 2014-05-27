@@ -84,7 +84,9 @@ namespace BySLib.EN
             set { valor = value; }
         }
 
-
+        /// <summary>
+        /// Atributo estado de la puja + getter/setter
+        /// </summary>
         public string Estado
         {
             get { return estado; }
