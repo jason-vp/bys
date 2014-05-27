@@ -38,12 +38,18 @@ public class ProvinciaEN: Object , IDisposable{
 #endregion
 
 #region Public Properties
- 
+
+/// <summary>
+/// Atributo Nombre + getter/setter
+/// </summary>
  public String Nombre{
 	get{return nombre;}
 	set{nombre = value;}
  }
 
+/// <summary>
+/// Atributo código provincia + getter/setter
+/// </summary>
  public int Cod_provincia{
 	get{return cod_provincia;}
 	set{cod_provincia = value;}

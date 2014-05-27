@@ -48,30 +48,44 @@ namespace BySLib.EN
 
         #region Getter y Setters
 
-
+        /// <summary>
+        /// Atributo pujador de compra + getter/setter
+        /// </summary>
         public int Pujador
         {
             get { return pujador; }
             set { pujador = value; }
         }
 
+        /// <summary>
+        /// Atributo producto + getter/setter
+        /// </summary>
         public int Producto
         {
             get { return producto; }
             set { producto = value; }
         }
+
+        /// <summary>
+        /// Atributo fecha + getter/setter
+        /// </summary>
         public DateTime Fecha
         {
             get { return fecha; }
             set { fecha = value; }
         }
-
+        /// <summary>
+        /// Atributo comentario + getter/setter
+        /// </summary>
         public string Comentario
         {
             get { return comentario; }
             set { comentario = value; }
         }
 
+        /// <summary>
+        /// Atributo Puntuación + getter/setter
+        /// </summary>
         public int Puntuacion
         {
             get { return puntuacion; }
