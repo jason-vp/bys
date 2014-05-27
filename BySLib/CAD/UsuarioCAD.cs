@@ -41,6 +41,7 @@ namespace BySLib
             p_ctx.Usuario.InsertOnSubmit(p_cli);
             p_ctx.SubmitChanges();
 
+
         }
         public static bool Update(BySBDDataContext p_ctx, Usuario p_cli)
         {
@@ -54,7 +55,7 @@ namespace BySLib
             //#endregion
 
             Usuario update = (from t1 in p_ctx.Usuario
-                              where t1.id == p_cli.id   
+                              where t1.id == p_cli.id
                               select t1).First();
 
             update.nick = p_cli.nick;
@@ -70,7 +71,7 @@ namespace BySLib
             update.num_votos = p_cli.num_votos;
             update.cod_postal = p_cli.cod_postal;
             update.nomb_pob = p_cli.nomb_pob;
-           
+
 
             p_ctx.SubmitChanges();
 
@@ -190,7 +191,7 @@ namespace BySLib
         }
 
         #endregion
-       
+
 
     }
 }

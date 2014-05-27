@@ -27,7 +27,6 @@ namespace BySLib.CAD
         public static void Create(BySBDDataContext p_ctx, Producto p_prod)
         {
 
-
             p_ctx.Producto.InsertOnSubmit(p_prod);
             p_ctx.SubmitChanges();
         }
