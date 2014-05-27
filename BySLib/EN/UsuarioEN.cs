@@ -42,6 +42,7 @@ namespace BySLib.EN
         private int telf = 0;
         private string direccion = "";
         private decimal credito = 0;
+        private string rutaImg = "";
         private decimal puntacion = 0;
         private int puntuacionTotal = 0;
         private int numeroVotos = 0;
@@ -176,6 +177,11 @@ namespace BySLib.EN
         {
             get { return nombre; }
             set { nombre = value; }
+        }
+        public string RutaImg
+        {
+            get { return rutaImg; }
+            set { rutaImg = value; }
         }
         #endregion
 

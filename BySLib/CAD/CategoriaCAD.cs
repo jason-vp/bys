@@ -3,74 +3,55 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using BySLib.EN;
+using BySLib.LINQ;
 
 namespace BySLib.CAD
 {
     /// <summary>
     /// Esta clase representa la capa de acceso a datos del usuario
     /// </summary>
-    class CategoriaCAD
+   public static class CategoriaCAD
     {
-        /// <summary>
-        /// Constante que indica los parámetros de conexión con la DB
-        /// </summary>
-        //private const string ConnectionString = "Data Source=Videoclub.sqlite;Version=3;New=False;Compress=True;";
-        private const string ConnectionString = "data source=.\\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\\Videoclub.mdf;User Instance=true";
-
-        private CategoriaEN cat;
-
-        /// <summary>
-        /// Constructor por parametros
-        /// </summary>
-        /// <param name="cat">Nueva categoria</param>
-        public CategoriaCAD(CategoriaEN cat)
-        {
-            this.cat = cat;
-        }
-
+       
         /// <summary>
         /// Devuelve la categoria cuyo id se corresponde con el que se pasa por parametro
         /// </summary>
         /// <param name="id">id de la categoria</param>
         /// <returns>categoria con el mismo id que el pasado por parametro</returns>
-        public CategoriaEN ObtenerPorID(int id)
+        public static Categoria GetById(BySBDDataContext p_ctx, int p_id)
         {
-            return null;
-        }
+            //#region Check Parameters
 
-        /// <summary>
-        /// Actualiza la BD
-        /// </summary>
-        public void Actualizar()
-        {
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
+            //ParameterChecker.CheckEqualBiggerZero(MethodBase.GetCurrentMethod(),
+            //    p_id, 2, MemberInfoGetting.GetMemberName(() => p_id));
 
-        }
+            //#endregion
 
-        /// <summary>
-        /// Devuelve una lista de todas las categorias
-        /// </summary>
-        /// <returns>lista de todas las categorias</returns>
-        public CategoriaEN[] listarCategorias()
-        {
-            return null;
-        }
-
-        /// <summary>
-        /// Inserta una nueva Subcategoria en la BD
-        /// </summary>
-        /// <param name="nuevaCat">Entidad de negocio de la nueva categoria</param>
-        public void Insertar(CategoriaEN nuevaCat)
-        {
+            return (from t1 in p_ctx.Categoria
+                    where t1.id == p_id
+                    select t1).SingleOrDefault();
 
         }
 
-        /// <summary>
-        /// Borra de la BD la categoria cuyo id se corresponde con el que se pasa por parametro
-        /// </summary>
-        /// <param name="id">id categoria</param>
-        public void BorrarCat(int id)
+        public static List<Categoria> GetAll(BySBDDataContext p_ctx)
         {
+            //#region Check Parameters
+
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
+            //ParameterChecker.CheckEqualBiggerZero(MethodBase.GetCurrentMethod(),
+            //    p_id, 2, MemberInfoGetting.GetMemberName(() => p_id));
+
+            //#endregion
+
+            return (from t1 in p_ctx.Categoria
+                    select t1).ToList();
 
         }
+
+    
+       
     }
 }

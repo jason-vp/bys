@@ -66,6 +66,7 @@
         <asp:Label ID="Label2" runat="server" Text="8"></asp:Label></p>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+<asp:ScriptManager ID="ScriptManager1" runat="server"> </asp:ScriptManager>
     <div id="contenedor">
         <h2 class="tiuloh2">Producto</h2>
         <div id="lateral">
