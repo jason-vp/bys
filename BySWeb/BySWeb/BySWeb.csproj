@@ -184,7 +184,12 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\BySLib\BySLib.csproj">
+      <Project>{AD59616B-C599-4F90-9E7E-4340B31981FD}</Project>
+      <Name>BySLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
   </ItemGroup>

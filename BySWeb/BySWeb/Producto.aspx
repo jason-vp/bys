@@ -98,13 +98,17 @@
                 </p>
                 <div class="divLblDescrip" align="left">
                 <div id="DivFondogris">
-                    <asp:Panel ID="PnlPuja" runat="server" Visible="true">
-                        <p>
+                    <asp:Panel ID="PnlPuja" runat="server"><p>
+                        &nbsp;<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                          <ContentTemplate>
                             Puja actual:
                             <asp:Label ID="LblPujaActual" runat="server" Text="30"></asp:Label>
                             &nbsp;<asp:ImageButton ID="ImageButton1" runat="server" 
-                                ImageUrl="~/images/refresh.gif" />
-                        </p>
+                                ImageUrl="~/images/refresh.gif" onclick="ImageButton1_Click" 
+                                  style="height: 16px" />
+                        </p></ContentTemplate>
+                        </asp:UpdatePanel>
+                        
                         <p>
                             <asp:TextBox ID="TextBoxPuja" runat="server" Width="63px"></asp:TextBox>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
