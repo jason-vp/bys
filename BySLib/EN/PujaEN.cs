@@ -146,6 +146,11 @@ namespace BySLib.EN
             
         }
 
+        public PujaEN()
+        {
+            // TODO: Complete member initialization
+        }
+
         /// <summary>
         /// Confirma los cambios de la puja en la DB. Inserta o modifica.
         /// </summary>

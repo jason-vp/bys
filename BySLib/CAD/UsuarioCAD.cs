@@ -6,8 +6,6 @@ using System.Data.Linq;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-//using System.Data.SqlClient;
-//using System.Data.SqlTypes;
 using BySLib.EN;
 using BySLib.LINQ;
 

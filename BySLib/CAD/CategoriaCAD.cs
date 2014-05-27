@@ -13,8 +13,6 @@ namespace BySLib.CAD
    public static class CategoriaCAD
     {
        
-
-
         /// <summary>
         /// Devuelve la categoria cuyo id se corresponde con el que se pasa por parametro
         /// </summary>
@@ -37,9 +35,23 @@ namespace BySLib.CAD
 
         }
 
-       
+        public static List<Categoria> GetAll(BySBDDataContext p_ctx)
+        {
+            //#region Check Parameters
 
-       
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
+            //ParameterChecker.CheckEqualBiggerZero(MethodBase.GetCurrentMethod(),
+            //    p_id, 2, MemberInfoGetting.GetMemberName(() => p_id));
+
+            //#endregion
+
+            return (from t1 in p_ctx.Categoria
+                    select t1).ToList();
+
+        }
+
+    
        
     }
 }

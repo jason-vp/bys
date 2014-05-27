@@ -62,32 +62,9 @@
       <Column Name="nomb_pob" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="eliminado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="Usuario_Producto" Member="Producto" ThisKey="id" OtherKey="usuario" Type="Producto" />
-      <Association Name="Usuario_Puja" Member="Puja" ThisKey="id" OtherKey="pujador" Type="Puja" />
       <Association Name="Usuario_Compra" Member="Compra" ThisKey="id" OtherKey="comprador" Type="Compra" />
+      <Association Name="Usuario_Puja" Member="Puja" ThisKey="id" OtherKey="pujador" Type="Puja" />
       <Association Name="Poblacion_Usuario" Member="Poblacion" ThisKey="cod_postal,nomb_pob" OtherKey="cod_postal,nom_pob" Type="Poblacion" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Puja" Member="Puja">
-    <Type Name="Puja">
-      <Column Name="producto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="pujador" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="valor" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Producto_Puja" Member="Producto1" ThisKey="producto" OtherKey="id" Type="Producto" IsForeignKey="true" />
-      <Association Name="Usuario_Puja" Member="Usuario" ThisKey="pujador" OtherKey="id" Type="Usuario" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Compra" Member="Compra">
-    <Type Name="Compra">
-      <Column Name="producto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="comprador" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="comentario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="puntuacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Association Name="Compra_Compra" Member="Compra2" ThisKey="producto,comprador" OtherKey="producto,comprador" Type="Compra" Cardinality="One" />
-      <Association Name="Compra_Compra" Member="Compra1" ThisKey="producto,comprador" OtherKey="producto,comprador" Type="Compra" IsForeignKey="true" />
-      <Association Name="Usuario_Compra" Member="Usuario" ThisKey="comprador" OtherKey="id" Type="Usuario" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Provincia" Member="Provincia">
@@ -101,9 +78,33 @@
     <Type Name="Poblacion">
       <Column Name="cod_prov" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="cod_postal" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="nom_pob" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nom_pob" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="Poblacion_Usuario" Member="Usuario" ThisKey="cod_postal,nom_pob" OtherKey="cod_postal,nomb_pob" Type="Usuario" />
       <Association Name="Provincia_Poblacion" Member="Provincia" ThisKey="cod_prov" OtherKey="cod_prov" Type="Provincia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Compra" Member="Compra">
+    <Type Name="Compra">
+      <Column Name="producto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="comprador" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="comentario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="puntuacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="eliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Compra_Compra" Member="Compra2" ThisKey="producto,comprador" OtherKey="producto,comprador" Type="Compra" Cardinality="One" />
+      <Association Name="Compra_Compra" Member="Compra1" ThisKey="producto,comprador" OtherKey="producto,comprador" Type="Compra" IsForeignKey="true" />
+      <Association Name="Usuario_Compra" Member="Usuario" ThisKey="comprador" OtherKey="id" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Puja" Member="Puja">
+    <Type Name="Puja">
+      <Column Name="producto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pujador" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="valor" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Producto_Puja" Member="Producto1" ThisKey="producto" OtherKey="id" Type="Producto" IsForeignKey="true" />
+      <Association Name="Usuario_Puja" Member="Usuario" ThisKey="pujador" OtherKey="id" Type="Usuario" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

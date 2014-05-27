@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
+using System.Data.Linq;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using BySLib.EN;
-using BySLib.CAD;
+using BySLib.LINQ;
 
 namespace BySLib.CAD
 {
@@ -12,10 +16,95 @@ namespace BySLib.CAD
     /// </summary>
    public static class PujaCAD
     {
+        #region CRUD'S
+
+        public static void Create(BySBDDataContext p_ctx, Puja p_puj)
+        {
+            //#region Check Parameters
+
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_cli, 2, MemberInfoGetting.GetMemberName(() => p_cli));
+
+            //#endregion
+
+            p_ctx.Puja.InsertOnSubmit(p_puj);
+            p_ctx.SubmitChanges();
+
+
+        }
+        public static bool Update(BySBDDataContext p_ctx, Puja p_puj)
+        {
+            //#region Check Parameters
+
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_cli, 2, MemberInfoGetting.GetMemberName(() => p_cli));
+
+            //#endregion
+
+            Puja update = (from t1 in p_ctx.Puja
+                             where t1.producto == p_puj.producto
+                             && t1.pujador == p_puj.pujador
+                             select t1).First();
+
+            update.producto = p_puj.producto;
+            update.pujador = p_puj.pujador;
+            update.valor = p_puj.valor;
+            update.estado = p_puj.estado;
+            update.fecha = p_puj.fecha;
+
+
+
+            p_ctx.SubmitChanges();
+
+            return true;
+        }
+
+        //public static bool UpdateEnabled(BySBDDataContext p_ctx, int p_id)
+        //{
+
+        //    Usuario update = (from t1 in p_ctx.Usuario
+        //                      where t1.id == p_id
+        //                      select t1).First();
+
+
+
+        //    p_ctx.SubmitChanges();
+
+        //    return true;
+        //}
+
         ///// <summary>
-        ///// Constante de la conexión a la BBDD
+        ///// Borra el usuario actual de la DB
         ///// </summary>
-        //private const string ConnectionString = "data source=.\\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\\*.mdf;User Instance=true";
+        ///// <returns>True si se borró</returns>
+        //public static bool Delete(BySBDDataContext p_ctx, Puja p_puj)
+        //{
+        //    //#region Check Parameters
+
+        //    //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+        //    //    p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
+        //    //ParameterChecker.CheckEqualBiggerZero(MethodBase.GetCurrentMethod(),
+        //    //    p_id, 2, MemberInfoGetting.GetMemberName(() => p_id));
+
+        //    //#endregion
+
+        //    Puja update = (from t1 in p_ctx.Puja
+        //                     where t1.producto == p_puj.producto
+        //                     && t1.pujador == p_puj.pujador
+        //                     select t1).First();
+
+        //    update.eliminado = true;
+
+        //    p_ctx.SubmitChanges();
+
+        //    return true;
+        //}
+
+        #endregion
 
 
       

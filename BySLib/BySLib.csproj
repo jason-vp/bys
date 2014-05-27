@@ -78,8 +78,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Utilities\DBConnectionManager.cs" />
-    <Compile Include="Utilities\FechaGPS.cs" />
-    <Compile Include="Utilities\NumeroNif.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

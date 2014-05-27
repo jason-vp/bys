@@ -6,7 +6,6 @@ using System.Collections.Generic;
 
 namespace BySLib.EN
 {
-
     /// <summary>
     /// Esta clase representa un Producto de la aplicacion (Entidad de negocio)
     /// </summary>
@@ -52,7 +51,10 @@ namespace BySLib.EN
         private DateTime fechaFin = new DateTime();
         private List<PujaEN> pujas = new List<PujaEN>();
         private List<CompraEN> compras = new List<CompraEN>();
-        private int subcategoria;
+        private int subcategoria = -1;
+        private bool eliminado = false;
+
+       
         #endregion
 
         #region Public Properties
@@ -171,7 +173,11 @@ namespace BySLib.EN
             set { subcategoria = value; }
         }
 
-
+        public bool Eliminado
+        {
+            get { return eliminado; }
+            set { eliminado = value; }
+        }
 
         #endregion
 
@@ -246,27 +252,12 @@ namespace BySLib.EN
 
         }
 
-        /// <summary>
-        /// Confirma los cambios del Producto en la DB. Inserta o modifica.
-        /// </summary>
-        /// <returns>Devuelve true si se llevó a cabo la insercion/acatualizacion o false en caso contrario</returns>
-        public bool commitDB()
+        public ProductoEN()
         {
-            // Inserta en la DB si no existe y lo actualiza si ya existía
-            // ProductoCAD cad = new ProductoCAD(this);
-            return false;// cad.insertarActualizar();
+            // TODO: Complete member initialization
         }
 
-        /// <summary>
-        /// Borra el Producto actual de la DB
-        /// </summary>
-        /// <returns>Devuelve true si se borró con éxito o false en caso contrario</returns>
-        public bool borrarDB()
-        {
-            // Borra el Producto actual de la DB
-            // ProductoCAD cad = new ProductoCAD(this);
-            return false;// cad.borrar();
-        }
+      
 
         public bool NoTieneCompras
         {

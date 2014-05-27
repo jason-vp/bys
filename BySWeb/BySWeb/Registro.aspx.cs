@@ -13,13 +13,25 @@ namespace BySWeb
         {
             try
             {
-                lbError.Text="";
-                PnlError.Visible=false;
-            }
-            catch(Exception ex)
-            {
+                lbError.Text = "";
+                PnlError.Visible = false;
 
+               
+
+                if (!this.IsPostBack)
+                {
+
+
+                    this.TextB_CP.Text = "000000";
+
+                }
             }
+            catch (Exception ex)
+            {
+                
+                
+            }
+
         }
 
         protected void TextBox2_TextChanged(object sender, EventArgs e)
@@ -31,12 +43,13 @@ namespace BySWeb
         {
             try
             {
-                if (TextB_tlf.Text.Trim().Length != 9)
+                if (TextB_CP.Text.Trim().Length != 5)
                 {
                     throw new Exception("Error");
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
 
                 PnlError.Visible = true;
                 lbError.Text = "error";
@@ -46,7 +59,23 @@ namespace BySWeb
 
         protected void TextB_CP_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                if (TextB_CP.Text.Trim().Length != 5)
+                {
+                    throw new Exception("Error");
+                }
+                else {
 
+                    TextB_CP.Text = "12345";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                PnlError.Visible = true;
+                lbError.Text = "error";
+            }
         }
 
     }

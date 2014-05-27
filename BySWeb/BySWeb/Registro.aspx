@@ -67,7 +67,8 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Localidad:&nbsp;&nbsp; &nbsp;
         <asp:TextBox ID="TextB_Localidad" runat="server" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CP:&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextB_CP" runat="server" OnTextChanged="TextB_CP_TextChanged" TextMode="Number"></asp:TextBox>
+        <asp:TextBox ID="TextB_CP" runat="server" OnTextChanged="TextB_CP_TextChanged" 
+            TextMode="Number" AutoPostBack="True"></asp:TextBox>
     </p>
     <p>
         Dirección:&nbsp;&nbsp;&nbsp;
