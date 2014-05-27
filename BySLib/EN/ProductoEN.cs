@@ -40,7 +40,7 @@ namespace BySLib.EN
         #region Private Properties
 
         private int id = -1;
-        private UsuarioEN propietario;
+        private int idpropietario;
         private string nombre = "";
         private string descripcion = "";
         private decimal precioSalida = 0;
@@ -67,10 +67,10 @@ namespace BySLib.EN
         /// <summary>
         /// Propiedad del propietario del producto
         /// </summary>
-        public UsuarioEN Propietario
+        public int IdPropietario
         {
-            get { return propietario; }
-            set { propietario = value; }
+            get { return idpropietario; }
+            set { idpropietario = value; }
         }
         /// <summary>
         /// Propiedad de la fecha del producto
@@ -230,7 +230,7 @@ namespace BySLib.EN
         {
 
             this.id = id;
-            this.propietario = propietario;
+            this.idpropietario = propietario;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.fotos = fotos;

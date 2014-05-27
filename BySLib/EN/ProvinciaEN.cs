@@ -1,16 +1,44 @@
 ﻿using System;
+using BySLib.CAD;
 
-public class ProvinciaEN{
+namespace BySLib.CAD{
 
+public class ProvinciaEN: Object , IDisposable{
+
+
+      #region IDisposable Members
+
+        private bool disposed = false;
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        protected void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                }
+            }
+            this.disposed = true;
+        }
+        ~ProvinciaEN()
+        {
+            this.Dispose(false);
+        }
+
+        #endregion
  int cod_provincia;
  string nombre;
  
- public String nombre{
+ public String Nombre{
 	get{return nombre;}
 	set{nombre = value;}
  }
 
- public int cod_provincia{
+ public int Cod_provincia{
 	get{return cod_provincia;}
 	set{cod_provincia = value;}
  }
@@ -36,4 +64,5 @@ public class ProvinciaEN{
   return prov.ListarProvincia();
  }
 
+}
 }

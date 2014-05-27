@@ -10,8 +10,33 @@ namespace BySLib.EN
     /// <summary>
     /// Esta clase representa un Usuario de la aplicacion (Entidad de negocio)
     /// </summary>
-    class CategoriaEN
+    public class CategoriaEN : Object, IDisposable
     {
+
+        #region IDisposable Members
+
+        private bool disposed = false;
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        protected void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                }
+            }
+            this.disposed = true;
+        }
+        ~CategoriaEN()
+        {
+            this.Dispose(false);
+        }
+
+        #endregion
         #region Private Properties
         private int id;
         private string nombre = "";

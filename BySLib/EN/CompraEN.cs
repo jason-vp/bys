@@ -10,9 +10,33 @@ namespace BySLib.EN
     /// <summary>
     /// Esta clase representa un Compra de la aplicacion (Entidad de Negocio)
     /// </summary>
-    class CompraEN
+   public class CompraEN: Object , IDisposable
     {
 
+         #region IDisposable Members
+
+        private bool disposed = false;
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        protected void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                }
+            }
+            this.disposed = true;
+        }
+        ~CompraEN()
+        {
+            this.Dispose(false);
+        }
+
+        #endregion
         #region Private Properties
         private UsuarioEN pujador;
         private ProductoEN producto;

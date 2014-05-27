@@ -1,7 +1,33 @@
 ﻿using System;
 
 
-public class PoblacionEN: ENProvincia{
+public class PoblacionEN: Object , IDisposable{
+
+      #region IDisposable Members
+
+        private bool disposed = false;
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        protected void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                }
+            }
+            this.disposed = true;
+        }
+        ~PoblacionEN()
+        {
+            this.Dispose(false);
+        }
+
+        #endregion
+
 
  int cod_postal;
  string nombre;

@@ -10,8 +10,33 @@ namespace BySLib.EN
     /// <summary>
     /// Esta clase representa un Producto de la aplicacion (Entidad de negocio)
     /// </summary>
-    class PujaEN
+    public class PujaEN: Object , IDisposable
     {
+
+          #region IDisposable Members
+
+        private bool disposed = false;
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        protected void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                }
+            }
+            this.disposed = true;
+        }
+        ~PujaEN()
+        {
+            this.Dispose(false);
+        }
+
+        #endregion
         #region Private Properties
 
         private UsuarioEN pujador;
