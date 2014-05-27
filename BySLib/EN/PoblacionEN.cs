@@ -1,67 +1,68 @@
 ﻿using System;
 
 
-public class PoblacionEN: Object , IDisposable{
+public class PoblacionEN : Object, IDisposable
+{
 
-      #region IDisposable Members
+    #region IDisposable Members
 
-        private bool disposed = false;
-        public void Dispose()
+    private bool disposed = false;
+    public void Dispose()
+    {
+        this.Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+    protected void Dispose(bool disposing)
+    {
+        if (!this.disposed)
         {
-            this.Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-        protected void Dispose(bool disposing)
-        {
-            if (!this.disposed)
+            if (disposing)
             {
-                if (disposing)
-                {
-                }
             }
-            this.disposed = true;
         }
-        ~PoblacionEN()
-        {
-            this.Dispose(false);
-        }
+        this.disposed = true;
+    }
+    ~PoblacionEN()
+    {
+        this.Dispose(false);
+    }
 
-        #endregion
+    #endregion
 
+    #region Private Properties
+    private int cod_postal;
+    private string nombrePoblacion;
+    private int cod_provincia;
 
- int cod_postal;
- string nombre;
- 
- public String nombre{
-	get{return nombre;}
-	set{nombre = value;}
- }
+    #endregion
 
- public int cod_postal{
-	get{return cod_postal;}
-	set{cod_postal = value;}
- }
- public bool insertarPoblacion{
-  PoblacionCAD po = new PoblacionCAD();
-  return po.ListarPoblacion();
+    #region Getters Setters
+    /// <summary>
+    /// Atributo Código de provincia + getter/setter
+    /// </summary>
+    public int Cod_provincia
+    {
+        get { return cod_provincia; }
+        set { cod_provincia = value; }
+    }
+    /// <summary>
+    /// Atributo Código postal + getter/setter
+    /// </summary>
+    public int Cod_postal
+    {
+        get { return cod_postal; }
+        set { cod_postal = value; }
+    }
 
- }
- public void ActualizarProvincia{
- PoblacionCAD po = new PoblacionCAD();
- po.ActualizarPoblacion(this);
+    /// <summary>
+    /// Atributo nombre + getter/setter
+    /// </summary>
+    public string Nombre
+    {
+        get { return nombrePoblacion; }
+        set { nombrePoblacion = value; }
+    }
 
- }
-
- public BorrarPoblacion (int id){
-  
-  PoblacionCAD po = new PoblacionCAD();
-  return po.BorrarPoblacion(id);
- }
-
-  public ArrayList listarPoblacion{
-  
-  PoblacionCAD po = new PoblacionCAD();
-  return po.ListarPoblacion();
- }
+    #endregion
 
 }

@@ -10,10 +10,10 @@ namespace BySLib.EN
     /// <summary>
     /// Esta clase representa un Compra de la aplicacion (Entidad de Negocio)
     /// </summary>
-   public class CompraEN: Object , IDisposable
+    public class CompraEN : Object, IDisposable
     {
 
-         #region IDisposable Members
+        #region IDisposable Members
 
         private bool disposed = false;
         public void Dispose()
@@ -38,130 +38,81 @@ namespace BySLib.EN
 
         #endregion
         #region Private Properties
-        private UsuarioEN pujador;
-        private ProductoEN producto;
-        private TimeSpan fecha;
+        private int pujador = -1;
+        private int producto = -1;
+        private DateTime fecha;//revisar
         private string comentario = "";
         private int puntuacion = 0;
+
         #endregion
-
-        public CompraEN(UsuarioEN pujador, ProductoEN producto, TimeSpan fecha, string comentario, int puntuacion)
-        {
-            this.pujador = pujador;
-            this.producto = producto;
-            this.fecha = fecha;
-            this.comentario = comentario;
-            this.puntuacion = puntuacion;
-        }
-
-        public void Insertar(CompraEN compra_nueva)
-        { }
-
-        public void Borrar(CompraEN compra)
-        { }
-
-        public void Actualizar(CompraEN compra)
-        { }     
 
         #region Getter y Setters
 
         /// <summary>
-        /// Obtiene al puajador actual
+        /// Atributo pujador de compra + getter/setter
         /// </summary>
-        /// <returns>Devuelve el Usuario</returns>
-        public UsuarioEN getPujador()
+        public int Pujador
         {
-            return pujador;
-        }
-
-
-        /// <summary>
-        /// Obtiene el producto actual
-        /// </summary>
-        /// </returns>Devuelve el Producto</returns>
-        public ProductoEN getProducto()
-        {
-            return producto;
-        }
-
-
-        /// <summary>
-        /// Obtiene la fecha de la compra actual
-        /// </summary>
-        /// </returns>Devuelve la fecha</returns>
-        public TimeSpan getFecha()
-        {
-            return fecha;
-        }
-
-
-        /// <summary>
-        /// Obtiene el comentario de la compra
-        /// </summary>
-        /// </returns>Devuelve el comentario</returns>
-        public string getComentario()
-        {
-            return comentario;
-        }
-
-
-        /// <summary>
-        /// Obtiene la puntuacion de la compra
-        /// </summary>
-        /// </returns>Devuelve la puntuacion</returns>
-        public int getPuntuacion()
-        {
-            return puntuacion;
+            get { return pujador; }
+            set { pujador = value; }
         }
 
         /// <summary>
-        /// Cambia el pujador de la compra
+        /// Atributo producto + getter/setter
         /// </summary>
-        /// <param name="pujador">Es el nuevo pujador</param>
-        public void setUsuario(UsuarioEN pujador)
+        public int Producto
         {
-            this.pujador = pujador;
+            get { return producto; }
+            set { producto = value; }
         }
 
         /// <summary>
-        /// Cambia el producto de la compra
+        /// Atributo fecha + getter/setter
         /// </summary>
-        /// <param name="producto">Es el nuevo producto</param>
-        public void setProducto(ProductoEN producto)
+        public DateTime Fecha
         {
-            this.producto = producto;
+            get { return fecha; }
+            set { fecha = value; }
+        }
+        /// <summary>
+        /// Atributo comentario + getter/setter
+        /// </summary>
+        public string Comentario
+        {
+            get { return comentario; }
+            set { comentario = value; }
         }
 
         /// <summary>
-        /// Cambia la fecha de la compra
+        /// Atributo Puntuación + getter/setter
         /// </summary>
-        /// <param name="fecha">Es la nueva fecha</param>
-        public void setFecha(TimeSpan fecha)
+        public int Puntuacion
         {
-            this.fecha = fecha;
+            get { return puntuacion; }
+            set { puntuacion = value; }
         }
-
-        /// <summary>
-        /// Cambia el comentario de la compra
-        /// </summary>
-        /// <param name="comentario">Es el nuevo comentario</param>
-        public void setComentario(string comentario)
-        {
-            this.comentario = comentario;
-        }
-        
-
-        /// <summary>
-        /// Cambia la puntuacion de la compra
-        /// </summary>
-        /// <param name="puntuacion">Es la nueva puntuacion</param>
-        public void setPuntuacion(int puntuacion)
-        {
-            this.puntuacion = puntuacion;
-        }
-
-
         #endregion
+
+
+        //public CompraEN(int pujador, int producto, DateTime fecha, string comentario, int puntuacion)
+        //{
+        //    this.pujador = pujador;
+        //    this.producto = producto;
+        //    this.fecha = fecha;
+        //    this.comentario = comentario;
+        //    this.puntuacion = puntuacion;
+        //}
+
+        //public void Insertar(CompraEN compra_nueva)
+        //{ }
+
+        //public void Borrar(CompraEN compra)
+        //{ }
+
+        //public void Actualizar(CompraEN compra)
+        //{ }
+
+
 
     }
 }

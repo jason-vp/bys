@@ -51,9 +51,11 @@
     <Compile Include="CAD\UsuarioCAD.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="EN\CategoriaEN.cs" />
+    <Compile Include="EN\PoblacionEN.cs" />
     <Compile Include="EN\ProductoEN.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="EN\ProvinciaEN.cs" />
     <Compile Include="EN\PujaEN.cs" />
     <Compile Include="EN\CompraEN.cs" />
     <Compile Include="EN\SubcategoriaEN.cs" />

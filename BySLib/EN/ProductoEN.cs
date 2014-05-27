@@ -40,7 +40,7 @@ namespace BySLib.EN
         #region Private Properties
 
         private int id = -1;
-        private int idpropietario;
+        private int idpropietario = -1;
         private string nombre = "";
         private string descripcion = "";
         private decimal precioSalida = 0;
@@ -52,7 +52,7 @@ namespace BySLib.EN
         private DateTime fechaFin = new DateTime();
         private List<PujaEN> pujas = new List<PujaEN>();
         private List<CompraEN> compras = new List<CompraEN>();
-        private SubcategoriaEN subcategoria;
+        private int subcategoria;
         #endregion
 
         #region Public Properties
@@ -67,7 +67,7 @@ namespace BySLib.EN
         /// <summary>
         /// Propiedad del propietario del producto
         /// </summary>
-        public int IdPropietario
+        public int Propietario
         {
             get { return idpropietario; }
             set { idpropietario = value; }
@@ -165,7 +165,7 @@ namespace BySLib.EN
         /// <summary>
         /// Propiedad de la subcategoria del producto
         /// </summary>
-        public SubcategoriaEN Subcategoria
+        public int Subcategoria
         {
             get { return subcategoria; }
             set { subcategoria = value; }
@@ -211,7 +211,7 @@ namespace BySLib.EN
         /// Constructor con parámetros
         /// </summary>
         /// <param name="id">El id del producto</param>
-        /// <param name="propietario">El usuario propietario del del producto</param>
+        /// <param name="idpropietario">El usuario propietario del del producto</param>
         /// <param name="nombre">El nombre del producto</param>
         /// <param name="fotos">La ruta de las fotos</param>
         /// <param name="precioSalida">El precio de salida del producto</param>
@@ -225,12 +225,12 @@ namespace BySLib.EN
         /// <param name="compras">La fecha de fin de la subasta del producto</param>
         /// <param name="subcategoria">La subcategoria del producto</param>
 
-        public ProductoEN(int id, UsuarioEN propietario, string nombre, string descripcion, decimal precioSalida, List<string> fotos, string estado, int cantidadInicial,
-                            int cantidadRestante, decimal precioCompra, DateTime fechaFin, List<PujaEN> pujas, List<CompraEN> compras, SubcategoriaEN subcategoria)
+        public ProductoEN(int id, int idpropietario, string nombre, string descripcion, decimal precioSalida, List<string> fotos, string estado, int cantidadInicial,
+                            int cantidadRestante, decimal precioCompra, DateTime fechaFin, List<PujaEN> pujas, List<CompraEN> compras, int subcategoria)
         {
 
             this.id = id;
-            this.idpropietario = propietario;
+            this.idpropietario = idpropietario;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.fotos = fotos;

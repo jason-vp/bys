@@ -16,6 +16,7 @@ namespace BySLib.EN
         #region IDisposable Members
 
         private bool disposed = false;
+
         public void Dispose()
         {
             this.Dispose(true);
@@ -38,9 +39,30 @@ namespace BySLib.EN
 
         #endregion
         #region Private Properties
-        private int id;
+        private int id = -1;
         private string nombre = "";
         #endregion
+        #region public Properties
+        /// <summary>
+        /// Identificador de la categoria + getter/setter
+        /// </summary>
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        /// <summary>
+        /// Nombre categoria + getter/setter
+        /// </summary>
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
+
+        #endregion
+
+
 
         /// <summary>
         /// Constructor por parametros
@@ -53,66 +75,7 @@ namespace BySLib.EN
             this.nombre = nombre;
         }
 
-        /// <summary>
-        /// Getter id
-        /// </summary>
-        /// <returns>id categoria</returns>
-        public int GetId()
-        {
-            return id;
-        }
 
-        /// <summary>
-        /// Getter nombre
-        /// </summary>
-        /// <returns>nombre categoria</returns>
-        public string GetNombre()
-        {
-            return nombre;
-        }
 
-        /// <summary>
-        /// Setter id
-        /// </summary>
-        /// <param name="id">nuevo id</param>
-        public void setId(int id)
-        {
-            this.id = id;
-        }
-
-        /// <summary>
-        /// Setter nombre
-        /// </summary>
-        /// <param name="nombre">nuevo nombre</param>
-        public void setNombre(string nombre)
-        {
-            this.nombre = nombre;
-        }
-
-        /// <summary>
-        /// Inserta la nueva categoria en la BD
-        /// </summary>
-        /// <param name="nuevaCat">nueva categoria</param>
-        public void Insertar(CategoriaEN nuevaCat)
-        {
-
-        }
-
-        /// <summary>
-        /// Actualiza la BD
-        /// </summary>
-        public void Actualizar()
-        {
-
-        }
-
-        /// <summary>
-        /// Borra la categoria cuyo id se corresponde con el pasado por parametro 
-        /// </summary>
-        /// <param name="id">id de la categoria</param>
-        public void BorrarCat(int id)
-        {
-
-        }
     }
 }

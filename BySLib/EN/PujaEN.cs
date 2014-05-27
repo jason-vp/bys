@@ -39,8 +39,8 @@ namespace BySLib.EN
         #endregion
         #region Private Properties
 
-        private UsuarioEN pujador;
-        private ProductoEN producto;
+        private int pujador =-1;
+        private int producto = -1;
         private decimal valor = 0;
         private string estado = "";
         private DateTime fecha = new DateTime();
@@ -51,7 +51,7 @@ namespace BySLib.EN
         /// <summary>
         /// Propiedad del pujador
         /// </summary>
-        public UsuarioEN Propietario
+        public int Propietario
         {
             get { return pujador; }
             set { pujador = value; }
@@ -60,7 +60,7 @@ namespace BySLib.EN
         /// <summary>
         /// Propiedad del producto
         /// </summary>
-        public ProductoEN Producto
+        public int Producto
         {
             get { return producto; }
             set { producto = value; }
@@ -84,6 +84,14 @@ namespace BySLib.EN
             set { valor = value; }
         }
 
+        /// <summary>
+        /// Atributo estado de la puja + getter/setter
+        /// </summary>
+        public string Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
         #endregion
 
         		
@@ -128,7 +136,7 @@ namespace BySLib.EN
 		/// <param name="estado">El estado en el que se encuentra la puja</param>
         /// <param name="valor">El valor de la puja</param>
 
-        public PujaEN(UsuarioEN pujador, ProductoEN producto, string estado, decimal valor)
+        public PujaEN(int pujador, int producto, string estado, decimal valor)
         {
 
 			this.pujador = pujador;
