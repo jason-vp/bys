@@ -37,93 +37,107 @@ namespace BySLib.EN
         #endregion
 
         #region Private Properties
-        private string dni = "";
+        private int id = -1;
+        private string nick = "";
+        private int telf = 0;
+        private string direccion = "";
+        private decimal credito = 0;
+        private decimal puntacion = 0;
+        private int puntuacionTotal = 0;
+        private int numeroVotos = 0;
+        private int codigoPostal = 0;
+        private string poblacion = "";
+        private bool eliminado = false;
+        private string mail = "";
         private string password = "";
         private string nombre = "";
-        private string apellidos = "";
-        private DateTime fechaAlta;
+
         #endregion
 
 
         #region Getter y Setters
 
         /// <summary>
-        /// Obtiene el DNI del usuario actual
+        /// 
         /// </summary>
-        /// <returns>Devuelve el DNI</returns>
-        public string getDni()
+        public int Id
         {
-            return dni;
+            get { return id; }
+            set { id = value; }
         }
-
-
         /// <summary>
-        /// Obtiene la contraseña del usuario
+        /// 
         /// </summary>
-        /// <returns>Devuelve la contraseña</returns>
-        public string getPassword()
+        public string Nick
         {
-            return password;
+            get { return nick; }
+            set { nick = value; }
+        }
+        public int Telf
+        {
+            get { return telf; }
+            set { telf = value; }
+        }
+        public string Direccion
+        {
+            get { return direccion; }
+            set { direccion = value; }
         }
 
-        /// <summary>
-        /// Obtiene el nombre del Usuario actual
-        /// </summary>
-        /// <returns>Devuelve el nombre</returns>
-        public string getNombre()
+        public decimal Credito
         {
-            return nombre;
+            get { return credito; }
+            set { credito = value; }
+        }
+        public decimal Puntacion
+        {
+            get { return puntacion; }
+            set { puntacion = value; }
+        }
+        public int PuntuacionTotal
+        {
+            get { return puntuacionTotal; }
+            set { puntuacionTotal = value; }
+        }
+        public int NumeroVotos
+        {
+            get { return numeroVotos; }
+            set { numeroVotos = value; }
+        }
+        public int CodigoPostal
+        {
+            get { return codigoPostal; }
+            set { codigoPostal = value; }
+        }
+        public string Poblacion
+        {
+            get { return poblacion; }
+            set { poblacion = value; }
+        }
+        public bool Eliminado
+        {
+            get { return eliminado; }
+            set { eliminado = value; }
+        }
+        public string Mail
+        {
+            get { return mail; }
+            set { mail = value; }
         }
 
-        /// <summary>
-        /// Obtiene los apellidos del usuario del Usuario actual
-        /// </summary>
-        /// <returns>Devuelve los apellidos</returns>
-        public string getApellidos()
+        public string Password
         {
-            return apellidos;
+            get { return password; }
+            set { password = value; }
         }
-
-        /// <summary>
-        /// Obtiene la fecha de alta del Usuario actual
-        /// </summary>
-        /// <returns>Devuelve la fecha de alta</returns>
-        public DateTime getFechaAlta()
+        public string Nombre
         {
-            return fechaAlta;
+            get { return nombre; }
+            set { nombre = value; }
         }
-
-
-        /// <summary>
-        /// Cambia el password del Usuario actual
-        /// </summary>
-        /// <param name="password">Es el nuevo password</param>
-        public void setPassword(string password)
-        {
-            this.password = password;
-        }
-
-        /// <summary>
-        /// Cambia el nombre del usuario actual
-        /// </summary>
-        /// <param name="nombre">Es el nuevo nombre</param>
-        public void setNombre(string nombre)
-        {
-            this.nombre = nombre;
-        }
-
-        /// <summary>
-        /// Cambia los apellidos del usuario actual
-        /// </summary>
-        /// <param name="apellidos">Son los nuevos apellidos</param>
-        public void setApellidos(string apellidos)
-        {
-            this.apellidos = apellidos;
-        }
-
         #endregion
 
-     
+
 
     }
 }

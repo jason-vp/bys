@@ -30,8 +30,14 @@ public class ProvinciaEN: Object , IDisposable{
         }
 
         #endregion
- int cod_provincia;
- string nombre;
+
+#region Private properties
+ private int cod_provincia;
+ private string nombre;
+
+#endregion
+
+#region Public Properties
  
  public String Nombre{
 	get{return nombre;}
@@ -42,27 +48,31 @@ public class ProvinciaEN: Object , IDisposable{
 	get{return cod_provincia;}
 	set{cod_provincia = value;}
  }
- public bool insertarProvincia{
-  ProvinciaCAD prov = new ProvinciaCAD();
-  return prov.ListarProvincia();
 
- }
- public  void ActualizarProvincia{
- CADProvioncia prov = new CADProvincia();
- prov.ActualizarProvincia(this);
+#endregion
 
- }
 
- public ProvinciaCAD BorrarProvincia (int id){
+ //public bool insertarProvincia{
+ // ProvinciaCAD prov = new ProvinciaCAD();
+ // return prov.ListarProvincia();
+
+ //}
+ //public  void ActualizarProvincia{
+ //CADProvioncia prov = new CADProvincia();
+ //prov.ActualizarProvincia(this);
+
+ //}
+
+ //public ProvinciaCAD BorrarProvincia (int id){
   
-  CADProvioncia prov = new ProvinciaCAD();
-  return prov.BorrarProvincia(id);
- }
-  public ArrayList listarProvincia{
+ // CADProvioncia prov = new ProvinciaCAD();
+ // return prov.BorrarProvincia(id);
+ //}
+ // public ArrayList listarProvincia{
   
-  CADProvioncia prov = new CADProvincia();
-  return prov.ListarProvincia();
- }
+ // CADProvioncia prov = new CADProvincia();
+ // return prov.ListarProvincia();
+ //}
 
 }
 }
