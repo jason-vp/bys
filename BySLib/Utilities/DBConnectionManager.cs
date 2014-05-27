@@ -7,7 +7,7 @@ namespace BySLib.Utilities
     {
         public static SqlConnection GetConnection()
         {
-            string cnx = "Server=localhost; Port=3306; Database=redcorner; Uid=root; Pwd=;"; //modificar
+            string cnx = "Server=localhost; Port=3306; Database=BySBD; Uid=root; Pwd=;"; //modificar
             return DBConnectionManager.GetClosedConnection(cnx);
         }
         public static SqlConnection GetOpenedConnection(string cnxString)

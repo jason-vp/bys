@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,26 +41,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\ProductoBL.cs" />
     <Compile Include="CAD\CategoriaCAD.cs" />
     <Compile Include="CAD\CompraCAD.cs" />
     <Compile Include="CAD\ProductoCAD.cs" />
+    <Compile Include="CAD\ProductoDALC.cs" />
     <Compile Include="CAD\PujaCAD.cs" />
     <Compile Include="CAD\SubcategoriaCAD.cs" />
     <Compile Include="CAD\UsuarioCAD.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="EN\CategoriaEN.cs" />
+    <Compile Include="EN\ProductoEN.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="EN\PujaEN.cs" />
     <Compile Include="EN\CompraEN.cs" />
-    <Compile Include="EN\ProductoEN.cs" />
     <Compile Include="EN\SubcategoriaEN.cs" />
     <Compile Include="EN\UsuarioEN.cs" />
+    <Compile Include="LINQ\BySBD.cs">
+      <DependentUpon>BySBD.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="LINQ\BySBD.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BySBD.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="LINQ\DataContextManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\DBConnectionManager.cs" />
-    <Compile Include="Utilities\FechaGPS.cs" />
-    <Compile Include="Utilities\NumeroNif.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="LINQ\BySBD.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>BySBD.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LINQ\BySBD.dbml.layout">
+      <DependentUpon>BySBD.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,3 +4,8 @@ C:\Users\Jose\Documents\GitHub\bys\BySLib\bin\Debug\BySLib.dll
 C:\Users\Jose\Documents\GitHub\bys\BySLib\bin\Debug\BySLib.pdb
 C:\Users\Jose\Documents\GitHub\bys\BySLib\obj\Debug\BySLib.dll
 C:\Users\Jose\Documents\GitHub\bys\BySLib\obj\Debug\BySLib.pdb
+C:\Users\TT\Documents\GitHub\bys\BySLib\bin\Debug\BySLib.dll
+C:\Users\TT\Documents\GitHub\bys\BySLib\bin\Debug\BySLib.pdb
+C:\Users\TT\Documents\GitHub\bys\BySLib\obj\Debug\BySLib.csprojResolveAssemblyReference.cache
+C:\Users\TT\Documents\GitHub\bys\BySLib\obj\Debug\BySLib.dll
+C:\Users\TT\Documents\GitHub\bys\BySLib\obj\Debug\BySLib.pdb

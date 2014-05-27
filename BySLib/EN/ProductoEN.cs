@@ -10,13 +10,37 @@ namespace BySLib.EN
     /// <summary>
     /// Esta clase representa un Producto de la aplicacion (Entidad de negocio)
     /// </summary>
-    class ProductoEN
+    public class ProductoEN : Object, IDisposable
     {
+        #region IDisposable Members
+
+        private bool disposed = false;
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        protected void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                }
+            }
+            this.disposed = true;
+        }
+        ~ProductoEN()
+        {
+            this.Dispose(false);
+        }
+
+        #endregion
 
         #region Private Properties
 
-        private int id = -1; 
-		private UsuarioEN propietario;
+        private int id = -1;
+        private UsuarioEN propietario;
         private string nombre = "";
         private string descripcion = "";
         private decimal precioSalida = 0;
@@ -26,131 +50,132 @@ namespace BySLib.EN
         private int cantidadInicial = 0;
         private int cantidadRestante = 0;
         private DateTime fechaFin = new DateTime();
-		private List<PujaEN> pujas = new List<PujaEN>();
-		private List<CompraEN> compras  = new List<CompraEN>();
-		private SubcategoriaEN subcategoria ;
+        private List<PujaEN> pujas = new List<PujaEN>();
+        private List<CompraEN> compras = new List<CompraEN>();
+        private SubcategoriaEN subcategoria;
         #endregion
-		
-		#region Public Properties
-		/// <summary>
-		/// Propiedad del id del producto
-		/// </summary>
+
+        #region Public Properties
+        /// <summary>
+        /// Propiedad del id del producto
+        /// </summary>
         public int Id
         {
             get { return id; }
             set { id = value; }
         }
-		/// <summary>
-		/// Propiedad del propietario del producto
-		/// </summary>
+        /// <summary>
+        /// Propiedad del propietario del producto
+        /// </summary>
         public UsuarioEN Propietario
         {
             get { return propietario; }
             set { propietario = value; }
         }
-		/// <summary>
-		/// Propiedad de la fecha del producto
-		/// </summary>
+        /// <summary>
+        /// Propiedad de la fecha del producto
+        /// </summary>
         public DateTime FechaFin
         {
             get { return fechaFin; }
             set { fechaFin = value; }
         }
-		
-		/// <summary>
-		/// Propiedad del nombre del producto
-		/// </summary>
-		public string Nombre
-		{
-			get { return nombre; }
-			set { nombre = value; }
-		}
-		/// <summary>
-		/// Propiedad de la descripcion del producto
-		/// </summary>
-		public string Descripcion
-		{
-			get { return descripcion; }
-			set { descripcion = value; }
-		}
-		/// <summary>
-		/// Propiedad del precio de salida del producto
-		/// </summary>
-		public decimal PrecioSalida
-		{
-			get { return precioSalida; }
-			set { precioSalida = value; }
-		}
-		/// <summary>
-		/// Propiedad del precio de compra del producto
-		/// </summary>
-		public decimal PrecioCompra
-		{
-			get { return precioCompra; }
-			set { precioCompra = value; }
-		}
-		/// <summary>
-		/// Propiedad del estado del producto
-		/// </summary>
-		public string Estado
-		{
-			get { return estado; }
-			set { estado = value; }
-		}
-		/// <summary>
-		/// Propiedad de la cantidad inicial del producto
-		/// </summary>
-		public int CantidadInicial
-		{
-			get { return cantidadInicial; }
-			set { cantidadInicial = value; }
-		}
-		/// <summary>
-		/// Propiedad de la cantidad restante del producto
-		/// </summary>
-		public int CantidadRestante
-		{
-			get { return cantidadRestante; }
-			set { cantidadRestante = value; }
-		}
-		/// <summary>
-		/// Propiedad de las pujas del producto
-		/// </summary>
-		public List<PujaEN> Pujas
+
+        /// <summary>
+        /// Propiedad del nombre del producto
+        /// </summary>
+        public string Nombre
         {
-			get { return pujas; }
-			set { pujas = value; }
-		}
-		/// <summary>
-		/// Propiedad de las compras del producto
-		/// </summary>
-		public List<CompraEN> Compras
-		{
-			get { return compras; }
-			set { compras = value; }
-		}
-		/// <summary>
-		/// Propiedad de las fotos del producto
-		/// </summary>
-		public List<string> Fotos
-		{
-			get { return fotos; }
-			set { fotos = value; }
-		}
-		/// <summary>
-		/// Propiedad de la subcategoria del producto
-		/// </summary>
-		public SubcategoriaEN Subcategoria
-		{
-			get { return subcategoria; }
-			set { subcategoria = value; }
-		}
-		
-		
-		
-		#endregion
-		
-		
+            get { return nombre; }
+            set { nombre = value; }
+        }
+        /// <summary>
+        /// Propiedad de la descripcion del producto
+        /// </summary>
+        public string Descripcion
+        {
+            get { return descripcion; }
+            set { descripcion = value; }
+        }
+        /// <summary>
+        /// Propiedad del precio de salida del producto
+        /// </summary>
+        public decimal PrecioSalida
+        {
+            get { return precioSalida; }
+            set { precioSalida = value; }
+        }
+        /// <summary>
+        /// Propiedad del precio de compra del producto
+        /// </summary>
+        public decimal PrecioCompra
+        {
+            get { return precioCompra; }
+            set { precioCompra = value; }
+        }
+        /// <summary>
+        /// Propiedad del estado del producto
+        /// </summary>
+        public string Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
+        /// <summary>
+        /// Propiedad de la cantidad inicial del producto
+        /// </summary>
+        public int CantidadInicial
+        {
+            get { return cantidadInicial; }
+            set { cantidadInicial = value; }
+        }
+        /// <summary>
+        /// Propiedad de la cantidad restante del producto
+        /// </summary>
+        public int CantidadRestante
+        {
+            get { return cantidadRestante; }
+            set { cantidadRestante = value; }
+        }
+
+        /// <summary>
+        /// Propiedad de las pujas del producto
+        /// </summary>
+        public List<PujaEN> Pujas
+        {
+            get { return pujas; }
+            set { pujas = value; }
+        }
+        /// <summary>
+        /// Propiedad de las compras del producto
+        /// </summary>
+        public List<CompraEN> Compras
+        {
+            get { return compras; }
+            set { compras = value; }
+        }
+        /// <summary>
+        /// Propiedad de las fotos del producto
+        /// </summary>
+        public List<string> Fotos
+        {
+            get { return fotos; }
+            set { fotos = value; }
+        }
+        /// <summary>
+        /// Propiedad de la subcategoria del producto
+        /// </summary>
+        public SubcategoriaEN Subcategoria
+        {
+            get { return subcategoria; }
+            set { subcategoria = value; }
+        }
+
+
+
+        #endregion
+
+
         /// <summary>
         /// Obtiene todos los productos de la DB
         /// </summary>
@@ -186,39 +211,39 @@ namespace BySLib.EN
         /// Constructor con parámetros
         /// </summary>
         /// <param name="id">El id del producto</param>
-		/// <param name="propietario">El usuario propietario del del producto</param>
+        /// <param name="propietario">El usuario propietario del del producto</param>
         /// <param name="nombre">El nombre del producto</param>
         /// <param name="fotos">La ruta de las fotos</param>
-		/// <param name="precioSalida">El precio de salida del producto</param>
+        /// <param name="precioSalida">El precio de salida del producto</param>
         /// <param name="precioSalida">El precio de salida del producto</param>
         /// <param name="precioCompra">El precio de compra del producto</param>
         /// <param name="fechaFin">La fecha de fin de la subasta del producto</param>
-		/// <param name="estado">El estado en el que se encuentra el producto</param>
-		/// <param name="cantidadInicial">La cantidad inicial de productos</param>
-		/// <param name="cantidadRestante">La cantidad de productos restantes</param>
-		/// <param name="pujas">Las pujas asociadas al producto</param>
-		/// <param name="compras">La fecha de fin de la subasta del producto</param>
-		/// <param name="subcategoria">La subcategoria del producto</param>
+        /// <param name="estado">El estado en el que se encuentra el producto</param>
+        /// <param name="cantidadInicial">La cantidad inicial de productos</param>
+        /// <param name="cantidadRestante">La cantidad de productos restantes</param>
+        /// <param name="pujas">Las pujas asociadas al producto</param>
+        /// <param name="compras">La fecha de fin de la subasta del producto</param>
+        /// <param name="subcategoria">La subcategoria del producto</param>
 
-        public ProductoEN(int id,UsuarioEN propietario, string nombre, string descripcion, decimal precioSalida, List<string> fotos, string estado, int cantidadInicial,
-							int cantidadRestante,decimal precioCompra, DateTime fechaFin,List<PujaEN> pujas,List<CompraEN> compras,SubcategoriaEN subcategoria)
+        public ProductoEN(int id, UsuarioEN propietario, string nombre, string descripcion, decimal precioSalida, List<string> fotos, string estado, int cantidadInicial,
+                            int cantidadRestante, decimal precioCompra, DateTime fechaFin, List<PujaEN> pujas, List<CompraEN> compras, SubcategoriaEN subcategoria)
         {
 
             this.id = id;
-			this.propietario = propietario;
+            this.propietario = propietario;
             this.nombre = nombre;
             this.descripcion = descripcion;
-			this.fotos = fotos;
-			this.estado = estado;
+            this.fotos = fotos;
+            this.estado = estado;
             this.precioSalida = precioSalida;
             this.precioCompra = precioCompra;
-			this.cantidadInicial = cantidadInicial;
-			this.cantidadRestante = cantidadRestante;
+            this.cantidadInicial = cantidadInicial;
+            this.cantidadRestante = cantidadRestante;
             this.fechaFin = DateTime.Now;
-			this.pujas = pujas;
-			this.compras = compras;
-			this.subcategoria = subcategoria;
-            
+            this.pujas = pujas;
+            this.compras = compras;
+            this.subcategoria = subcategoria;
+
         }
 
         /// <summary>
@@ -228,7 +253,7 @@ namespace BySLib.EN
         public bool commitDB()
         {
             // Inserta en la DB si no existe y lo actualiza si ya existía
-           // ProductoCAD cad = new ProductoCAD(this);
+            // ProductoCAD cad = new ProductoCAD(this);
             return false;// cad.insertarActualizar();
         }
 
@@ -239,8 +264,13 @@ namespace BySLib.EN
         public bool borrarDB()
         {
             // Borra el Producto actual de la DB
-           // ProductoCAD cad = new ProductoCAD(this);
+            // ProductoCAD cad = new ProductoCAD(this);
             return false;// cad.borrar();
+        }
+
+        public bool NoTieneCompras
+        {
+            get { return this.compras == null || this.compras.Count == 0; }
         }
 
     }
