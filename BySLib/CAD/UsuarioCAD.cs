@@ -6,8 +6,6 @@ using System.Data.Linq;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-//using System.Data.SqlClient;
-//using System.Data.SqlTypes;
 using BySLib.EN;
 using BySLib.LINQ;
 
@@ -18,12 +16,7 @@ namespace BySLib
     /// </summary>
     public static class UsuarioCAD
     {
-        /// <summary>
-        /// Constante que indica los parámetros de conexión con la DB
-        /// </summary>
-        //private const string ConnectionString = "Data Source=Videoclub.sqlite;Version=3;New=False;Compress=True;";
-        private const string ConnectionString = "data source=.\\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\\Videoclub.mdf;User Instance=true";
-
+        
 
         #region CRUD'S
 
@@ -77,29 +70,20 @@ namespace BySLib
 
             return true;
         }
-        public static bool UpdateEnabled(BySBDDataContext p_ctx, int p_id, bool p_habilitado)
-        {
-            //#region Check Parameters
+        
+        //public static bool UpdateEnabled(BySBDDataContext p_ctx, int p_id)
+        //{
+         
+        //    Usuario update = (from t1 in p_ctx.Usuario
+        //                      where t1.id == p_id
+        //                      select t1).First();
 
-            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
-            //    p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
-            //ParameterChecker.CheckEqualBiggerZero(MethodBase.GetCurrentMethod(),
-            //    p_id, 2, MemberInfoGetting.GetMemberName(() => p_id));
-            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
-            //    p_habilitado, 3, MemberInfoGetting.GetMemberName(() => p_habilitado));
+         
 
-            //#endregion
+        //    p_ctx.SubmitChanges();
 
-            Usuario update = (from t1 in p_ctx.Usuario
-                              where t1.id == p_id
-                              select t1).First();
-
-            update.habilitado = p_habilitado;
-
-            p_ctx.SubmitChanges();
-
-            return true;
-        }
+        //    return true;
+        //}
 
         /// <summary>
         /// Borra el usuario actual de la DB

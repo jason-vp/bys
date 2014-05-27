@@ -43,10 +43,21 @@ namespace BySLib.EN
         private DateTime fecha;//revisar
         private string comentario = "";
         private int puntuacion = 0;
+        private bool eliminado = false;
+
+       
 
         #endregion
 
         #region Getter y Setters
+
+
+
+        public bool Eliminado
+        {
+            get { return eliminado; }
+            set { eliminado = value; }
+        }
 
         /// <summary>
         /// Atributo pujador de compra + getter/setter

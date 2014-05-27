@@ -24,12 +24,22 @@ namespace BySLib.CAD
 
         #region CRUD'S
 
+        /// <summary>
+        /// Método para insertar el producto
+        /// </summary>
+        /// <returns>Devuelve si se ha insertado correctamente</returns>
         public static void Create(BySBDDataContext p_ctx, Producto p_prod)
         {
 
             p_ctx.Producto.InsertOnSubmit(p_prod);
             p_ctx.SubmitChanges();
         }
+
+        /// <summary>
+        /// Método para actualizar el producto
+        /// </summary>
+        /// <returns>Devuelve si se ha actualizado correctamente</returns>
+		
         public static bool Update(BySBDDataContext p_ctx, Producto p_prod)
         {
 
@@ -75,29 +85,34 @@ namespace BySLib.CAD
 
         //    return true;
         //}
-        //public static bool Delete(SunAlmondsCommunicatorDataContext p_ctx, long p_id)
-        //{
-        //    #region Check Parameters
+        /// <summary>
+        /// Método de borrado en la BBDD de un producto
+        /// </summary>
+        /// <param name="a">producto a borrar</param>
+        /// <returns>true si ha podido borrar el producto</returns>
+        public static bool Delete(BySBDDataContext p_ctx, int p_id)
+        {
+            //#region Check Parameters
 
-        //    ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
-        //        p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
-        //    ParameterChecker.CheckEqualBiggerZero(MethodBase.GetCurrentMethod(),
-        //        p_id, 2, MemberInfoGetting.GetMemberName(() => p_id));
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
+            //ParameterChecker.CheckEqualBiggerZero(MethodBase.GetCurrentMethod(),
+            //    p_id, 2, MemberInfoGetting.GetMemberName(() => p_id));
 
-        //    #endregion
+            //#endregion
 
-        //    Producto update = (from t1 in p_ctx.Producto
-        //                       where t1.Id == p_id
-        //                       select t1).First();
+            Producto update = (from t1 in p_ctx.Producto
+                               where t1.id == p_id
+                               select t1).First();
 
-        //    update.Eliminado = true;
+            update.eliminado = true;
 
-        //    p_ctx.SubmitChanges();
+            p_ctx.SubmitChanges();
 
-        //    return true;
+            return true;
 
-        //}
-        //public static bool Recover(SunAlmondsCommunicatorDataContext p_ctx, long p_id)
+        }
+        //public static bool Recover(BySBDDataContext p_ctx, long p_id)
         //{
         //    #region Check Parameters
 
@@ -154,42 +169,11 @@ namespace BySLib.CAD
 			return false;
 		}
 
-		/// <summary>
-		/// Método para insertar el producto
-		/// </summary>
-		/// <returns>Devuelve si se ha insertado correctamente</returns>
-		private bool insertar()
-		{
-			
-			return false;
-		}
-		
-		/// <summary>
-		/// Método para actualizar el producto
-		/// </summary>
-		/// <returns>Devuelve si se ha actualizado correctamente</returns>
-		private bool actualizar()
-		{
-			
-			return false;
-		}
-
 		
 
-		/// <summary>
-		/// Método de borrado en la BBDD de un producto
-		/// </summary>
-		/// <param name="a">producto a borrar</param>
-		/// <returns>true si ha podido borrar el producto</returns>
-		public bool borrar(int estado)
-		{
-			
-			return false;
-		}
-
-        internal static bool Create(ProductoEN prod)
-        {
-            throw new NotImplementedException();
-        }
+        //internal static bool Create(ProductoEN prod)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

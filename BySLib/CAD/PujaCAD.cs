@@ -1,30 +1,113 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
+using System.Data.Linq;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using BySLib.EN;
-using BySLib.CAD;
+using BySLib.LINQ;
 
 namespace BySLib.CAD
 {
     /// <summary>
     /// Clase de la puja que conecta con la BBDD
     /// </summary>
-    class PujaCAD
+   public static class PujaCAD
     {
-        /// <summary>
-        /// Constante de la conexión a la BBDD
-        /// </summary>
-        private const string ConnectionString = "data source=.\\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\\*.mdf;User Instance=true";
+        #region CRUD'S
 
-
-        /// <summary>
-        /// Constructor con parámetros
-        /// </summary>
-        public PujaCAD()
+        public static void Create(BySBDDataContext p_ctx, Puja p_puj)
         {
-            
+            //#region Check Parameters
+
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_cli, 2, MemberInfoGetting.GetMemberName(() => p_cli));
+
+            //#endregion
+
+            p_ctx.Puja.InsertOnSubmit(p_puj);
+            p_ctx.SubmitChanges();
+
+
         }
+        public static bool Update(BySBDDataContext p_ctx, Puja p_puj)
+        {
+            //#region Check Parameters
+
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_cli, 2, MemberInfoGetting.GetMemberName(() => p_cli));
+
+            //#endregion
+
+            Puja update = (from t1 in p_ctx.Puja
+                             where t1.producto == p_puj.producto
+                             && t1.pujador == p_puj.pujador
+                             select t1).First();
+
+            update.producto = p_puj.producto;
+            update.pujador = p_puj.pujador;
+            update.valor = p_puj.valor;
+            update.estado = p_puj.estado;
+            update.fecha = p_puj.fecha;
+
+
+
+            p_ctx.SubmitChanges();
+
+            return true;
+        }
+
+        //public static bool UpdateEnabled(BySBDDataContext p_ctx, int p_id)
+        //{
+
+        //    Usuario update = (from t1 in p_ctx.Usuario
+        //                      where t1.id == p_id
+        //                      select t1).First();
+
+
+
+        //    p_ctx.SubmitChanges();
+
+        //    return true;
+        //}
+
+        ///// <summary>
+        ///// Borra el usuario actual de la DB
+        ///// </summary>
+        ///// <returns>True si se borró</returns>
+        //public static bool Delete(BySBDDataContext p_ctx, Puja p_puj)
+        //{
+        //    //#region Check Parameters
+
+        //    //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+        //    //    p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
+        //    //ParameterChecker.CheckEqualBiggerZero(MethodBase.GetCurrentMethod(),
+        //    //    p_id, 2, MemberInfoGetting.GetMemberName(() => p_id));
+
+        //    //#endregion
+
+        //    Puja update = (from t1 in p_ctx.Puja
+        //                     where t1.producto == p_puj.producto
+        //                     && t1.pujador == p_puj.pujador
+        //                     select t1).First();
+
+        //    update.eliminado = true;
+
+        //    p_ctx.SubmitChanges();
+
+        //    return true;
+        //}
+
+        #endregion
+
+
+      
         
         /// <summary>
         /// Obtenemos todos los producto  en un array
@@ -62,38 +145,6 @@ namespace BySLib.CAD
             return false;
         }
 
-        /// <summary>
-        /// Método para insertar la puja
-        /// </summary>
-        /// <returns>Devuelve si se ha insertado correctamente</returns>
-        private bool insertar()
-        {
-
-            return false;
-        }
-
-        /// <summary>
-        /// Método para actualizar la puja
-        /// </summary>
-        /// <returns>Devuelve si se ha actualizado correctamente</returns>
-        private bool actualizar()
-        {
-
-            return false;
-        }
-
-
-
-        /// <summary>
-        /// Método de borrado en la BBDD de una puja
-        /// </summary>
-        /// <param name="idProducto">Id del producto de la puja</param>
-        /// <param name="idPujador">Id del producto de la puja</param>
-        /// <returns>true si ha podido borrar la puja</returns>
-        public bool borrar(int idProducto, int idPujador)
-        {
-
-            return false;
-        }
+       
     }
 }

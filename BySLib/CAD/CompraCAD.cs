@@ -1,64 +1,118 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
+using System.Data.Linq;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using BySLib.EN;
+using BySLib.LINQ;
 
 namespace BySLib
 {
     /// <summary>
     /// Esta clase representa la capa de acceso a datos de compras
     /// </summary>
-    class CompraCAD
+    public static class CompraCAD
     {
-        /// <summary>
-        /// Constante que indica los parametros de conexion de la BD
-        /// </summary>
-        private const string ConnectionString = "data source=.\\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\\Videoclub.mdf;User Instance=true";
 
-        /// <summary>
-        /// Representa la entidad de negocio relacionada con el CAD
-        /// </summary>
-        private CompraEN compra;
 
-        /// <summary>
-        /// Constructor con parámetros
-        /// </summary>
-        /// <param name="compra">Es la entidad de negocio relacionada con esta compra</param>
-        public CompraCAD(CompraEN compra)
+        #region CRUD'S
+
+        public static void Create(BySBDDataContext p_ctx, Compra p_com)
         {
-            this.compra = compra;
+            //#region Check Parameters
+
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_cli, 2, MemberInfoGetting.GetMemberName(() => p_cli));
+
+            //#endregion
+
+            p_ctx.Compra.InsertOnSubmit(p_com);
+            p_ctx.SubmitChanges();
+
+
+        }
+        public static bool Update(BySBDDataContext p_ctx, Compra p_com)
+        {
+            //#region Check Parameters
+
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_cli, 2, MemberInfoGetting.GetMemberName(() => p_cli));
+
+            //#endregion
+
+            Compra update = (from t1 in p_ctx.Compra
+                              where t1.producto == p_com.producto
+                              && t1.comprador == p_com.comprador
+                              select t1).First();
+
+            update.producto = p_com.producto;
+            update.comprador = p_com.comprador;
+            update.comentario = p_com.comentario;
+            update.puntuacion = p_com.puntuacion;
+            update.fecha = p_com.fecha;
+            
+
+
+            p_ctx.SubmitChanges();
+
+            return true;
         }
 
-        /// <summary>
-        /// Funcion para Insertar las compras
-        /// </summary>
-        public void Insertar()
-        { }
+        //public static bool UpdateEnabled(BySBDDataContext p_ctx, int p_id)
+        //{
+
+        //    Usuario update = (from t1 in p_ctx.Usuario
+        //                      where t1.id == p_id
+        //                      select t1).First();
+
+
+
+        //    p_ctx.SubmitChanges();
+
+        //    return true;
+        //}
 
         /// <summary>
-        /// Funcion para Actualizar las compras
+        /// Borra el usuario actual de la DB
         /// </summary>
-        public void Actualizar()
-        { }
+        /// <returns>True si se borró</returns>
+        public static bool Delete(BySBDDataContext p_ctx, Compra p_com)
+        {
+            //#region Check Parameters
 
-        /// <summary>
-        /// Funcion para Borrar las compras
-        /// </summary>
-        public void Borrar()
-        { }
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
+            //ParameterChecker.CheckEqualBiggerZero(MethodBase.GetCurrentMethod(),
+            //    p_id, 2, MemberInfoGetting.GetMemberName(() => p_id));
 
-        /// <summary>
-        /// Funcion para Borrar las compras
-        /// </summary>
-        public CompraEN ObtenerPorId()
-        { return null; }
+            //#endregion
 
-        /// <summary>
-        /// Funcion Listar las Compras
-        /// </summary>
-        public CompraEN[] listarCompra()
-        { return null; }       
+            Compra update = (from t1 in p_ctx.Compra
+                             where t1.producto == p_com.producto
+                             && t1.comprador == p_com.comprador
+                              select t1).First();
+
+            update.eliminado = true;
+
+            p_ctx.SubmitChanges();
+
+            return true;
+        }
+
+        #endregion
+        #region Getting Data
+
+
+
+        #endregion
+
 
     }
 }
