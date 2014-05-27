@@ -38,7 +38,7 @@ namespace BySLib.EN
         #endregion
 
         #region Private Properties
-
+        
         private int id = -1;
         private int idpropietario = -1;
         private string nombre = "";

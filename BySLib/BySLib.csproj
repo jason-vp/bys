@@ -42,10 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\ProductoBL.cs" />
+    <Compile Include="BL\UsuarioBL.cs" />
     <Compile Include="CAD\CategoriaCAD.cs" />
     <Compile Include="CAD\CompraCAD.cs" />
+    <Compile Include="CAD\PoblacionCAD.cs" />
     <Compile Include="CAD\ProductoCAD.cs" />
-    <Compile Include="CAD\ProductoDALC.cs" />
+    <Compile Include="CAD\ProvinciaCAD.cs" />
     <Compile Include="CAD\PujaCAD.cs" />
     <Compile Include="CAD\SubcategoriaCAD.cs" />
     <Compile Include="CAD\UsuarioCAD.cs" />
@@ -76,6 +78,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Utilities\DBConnectionManager.cs" />
+    <Compile Include="Utilities\FechaGPS.cs" />
+    <Compile Include="Utilities\NumeroNif.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
