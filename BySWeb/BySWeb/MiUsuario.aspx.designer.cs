@@ -40,15 +40,6 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.RadioButton Mujer;
         
         /// <summary>
-        /// Control Fecha_Nac.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Fecha_Nac;
-        
-        /// <summary>
         /// Control Direccion.
         /// </summary>
         /// <remarks>
@@ -56,24 +47,6 @@ namespace BySWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Direccion;
-        
-        /// <summary>
-        /// Control Num.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Num;
-        
-        /// <summary>
-        /// Control Piso.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Piso;
         
         /// <summary>
         /// Control Provincia.
@@ -130,13 +103,13 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.TextBox Email;
         
         /// <summary>
-        /// Control Puntuacion.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Puntuacion;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// Control Contraseña_Actual.

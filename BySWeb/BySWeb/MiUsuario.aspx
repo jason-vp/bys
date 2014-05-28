@@ -80,24 +80,18 @@
             ID="Hombre" runat="server" Checked="True" GroupName="Sexo" Text="Hombre" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RadioButton ID="Mujer" runat="server" 
             GroupName="Sexo" Text="Mujer" />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-        <strong>Fecha de Nacimiento&nbsp;&nbsp; &nbsp; 
-        <asp:TextBox ID="Fecha_Nac" runat="server" TextMode="Date" Width="150px"></asp:TextBox>
-        </strong></p>
+        &nbsp;</p>
     <p>
         <strong>Direccion
         </strong>&nbsp;
         <asp:TextBox ID="Direccion" runat="server" Width="300px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp; <strong>Nº</strong>&nbsp;&nbsp; <asp:TextBox ID="Num" 
-            runat="server" Width="30px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp; <strong>Piso</strong>&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="Piso" 
-            runat="server" Width="30px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </p>
     <p>
         <strong>Provincia</strong>&nbsp;&nbsp;
         <asp:TextBox ID="Provincia" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp; <strong>Localidad</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; <strong>Poblacion</strong>&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="Localidad" runat="server"></asp:TextBox>
 &nbsp;&nbsp; <strong>C.P.</strong>&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="CP" 
             runat="server" Width="75px"></asp:TextBox>
@@ -117,8 +111,9 @@
             runat="server" Width="100px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp; <strong>&nbsp;Email&nbsp;&nbsp;&nbsp;&nbsp; </strong>
         <asp:TextBox ID="Email" runat="server" TextMode="Email" Width="150px"></asp:TextBox>
-    &nbsp;&nbsp;&nbsp;&nbsp; <strong>Puntuacion Usuario&nbsp;&nbsp;&nbsp;&nbsp; </strong> 
-        <asp:TextBox ID="Puntuacion" runat="server" TextMode="Number" Width="50px"></asp:TextBox>
+    &nbsp;&nbsp;&nbsp;&nbsp; <strong>Puntuacion Usuario&nbsp;&nbsp;&nbsp;&nbsp; 
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        </strong> 
     </p>
     <p>
         <strong>Contraseña Actual&nbsp;&nbsp;&nbsp;&nbsp; </strong>
