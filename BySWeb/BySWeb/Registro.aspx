@@ -83,11 +83,6 @@
        </div>
     </p>
     <p>
-        
-        &nbsp;Fecha de nacimiento:&nbsp;
-        <asp:TextBox ID="TextB_FNac" runat="server" TextMode="Date"></asp:TextBox>
-    </p>
-    <p>
         CP:
         <asp:TextBox ID="TextB_CP" runat="server" ontextchanged="TextB_CP_TextChanged" 
             style = "margin-left:50px; margin-right:10px;" AutoPostBack="True"  ></asp:TextBox>
