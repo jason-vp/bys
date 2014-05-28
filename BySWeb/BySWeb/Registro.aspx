@@ -83,11 +83,8 @@
        </div>
     </p>
     <p>
-        Sexo:&nbsp;
-        <asp:RadioButton ID="RadioButtonHombre" runat="server" Text="Hombre" />
-        &nbsp;
-        <asp:RadioButton ID="RadioButtonMujer" runat="server" Text="Mujer" />
-        &nbsp;&nbsp;&nbsp;&nbsp; Fecha de nacimiento:&nbsp;
+        
+        &nbsp;Fecha de nacimiento:&nbsp;
         <asp:TextBox ID="TextB_FNac" runat="server" TextMode="Date"></asp:TextBox>
     </p>
     <p>
