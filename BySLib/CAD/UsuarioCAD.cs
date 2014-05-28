@@ -115,7 +115,7 @@ namespace BySLib
 
         #region Getting Data
 
-        public static Usuario GetById(BySBDDataContext p_ctx, int p_id)
+        public static Usuario GetById(int p_id)
         {
             //#region Check Parameters
 
@@ -125,13 +125,14 @@ namespace BySLib
             //    p_id, 2, MemberInfoGetting.GetMemberName(() => p_id));
 
             //#endregion
+            BySBDDataContext p_ctx = new BySBDDataContext();
 
             return (from t1 in p_ctx.Usuario
                     where t1.id == p_id
                     select t1).SingleOrDefault();
 
         }
-        public static Usuario[] GetAll(BySBDDataContext p_ctx)
+        public static Usuario[] GetAll(BySBDDataContext p_ctx) //array ocupa menos en memoria que list
         {
             //#region Check Parameters
 
@@ -148,7 +149,7 @@ namespace BySLib
         /// Obtiene todos los usuarios de la DB por id que no han sido eliminados
         /// </summary>
         /// <returns>Vector con los usuarios leidos de la DB</returns>
-        public static Usuario[] GetAllNotDeletedByIdUsuario(BySBDDataContext p_ctx, int p_idUsuario)
+        public static Usuario GetNotDeletedByIdUsuario(BySBDDataContext p_ctx, int p_idUsuario)
         {
             //#region Check Parameters
 
@@ -162,7 +163,8 @@ namespace BySLib
             return (from t1 in p_ctx.Usuario
                     where t1.id == p_idUsuario
                     && t1.eliminado == false
-                    select t1).ToArray();
+                    select t1).SingleOrDefault();
+                    
         }
 
         #endregion

@@ -1,13 +1,4 @@
-﻿using System;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Common;
-using System.Data.Linq;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using BySLib.EN;
+﻿using System.Linq;
 using BySLib.LINQ;
 
 

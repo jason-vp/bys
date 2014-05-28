@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BySLib.EN;
+using BySLib.BL;
+using BySWeb.Utilities;
+
 
 namespace BySWeb
 {
@@ -43,9 +47,11 @@ namespace BySWeb
         {
             try
             {
-                if (TextB_CP.Text.Trim().Length != 5)
-                {
-                    throw new Exception("Error");
+               
+                using (UsuarioEN us = this.getUsuario()) {
+
+                    UsuarioBL.CreateFromEN(Tools.GetDbCnxStr(), us);
+                
                 }
             }
             catch (Exception ex)
@@ -55,6 +61,21 @@ namespace BySWeb
                 lbError.Text = "error";
             }
 
+        }
+
+        private UsuarioEN getUsuario()
+        {
+            //filtrar validatedata
+
+            return new UsuarioEN
+            {
+                Nombre = this.TextB_Nombre.Text.Trim(),
+                Nick = this.TextB_Usuario.Text.Trim(),
+                Mail = TextB_mail.Text.Trim(),
+                Password = TextB_Contraseña.Text.Trim(),
+                Telf = Convert.ToInt32(TextB_tlf.Text.Trim()),
+                Direccion = TextBox2.Text.Trim()
+            };
         }
 
         protected void TextB_CP_TextChanged(object sender, EventArgs e)

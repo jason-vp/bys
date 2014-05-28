@@ -1,7 +1,4 @@
 ﻿using System;
-using BySLib.Utilities;
-using BySLib.EN;
-using BySLib.CAD;
 using System.Collections.Generic;
 
 namespace BySLib.EN
@@ -44,7 +41,7 @@ namespace BySLib.EN
         private string descripcion = "";
         private decimal precioSalida = 0;
         private decimal precioCompra = 0;
-        private List<string> fotos = new List<string>();
+        private List<FotosProductoEN> fotos = new List<FotosProductoEN>();
         private string estado = "";
         private int cantidadInicial = 0;
         private int cantidadRestante = 0;
@@ -159,7 +156,7 @@ namespace BySLib.EN
         /// <summary>
         /// Propiedad de las fotos del producto
         /// </summary>
-        public List<string> Fotos
+        public List<FotosProductoEN> Fotos
         {
             get { return fotos; }
             set { fotos = value; }
@@ -186,7 +183,7 @@ namespace BySLib.EN
         /// Obtiene todos los productos de la DB
         /// </summary>
         /// <returns>Devuelve un array de producto con todos los productos leidos de la DB</returns>
-        static public ProductoEN[] getProducto()
+        static public FotosProductoEN[] getProducto()
         {
             // Lee los productos de la DB y los devuelve
             return ProductoCAD.obtenerTodosProductos();
@@ -197,7 +194,7 @@ namespace BySLib.EN
         /// </summary>
         /// <param name="id">El producto del usuario que se devolvera</param>
         /// <returns>Devuelve un Producto cuyo id se pasó por parámetro</returns>
-        static public ProductoEN getProducto(int id)
+        static public FotosProductoEN getProducto(int id)
         {
             // busca el producto por el id en la DB
             return ProductoCAD.obtenerProductoById(id);
@@ -231,26 +228,26 @@ namespace BySLib.EN
         /// <param name="compras">La fecha de fin de la subasta del producto</param>
         /// <param name="subcategoria">La subcategoria del producto</param>
 
-        public ProductoEN(int id, int idpropietario, string nombre, string descripcion, decimal precioSalida, List<string> fotos, string estado, int cantidadInicial,
-                            int cantidadRestante, decimal precioCompra, DateTime fechaFin, List<PujaEN> pujas, List<CompraEN> compras, int subcategoria)
-        {
+        //public FotosProductoEN(int id, int idpropietario, string nombre, string descripcion, decimal precioSalida, List<string> fotos, string estado, int cantidadInicial,
+        //                    int cantidadRestante, decimal precioCompra, DateTime fechaFin, List<PujaEN> pujas, List<CompraEN> compras, int subcategoria)
+        //{
 
-            this.id = id;
-            this.idpropietario = idpropietario;
-            this.nombre = nombre;
-            this.descripcion = descripcion;
-            this.fotos = fotos;
-            this.estado = estado;
-            this.precioSalida = precioSalida;
-            this.precioCompra = precioCompra;
-            this.cantidadInicial = cantidadInicial;
-            this.cantidadRestante = cantidadRestante;
-            this.fechaFin = DateTime.Now;
-            this.pujas = pujas;
-            this.compras = compras;
-            this.subcategoria = subcategoria;
+        //    this.id = id;
+        //    this.idpropietario = idpropietario;
+        //    this.nombre = nombre;
+        //    this.descripcion = descripcion;
+        //    this.fotos = fotos;
+        //    this.estado = estado;
+        //    this.precioSalida = precioSalida;
+        //    this.precioCompra = precioCompra;
+        //    this.cantidadInicial = cantidadInicial;
+        //    this.cantidadRestante = cantidadRestante;
+        //    this.fechaFin = DateTime.Now;
+        //    this.pujas = pujas;
+        //    this.compras = compras;
+        //    this.subcategoria = subcategoria;
 
-        }
+        //}
 
         public ProductoEN()
         {

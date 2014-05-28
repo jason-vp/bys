@@ -1,7 +1,7 @@
 ﻿using System;
-using BySLib.CAD;
+using BySLib.EN;
 
-namespace BySLib.CAD{
+namespace BySLib.EN{
 
 public class ProvinciaEN: Object , IDisposable{
 

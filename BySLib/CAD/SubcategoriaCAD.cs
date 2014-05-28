@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using BySLib.EN;
 using BySLib.LINQ;
-namespace BySLib.CAD
+namespace BySLib.EN
 {
     /// <summary>
     /// Esta clase representa la capa de acceso a datos del usuario

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using BySLib.CAD;
+﻿using System.Collections.Generic;
+using System.Data.Linq;
 using BySLib.EN;
 using BySLib.LINQ;
 
@@ -15,9 +12,76 @@ namespace BySLib.BL
         {
             using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(dbCnxStr))
             {
-               // ProductoCAD.Create(cnx, ConvertFromEN(prod));
+                ProductoCAD.Create(cnx, ConvertFromEN(prod));
             }
         }
+
+        #region Convert To DTO
+
+        private static List<FotosProductoEN> ConvertToListFotosEn(EntitySet<FotosProducto> p_lsFotos)
+        {
+            if (p_lsFotos == null || p_lsFotos.Count <= 0)
+                return new List<FotosProductoEN>();
+
+            List<FotosProductoEN> ls = new List<FotosProductoEN>();
+            foreach (FotosProducto c in p_lsFotos)
+                ls.Add(ConvertToFotosEN(c));
+
+            return ls;
+        }
+        private static EntitySet<FotosProducto> ConvertToEntitytFotosEn(List<FotosProductoEN> p_lsFotos)
+        {
+            if (p_lsFotos == null || p_lsFotos.Count <= 0)
+                return new EntitySet<FotosProducto>();
+
+            EntitySet<FotosProducto> ls = new EntitySet<FotosProducto>();
+            foreach (FotosProductoEN c in p_lsFotos)
+                ls.Add(ConvertFromFotosEN(c));
+
+            return ls;
+        }
+
+
+
+        private static FotosProductoEN ConvertToFotosEN(FotosProducto p_fotos)
+        {
+            //#region Check Parameters
+
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_consume, 1, MemberInfoGetting.GetMemberName(() => p_consume));
+
+            //#endregion
+
+            return new FotosProductoEN()
+            {
+                Id = p_fotos.id,
+                Ruta = p_fotos.ruta,
+                Idproducto = (int)p_fotos.producto//revisar
+            };
+
+        }
+
+        private static FotosProducto ConvertFromFotosEN(FotosProductoEN p_fotos)
+        {
+            //#region Check Parameters
+
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_consume, 1, MemberInfoGetting.GetMemberName(() => p_consume));
+
+            //#endregion
+
+            return new FotosProducto()
+            {
+                id = p_fotos.Id,
+                ruta = p_fotos.Ruta,
+                producto = (int)p_fotos.Idproducto//revisar
+            };
+
+        }
+        
+
+
+
 
         internal static Producto ConvertFromEN(ProductoEN prod)
         {
@@ -34,6 +98,7 @@ namespace BySLib.BL
                 fecha_fin = prod.FechaFin,
                 usuario = prod.Propietario,
                 subcat = prod.Subcategoria,
+                FotosProducto = ConvertToEntitytFotosEn(prod.Fotos),
                 eliminado = prod.Eliminado
 
             };
@@ -54,13 +119,14 @@ namespace BySLib.BL
                 FechaFin = prod.fecha_fin,
                 Propietario = prod.usuario,
                 Subcategoria = (int)prod.subcat,
+                Fotos = ConvertToListFotosEn(prod.FotosProducto),
                 Eliminado = (bool)prod.eliminado
 
             };
         }
 
      
-
+        #endregion
 
 
     }

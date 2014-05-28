@@ -183,6 +183,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\Tools.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BySLib\BySLib.csproj">
@@ -196,6 +197,7 @@
   <ItemGroup>
     <Content Include="Site.Master" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>

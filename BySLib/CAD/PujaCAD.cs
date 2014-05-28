@@ -9,7 +9,7 @@ using System.Text;
 using BySLib.EN;
 using BySLib.LINQ;
 
-namespace BySLib.CAD
+namespace BySLib.EN
 {
     /// <summary>
     /// Clase de la puja que conecta con la BBDD

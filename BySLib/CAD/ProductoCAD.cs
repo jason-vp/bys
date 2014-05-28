@@ -10,7 +10,7 @@ using BySLib.Utilities;
 using BySLib.LINQ;
 
 
-namespace BySLib.CAD
+namespace BySLib.EN
 {
 	/// <summary>
 	/// Clase del producto que conecta con la BBDD
@@ -20,7 +20,7 @@ namespace BySLib.CAD
 		/// <summary>
 		/// Constante de la conexión a la BBDD
 		/// </summary>
-		private const string ConnectionString = "data source=.\\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\\*.mdf;User Instance=true";
+		//private const string ConnectionString = "data source=.\\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\\*.mdf;User Instance=true";
 
         #region CRUD'S
 
@@ -140,9 +140,9 @@ namespace BySLib.CAD
 		/// Obtenemos todos los producto  en un array
 		/// </summary>
 		/// <returns>Lista de todos los producto</returns>
-		static public ProductoEN[] obtenerTodosProductos()
+		static public FotosProductoEN[] obtenerTodosProductos()
 		{
-            ProductoEN[] productos = null;
+            FotosProductoEN[] productos = null;
 			return productos;
 		}
 
@@ -151,9 +151,9 @@ namespace BySLib.CAD
 		/// </summary>
 		/// <param name="id">Id del producto a obtener</param>
 		/// <returns>producto por el id</returns>
-		static public ProductoEN obtenerProductoById(int id)
+		static public FotosProductoEN obtenerProductoById(int id)
 		{
-            ProductoEN producto = null;
+            FotosProductoEN producto = null;
 
 			return producto;
 		}

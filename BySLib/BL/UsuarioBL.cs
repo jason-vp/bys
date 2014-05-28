@@ -1,20 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using BySLib.CAD;
-using BySLib.EN;
+﻿using BySLib.EN;
 using BySLib.LINQ;
 
 namespace BySLib.BL
 {
-    class UsuarioBL
+   public class UsuarioBL
     {
 
+       public static void CreateFromEN(string p_dbCnxStr, UsuarioEN p_cli)
+       {
+           //#region Check Parameters
+
+           //ParameterChecker.CheckStringNullEmptyWhiteSpace(MethodBase.GetCurrentMethod(),
+           //    p_dbCnxStr, 1, MemberInfoGetting.GetMemberName(() => p_dbCnxStr));
+           //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+           //    p_cli, 2, MemberInfoGetting.GetMemberName(() => p_cli));
+
+           //#endregion
+
+           using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+           {
+               
+               UsuarioCAD.Create(cnx, UsuarioBL.ConvertFromEN(p_cli));
+           }
+       }
+
+
+
+
+        public static UsuarioEN GetByIdToEN(string dbcnx, int id) {
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(dbcnx)) {
+
+                return UsuarioBL.ConvertToEN(UsuarioCAD.GetNotDeletedByIdUsuario(cnx, id));
+            
+            }
+        
+        }
 
         internal static Usuario ConvertFromEN(UsuarioEN usu)
         {
-            return new Usuario()
+            return new Usuario
             {
                 id = usu.Id,
                 nombre = usu.Nombre,
@@ -37,7 +62,7 @@ namespace BySLib.BL
 
         private static UsuarioEN ConvertToEN(Usuario usu)//revisar
         {
-            return new UsuarioEN()
+            return new UsuarioEN
             {
                 Id = usu.id,
                 Nombre = usu.nombre,

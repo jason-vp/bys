@@ -1,4 +1,6 @@
 using System;
+
+
 namespace BySLib.LINQ
 {
     partial class BySBDDataContext
