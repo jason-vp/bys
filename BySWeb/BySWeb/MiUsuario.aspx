@@ -76,12 +76,6 @@
         </strong>
     </p>
     <p>
-        <strong>Sexo</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<asp:RadioButton 
-            ID="Hombre" runat="server" Checked="True" GroupName="Sexo" Text="Hombre" />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RadioButton ID="Mujer" runat="server" 
-            GroupName="Sexo" Text="Mujer" />
-        &nbsp;</p>
-    <p>
         <strong>Direccion
         </strong>&nbsp;
         <asp:TextBox ID="Direccion" runat="server" Width="300px"></asp:TextBox>
