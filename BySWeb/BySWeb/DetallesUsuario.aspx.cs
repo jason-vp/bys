@@ -11,14 +11,14 @@ namespace BySWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int id = Int32.Parse(Request.QueryString["id"]);
-            UsuarioEN user = new UsuarioEN(id);
-            nickDetUsuario.Text = user.Nick;
-            emailDetUsuario.Text = user.Mail;
-            PoblacionEN pob= new PoblacionEN(user.CodigoPostal, user.Poblacion);
-            localidadDetUsuario.Text = pob.Nombre;
-            puntuacionDetallesUsuario.Text = user.Puntacion;
-            userLogo.ImageUrl = user.rutaImg;
+            //int id = Int32.Parse(Request.QueryString["id"]);
+            //UsuarioEN user = new UsuarioEN(id);
+            //nickDetUsuario.Text = user.Nick;
+            //emailDetUsuario.Text = user.Mail;
+            //PoblacionEN pob= new PoblacionEN(user.CodigoPostal, user.Poblacion);
+            //localidadDetUsuario.Text = pob.Nombre;
+            //puntuacionDetallesUsuario.Text = user.Puntacion;
+            //userLogo.ImageUrl = user.rutaImg;
 
  
 
