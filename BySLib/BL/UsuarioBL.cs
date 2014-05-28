@@ -3,40 +3,57 @@ using BySLib.LINQ;
 
 namespace BySLib.BL
 {
-   public class UsuarioBL
+    public class UsuarioBL
     {
+        #region CRUD's
+        public static void CreateFromEN(string p_dbCnxStr, UsuarioEN p_cli)
+        {
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+                UsuarioCAD.Create(cnx, UsuarioBL.ConvertFromEN(p_cli));
 
-       public static void CreateFromEN(string p_dbCnxStr, UsuarioEN p_cli)
-       {
-           //#region Check Parameters
-
-           //ParameterChecker.CheckStringNullEmptyWhiteSpace(MethodBase.GetCurrentMethod(),
-           //    p_dbCnxStr, 1, MemberInfoGetting.GetMemberName(() => p_dbCnxStr));
-           //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
-           //    p_cli, 2, MemberInfoGetting.GetMemberName(() => p_cli));
-
-           //#endregion
-
-           using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
-           {
-               
-               UsuarioCAD.Create(cnx, UsuarioBL.ConvertFromEN(p_cli));
-           }
-       }
-
-
-
-
-        public static UsuarioEN GetByIdToEN(string dbcnx, int id) {
-
-            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(dbcnx)) {
-
-                return UsuarioBL.ConvertToEN(UsuarioCAD.GetNotDeletedByIdUsuario(cnx, id));
-            
-            }
-        
         }
 
+        public static bool UpdateFromEN(string p_dbCnxStr, UsuarioEN p_cli)
+        {
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+                return UsuarioCAD.Update(cnx, UsuarioBL.ConvertFromEN(p_cli));
+
+        }
+
+        public static bool Delete(string p_dbCnxStr, int p_id)
+        {
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+                return UsuarioCAD.Delete(cnx, p_id);
+
+        }
+
+
+        #endregion
+        #region Getting Data
+
+        public static UsuarioEN GetByIdToEN(string dbcnx, int id)
+        {
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(dbcnx))
+            {
+
+                return UsuarioBL.ConvertToEN(UsuarioCAD.GetNotDeletedByIdUsuario(cnx, id));
+
+            }
+
+        }
+
+        public static bool validateToEN(string dbcnx, string nick, string pass)//revisar hash
+        {
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(dbcnx))
+                return UsuarioCAD.ValidateUser(cnx, nick, pass);
+
+        }
+
+
+        #endregion
         internal static Usuario ConvertFromEN(UsuarioEN usu)
         {
             return new Usuario
@@ -46,16 +63,16 @@ namespace BySLib.BL
                 nick = usu.Nick,
                 mail = usu.Mail,
                 password = usu.Password,
-                telf = (int)usu.Telf,
+                telf = usu.Telf,
                 dir = usu.Direccion,
-                credito = (decimal)usu.Credito,
+                credito = usu.Credito,
                 ruta_img = usu.RutaImg,
-                puntuacion = (int)usu.Puntacion,
-                punt_total = (int)usu.PuntuacionTotal,
-                num_votos = (int)usu.NumeroVotos,
-                cod_postal = (int)usu.CodigoPostal,
+                puntuacion = usu.Puntacion,
+                punt_total = usu.PuntuacionTotal,
+                num_votos = usu.NumeroVotos,
+                cod_postal = usu.CodigoPostal,
                 nomb_pob = usu.Poblacion,
-                eliminado = (bool)usu.Eliminado
+                eliminado = usu.Eliminado
 
             };
         }
@@ -69,16 +86,16 @@ namespace BySLib.BL
                 Nick = usu.nick,
                 Mail = usu.mail,
                 Password = usu.password,
-                Telf = (int)usu.telf,
+                Telf = usu.telf,
                 Direccion = usu.dir,
-                Credito = (decimal)usu.credito,
+                Credito = usu.credito,
                 RutaImg = usu.ruta_img,
-                Puntacion = (int)usu.puntuacion,
-                PuntuacionTotal = (int)usu.punt_total,
-                NumeroVotos = (int)usu.num_votos,
-                CodigoPostal = (int)usu.cod_postal,
+                Puntacion = usu.puntuacion,
+                PuntuacionTotal = usu.punt_total,
+                NumeroVotos = usu.num_votos,
+                CodigoPostal = usu.cod_postal,
                 Poblacion = usu.nomb_pob,
-                Eliminado = (bool)usu.eliminado
+                Eliminado = usu.eliminado
 
             };
         }

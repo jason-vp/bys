@@ -115,35 +115,15 @@ namespace BySLib
 
         #region Getting Data
 
-        public static Usuario GetById(int p_id)
+        public static Usuario GetById(BySBDDataContext p_ctx, int p_id)
         {
-            //#region Check Parameters
-
-            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
-            //    p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
-            //ParameterChecker.CheckEqualBiggerZero(MethodBase.GetCurrentMethod(),
-            //    p_id, 2, MemberInfoGetting.GetMemberName(() => p_id));
-
-            //#endregion
-            BySBDDataContext p_ctx = new BySBDDataContext();
 
             return (from t1 in p_ctx.Usuario
                     where t1.id == p_id
                     select t1).SingleOrDefault();
 
         }
-        public static Usuario[] GetAll(BySBDDataContext p_ctx) //array ocupa menos en memoria que list
-        {
-            //#region Check Parameters
-
-            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
-            //    p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
-
-            //#endregion
-
-            return (from t1 in p_ctx.Usuario
-                    select t1).ToArray();
-        }
+        
 
         /// <summary>
         /// Obtiene todos los usuarios de la DB por id que no han sido eliminados
@@ -165,6 +145,20 @@ namespace BySLib
                     && t1.eliminado == false
                     select t1).SingleOrDefault();
                     
+        }
+
+        public static bool ValidateUser(BySBDDataContext p_ctx, string nick, string pass)//revisar
+        {
+            
+
+            Usuario us = (from t1 in p_ctx.Usuario
+                          where t1.nick == nick
+                          && t1.password == pass
+                          select t1).First();
+            if (us != null)
+                return false;
+            else
+                return true;
         }
 
         #endregion

@@ -81,7 +81,9 @@ namespace BySWeb
                 Mail = TextB_mail.Text.Trim(),
                 Password = TextB_Contraseña.Text.Trim(),
                 Telf = Convert.ToInt32(TextB_tlf.Text.Trim()),
-                Direccion = TextBox2.Text.Trim()
+                Direccion = TextBox2.Text.Trim(),
+                CodigoPostal = Convert.ToInt32(TextB_CP.Text.Trim()),
+                Poblacion = "ALI"
             };
         }
 

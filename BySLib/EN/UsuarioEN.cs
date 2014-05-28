@@ -2,6 +2,7 @@
 using BySLib;
 using BySLib.LINQ;
 using BySLib.BL;
+using System.Collections.Generic;
 
 
 namespace BySLib.EN
@@ -54,6 +55,7 @@ namespace BySLib.EN
         private string mail = "";
         private string password = "";
         private string nombre = "";
+        //private List<ProductoEN> productos;
 
         #endregion
 

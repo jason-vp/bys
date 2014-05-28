@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AUXILIAR\Validacion.cs" />
     <Compile Include="BL\CompraBL.cs" />
+    <Compile Include="BL\PoblacionBL.cs" />
     <Compile Include="BL\ProductoBL.cs" />
     <Compile Include="BL\PujaBL.cs" />
     <Compile Include="BL\UsuarioBL.cs" />

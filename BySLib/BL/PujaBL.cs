@@ -5,6 +5,25 @@ namespace BySLib.BL
 {
     public static class PujaBL
     {
+        #region CRUD's
+        public static void CreateFromEN(string p_dbCnxStr, PujaEN p_cli)
+        {
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+                PujaCAD.Create(cnx, PujaBL.ConvertFromEN(p_cli));
+
+        }
+
+        public static bool UpdateFromEN(string p_dbCnxStr, PujaEN p_cli)
+        {
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+                return PujaCAD.Update(cnx, PujaBL.ConvertFromEN(p_cli));
+
+        }
+
+
+        #endregion
+
+
         internal static Puja ConvertFromEN(PujaEN prod)
         {
             return new Puja()
@@ -25,7 +44,7 @@ namespace BySLib.BL
             {
                 Producto = prod.producto,
                 Propietario = prod.pujador,
-                Valor = (decimal)prod.valor,
+                Valor = prod.valor,
                 Fecha = prod.fecha,
                 Estado = prod.estado
               

@@ -9,7 +9,10 @@ namespace BySWeb.Utilities
     {
         public static string GetDbCnxStr()
         {
-            return "Data Source=.\\SQLEXPRESS;AttachDbFilename=C:\\Users\\TT\\Documents\\GitHub\\bys\\BySWeb\\BySWeb\\App_Data\\BySBD.mdf;Integrated Security=True;User Instance=True";
+            return "Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|BySBD.mdf;Integrated Security=True;User Instance=True";
+            // return "Server=localhost; Port=3950; Database=BySBD; Uid=root; Pwd=;"; C:\\Users\\TT\\Documents\\GitHub\\bys\\BySWeb\\BySWeb\\App_Data
+       
+        
         }
     }
 }
