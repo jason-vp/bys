@@ -164,6 +164,9 @@ namespace BySWeb
                 e.IsValid = false;
             }
         }
+        protected void ComprobarCpostal(object sender, ServerValidateEventArgs e) { 
+        
+        }
 
         protected void rellenaLocProv(int CP){
         
