@@ -16,26 +16,29 @@
 
           <p style="width: 99%">
               Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <asp:TextBox ID="TextBox10" runat="server" Width="170px"></asp:TextBox>
+              <asp:TextBox ID="tbNombreProducto" runat="server" Width="170px" 
+                  ontextchanged="tbNombreProducto_TextChanged"></asp:TextBox>
         </p>
               <p style="width: 100%">
                   Descripcion:&nbsp;</p>
               <p style="width: 100%">
-                  &nbsp;<asp:TextBox ID="TextBox11" runat="server" Width="319px" Height="93px"></asp:TextBox>
+                  &nbsp;<asp:TextBox ID="tbDescripcion" runat="server" 
+                      Width="319px" Height="93px"></asp:TextBox>
         </p>
               <p style="width: 100%">
                   Precio salida:
-                  <asp:TextBox ID="TextBox12" runat="server" Width="116px"></asp:TextBox>
+                  <asp:TextBox ID="tbPrecioSalida" runat="server" Width="116px"></asp:TextBox>
         &nbsp;€</p>
               <p style="width: 100%">
-&nbsp;<asp:CheckBox ID="CheckBox1" runat="server" Text="Compra Inmediata" TextAlign="Left" />
+                  <asp:CheckBox ID="chkCompraInmediata" runat="server" Text="Compra Inmediata" 
+                      TextAlign="Left" />
                   &nbsp;Precio:
-                  <asp:TextBox ID="TextBox15" runat="server" style="margin-left: 20px" 
+                  <asp:TextBox ID="tbCompra" runat="server" style="margin-left: 20px" 
                       Width="56px"></asp:TextBox>
         &nbsp;€</p>
               <p style="width: 100%">
                   Cantidad:&nbsp;&nbsp;&nbsp;&nbsp;
-                  <asp:TextBox ID="TextBox14" runat="server" Width="24px"></asp:TextBox>
+                  <asp:TextBox ID="tbCantidadRestante" runat="server" Width="24px"></asp:TextBox>
         </p>
               <p style="width: 100%">
                   Categoría:

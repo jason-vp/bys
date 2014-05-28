@@ -33,7 +33,7 @@ namespace BySWeb
                 {
 
 
-                    this.TextB_CP.Text = "000000";
+                    this.tbCP.Text = "000000";
 
                 }
             }
@@ -76,23 +76,23 @@ namespace BySWeb
 
             return new UsuarioEN
             {
-                Nombre = this.TextB_Nombre.Text.Trim(),
-                Nick = this.TextB_Usuario.Text.Trim(),
-                Mail = TextB_mail.Text.Trim(),
-                Password = TextB_Contraseña.Text.Trim(),
-                Telf = Convert.ToInt32(TextB_tlf.Text.Trim()),
-                Direccion = TextBox2.Text.Trim(),
-                CodigoPostal = Convert.ToInt32(TextB_CP.Text.Trim()),
-                Poblacion = "ALI"
+
+                Nombre = this.tbNombre.Text.Trim(),
+                Nick = this.tbUsuarioEn.Text.Trim(),
+                Mail = tbmail.Text.Trim(),
+                Password = tbcontrasenya.Text.Trim(),
+                Telf = Convert.ToInt32(tbtlf.Text.Trim()),
+                Direccion = tbdireccion.Text.Trim()
+
             };
         }
 
         protected void TextB_CP_TextChanged(object sender, EventArgs e)
         {
-            if (TextB_CP.Text.Length == 5){
+            if (tbCP.Text.Length == 5){
 
                //llamada a la funcion AJAX
-                rellenaLocProv(Int32.Parse(TextB_CP.Text));
+                rellenaLocProv(Int32.Parse(tbCP.Text));
             }
             
         }
@@ -102,6 +102,16 @@ namespace BySWeb
             string nombre = e.Value;
 
             if (!Validacion.isNombre(nombre))
+            {
+                e.IsValid = false;
+            }
+        }
+
+        protected void ComprobarNombre(object sender, ServerValidateEventArgs e)
+        {
+            string nombre = e.Value;
+
+            if (!Validacion.isNombreP(nombre))
             {
                 e.IsValid = false;
             }
@@ -166,8 +176,13 @@ namespace BySWeb
                 e.IsValid = false;
             }
         }
-        protected void ComprobarCpostal(object sender, ServerValidateEventArgs e) { 
-        
+        protected void ComprobarCpostal(object sender, ServerValidateEventArgs e) {
+
+            string cp = e.Value;
+
+            if(!Validacion.isCpostal(cp))
+                e.IsValid=false;
+
         }
 
         protected void rellenaLocProv(int CP){

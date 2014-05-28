@@ -13,31 +13,31 @@ namespace BySWeb {
     public partial class Producto {
         
         /// <summary>
-        /// Control Image2.
+        /// Control imgUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image2;
+        protected global::System.Web.UI.WebControls.Image imgUsuario;
         
         /// <summary>
-        /// Control Label1.
+        /// Control lblNombreProp.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblNombreProp;
         
         /// <summary>
-        /// Control Label2.
+        /// Control lblPuntUser.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lblPuntUser;
         
         /// <summary>
         /// Control ScriptManager1.
@@ -49,40 +49,40 @@ namespace BySWeb {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// Control imagenProducto.
+        /// Control imgProducto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imagenProducto;
+        protected global::System.Web.UI.WebControls.Image imgProducto;
         
         /// <summary>
-        /// Control nombreProducto.
+        /// Control lblNombreProd.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nombreProducto;
+        protected global::System.Web.UI.WebControls.Label lblNombreProd;
         
         /// <summary>
-        /// Control descriProducto.
+        /// Control lblDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label descriProducto;
+        protected global::System.Web.UI.WebControls.Label lblDescripcion;
         
         /// <summary>
-        /// Control LblCantidadRest.
+        /// Control lblCantidadRest.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblCantidadRest;
+        protected global::System.Web.UI.WebControls.Label lblCantidadRest;
         
         /// <summary>
         /// Control fechaFinProducto.
@@ -121,13 +121,13 @@ namespace BySWeb {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// Control LblPujaActual.
+        /// Control lblPujaActual.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblPujaActual;
+        protected global::System.Web.UI.WebControls.Label lblPujaActual;
         
         /// <summary>
         /// Control ImageButton1.
@@ -139,22 +139,22 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
         
         /// <summary>
-        /// Control TextBoxPuja.
+        /// Control tbPuja.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPuja;
+        protected global::System.Web.UI.WebControls.TextBox tbPuja;
         
         /// <summary>
-        /// Control ButtonPuja.
+        /// Control btnPuja.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonPuja;
+        protected global::System.Web.UI.WebControls.Button btnPuja;
         
         /// <summary>
         /// Control PnlCompra.
@@ -166,22 +166,22 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.Panel PnlCompra;
         
         /// <summary>
-        /// Control LblPrecio.
+        /// Control lblPrecio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblPrecio;
+        protected global::System.Web.UI.WebControls.Label lblPrecio;
         
         /// <summary>
-        /// Control ButtonCompra.
+        /// Control btnCompra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonCompra;
+        protected global::System.Web.UI.WebControls.Button btnCompra;
         
         /// <summary>
         /// Control pnlError.
@@ -220,22 +220,22 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.HyperLink productoComentario1;
         
         /// <summary>
-        /// Control puntuacionComentario1.
+        /// Control lblPuntComent1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label puntuacionComentario1;
+        protected global::System.Web.UI.WebControls.Label lblPuntComent1;
         
         /// <summary>
-        /// Control descripcionComentario1.
+        /// Control lblDescripcionComent1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label descripcionComentario1;
+        protected global::System.Web.UI.WebControls.Label lblDescripcionComent1;
         
         /// <summary>
         /// Control HyperLink1.
@@ -256,22 +256,22 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
         
         /// <summary>
-        /// Control Label3.
+        /// Control lblPuntComent2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label lblPuntComent2;
         
         /// <summary>
-        /// Control Label4.
+        /// Control lblDescripcionComent2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label lblDescripcionComent2;
         
         /// <summary>
         /// Control DropDownList1.
@@ -292,12 +292,12 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.TextBox TextBox3;
         
         /// <summary>
-        /// Control Button_Editar_Comentario_3.
+        /// Control btnEnviarComent.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_Editar_Comentario_3;
+        protected global::System.Web.UI.WebControls.Button btnEnviarComent;
     }
 }
