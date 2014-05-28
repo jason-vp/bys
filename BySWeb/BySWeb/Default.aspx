@@ -6,7 +6,26 @@
     <h2 class = "tituloh2">
         Ultimos Articulos
     </h2>
-    <ul>
+
+     <asp:Repeater ID="RPTultimosProductos" runat="server">
+        <HeaderTemplate>
+            <ul>
+        </HeaderTemplate>
+        <ItemTemplate>
+            <li>
+            <p>
+            <asp:HyperLink ID="ultimoProducto1" runat="server" NavigateUrl= '<%# string.Format("~/Producto.aspx?id={0}", ((BySLib.EN.ProductoEN)Container.DataItem).Id) %>' >
+            <asp:Label ID="nombreUltimoProducto1" runat="server"> <%# ((BySLib.EN.ProductoEN)Container.DataItem).Nombre %> </asp:Label></asp:HyperLink>
+            <asp:Label ID="precioUltimoProducto1" runat="server" ><%# ((BySLib.EN.ProductoEN)Container.DataItem).PrecioSalida %></asp:Label>
+            </p>
+            </li>
+        </ItemTemplate>
+        <FooterTemplate>
+            </ul>
+        </FooterTemplate>
+    </asp:Repeater>
+
+   <!-- <ul>
         <li><p><asp:HyperLink ID="ultimoProducto1" runat="server" NavigateUrl="~/Producto.aspx"><asp:Label ID="nombreUltimoProducto1" runat="server" Text="Label">Pecera</asp:Label></asp:HyperLink>
             <asp:Label ID="precioUltimoProducto1" runat="server" Text="Label">0,00 €</asp:Label>
             </p>
@@ -35,26 +54,31 @@
                 <asp:Label ID="precioUltimoProducto5" runat="server" Text="Label">0,00 €</asp:Label>
             </p>
         </li>
-    </ul>
+    </ul> -->
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div style="min-height: 970px">
 
     <h2 class = "tituloh2">Productos destacados</h2>
 
-
-     <asp:HyperLink ID="productoDestacado1" runat="server" NavigateUrl="~/Producto.aspx"><div class = "imgportada">
+    <asp:Repeater runat="server" ID="RPTproductoDestacado">
+        <ItemTemplate>
+            <asp:HyperLink ID="productoDestacado1" runat="server" NavigateUrl= '<%# string.Format("~/Producto.aspx?id={0}", ((BySLib.EN.ProductoEN)Container.DataItem).Id) %>' ><div class = "imgportada">
    
-        <asp:Image ID="imagenDestacados1" runat="server" ImageUrl="~/images/bic.jpg" />
+                <asp:Image ID="imagenDestacados1" runat="server" ImageUrl= '<%# string.Format("{0}",((BySLib.EN.ProductoEN)Container.DataItem).Fotos[0].Ruta) %>' />
 
-        <h3><asp:Label ID="nombreProDestacado1" runat="server" Text="Label">Boligrafo Bic, de los buenos</asp:Label></h3>
+                <!--"\" + </%# ((BySLib.EN.ProductoEN)Container.DataItem).Fotos[0].ruta %> + "\""-->
 
-        <p><asp:Label ID="precioDestacados1" runat="server" Text="Label">2.27 €</asp:Label></p>
-    </div></asp:HyperLink>
+                <h3><asp:Label ID="nombreProDestacado1" runat="server"> <%# ((BySLib.EN.ProductoEN)Container.DataItem).Nombre %> </asp:Label></h3>
+
+                <p><asp:Label ID="precioDestacados1" runat="server"><%# ((BySLib.EN.ProductoEN)Container.DataItem).Pujas %></asp:Label></p>
+            </div></asp:HyperLink>
+        </ItemTemplate>
+    </asp:Repeater>
 
 
 
-    <asp:HyperLink ID="productoDestacado2" runat="server" NavigateUrl="~/Producto.aspx"><div class = "imgportada">
+   <!-- <asp:HyperLink ID="productoDestacado2" runat="server" NavigateUrl="~/Producto.aspx"><div class = "imgportada">
         <asp:Image ID="imagenDestacados2" runat="server" ImageUrl="~/images/casco.jpeg" />
 
         <h3><asp:Label ID="nombreProDestacado2" runat="server" Text="Label">Casco integral ortera</asp:Label></h3>
@@ -150,7 +174,7 @@
         <h3><asp:Label ID="nombreProDestacado12" runat="server" Text="Label">Lavadora portal alternativo a Narnia</asp:Label></h3>
 
         <p><asp:Label ID="precioDestacados12" runat="server" Text="Label">6.78 €</asp:Label></p>
-    </div></asp:HyperLink>
+    </div></asp:HyperLink> -->
 
 
     </div>

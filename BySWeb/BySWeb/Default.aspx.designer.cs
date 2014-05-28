@@ -13,6 +13,15 @@ namespace BySWeb {
     public partial class WebForm1 {
         
         /// <summary>
+        /// Control RPTultimosProductos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RPTultimosProductos;
+        
+        /// <summary>
         /// Control ultimoProducto1.
         /// </summary>
         /// <remarks>
@@ -148,40 +157,13 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.Label precioUltimoProducto5;
         
         /// <summary>
-        /// Control productoDestacado1.
+        /// Control RPTproductoDestacado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink productoDestacado1;
-        
-        /// <summary>
-        /// Control imagenDestacados1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imagenDestacados1;
-        
-        /// <summary>
-        /// Control nombreProDestacado1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nombreProDestacado1;
-        
-        /// <summary>
-        /// Control precioDestacados1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label precioDestacados1;
+        protected global::System.Web.UI.WebControls.Repeater RPTproductoDestacado;
         
         /// <summary>
         /// Control productoDestacado2.
