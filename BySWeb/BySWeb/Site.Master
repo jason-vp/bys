@@ -24,7 +24,7 @@
                 <div class="loginDisplay">
                         <div id="dvLogin">
                         <asp:Panel ID="pnlLogin" Visible="true" runat="server">
-                            <asp:Login ID="Login1" runat="server" DestinationPageUrl="/" OnAuthenticate="Login1_Authenticae" >
+                            <asp:Login ID="Login1" runat="server" DestinationPageUrl="/" OnAuthenticate="Login1_Authenticate" >
                             </asp:Login>
                            </asp:Panel>
                         <asp:Panel ID="pnlLStatus" Visible="false" runat="server">

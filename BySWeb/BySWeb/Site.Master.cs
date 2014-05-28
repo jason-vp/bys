@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using BySLib.AUXILIAR;
 using BySLib.BL;
 using System.Web.Security;
+using BySWeb.Utilities;
 
 
 namespace BySWeb
@@ -40,7 +41,7 @@ namespace BySWeb
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
             bool correcto=false;
-            correcto=UsuarioBL.Validate(Login1.UserName, PasswordHash.CreateHash(Login1.Password));
+            correcto=UsuarioBL.validateToEN(Tools.GetDbCnxStr(), Login1.UserName, PasswordHash.CreateHash(Login1.Password));
 
             if (correcto)
             {

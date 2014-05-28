@@ -1,7 +1,3 @@
-C:\Users\Jose\Documents\GitHub\bys\BySWeb\BySWeb\bin\BySWeb.dll
-C:\Users\Jose\Documents\GitHub\bys\BySWeb\BySWeb\bin\BySWeb.pdb
-C:\Users\Jose\Documents\GitHub\bys\BySWeb\BySWeb\obj\Debug\BySWeb.dll
-C:\Users\Jose\Documents\GitHub\bys\BySWeb\BySWeb\obj\Debug\BySWeb.pdb
 C:\Users\TT\Documents\websubastas\BySWeb\BySWeb\bin\BySWeb.dll
 C:\Users\TT\Documents\websubastas\BySWeb\BySWeb\bin\BySWeb.pdb
 C:\Users\TT\Documents\websubastas\BySWeb\BySWeb\obj\Debug\BySWeb.dll
@@ -17,3 +13,10 @@ C:\Users\TT\Documents\GitHub\bys\BySWeb\BySWeb\bin\BySLib.pdb
 C:\Users\TT\Documents\GitHub\bys\BySWeb\BySWeb\obj\Debug\BySWeb.csprojResolveAssemblyReference.cache
 C:\Users\TT\Documents\GitHub\bys\BySWeb\BySWeb\obj\Debug\BySWeb.dll
 C:\Users\TT\Documents\GitHub\bys\BySWeb\BySWeb\obj\Debug\BySWeb.pdb
+C:\Users\Jose\Documents\GitHub\bys\BySWeb\BySWeb\obj\Debug\BySWeb.csprojResolveAssemblyReference.cache
+C:\Users\Jose\Documents\GitHub\bys\BySWeb\BySWeb\bin\BySWeb.dll
+C:\Users\Jose\Documents\GitHub\bys\BySWeb\BySWeb\bin\BySWeb.pdb
+C:\Users\Jose\Documents\GitHub\bys\BySWeb\BySWeb\bin\BySLib.dll
+C:\Users\Jose\Documents\GitHub\bys\BySWeb\BySWeb\bin\BySLib.pdb
+C:\Users\Jose\Documents\GitHub\bys\BySWeb\BySWeb\obj\Debug\BySWeb.dll
+C:\Users\Jose\Documents\GitHub\bys\BySWeb\BySWeb\obj\Debug\BySWeb.pdb
