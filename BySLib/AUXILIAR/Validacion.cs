@@ -30,6 +30,13 @@ namespace BySLib.AUXILIAR
             return System.Text.RegularExpressions.Regex.IsMatch(s, sPattern);
         }
 
+        public static bool isNombreP(string s)
+        {
+            string sPattern = "^[A-Za-z]*$";
+
+            return System.Text.RegularExpressions.Regex.IsMatch(s, sPattern);
+        }
+
         public static bool isDireccion(string s) // Formato: Calle Numero Numero
         {
             string sPattern = "^.{1,40}$";
@@ -47,16 +54,11 @@ namespace BySLib.AUXILIAR
         public static bool isCpostal(string s)
         {
             string sPattern = "^\\d{5}$";
+            //string sPattern = "^[0-9]{5,5}([- ]?[0-9]{4,4})?$";
 
             return System.Text.RegularExpressions.Regex.IsMatch(s, sPattern);
         }
 
-        public static bool isTarjeta(string s)
-        {
-            string sPattern = "^\\d{4}$";
-
-            return System.Text.RegularExpressions.Regex.IsMatch(s, sPattern);
-        }
 
         public static bool isMes(string s)
         {
