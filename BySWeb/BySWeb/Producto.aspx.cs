@@ -12,7 +12,7 @@ namespace BySWeb
         protected void Page_Load(object sender, EventArgs e)
         {
                 //Informacion sobre el producto de la interfaz de producto.
-            int id = Int32.Parse(Request.QueryString["id"]);
+           /** int id = Int32.Parse(Request.QueryString["id"]);
             ProductoEN prod=new ProdcutoEN(id);
             lblNombreProd.Text=prod.Nombre;
             lblDescripcion.Text=prod.Descripcion;
@@ -27,7 +27,7 @@ namespace BySWeb
             lblNombreProp.Text = user.Nombre.ToString();
             lblPuntUser.Text=user.Puntacion.ToString();
             imgUsuario.ImageUrl=user.RutaImg;
-        
+        **/
         }
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
