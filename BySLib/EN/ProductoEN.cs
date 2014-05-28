@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using BySLib.BL;
 
 namespace BySLib.EN
 {
@@ -34,7 +35,7 @@ namespace BySLib.EN
         #endregion
 
         #region Private Properties
-        
+
         private int id = -1;
         private int idpropietario = -1;
         private string nombre = "";
@@ -51,7 +52,7 @@ namespace BySLib.EN
         private int subcategoria = -1;
         private bool eliminado = false;
 
-       
+
         #endregion
 
         #region Public Properties
@@ -179,36 +180,7 @@ namespace BySLib.EN
         #endregion
 
 
-        /// <summary>
-        /// Obtiene todos los productos de la DB
-        /// </summary>
-        /// <returns>Devuelve un array de producto con todos los productos leidos de la DB</returns>
-        static public FotosProductoEN[] getProducto()
-        {
-            // Lee los productos de la DB y los devuelve
-            return ProductoCAD.obtenerTodosProductos();
-        }
 
-        /// <summary>
-        /// Obtiene un producto a traves de su id
-        /// </summary>
-        /// <param name="id">El producto del usuario que se devolvera</param>
-        /// <returns>Devuelve un Producto cuyo id se pasó por parámetro</returns>
-        static public FotosProductoEN getProducto(int id)
-        {
-            // busca el producto por el id en la DB
-            return ProductoCAD.obtenerProductoById(id);
-        }
-
-        /// <summary>
-        /// Comprueba si un producto existe en la DB
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns>Devuelve verdadero si el producto existe en la BD</returns>
-        public static bool esProducto(int id)
-        {
-            return ProductoCAD.esProducto(id);
-        }
 
         /// <summary>
         /// Constructor con parámetros
@@ -254,7 +226,8 @@ namespace BySLib.EN
             // TODO: Complete member initialization
         }
 
-      
+
+        
 
         public bool NoTieneCompras
         {

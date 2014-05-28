@@ -136,44 +136,18 @@ namespace BySLib.EN
 
         #endregion
 
-		/// <summary>
-		/// Obtenemos todos los producto  en un array
-		/// </summary>
-		/// <returns>Lista de todos los producto</returns>
-		static public FotosProductoEN[] obtenerTodosProductos()
-		{
-            FotosProductoEN[] productos = null;
-			return productos;
-		}
+        #region Getting Data
 
-		/// <summary>
-		/// Obtenemos el artículo por el id
-		/// </summary>
-		/// <param name="id">Id del producto a obtener</param>
-		/// <returns>producto por el id</returns>
-		static public FotosProductoEN obtenerProductoById(int id)
-		{
-            FotosProductoEN producto = null;
+        public static Producto GetById(BySBDDataContext p_ctx, int p_id)
+        {
+            return (from t1 in p_ctx.Producto
+                    where t1.id == p_id
+                    && t1.eliminado == false
+                    select t1).SingleOrDefault();
 
-			return producto;
-		}
+        }
 
-		/// <summary>
-		/// Obtenemos true si el producto existe
-		/// </summary>
-		/// <param name="id">id del producto a obtener</param>
-		/// <returns>verdadero si el producto existe, falso en caso contrario</returns>
-		static public bool esProducto(int id)
-		{
-		
-			return false;
-		}
+        #endregion
 
-		
-
-        //internal static bool Create(ProductoEN prod)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

@@ -40,22 +40,22 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.Label lbError;
         
         /// <summary>
-        /// Control TextB_Usuario.
+        /// Control tbUsuarioEn.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextB_Usuario;
+        protected global::System.Web.UI.WebControls.TextBox tbUsuarioEn;
         
         /// <summary>
-        /// Control ValidatorNombre.
+        /// Control ValidatorUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator ValidatorNombre;
+        protected global::System.Web.UI.WebControls.CustomValidator ValidatorUsuario;
         
         /// <summary>
         /// Control UserNameReq.
@@ -67,22 +67,22 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator UserNameReq;
         
         /// <summary>
-        /// Control TextB_Contraseña.
+        /// Control tbcontrasenya.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextB_Contraseña;
+        protected global::System.Web.UI.WebControls.TextBox tbcontrasenya;
         
         /// <summary>
-        /// Control TextB_RepiteContra.
+        /// Control tbRepiteContra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextB_RepiteContra;
+        protected global::System.Web.UI.WebControls.TextBox tbRepiteContra;
         
         /// <summary>
         /// Control ValidatorPassword.
@@ -112,13 +112,13 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator PasswordReq;
         
         /// <summary>
-        /// Control TextB_mail.
+        /// Control tbmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextB_mail;
+        protected global::System.Web.UI.WebControls.TextBox tbmail;
         
         /// <summary>
         /// Control ValidatorEmail.
@@ -130,22 +130,31 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.CustomValidator ValidatorEmail;
         
         /// <summary>
-        /// Control TextB_avatar.
+        /// Control RequiredFieldValidator4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextB_avatar;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
-        /// Control TextB_Nombre.
+        /// Control tbavatar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextB_Nombre;
+        protected global::System.Web.UI.WebControls.TextBox tbavatar;
+        
+        /// <summary>
+        /// Control tbNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbNombre;
         
         /// <summary>
         /// Control CustomValidator1.
@@ -157,22 +166,40 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
         
         /// <summary>
-        /// Control TextB_CP.
+        /// Control RequiredFieldValidator3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextB_CP;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
-        /// Control ValidatorCpostal.
+        /// Control tbCP.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator ValidatorCpostal;
+        protected global::System.Web.UI.WebControls.TextBox tbCP;
+        
+        /// <summary>
+        /// Control ValidatorCP.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator ValidatorCP;
+        
+        /// <summary>
+        /// Control RequiredFieldValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
         /// Control UpdatePanel1.
@@ -202,40 +229,40 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.DropDownList listaLocalidad;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control tbdireccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox tbdireccion;
         
         /// <summary>
-        /// Control TextB_num.
+        /// Control tbnumero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextB_num;
+        protected global::System.Web.UI.WebControls.TextBox tbnumero;
         
         /// <summary>
-        /// Control TextB_Piso.
+        /// Control tbPiso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextB_Piso;
+        protected global::System.Web.UI.WebControls.TextBox tbPiso;
         
         /// <summary>
-        /// Control TextB_tlf.
+        /// Control tbtlf.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextB_tlf;
+        protected global::System.Web.UI.WebControls.TextBox tbtlf;
         
         /// <summary>
         /// Control ValidatorTelefono.
@@ -245,6 +272,15 @@ namespace BySWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator ValidatorTelefono;
+        
+        /// <summary>
+        /// Control RequiredFieldValidator2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
         /// Control Button_Enviar.

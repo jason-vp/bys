@@ -6,6 +6,8 @@ using BySLib.LINQ;
 
 namespace BySLib.BL
 {
+
+    #region CRUD'S
     public static class ProductoBL
     {
         public static void Create(string dbCnxStr, ProductoEN prod)
@@ -15,8 +17,38 @@ namespace BySLib.BL
                 ProductoCAD.Create(cnx, ConvertFromEN(prod));
             }
         }
+        public static bool UpdateFromEN(string p_dbCnxStr, ProductoEN p_com)
+        {
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+                return ProductoCAD.Update(cnx, ProductoBL.ConvertFromEN(p_com));
 
+        }
+
+        public static bool Delete(string p_dbCnxStr, int p_id)
+        {
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+                return ProductoCAD.Delete(cnx, p_id);
+
+        }
+
+
+
+    #endregion
+        #region Getting Data
+
+        public static ProductoEN GetByIdToEN(string p_dbCnxStr, int p_id)
+        {
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+                return ProductoBL.ConvertToEN(ProductoCAD.GetById(cnx, p_id));
+
+        }
+
+        #endregion
         #region Convert To DTO
+
+
+
 
         private static List<FotosProductoEN> ConvertToListFotosEn(EntitySet<FotosProducto> p_lsFotos)
         {
@@ -74,7 +106,7 @@ namespace BySLib.BL
             {
                 id = p_fotos.Id,
                 ruta = p_fotos.Ruta,
-                producto = (int)p_fotos.Idproducto//revisar
+                producto = p_fotos.Idproducto//revisar
             };
 
         }
@@ -111,16 +143,16 @@ namespace BySLib.BL
                 Id = prod.id,
                 Nombre = prod.nombre,
                 Descripcion = prod.descripcion,
-                PrecioSalida = (decimal)prod.precio_sal,
-                PrecioCompra = (decimal)prod.precio_compra,
+                PrecioSalida = prod.precio_sal,
+                PrecioCompra = prod.precio_compra,
                 Estado = prod.estado,
-                CantidadInicial = (int)prod.cant_ini,
-                CantidadRestante = (int)prod.cant_fin,
+                CantidadInicial = prod.cant_ini,
+                CantidadRestante = prod.cant_fin,
                 FechaFin = prod.fecha_fin,
                 Propietario = prod.usuario,
-                Subcategoria = (int)prod.subcat,
+                Subcategoria = prod.subcat,
                 Fotos = ConvertToListFotosEn(prod.FotosProducto),
-                Eliminado = (bool)prod.eliminado
+                Eliminado = prod.eliminado
 
             };
         }

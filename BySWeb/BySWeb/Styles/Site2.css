@@ -366,3 +366,8 @@ div.accountInfo
 {
     border: 1px solid black;
 }
+
+#dvLogin 
+{
+    float:right;
+}
