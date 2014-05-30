@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BySLib.EN;
+using BySLib.BL;
+using BySLib.Utilities;
+using BySWeb.Utilities;
 
 namespace BySWeb
 {
@@ -16,7 +19,8 @@ namespace BySWeb
             List<ProductoEN> lProductosDestacados = null;
             List<ProductoEN> lUltimosProductos = null;
 
-
+            //SubcategoriaEN sub = SubcategoriaBL.GetById(Tools.GetDbCnxStr(), 1); 
+            
             if (lProductosDestacados != null)
             {
                 RPTproductoDestacado.DataSource = lProductosDestacados;

@@ -44,6 +44,38 @@ namespace BySLib.BL
 
         }
 
+        public static List<ProductoEN> GetByUltimosEN(string p_dbCnxStr)
+        {
+
+            List<ProductoEN> ls = new List<ProductoEN>();
+            List<Producto> lsProdu = new List<Producto>();
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+                
+           lsProdu = ProductoCAD.GetByUltimosActivos(cnx);
+
+            foreach (Producto c in lsProdu)
+                ls.Add(ProductoBL.ConvertToEN(c));
+            return ls;
+        }
+
+        public static List<ProductoEN> GetByDestacadosEN(string p_dbCnxStr, int p_id)
+        {
+            List<ProductoEN> ls = new List<ProductoEN>();
+            List<Producto> lsProdu = new List<Producto>();
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+
+                lsProdu = ProductoCAD.GetByDestacados(cnx);
+
+            foreach (Producto c in lsProdu)
+                ls.Add(ProductoBL.ConvertToEN(c));
+            return ls;
+
+        }
+
+
+
         #endregion
         #region Convert To DTO
 
@@ -83,7 +115,7 @@ namespace BySLib.BL
             //    p_consume, 1, MemberInfoGetting.GetMemberName(() => p_consume));
 
             //#endregion
-
+            
             return new FotosProductoEN()
             {
                 Id = p_fotos.id,
