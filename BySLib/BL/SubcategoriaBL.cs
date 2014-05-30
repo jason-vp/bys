@@ -12,7 +12,7 @@ namespace BySLib.BL
 
         #region Getting Data
 
-        private static SubcategoriaEN GetById(string p_dbCnxStr, int p_id) { 
+        public static SubcategoriaEN GetById(string p_dbCnxStr, int p_id) { 
         
             using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr)){
                 return SubcategoriaBL.ConvertToSubEN(SubcategoriaCAD.GetById(cnx, p_id));
