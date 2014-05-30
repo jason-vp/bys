@@ -5,3 +5,10 @@ C:\Users\Carlos\Documents\bys\BySWeb\BySWeb\bin\BySLib.dll
 C:\Users\Carlos\Documents\bys\BySWeb\BySWeb\bin\BySLib.pdb
 C:\Users\Carlos\Documents\bys\BySWeb\BySWeb\obj\Debug\BySWeb.dll
 C:\Users\Carlos\Documents\bys\BySWeb\BySWeb\obj\Debug\BySWeb.pdb
+C:\Users\TT\Documents\GitHub\bys\BySWeb\BySWeb\bin\BySWeb.dll
+C:\Users\TT\Documents\GitHub\bys\BySWeb\BySWeb\bin\BySWeb.pdb
+C:\Users\TT\Documents\GitHub\bys\BySWeb\BySWeb\bin\BySLib.dll
+C:\Users\TT\Documents\GitHub\bys\BySWeb\BySWeb\bin\BySLib.pdb
+C:\Users\TT\Documents\GitHub\bys\BySWeb\BySWeb\obj\Debug\BySWeb.csprojResolveAssemblyReference.cache
+C:\Users\TT\Documents\GitHub\bys\BySWeb\BySWeb\obj\Debug\BySWeb.dll
+C:\Users\TT\Documents\GitHub\bys\BySWeb\BySWeb\obj\Debug\BySWeb.pdb

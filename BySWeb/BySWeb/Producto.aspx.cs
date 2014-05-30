@@ -26,7 +26,7 @@ namespace BySWeb
             lblPujaActual.Text= ultimaPuja.Valor.ToString();
             lblPrecio.Text=prod.PrecioCompra.ToString();
             imgProducto.ImageUrl = prod.Fotos[0].Ruta;
-                //Barra lateral información del usuario propietario del producto
+              //Barra lateral información del usuario propietario del producto
             UsuarioEN user = UsuarioBL.GetByIdToEN(Tools.GetDbCnxStr(), id);
             lblNombreProp.Text = user.Nombre.ToString();
             lblPuntUser.Text=user.Puntacion.ToString();

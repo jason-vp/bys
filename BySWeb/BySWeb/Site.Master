@@ -40,32 +40,116 @@
                 <div class="fixedwidth">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">       
                     <Items>
-                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Página principal"/>
-                        <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Categoría 1" Value="Categoría 1">
-                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Subcategoría 1" Value="Subcategoría 1"></asp:MenuItem>
-                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Subcategoría 2" Value="Subcategoría 2"></asp:MenuItem>
-                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Subcategoría 3" Value="Subcategoría 3"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Pagina Principal" 
+                            Value="Pagina Principal"/>
+                        <asp:MenuItem NavigateUrl="~/Listar.aspx?t=c&amp;n=1" Text="Moda" 
+                            Value="CatModa">
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=1" Text="Ropa niño" 
+                                Value="SubRopa niño"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=2" Text="Ropa Mujer" 
+                                Value="Subcategoría 2"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=3" Text="Ropa Hombre" 
+                                Value="Subcategoría 3"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=4" Text="Calzado Hombre" 
+                                Value="Calzado Hombre"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=5" Text="Calzado Mujer" 
+                                Value="Calzado Mujer"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=6" Text="Complementos" 
+                                Value="Complementos"></asp:MenuItem>
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Categoría 2" Value="Categoría 2">
-                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
-                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
-                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Listar.aspx?t=c&amp;n=2" Text="Informatica" 
+                            Value="CatInformatica">
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=7" Text="Portatiles" 
+                                Value="Nuevo elemento"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=7" Text="Tablets" 
+                                Value="Nuevo elemento1"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=8" Text="Telefonia" 
+                                Value="Nuevo elemento2"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=9" Text="Sobremesa" 
+                                Value="Sobremesa"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=10" Text="Componentes" 
+                                Value="Componentes"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=11" Text="Otros" 
+                                Value="Otros"></asp:MenuItem>
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Categoría 3" Value="Categoría 3">
-                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
-                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Listar.aspx?t=c&amp;n=3" Text="Electronica" 
+                            Value="CatElectronica">
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=13" Text="Fotografia" 
+                                Value="Fotografia"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=14" Text="Sonido" 
+                                Value="Sonido"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=15" Text="Componentes" 
+                                Value="Componentes"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=16" Text="Otros" 
+                                Value="Otros"></asp:MenuItem>
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Categoría 4" Value="Categoría 4">
-                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
-                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Listar.aspx?t=c&amp;n=4" Text="Deportes" 
+                            Value="CatDeportes">
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=17" Text="Equipamiento" 
+                                Value="equi"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=18" 
+                                Text="Bicicleta y Ciclismo" Value="bici"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=19" Text="Equipo Gimnasio" 
+                                Value="Equipo Gimnasio"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=20" Text="Ropa Deporte" 
+                                Value="Ropa Deporte"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=21" Text="Otros" 
+                                Value="Otros"></asp:MenuItem>
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Categoría 5" Value="Categoría 5">
-                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
-                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Listar.aspx?t=c&amp;n=5" Text="Motor" 
+                            Value="CatMotor">
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=22" Text="Barcos" 
+                                Value="Barcos"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=23" Text="Coches" 
+                                Value="Coches"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=24" Text="Motos" 
+                                Value="Motos"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=25" Text="Accesorios" 
+                                Value="Accesorios"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=25" Text="Recambios" 
+                                Value="Recambios"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=27" Text="Otros" 
+                                Value="Otros"></asp:MenuItem>
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Categoría 6" Value="Categoría 6">
-                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
-                            <asp:MenuItem NavigateUrl="~/Listar.aspx" Text="Nuevo elemento" Value="Nuevo elemento"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Listar.aspx?t=c&amp;n=6" Text="Ocio Y Arte" 
+                            Value="CatOcioArte">
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=28" Text="Libros, Revistas" 
+                                Value="Libros, Revistas"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=29" Text="Musica" 
+                                Value="Musica"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=30" Text="Arte y Antiguedad" 
+                                Value="Arte y Antiguedad"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=31" Text="Coleccionismo" 
+                                Value="Coleccionismo"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=32" Text="Juguetes" 
+                                Value="Juguetes"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=33" Text="Relojes" 
+                                Value="Relojes"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=34" Text="Joyas" 
+                                Value="Joyas"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Listar.aspx?t=c&amp;n=7" Text="Hogar" 
+                            Value="CatHogar">
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=35" 
+                                Text="Electrodomesticos Pequeños" Value="Electrodomesticos Pequeños">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=36" 
+                                Text="Electrodomesticos Grandes" Value="Electrodomesticos Grandes">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=37" Text="Televisores" 
+                                Value="Televisores"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=38" Text="Terraza y Jardin" 
+                                Value="Terraza y Jardin"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=39" Text="Bricolage" 
+                                Value="Bricolage"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=40" Text="Mascotas" 
+                                Value="Mascotas"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=41" Text="Decoracion" 
+                                Value="Decoracion"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=42" Text="Muebles" 
+                                Value="Muebles"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Listar.aspx?t=s&amp;n=43" Text="Viviendas" 
+                                Value="Viviendas"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="/Listar.aspx" Text="Buscar" Value="Buscar">
                         </asp:MenuItem>
