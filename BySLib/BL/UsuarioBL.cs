@@ -44,11 +44,11 @@ namespace BySLib.BL
 
         }
 
-        public static string GetUserHash(string dbcnx, string nick)//revisar hash
+        public static UsuarioEN GetUserByNick(string dbcnx, string nick)//revisar hash
         {
 
             using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(dbcnx))
-                return UsuarioCAD.ValidateUserHash(cnx, nick);
+                return UsuarioBL.ConvertToEN(UsuarioCAD.GetUserByNick(cnx, nick));
 
         }
 

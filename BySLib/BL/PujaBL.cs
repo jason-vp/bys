@@ -38,6 +38,15 @@ namespace BySLib.BL
             };
         }
 
+
+        public static PujaEN GetLastPujaByProductoId(string p_dbCnxStr, int idprod)
+        {
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+                return PujaBL.ConvertToEN(PujaCAD.GetByIdProducto(cnx, idprod));
+        
+        }
+
+
         private static PujaEN ConvertToEN(Puja prod)//revisar
         {
             return new PujaEN()

@@ -10,6 +10,7 @@ using BySLib.AUXILIAR;
 using BySLib.BL;
 using System.Web.Security;
 using BySWeb.Utilities;
+using BySLib.EN;
 
 
 namespace BySWeb
@@ -42,11 +43,8 @@ namespace BySWeb
         {
             bool correcto=false;
 
-            string hash = UsuarioBL.GetUserHash(Tools.GetDbCnxStr(), Login1.UserName);
-            if (hash == "NO")
-                correcto = false;
-            else
-            correcto= PasswordHash.ValidatePassword(Login1.Password, hash);
+            UsuarioEN user = UsuarioBL.GetUserByNick(Tools.GetDbCnxStr(), Login1.UserName);          
+            correcto= PasswordHash.ValidatePassword(Login1.Password, user.Password);
            
             if (!correcto)
             {
@@ -55,12 +53,13 @@ namespace BySWeb
             else
             {
 
-                Session["nick"] = Login1.UserName;
+                Session["userNick"] = user.Nick;
+                Session["userId"] = user.Id;
+                Session["LoggedIn"] = "true";
+
                 
                 FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet);
             }
-
-            
 
         }
         
