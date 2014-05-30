@@ -59,7 +59,7 @@ namespace BySLib.BL
             return ls;
         }
 
-        public static List<ProductoEN> GetByDestacadosEN(string p_dbCnxStr, int p_id)
+        public static List<ProductoEN> GetByDestacadosEN(string p_dbCnxStr)
         {
             List<ProductoEN> ls = new List<ProductoEN>();
             List<Producto> lsProdu = new List<Producto>();
@@ -84,7 +84,7 @@ namespace BySLib.BL
 
         private static List<FotosProductoEN> ConvertToListFotosEn(EntitySet<FotosProducto> p_lsFotos)
         {
-            if (p_lsFotos == null || p_lsFotos.Count <= 0)
+            if (p_lsFotos == null || p_lsFotos.Count <= 0) //TODO: aqui falla algo
                 return new List<FotosProductoEN>();
 
             List<FotosProductoEN> ls = new List<FotosProductoEN>();
