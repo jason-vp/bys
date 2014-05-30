@@ -110,6 +110,15 @@ namespace BySLib
         #region Getting Data
 
 
+        public static List<Compra> GetByIdPropietario(BySBDDataContext p_ctx, int p_id)
+        {
+            return (from t1 in p_ctx.Compra
+                    where t1.comprador == p_id
+                    && t1.eliminado == false
+                    select t1).ToList();
+
+        }
+
 
         #endregion
 

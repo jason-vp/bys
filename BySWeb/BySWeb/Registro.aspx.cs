@@ -26,6 +26,7 @@ namespace BySWeb
             {
                 lbError.Text = "";
                 PnlError.Visible = false;
+               
 
                
 
@@ -65,7 +66,7 @@ namespace BySWeb
             {
 
                 PnlError.Visible = true;
-                lbError.Text = "error";
+                lbError.Text = "Error al Crear el usuario";
             }
 
         }
@@ -80,10 +81,11 @@ namespace BySWeb
                 Nombre = this.tbNombre.Text.Trim(),
                 Nick = this.tbUsuarioEn.Text.Trim(),
                 Mail = tbmail.Text.Trim(),
-                Password = tbcontrasenya.Text.Trim(),
+                Password =  PasswordHash.CreateHash(tbcontrasenya.Text.Trim()),
                 Telf = Convert.ToInt32(tbtlf.Text.Trim()),
-                Direccion = tbdireccion.Text.Trim()
-
+                Direccion = tbdireccion.Text.Trim(),
+                CodigoPostal = 1010,
+                Poblacion = "ALI"
             };
         }
 

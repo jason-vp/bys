@@ -17,6 +17,8 @@
             font-size: large;
             color: #000099;
         }
+        
+        
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PlaceholderSidebar" runat="server">
@@ -26,7 +28,7 @@
     <p>
         <br />
     <asp:Panel ID="PnlError" runat="server" Visible="false">
-        <asp:Label ID="lbError" runat="server"></asp:Label>
+        <asp:Label ID="lbError" runat="server" ></asp:Label>
     </asp:Panel>
     <p class="style2">
         <strong>Datos de usuario</strong><p>

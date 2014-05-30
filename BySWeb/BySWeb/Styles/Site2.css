@@ -371,3 +371,9 @@ div.accountInfo
 {
     float:right;
 }
+
+#MainContent_lbError
+{
+    color:Red;
+    
+}

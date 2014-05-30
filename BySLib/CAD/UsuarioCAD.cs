@@ -147,18 +147,22 @@ namespace BySLib
                     
         }
 
-        public static bool ValidateUser(BySBDDataContext p_ctx, string nick, string pass)//revisar
+        public static string ValidateUserHash(BySBDDataContext p_ctx, string nick)//revisar
         {
-            
+            try
+            {
 
-            Usuario us = (from t1 in p_ctx.Usuario
-                          where t1.nick == nick
-                          && t1.password == pass
-                          select t1).First();
-            if (us != null)
-                return false;
-            else
-                return true;
+                Usuario us = (from t1 in p_ctx.Usuario
+                              where t1.nick == nick
+                              select t1).First();
+                
+                return us.password;
+
+            }
+            catch (Exception ex)
+            {
+                return "NO";
+            }
         }
 
         #endregion
