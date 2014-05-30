@@ -60,19 +60,27 @@
       <DependentUpon>BySBD.mdf</DependentUpon>
     </Content>
     <Content Include="DetallesUsuario.aspx" />
+    <Content Include="images\asus.jpg" />
+    <Content Include="images\batidora.jpg" />
     <Content Include="images\bic.jpg" />
     <Content Include="images\casco.jpeg" />
     <Content Include="images\cascos.jpg" />
+    <Content Include="images\cintacorrer.jpg" />
+    <Content Include="images\elefante.png" />
     <Content Include="images\entrada.JPG" />
     <Content Include="images\mac.jpg" />
     <Content Include="images\mechon.jpg" />
+    <Content Include="images\movil.jpg" />
     <Content Include="images\popeye.jpg" />
     <Content Include="images\puerros.jpg" />
     <Content Include="images\refresh.gif" />
     <Content Include="images\sartenes.jpg" />
+    <Content Include="images\televisor.jpg" />
     <Content Include="images\Tgrafica.jpg" />
     <Content Include="images\travelo.jpg" />
+    <Content Include="images\vestidoverano.jpg" />
     <Content Include="images\washer.jpg" />
+    <Content Include="images\zapatos.png" />
     <Content Include="Listar.aspx" />
     <Content Include="images\logo.png" />
     <Content Include="MiProducto.aspx" />
