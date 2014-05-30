@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Detalles de Usuario" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MiProducto.aspx.cs" Inherits="BySWeb.DetallesUsuario" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+<asp:Content ID="DetallesUsuario" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
         .style1
         {

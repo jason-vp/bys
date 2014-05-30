@@ -8,9 +8,9 @@ using BySLib.EN;
 
 namespace BySWeb
 {
-    public partial class DetallesUsuario : System.Web.UI.Page
+    public partial class MiProducto : System.Web.UI.Page
     {
-        protected void Page_Load2(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {/*
             try 
             {
@@ -43,34 +43,34 @@ namespace BySWeb
             }*/
         }
 
-        protected void TextBox2_TextChanged(object sender, EventArgs e)
-        {
+        //protected void TextBox2_TextChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        protected void CheckBox2_CheckedChanged(object sender, EventArgs e)
-        {
+        //protected void CheckBox2_CheckedChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        //protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        //protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        protected void Nombre_TextChanged(object sender, EventArgs e)
-        {
+        //protected void Nombre_TextChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        protected void tbNombreProducto_TextChanged(object sender, EventArgs e)
-        {
+        //protected void tbNombreProducto_TextChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
     }
 }

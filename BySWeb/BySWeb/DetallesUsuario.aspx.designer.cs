@@ -8,9 +8,9 @@
 //------------------------------------------------------------------------------
 
 namespace BySWeb {
-    
-    
-    public partial class DetallesUsuario {
+
+
+    public partial class DetallesUsuario    {
         
         /// <summary>
         /// Control Image1.
