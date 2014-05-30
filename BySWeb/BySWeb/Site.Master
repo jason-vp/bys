@@ -28,8 +28,8 @@
                             </asp:Login>
                            </asp:Panel>
                         <asp:Panel ID="pnlLStatus" Visible="false" runat="server">
-                            <p>Bienvenido <asp:LoginName ID="loginName" runat="server" /> </p>
-                            <p><a href="/MiUsuario.aspx">Panel Usuario</a><asp:LoginStatus ID="loginStatus" runat="server" /></p>
+                            <p>Bienvenido <strong><asp:LoginName ID="loginName" runat="server" /></strong> </p>
+                            <p><a href="/MiUsuario.aspx">Panel Usuario</a><asp:LoginStatus ID="LoginStatus1" runat="server" onloggedout="LoginStatus1_LoggedOut" LogoutAction="Redirect"  LogoutPageUrl="/"  /></p>
                         </asp:Panel>
                             
                         </div>

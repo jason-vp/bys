@@ -7,7 +7,11 @@ using BySLib.EN;
 
 namespace BySLib.BL
 {
+<<<<<<< HEAD
     public static class SubcategoriaBL
+=======
+    public class SubcategoriaBL
+>>>>>>> ea6547dc1163d4af73cfb92df61ea8b39b3ede0a
     {
 
         #region Getting Data

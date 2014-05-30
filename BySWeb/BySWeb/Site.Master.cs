@@ -62,6 +62,12 @@ namespace BySWeb
             }
 
         }
-        
+        protected void LoginStatus1_LoggedOut(Object sender, System.EventArgs e)
+        {
+            Session["userNick"] = null;
+            Session["userId"] = null;
+            Session["LoggedIn"] = null;
+        }
+
     }
 }

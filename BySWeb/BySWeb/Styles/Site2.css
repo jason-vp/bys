@@ -273,7 +273,7 @@ div.accountInfo
 {
     font-size: 1.1em;
     display: block;
-    text-align: right;
+    text-align: left;
     padding: 10px;
     color: White;
 }
@@ -375,5 +375,16 @@ div.accountInfo
 #MainContent_lbError
 {
     color:Red;
+    
+}
+
+#pnlLStatus p a
+{
+    margin-right: 5px;
+    font-size: 11px;
+}
+
+#pnlLogin p 
+{
     
 }
