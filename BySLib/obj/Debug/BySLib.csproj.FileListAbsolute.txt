@@ -1,15 +1,8 @@
 C:\Users\Mario\Documents\bys\BySLib\obj\Debug\BySLib.csprojResolveAssemblyReference.cache
-<<<<<<< HEAD
-=======
 C:\Users\TT\Documents\GitHub\bys\BySLib\bin\Debug\BySLib.dll.config
 C:\Users\TT\Documents\GitHub\bys\BySLib\bin\Debug\BySLib.dll
 C:\Users\TT\Documents\GitHub\bys\BySLib\bin\Debug\BySLib.pdb
 C:\Users\TT\Documents\GitHub\bys\BySLib\obj\Debug\BySLib.dll
 C:\Users\TT\Documents\GitHub\bys\BySLib\obj\Debug\BySLib.pdb
 C:\Users\TT\Documents\GitHub\bys\BySLib\obj\Debug\BySLib.csprojResolveAssemblyReference.cache
->>>>>>> ea6547dc1163d4af73cfb92df61ea8b39b3ede0a
-C:\Users\Jose\Documents\GitHub\bys\BySLib\bin\Debug\BySLib.dll.config
-C:\Users\Jose\Documents\GitHub\bys\BySLib\bin\Debug\BySLib.dll
-C:\Users\Jose\Documents\GitHub\bys\BySLib\bin\Debug\BySLib.pdb
-C:\Users\Jose\Documents\GitHub\bys\BySLib\obj\Debug\BySLib.dll
-C:\Users\Jose\Documents\GitHub\bys\BySLib\obj\Debug\BySLib.pdb
+
