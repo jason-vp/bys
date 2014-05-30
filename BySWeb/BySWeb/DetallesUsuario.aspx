@@ -53,7 +53,7 @@
 
           <p style="width: 99%">
               Nick:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <asp:Label ID="nickDetUsuario" runat="server" Text="LatinLover69"></asp:Label>
+              <asp:Label ID="lblNick" runat="server" Text="LatinLover69"></asp:Label>
         </p>
               <p style="width: 100%">
                   Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 

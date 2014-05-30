@@ -26,7 +26,7 @@ namespace BySLib.AUXILIAR
         public static bool isNombre(string s)
         {
             string sPattern = "^[a-zA-ZÀ-ÖØ-öø-ÿ]+\\.?(( |\\-)[a-zA-ZÀ-ÖØ-öø-ÿ]+\\.?)*$";
-        
+//string sPattern = "^[-A-Z]/s*$";
             return System.Text.RegularExpressions.Regex.IsMatch(s, sPattern);
         }
 

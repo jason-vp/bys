@@ -7,7 +7,8 @@ using BySLib.EN;
 
 namespace BySLib.BL
 {
-    public class CategoriaBL
+
+    public static class CategoriaBL
     {
 
 
@@ -42,7 +43,7 @@ namespace BySLib.BL
             {
                 Id = p_sub.id,
                 Nombre = p_sub.nombre
-              
+
             };
 
         }
@@ -60,7 +61,7 @@ namespace BySLib.BL
             {
                 id = p_sub.Id,
                 nombre = p_sub.Nombre
-               
+
             };
 
         }

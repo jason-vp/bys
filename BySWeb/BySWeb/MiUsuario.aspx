@@ -67,21 +67,37 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <p class="style1">
+     
         <strong>DATOS PERSONALES</strong></p>
     <div style="text-align: right; margin-left: 678px; height: 22px;">
         <img alt="" src="" style="height: 100px" /></div>
+        <asp:Panel ID="PnlError" runat="server" Visible="False">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label 
+            ID="lbError" runat="server" style="text-align: center" Text="lbError"></asp:Label>
+        &nbsp;</asp:Panel>
+
     <p>
         <strong>Nombre&nbsp;&nbsp;&nbsp;&nbsp; 
-        <asp:TextBox ID="Nombre" runat="server" Width="350px"></asp:TextBox>
+        <asp:TextBox ID="tbNombre" runat="server" Width="350px"></asp:TextBox>
         </strong>
+        <div class="validator">
+            <asp:CustomValidator ID="CustomValidator1" ControlToValidate="tbNombre"
+           OnServerValidate="ComprobarNombre" runat="server" ErrorMessage="Nombre incorrecto" 
+           Display="Dynamic" ValidateEmptyText="true" ForeColor="Red"></asp:CustomValidator>
+       </div>
     </p>
     <p>
         <strong>Direccion
         </strong>&nbsp;
-        <asp:TextBox ID="Direccion" runat="server" Width="300px"></asp:TextBox>
+        <asp:TextBox ID="tbDireccion" runat="server" Width="300px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </p>
+    <div class="validator">
+            <asp:CustomValidator ID="CustomValidator2" ControlToValidate="tbDireccion"
+           OnServerValidate="ComprobarNombre" runat="server" ErrorMessage="Direccion incorrecta" 
+           Display="Dynamic" ValidateEmptyText="true" ForeColor="Red"></asp:CustomValidator>
+       </div>
     <p>
         <strong>Provincia</strong>&nbsp;&nbsp;
         <asp:TextBox ID="Provincia" runat="server"></asp:TextBox>
@@ -92,33 +108,54 @@
     </p>
     <p>
         <strong>Telefono</strong>&nbsp;&nbsp; 
-        <asp:TextBox ID="Telefono" runat="server" 
-            TextMode="Phone" Width="125px" style="margin-left: 3px"></asp:TextBox>
+        <asp:TextBox ID="tbtlf" runat="server" 
+            TextMode="Phone" Width="125px" style="margin-left: 3px" Height="22px"></asp:TextBox>
         &nbsp;</p>
+        <div class="validator">
+             <asp:CustomValidator ID="ValidatorTelefono" ControlToValidate="tbtlf"
+            OnServerValidate="ComprobarTelefono" runat="server" ErrorMessage="Teléfono no válido" 
+            Display="Dynamic" ValidateEmptyText="true" ForeColor="Red"></asp:CustomValidator>
+         </div>
     <p>
         &nbsp;</p>
     <p class="style1">
         <strong>DETALLES DEL USUARIO</strong></p>
     <p>
-        <strong>Usuario&nbsp;&nbsp;&nbsp;&nbsp; </strong>
-        <asp:TextBox ID="Usuario" 
-            runat="server" Width="100px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp; <strong>&nbsp;Email&nbsp;&nbsp;&nbsp;&nbsp; </strong>
-        <asp:TextBox ID="Email" runat="server" TextMode="Email" Width="150px"></asp:TextBox>
+        <strong>Usuario&nbsp;<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+        &nbsp;&nbsp;&nbsp; </strong>
+&nbsp;&nbsp;&nbsp; <strong>&nbsp;</strong><p>
+        <strong>Email&nbsp;&nbsp;&nbsp;&nbsp; </strong>
+        <asp:TextBox ID="tbmail" runat="server" TextMode="Email" Width="150px"></asp:TextBox>
     &nbsp;&nbsp;&nbsp;&nbsp; <strong>Puntuacion Usuario&nbsp;&nbsp;&nbsp;&nbsp; 
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-        </strong> 
+        </strong>
+        <div class="validator" style="right: 50px; position: inherit;">
+            <asp:CustomValidator ID="ValidatorEmail" ControlToValidate="tbmail"
+         OnServerValidate="ComprobarEmail" runat="server" ErrorMessage="Email no válido"
+         Display="Dynamic" ValidateEmptyText="true" ForeColor="Red"></asp:CustomValidator>
+        </div>
     </p>
     <p>
         <strong>Contraseña Actual&nbsp;&nbsp;&nbsp;&nbsp; </strong>
         <asp:TextBox ID="Contraseña_Actual" runat="server" TextMode="Password" 
             Width="90px"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp; <strong>Nueva Contraseña</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="Contraseña_Nueva" runat="server" TextMode="Password" 
-            Width="90px"></asp:TextBox>
+        <asp:TextBox ID="tbcontrasenyanueva" runat="server" TextMode="Password" 
+            Width="90px" ></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp; <strong>&nbsp;Repite Contraseña</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="Contreseña_Nueva2" runat="server" TextMode="Password" 
+        <asp:TextBox ID="tbcontrasenyanueva2" runat="server" TextMode="Password" 
             Width="90px"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="PasswordReq" runat="server"
+        ControlToValidate="Contraseña_Actual"
+        ErrorMessage="Introduce tu contraseña" ForeColor="Red"></asp:RequiredFieldValidator>
+            <div class="validator_pass"><asp:CustomValidator ID="ValidatorPassword" ControlToValidate="tbcontrasenyanueva"
+        OnServerValidate="ComprobarPassword2" runat="server" 
+                ErrorMessage="La contraseña debe contener mayúsculas, minúsculas y números y debe tener entre 6 y 12 caracteres" 
+                Display="Dynamic" ValidateEmptyText="true" ForeColor="Red"></asp:CustomValidator></div>
+
+        <div class="validator"><asp:CustomValidator ID="ValidatorPassword2" ControlToValidate="tbcontrasenyanueva2"
+         runat="server" ErrorMessage="La nueva contraseña no coincide" Display="Dynamic" 
+                ValidateEmptyText="false" ForeColor="Red"></asp:CustomValidator></div>
     </p>
     <p>
         <strong>Credito Actual&nbsp;&nbsp;&nbsp; </strong>&nbsp;<asp:TextBox 
@@ -139,10 +176,7 @@
         <asp:Button ID="Boton_Revertir_Datos" runat="server" Text="Descartar" 
             Width="100px" />
     </p>
-    <asp:Panel ID="PnlError" runat="server" Visible="False">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label 
-            ID="lbError" runat="server" style="text-align: center" Text="lbError"></asp:Label>
-        &nbsp;</asp:Panel>
+   
     <p class="style1">
         <strong>COMENTARIOS REALIZADOS</strong></p>
         <div class="comentario">

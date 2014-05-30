@@ -7,20 +7,23 @@ using BySLib.EN;
 
 namespace BySLib.BL
 {
-    public class SubcategoriaBL
-    {
+
+    public static class SubcategoriaBL{
+
 
         #region Getting Data
 
-        public static SubcategoriaEN GetById(string p_dbCnxStr, int p_id) { 
-        
-            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr)){
+        public static SubcategoriaEN GetById(string p_dbCnxStr, int p_id)
+        {
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+            {
                 return SubcategoriaBL.ConvertToSubEN(SubcategoriaCAD.GetById(cnx, p_id));
-            
+
             }
-        
-        
-        }    
+
+
+        }
         #endregion
 
         #region Convert To EN
@@ -38,7 +41,7 @@ namespace BySLib.BL
             {
                 Id = p_sub.id,
                 Nombre = p_sub.nombre,
-                Padre = p_sub.cat_padre 
+                Padre = p_sub.cat_padre
             };
 
         }
