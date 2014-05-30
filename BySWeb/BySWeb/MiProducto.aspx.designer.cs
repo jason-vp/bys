@@ -85,21 +85,21 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.TextBox tbCantidadRestante;
         
         /// <summary>
-        /// Control Categoria.
+        /// Control lbcategoria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Categoria;
+        protected global::System.Web.UI.WebControls.Label lbcategoria;
         
         /// <summary>
-        /// Control Subcategoria.
+        /// Control lbSubcategoria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Subcategoria;
+        protected global::System.Web.UI.WebControls.Label lbSubcategoria;
     }
 }
