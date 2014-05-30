@@ -7,11 +7,8 @@ using BySLib.EN;
 
 namespace BySLib.BL
 {
-<<<<<<< HEAD
+
     public static class CategoriaBL
-=======
-    public class CategoriaBL
->>>>>>> ea6547dc1163d4af73cfb92df61ea8b39b3ede0a
     {
 
 
