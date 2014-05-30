@@ -14,39 +14,23 @@ namespace BySWeb
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //    //Informacion sobre el producto de la interfaz de producto.
-            //int id = Int32.Parse(Request.QueryString["id"]);
-            //ProductoEN prod=new ProductoEN(id);
-            //lblNombreProd.Text=prod.Nombre;
-            //lblDescripcion.Text=prod.Descripcion;
-            //lblCantidadRest.Text=prod.CantidadRestante.ToString();
-            //fechaFinProducto.Text=prod.FechaFin.ToString();
-            //EstadoProducto.Text = prod.Estado;
-            //lblPujaActual.Text=prod.pujaMayor().toString();
-            //lblPrecio.Text=prod.PrecioCompra.ToString();
-            //imgProducto.ImageUrl = prod.Fotos[0].Ruta;
-            //    //Barra lateral información del usuario propietario del producto
-            //UsuarioEN user = new UsuarioEN(prod.Propietario);
-            //lblNombreProp.Text = user.Nombre.ToString();
-            //lblPuntUser.Text=user.Puntacion.ToString();
-            //imgUsuario.ImageUrl=user.RutaImg;
-
                 //Informacion sobre el producto de la interfaz de producto.
-           /* int id = Int32.Parse(Request.QueryString["id"]);
-            ProductoEN prod= new ProductoEN(id);
+            int id = Int32.Parse(Request.QueryString["id"]);
+            ProductoEN prod= ProductoBL.GetByIdToEN(Tools.GetDbCnxStr(),id);
             lblNombreProd.Text=prod.Nombre;
             lblDescripcion.Text=prod.Descripcion;
             lblCantidadRest.Text=prod.CantidadRestante.ToString();
             fechaFinProducto.Text=prod.FechaFin.ToString();
             EstadoProducto.Text = prod.Estado;
-            lblPujaActual.Text=prod.pujaMayor().toString();
+            PujaEN ultimaPuja = PujaBL.GetLastPujaByProductoId(Tools.GetDbCnxStr(), id);
+            lblPujaActual.Text= ultimaPuja.Valor.ToString();
             lblPrecio.Text=prod.PrecioCompra.ToString();
             imgProducto.ImageUrl = prod.Fotos[0].Ruta;
                 //Barra lateral información del usuario propietario del producto
-            UsuarioEN user = new UsuarioEN(prod.Propietario);
+            UsuarioEN user = UsuarioBL.GetByIdToEN(Tools.GetDbCnxStr(), id);
             lblNombreProp.Text = user.Nombre.ToString();
             lblPuntUser.Text=user.Puntacion.ToString();
-            imgUsuario.ImageUrl=user.RutaImg; */
+            imgUsuario.ImageUrl=user.RutaImg;
 
         
         }
