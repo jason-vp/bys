@@ -13,22 +13,58 @@ namespace BySWeb {
     public partial class MiUsuario {
         
         /// <summary>
-        /// Control Nombre.
+        /// Control PnlError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Nombre;
+        protected global::System.Web.UI.WebControls.Panel PnlError;
         
         /// <summary>
-        /// Control Direccion.
+        /// Control lbError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Direccion;
+        protected global::System.Web.UI.WebControls.Label lbError;
+        
+        /// <summary>
+        /// Control tbNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbNombre;
+        
+        /// <summary>
+        /// Control CustomValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
+        
+        /// <summary>
+        /// Control tbDireccion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbDireccion;
+        
+        /// <summary>
+        /// Control CustomValidator2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator2;
         
         /// <summary>
         /// Control Provincia.
@@ -58,31 +94,40 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.TextBox CP;
         
         /// <summary>
-        /// Control Telefono.
+        /// Control tbtlf.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Telefono;
+        protected global::System.Web.UI.WebControls.TextBox tbtlf;
         
         /// <summary>
-        /// Control Usuario.
+        /// Control ValidatorTelefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Usuario;
+        protected global::System.Web.UI.WebControls.CustomValidator ValidatorTelefono;
         
         /// <summary>
-        /// Control Email.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Email;
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// Control tbmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbmail;
         
         /// <summary>
         /// Control Label1.
@@ -94,6 +139,15 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
+        /// Control ValidatorEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator ValidatorEmail;
+        
+        /// <summary>
         /// Control Contraseña_Actual.
         /// </summary>
         /// <remarks>
@@ -103,22 +157,49 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.TextBox Contraseña_Actual;
         
         /// <summary>
-        /// Control Contraseña_Nueva.
+        /// Control tbcontrasenyanueva.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Contraseña_Nueva;
+        protected global::System.Web.UI.WebControls.TextBox tbcontrasenyanueva;
         
         /// <summary>
-        /// Control Contreseña_Nueva2.
+        /// Control tbcontrasenyanueva2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Contreseña_Nueva2;
+        protected global::System.Web.UI.WebControls.TextBox tbcontrasenyanueva2;
+        
+        /// <summary>
+        /// Control PasswordReq.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator PasswordReq;
+        
+        /// <summary>
+        /// Control ValidatorPassword.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator ValidatorPassword;
+        
+        /// <summary>
+        /// Control ValidatorPassword2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator ValidatorPassword2;
         
         /// <summary>
         /// Control Credito.
@@ -164,24 +245,6 @@ namespace BySWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Boton_Revertir_Datos;
-        
-        /// <summary>
-        /// Control PnlError.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PnlError;
-        
-        /// <summary>
-        /// Control lbError.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbError;
         
         /// <summary>
         /// Control DropDownList2.
