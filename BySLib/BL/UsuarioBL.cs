@@ -44,11 +44,11 @@ namespace BySLib.BL
 
         }
 
-        public static bool validateToEN(string dbcnx, string nick, string pass)//revisar hash
+        public static string GetUserHash(string dbcnx, string nick)//revisar hash
         {
 
             using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(dbcnx))
-                return UsuarioCAD.ValidateUser(cnx, nick, pass);
+                return UsuarioCAD.ValidateUserHash(cnx, nick);
 
         }
 

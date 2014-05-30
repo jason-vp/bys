@@ -41,14 +41,22 @@ namespace BySWeb
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
             bool correcto=false;
-            correcto=UsuarioBL.validateToEN(Tools.GetDbCnxStr(), Login1.UserName, PasswordHash.CreateHash(Login1.Password));
 
-            if (correcto)
+            string hash = UsuarioBL.GetUserHash(Tools.GetDbCnxStr(), Login1.UserName);
+            if (hash == "NO")
+                correcto = false;
+            else
+            correcto= PasswordHash.ValidatePassword(Login1.Password, hash);
+           
+            if (!correcto)
             {
                 Login1.FailureText = "Usuario o contraseña incorrecta.";
             }
             else
             {
+
+                Session["nick"] = Login1.UserName;
+                
                 FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet);
             }
 
