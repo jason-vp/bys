@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BySLib.EN;
 using BySLib.BL;
+using BySWeb.Utilities;
 namespace BySWeb
 {
     public partial class Producto : System.Web.UI.Page
@@ -52,31 +53,20 @@ namespace BySWeb
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            //ProductoEN productoActual = new ProductoEN();
+            int id = Int32.Parse(Request.QueryString["id"]);
+            ProductoEN productoActual = ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), id);            
+            
+            PujaEN pujaActual = PujaBL.GetLastPujaByProductoId(Utilities.Tools.GetDbCnxStr(), productoActual.Id);
+            decimal mostrar = pujaActual.Valor;
 
-            //float pujaActuaWeb = float.Parse(lblPujaActual.Text);
+            if(mostrar == -1){
 
+                mostrar = productoActual.PrecioSalida;
+            }
+            else{
 
-            //int id = Int32.Parse(Request.QueryString["id"]);
-
-
-            //productoActual.GetById(id);
-            //PujaEN pujaActual = productoactual.getultimapuja();
-            //float mostrar = pujaactual.valor;
-
-            productoActual = ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), id);
-            PujaEN pujaActual = PujaBL.GetLastPujaByProductoId(productoActual.Id);
-            float mostrar = pujaActual.valor;
-
-
-            //if(mostrar == -1{
-
-            //    mostrar = productoactual.preciosalida;
-            //}
-            //if(mostrar != pujaactuaweb){
-
-            //    lblPujaActual.Text = mostrar.ToString;
-            //}
+                lblPujaActual.Text = mostrar.ToString();
+            }
         }
     }
 }
