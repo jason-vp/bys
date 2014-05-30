@@ -8,9 +8,9 @@
 //------------------------------------------------------------------------------
 
 namespace BySWeb {
-    
-    
-    public partial class DetallesUsuario {
+
+
+    public partial class MiProducto{
         
         /// <summary>
         /// Control ultimoProducto1.

@@ -147,6 +147,26 @@ namespace BySLib.EN
 
         }
 
+        public static List<Producto> GetByUltimosActivos(BySBDDataContext p_ctx)
+        {
+            return (from t1 in p_ctx.Producto
+                    where t1.eliminado == false 
+                    && t1.estado == "Activo" 
+                    orderby t1.id descending
+                    select t1).ToList();
+
+        }
+
+        public static List<Producto> GetByDestacados(BySBDDataContext p_ctx)
+        {
+            return (from t1 in p_ctx.Producto
+                    where t1.eliminado == false
+                    && t1.estado == "Activo"
+                    orderby t1.fecha_fin ascending
+                    select t1).Take(12).ToList();
+
+        }
+
         #endregion
 
     }
