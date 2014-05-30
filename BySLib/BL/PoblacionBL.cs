@@ -48,8 +48,7 @@ namespace BySLib.BL
             {
                 Cod_provincia = prod.cod_prov,
                 Cod_postal = prod.cod_postal,
-                Nombre = prod.nom_pob
-              
+                Nombre = prod.nom_pob        
 
             };
         }

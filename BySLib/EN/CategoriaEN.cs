@@ -75,6 +75,11 @@ namespace BySLib.EN
             this.nombre = nombre;
         }
 
+        public CategoriaEN()
+        {
+            // TODO: Complete member initialization
+        }
+
 
 
     }
