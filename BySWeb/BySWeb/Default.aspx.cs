@@ -17,12 +17,16 @@ namespace BySWeb
             List<ProductoEN> lUltimosProductos = null;
 
 
-
-            RPTproductoDestacado.DataSource = lProductosDestacados;
-            RPTproductoDestacado.DataBind();
-
-            RPTultimosProductos.DataSource = lUltimosProductos;
-            RPTultimosProductos.DataBind();
+            if (lProductosDestacados != null)
+            {
+                RPTproductoDestacado.DataSource = lProductosDestacados;
+                RPTproductoDestacado.DataBind();
+            }
+            if (lUltimosProductos != null)
+            {
+                RPTultimosProductos.DataSource = lUltimosProductos;
+                RPTultimosProductos.DataBind();
+            }
         }
     }
 }

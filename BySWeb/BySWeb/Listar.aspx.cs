@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BySLib.EN;
 
 namespace BySWeb
 {
@@ -11,7 +12,10 @@ namespace BySWeb
     {
         protected void Page_Load2(object sender, EventArgs e)
         {
+            List<ProductoEN> lProductosListados = null;
 
+            RPTproductosListados.DataSource = lProductosListados;
+            RPTproductosListados.DataBind();
         }
     }
 }

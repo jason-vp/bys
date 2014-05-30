@@ -36,7 +36,22 @@
         <asp:Button ID="Button2" runat="server" Text="Buscar" />
         </p>
     </div>
-     <asp:HyperLink ID="productoListado1" runat="server" NavigateUrl="~/Producto.aspx"><div class = "imgportada">
+    <asp:Repeater runat="server" ID="RPTproductosListados">
+        <ItemTemplate>
+            <asp:HyperLink ID="productoDestacado1" runat="server" NavigateUrl= '<%# string.Format("~/Producto.aspx?id={0}", ((BySLib.EN.ProductoEN)Container.DataItem).Id) %>' ><div class = "imgportada">
+   
+                <asp:Image ID="imagenDestacados1" runat="server" ImageUrl= '<%# string.Format("{0}",((BySLib.EN.ProductoEN)Container.DataItem).Fotos[0].Ruta) %>' />
+
+                <!--"\" + </%# ((BySLib.EN.ProductoEN)Container.DataItem).Fotos[0].ruta %> + "\""-->
+
+                <h3><asp:Label ID="nombreProDestacado1" runat="server"> <%# ((BySLib.EN.ProductoEN)Container.DataItem).Nombre %> </asp:Label></h3>
+
+                <p><asp:Label ID="precioDestacados1" runat="server"><%# ((BySLib.EN.ProductoEN)Container.DataItem).Pujas %></asp:Label></p>
+            </div></asp:HyperLink>
+        </ItemTemplate>
+    </asp:Repeater>
+
+     <!--<asp:HyperLink ID="productoListado1" runat="server" NavigateUrl="~/Producto.aspx"><div class = "imgportada">
    
         <asp:Image ID="imagenListados1" runat="server" ImageUrl="~/images/bic.jpg" />
 
@@ -142,7 +157,7 @@
         <h3><asp:Label ID="nombreProListado12" runat="server" Text="Label">Lavadora portal alternativo a Narnia</asp:Label></h3>
 
         <p><asp:Label ID="precioListados12" runat="server" Text="Label">6.78 €</asp:Label></p>
-    </div></asp:HyperLink>
+    </div></asp:HyperLink> -->
     <div style="height: 30px;">1&nbsp;<a href="">2</a>&nbsp;<a href="">3</a>&nbsp;<a href="">4</a>&nbsp;<a href="">5</a>&nbsp;<a href="">6</a>&nbsp;<a href="">7</a>&nbsp;<a href="">8</a>&nbsp;<a href="">6</a>&nbsp;<a href="">9</a>&nbsp;<a href="">10</a>&nbsp;<a href="">>></a>&nbsp;</div>
     </div>
     </asp:Content>
