@@ -106,9 +106,20 @@ namespace BySLib.EN
 
         #endregion
 
+        #region Getting Data
+        public static Puja GetByIdProducto(BySBDDataContext p_ctx, int p_id)
+        {
+            return (from t1 in p_ctx.Puja
+                    where t1.producto == p_id                 
+                    select t1).SingleOrDefault();
 
-      
-        
+        }
+
+
+
+        #endregion
+
+
         /// <summary>
         /// Obtenemos todos los producto  en un array
         /// </summary>

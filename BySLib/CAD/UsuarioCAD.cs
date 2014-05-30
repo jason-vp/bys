@@ -147,22 +147,13 @@ namespace BySLib
                     
         }
 
-        public static string ValidateUserHash(BySBDDataContext p_ctx, string nick)//revisar
+        public static Usuario GetUserByNick(BySBDDataContext p_ctx, string nick)//revisar
         {
-            try
-            {
-
-                Usuario us = (from t1 in p_ctx.Usuario
+           
+               return (from t1 in p_ctx.Usuario
                               where t1.nick == nick
-                              select t1).First();
+                              select t1).SingleOrDefault();
                 
-                return us.password;
-
-            }
-            catch (Exception ex)
-            {
-                return "NO";
-            }
         }
 
         #endregion
