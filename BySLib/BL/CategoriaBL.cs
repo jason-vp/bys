@@ -7,14 +7,14 @@ using BySLib.EN;
 
 namespace BySLib.BL
 {
-    class CategoriaBL
+    public class CategoriaBL
     {
 
 
 
         #region Getting Data
 
-        private static CategoriaEN GetById(string p_dbCnxStr, int p_id)
+        public static CategoriaEN GetById(string p_dbCnxStr, int p_id)
         {
 
             using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))

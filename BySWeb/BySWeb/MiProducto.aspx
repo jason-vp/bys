@@ -1,5 +1,5 @@
-﻿<%@ Page Title="Mi prodcuto" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
-    CodeBehind="MiProducto.aspx.cs" Inherits="BySWeb.DetallesUsuario" %>
+﻿<%@ Page Title="Mi Producto" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+    CodeBehind="MiProducto.aspx.cs" Inherits="BySWeb.MiProducto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
@@ -21,7 +21,8 @@
             <p style="width: 100%">
                 Descripcion:&nbsp;</p>
             <p style="width: 100%">
-                &nbsp;<asp:TextBox ID="tbDescripcion" runat="server" Width="319px" Height="93px"></asp:TextBox>
+                &nbsp;<asp:TextBox ID="tbDescripcion" runat="server" 
+                    Width="319px" Height="93px" TextMode="MultiLine"></asp:TextBox>
             </p>
             <p style="width: 100%">
                 Precio salida:
