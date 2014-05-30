@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BySLib.EN;
+using BySLib.BL;
 namespace BySWeb
 {
     public partial class Producto : System.Web.UI.Page
@@ -12,8 +13,8 @@ namespace BySWeb
         protected void Page_Load(object sender, EventArgs e)
         {
                 //Informacion sobre el producto de la interfaz de producto.
-            int id = Int32.Parse(Request.QueryString["id"]);
-            ProductoEN prod=new ProdcutoEN(id);
+           /* int id = Int32.Parse(Request.QueryString["id"]);
+            ProductoEN prod= new ProductoEN(id);
             lblNombreProd.Text=prod.Nombre;
             lblDescripcion.Text=prod.Descripcion;
             lblCantidadRest.Text=prod.CantidadRestante.ToString();
@@ -26,7 +27,7 @@ namespace BySWeb
             UsuarioEN user = new UsuarioEN(prod.Propietario);
             lblNombreProp.Text = user.Nombre.ToString();
             lblPuntUser.Text=user.Puntacion.ToString();
-            imgUsuario.ImageUrl=user.RutaImg;
+            imgUsuario.ImageUrl=user.RutaImg; */
         
         }
 
@@ -39,9 +40,9 @@ namespace BySWeb
 
             int id = Int32.Parse(Request.QueryString["id"]);
 
-            productoActual.GetById(id);
-            PujaEN pujaActual = productoactual.getultimapuja();
-            float mostrar = pujaactual.valor;
+            productoActual = ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), id);
+            PujaEN pujaActual = PujaBL.GetLastPujaByProductoId(productoActual.Id);
+            float mostrar = pujaActual.valor;
 
             if(mostrar == -1{
 
