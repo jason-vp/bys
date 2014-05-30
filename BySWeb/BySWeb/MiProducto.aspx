@@ -38,13 +38,12 @@
             </p>
             <p style="width: 100%">
                 Categoría:
-                <asp:DropDownList ID="Categoria" runat="server" Height="16px" Width="87px">
-                    <asp:ListItem>Categoria1</asp:ListItem>
-                </asp:DropDownList>
-                Subcategoría
-                <asp:DropDownList ID="Subcategoria" runat="server" Height="16px" Width="93px">
-                    <asp:ListItem>SubCategoria</asp:ListItem>
-                </asp:DropDownList>
+                <asp:Label ID="lbcategoria" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;
+            </p>
+            <p style="width: 100%">
+                Subcategoría:
+                <asp:Label ID="lbSubcategoria" runat="server" Text="Label"></asp:Label>
             </p>
         </div>
         <p>

@@ -22,11 +22,11 @@ namespace BySWeb
                 tbPrecioSalida.Text = prod.PrecioSalida.ToString();
                 tbCompra.Text = prod.PrecioCompra.ToString();
                 tbCantidadRestante.Text = prod.CantidadRestante.ToString();
-                ImageProducto.ImageUrl = prod.Fotos[0].Ruta;
-                SubcategoriaEN subcat = SubcategoriaBL.GetById(BySWeb.Utilities.Tools.GetDbCnxStr(), prod.Subcategoria );
-                CategoriaEN cat = CategoriaBL.GetById(BySWeb.Utilities.Tools.GetDbCnxStr(), subcat.Padre);
-                Categoria.Text = cat.Nombre;
-                Subcategoria.Text = subcat.Nombre;
+                //ImageProducto.ImageUrl = prod.Fotos[0].Ruta;
+                SubcategoriaEN subcat = SubcategoriaBL.GetById(Utilities.Tools.GetDbCnxStr(), prod.Subcategoria );
+                CategoriaEN cat = CategoriaBL.GetById(Utilities.Tools.GetDbCnxStr(), subcat.Padre);
+                lbcategoria.Text = cat.Nombre;
+                lbSubcategoria.Text = subcat.Nombre;
                 
                
                 if (prod.PrecioCompra == -1)
