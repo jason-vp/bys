@@ -12,7 +12,7 @@ namespace BySWeb
         protected void Page_Load(object sender, EventArgs e)
         {
                 //Informacion sobre el producto de la interfaz de producto.
-           /** int id = Int32.Parse(Request.QueryString["id"]);
+            int id = Int32.Parse(Request.QueryString["id"]);
             ProductoEN prod=new ProdcutoEN(id);
             lblNombreProd.Text=prod.Nombre;
             lblDescripcion.Text=prod.Descripcion;
@@ -27,31 +27,30 @@ namespace BySWeb
             lblNombreProp.Text = user.Nombre.ToString();
             lblPuntUser.Text=user.Puntacion.ToString();
             imgUsuario.ImageUrl=user.RutaImg;
-        **/
+        
         }
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            //ProductoEN productoActual = new ProductoEN();
+            ProductoEN productoActual = new ProductoEN();
 
-            //float pujaActuaWeb = float.Parse(LblPujaActual.Text);
+            float pujaActuaWeb = float.Parse(lblPujaActual.Text);
 
 
-            //int id = Int32.Parse(Request.QueryString["id"]);
+            int id = Int32.Parse(Request.QueryString["id"]);
 
-            //productoactual.getproductobyid(id);
+            productoActual.GetById(id);
+            PujaEN pujaActual = productoactual.getultimapuja();
+            float mostrar = pujaactual.valor;
 
-            //pujaen pujaactual = productoactual.getultimapuja();
-            //float mostrar = pujaactual.valor;
+            if(mostrar == -1{
 
-            //if(mostrar == -1{
+                mostrar = productoactual.preciosalida;
+            }
+            if(mostrar != pujaactuaweb){
 
-            //    mostrar = productoactual.preciosalida;
-            //}
-            //if(mostrar != pujaactuaweb){
-
-            //    lblpujaactual.text = mostrar.tostring();
-            //}
+                lblPujaActual.Text = mostrar.ToString;
+            }
         }
     }
 }
