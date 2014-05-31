@@ -15,20 +15,23 @@ namespace BySWeb
         {
             try
             {
-                int id = Convert.ToInt32(Session["userId"]);
-                UsuarioEN user=UsuarioBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), id);
-                tbNombre.Text = user.Nombre;
-                tbmail.Text = user.Mail;
-                tbDireccion.Text = user.Direccion;
-                Localidad.Text = user.Poblacion;
-                CP.Text = user.CodigoPostal.ToString();
-                tbtlf.Text = user.Telf.ToString();
-                tbmail.Text = user.Mail;
-                Label3.Text = user.Puntacion.ToString();
-                Label1.Text = user.Nick;
-                Credito.Text = user.Credito.ToString();
-                //lbError.Text = "";
-                //PnlError.Visible = false;
+                if (!Page.IsPostBack)
+                {
+                    int id = Convert.ToInt32(Session["userId"]);
+                    UsuarioEN user = UsuarioBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), id);
+                    tbNombre.Text = user.Nombre;
+                    tbmail.Text = user.Mail;
+                    tbDireccion.Text = user.Direccion;
+                    Localidad.Text = user.Poblacion;
+                    CP.Text = user.CodigoPostal.ToString();
+                    tbtlf.Text = user.Telf.ToString();
+                    tbmail.Text = user.Mail;
+                    Label3.Text = user.Puntacion.ToString();
+                    Label1.Text = user.Nick;
+                    Credito.Text = user.Credito.ToString();
+                    //lbError.Text = "";
+                    //PnlError.Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -46,8 +49,7 @@ namespace BySWeb
 
             try
             {
-               
-               
+                editarUser();
             }
             catch (Exception ex)
             {
@@ -59,25 +61,29 @@ namespace BySWeb
 
         protected void editarUser()
         {
-            int id = Int32.Parse(Request.QueryString["userID"]);
+            int id = Convert.ToInt32(Session["userId"]);
             UsuarioEN user = UsuarioBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), id);
             //Se comprueba que el password introducido sea correcto antes de confirmar los cambios.
-            if (PasswordHash.CreateHash(Contraseña_Actual.Text) == user.Password)
-            {
-                //sustitucion de los valores del objeto auxiliar con los datos del usuario de la BBDD
-                user.Nombre = tbNombre.Text;
-                user.Direccion = tbDireccion.Text;
-                user.Poblacion = Localidad.Text;
-                user.CodigoPostal = Int32.Parse(CP.Text);
-                user.Telf = Int32.Parse(tbtlf.Text);
-                user.Mail = tbmail.Text;
-                if (tbtlf.Text.Trim().Length != 9)
-                {
-                    throw new Exception("Error Datos Incorrectos");
-                }
-                //Funcion de actualización de la BBDD.
-                UsuarioBL.UpdateFromEN(Utilities.Tools.GetDbCnxStr(), user);
-            }
+            //if (PasswordHash.CreateHash(Contraseña_Actual.Text) == user.Password)
+            //{
+                    //sustitucion de los valores del objeto auxiliar con los datos del usuario de la BBDD
+                    user.Nombre = tbNombre.Text;
+                    user.Direccion = tbDireccion.Text;
+                    user.Poblacion = Localidad.Text;
+                    user.CodigoPostal = Int32.Parse(CP.Text);
+                    user.Telf = Int32.Parse(tbtlf.Text);
+                    user.Mail = tbmail.Text;
+                    if (tbtlf.Text.Trim().Length != 9)
+                    {
+                        throw new Exception("Error Datos Incorrectos");
+                    }
+                    //Funcion de actualización de la BBDD.
+                    UsuarioBL.UpdateFromEN(Utilities.Tools.GetDbCnxStr(), user);
+            // }
+            //else
+            //{
+            //    ValidatorPassword2.Visible = true;
+            //}
         }
 
         protected void ComprobarNombre(object sender, ServerValidateEventArgs e)

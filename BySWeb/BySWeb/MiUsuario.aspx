@@ -78,7 +78,7 @@
 
     <p>
         <strong>Nombre&nbsp;&nbsp;&nbsp;&nbsp; 
-        <asp:TextBox ID="tbNombre" runat="server" Width="350px"></asp:TextBox>
+        <asp:TextBox ID="tbNombre" runat="server" Width="350px" ></asp:TextBox>
         </strong>
         <div class="validator">
             <asp:CustomValidator ID="CustomValidator1" ControlToValidate="tbNombre"
