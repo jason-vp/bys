@@ -67,15 +67,6 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.CustomValidator CustomValidator2;
         
         /// <summary>
-        /// Control Provincia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Provincia;
-        
-        /// <summary>
         /// Control Localidad.
         /// </summary>
         /// <remarks>
@@ -128,6 +119,15 @@ namespace BySWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbmail;
+        
+        /// <summary>
+        /// Control Label3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
         /// Control Label1.

@@ -15,6 +15,7 @@ namespace BySWeb
         {
             try 
             {
+
                 int id = Int32.Parse(Request.QueryString["id"]);
                 ProductoEN prod = ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), id);
                 tbNombreProducto.Text = prod.Nombre;
@@ -22,7 +23,7 @@ namespace BySWeb
                 tbPrecioSalida.Text = prod.PrecioSalida.ToString();
                 tbCompra.Text = prod.PrecioCompra.ToString();
                 tbCantidadRestante.Text = prod.CantidadRestante.ToString();
-                //ImageProducto.ImageUrl = prod.Fotos[0].Ruta;
+                ImageProducto.ImageUrl = prod.Fotos[0].Ruta;
                 SubcategoriaEN subcat = SubcategoriaBL.GetById(Utilities.Tools.GetDbCnxStr(), prod.Subcategoria );
                 CategoriaEN cat = CategoriaBL.GetById(Utilities.Tools.GetDbCnxStr(), subcat.Padre);
                 lbcategoria.Text = cat.Nombre;
@@ -48,6 +49,21 @@ namespace BySWeb
             { 
             
             }
+        }
+
+        //Función para editar un producto desde la interfaz de MiProducto
+        protected void editar()
+        {
+            //Creación de objeto  con los datos modificados
+            ProductoEN prod = ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), Int32.Parse(Request.QueryString["id"]));
+            prod.Nombre = tbNombreProducto.Text;
+            prod.Descripcion = tbDescripcion.Text;
+            prod.PrecioSalida = Int32.Parse(tbPrecioSalida.Text);
+            prod.PrecioCompra = Int32.Parse(tbCompra.Text);
+            prod.CantidadRestante = Int32.Parse(tbCantidadRestante.Text);
+            //prod.Fotos=
+            //funcion de edición en la bd a partir del objeto EN
+            ProductoBL.UpdateFromEN(Utilities.Tools.GetDbCnxStr(), prod);
         }
 
         //protected void TextBox2_TextChanged(object sender, EventArgs e)

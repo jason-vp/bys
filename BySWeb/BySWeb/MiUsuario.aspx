@@ -99,9 +99,7 @@
            Display="Dynamic" ValidateEmptyText="true" ForeColor="Red"></asp:CustomValidator>
        </div>
     <p>
-        <strong>Provincia</strong>&nbsp;&nbsp;
-        <asp:TextBox ID="Provincia" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp; <strong>Poblacion</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+        <strong>Poblacion</strong>&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="Localidad" runat="server"></asp:TextBox>
 &nbsp;&nbsp; <strong>C.P.</strong>&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="CP" 
             runat="server" Width="75px"></asp:TextBox>
@@ -126,7 +124,9 @@
 &nbsp;&nbsp;&nbsp; <strong>&nbsp;</strong><p>
         <strong>Email&nbsp;&nbsp;&nbsp;&nbsp; </strong>
         <asp:TextBox ID="tbmail" runat="server" TextMode="Email" Width="150px"></asp:TextBox>
-    &nbsp;&nbsp;&nbsp;&nbsp; <strong>Puntuacion Usuario&nbsp;&nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp;&nbsp; <strong>Puntuacion&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp; Usuario&nbsp;&nbsp;&nbsp;&nbsp; 
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         </strong>
         <div class="validator" style="right: 50px; position: inherit;">
