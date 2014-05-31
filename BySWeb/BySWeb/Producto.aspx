@@ -138,72 +138,57 @@
         </div>
     </asp:Panel>
 
-        <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>&nbsp;COMENTARIOS:</strong></p> </br>
+        <h3 style="margin-left:20px; margin-bottom:20px">COMENTARIOS:</h3>
+
+       <!--<asp:Repeater runat="server" ID="RPTcomentariosProducto">
+            <ItemTemplate>
+                <div class="comentario">
+                    <p style="margin-left:20px">
+                        Usuario: <asp:HyperLink ID="usuarioComentario1" runat="server" NavigateUrl='<# string.Format("~/DetallesUsuario.aspx?id={0}", ((BySLib.EN.UsuarioEN)Container.DataItem).Id) %>' style="margin-right:15px">
+                                    <asp:Label ID="Label1" runat="server"> <# ((BySLib.EN.UsuarioEN)Container.DataItem).Nombre %></asp:Label>
+                                 </asp:HyperLink>
+                        Producto: <asp:HyperLink ID="productoComentario1" runat="server" style="margin-right:15px">
+                                    <asp:Label ID="Label2" runat="server"> <# ((BySLib.EN.ProductoEN)Container.DataItem).Nombre %></asp:Label>
+                                  </asp:HyperLink>
+                        Puntuación:<asp:Label ID="lblPuntComent1" runat="server" style="margin-left:10px"><# ((BySLib.EN.ProductoEN)Container.DataItem)./*TODO*/ %></asp:Label>
+                    </p>
+                    <p style="margin-left:20px">
+                        Descripción:<asp:Label ID="lblDescripcionComent1" runat="server" Text="Entregadas en mano y pagado en negro, muy buen servicio." style="margin-left:20px"></asp:Label>
+                    </p>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater> -->
+
         <div class="comentario">
-    <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
-              <asp:HyperLink ID="usuarioComentario1" runat="server" NavigateUrl="~/DetallesUsuario.aspx">Perico90</asp:HyperLink>
-        &nbsp;&nbsp;&nbsp;
-
-         Producto:
-              <asp:HyperLink ID="productoComentario1" runat="server">Barco velero</asp:HyperLink>
-        &nbsp;&nbsp; Puntuación:&nbsp;<asp:Label ID="lblPuntComent1" runat="server"
-                Text="10"></asp:Label>
+            <p style="margin-left:20px">
+                Usuario: <asp:HyperLink ID="usuarioComentario1" runat="server" NavigateUrl="~/DetallesUsuario.aspx" style="margin-right:15px">Perico90</asp:HyperLink>
+                Producto: <asp:HyperLink ID="productoComentario1" runat="server" style="margin-right:15px">Barco velero</asp:HyperLink>
+                Puntuación:<asp:Label ID="lblPuntComent1" runat="server" Text="5" style="margin-left:10px"></asp:Label>
             </p>
-            <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;
-            <asp:Label ID="lblDescripcionComent1" runat="server"
-                Text="Entregadas en mano y pagado en negro, muy buen servicio."></asp:Label>
-        &nbsp;&nbsp;&nbsp; 
-        &nbsp;</p>
-        </div>
-        <div class="comentario">
-    <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
-              <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/DetallesUsuario.aspx">Perico90</asp:HyperLink>
-        &nbsp;&nbsp;&nbsp;
-
-         Producto:
-              <asp:HyperLink ID="HyperLink2" runat="server">Barco velero</asp:HyperLink>
-        &nbsp;&nbsp; Puntuación:&nbsp;<asp:Label ID="lblPuntComent2" runat="server"
-                Text="10"></asp:Label>
+            <p style="margin-left:20px">
+                Descripción:<asp:Label ID="lblDescripcionComent1" runat="server" Text="Entregadas en mano y pagado en negro, muy buen servicio." style="margin-left:20px"></asp:Label>
             </p>
-            <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;
-            <asp:Label ID="lblDescripcionComent2" runat="server"
-                Text="Entregadas en mano y pagado en negro, muy buen servicio."></asp:Label>
-        &nbsp;&nbsp;&nbsp; 
-        &nbsp;</p>
         </div>
-    </div>
-    <div id="hacer comentario">
-    <p><h3>Realizar comentario:</h3></p>
-            <div class="comentario">
-            <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:
-              <a href="/DetallesUsuario.aspx">Perico90</a>
-        &nbsp;&nbsp;&nbsp;
-
-         Producto:
-              <a href="/Producto.aspx">Barco velero</a>
-        &nbsp;&nbsp; Puntuación:&nbsp;
-                <asp:DropDownList ID="DropDownList1" runat="server">
-                    <asp:ListItem>1</asp:ListItem>
-                    <asp:ListItem>2</asp:ListItem>
-                    <asp:ListItem>3</asp:ListItem>
-                    <asp:ListItem>4</asp:ListItem>
-                    <asp:ListItem>5</asp:ListItem>
-                </asp:DropDownList>
-            </p>
-            <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Descripción:&nbsp;&nbsp; &nbsp;<asp:TextBox 
-            ID="TextBox3" runat="server" Height="100px" Width="700px" style="margin-left:20px" Value=""></asp:TextBox>
-        &nbsp;&nbsp;&nbsp; 
-        &nbsp;</p>
-        <asp:Button ID="btnEnviarComent" runat="server" Text="Enviar" 
-            Width="100px"  />
-            </div>
-        </div>
+        
+        <div>
+            <h3 style="margin-left:20px; margin-bottom:20px">REALIZAR COMENTARIO:</h3>
+                <div class="comentario">
+                <p style="margin-left:20px">
+                    Usuario: <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/DetallesUsuario.aspx" style="margin-right:15px">Perico90</asp:HyperLink>
+                    Producto: <asp:HyperLink ID="HyperLink2" runat="server" style="margin-right:15px">Barco velero</asp:HyperLink>
+                    Puntuación:
+                    <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                        <asp:ListItem>4</asp:ListItem>
+                        <asp:ListItem>5</asp:ListItem>
+                    </asp:DropDownList>
+                </p>
+                <p style="margin-left:20px">
+                Descripción: <asp:TextBox ID="TextBox3" runat="server" Height="100px" Width="700px" Value=""></asp:TextBox>
+                </p>
+                    <asp:Button ID="btnEnviarComent" runat="server" Text="Enviar" Width="100px" style="margin-left:20px" /> <!-- Hay que controlar la DIVitis -->
+                </div>
         </div>
 </asp:Content>

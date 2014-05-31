@@ -120,6 +120,16 @@ namespace BySLib
         }
 
 
+        public static List<Compra> GetByIdProducto(BySBDDataContext p_ctx, int p_id)
+        {
+            return (from t1 in p_ctx.Compra
+                    where t1.producto == p_id
+                    && t1.eliminado == false
+                    select t1).ToList();
+
+        }
+
+
         #endregion
 
 

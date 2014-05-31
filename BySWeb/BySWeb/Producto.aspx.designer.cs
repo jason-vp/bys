@@ -202,6 +202,15 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.Label lbError;
         
         /// <summary>
+        /// Control RPTcomentariosProducto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RPTcomentariosProducto;
+        
+        /// <summary>
         /// Control usuarioComentario1.
         /// </summary>
         /// <remarks>
@@ -254,24 +263,6 @@ namespace BySWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
-        
-        /// <summary>
-        /// Control lblPuntComent2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPuntComent2;
-        
-        /// <summary>
-        /// Control lblDescripcionComent2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescripcionComent2;
         
         /// <summary>
         /// Control DropDownList1.

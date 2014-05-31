@@ -40,9 +40,32 @@ namespace BySLib.BL
         #region Getting Data
         public static List<CompraEN> GetByIdPropietarioToEN(string p_dbCnxStr, int p_id)
         {
-            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
-                return CompraBL.ConvertToListCompraEn(CompraCAD.GetByIdPropietario(cnx, p_id));
 
+            List<CompraEN> ls = new List<CompraEN>();
+            List<Compra> lsProdu = new List<Compra>();
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+
+                lsProdu = CompraCAD.GetByIdPropietario(cnx, p_id);
+
+            foreach (Compra c in lsProdu)
+                ls.Add(CompraBL.ConvertToEN(c));
+            return ls;
+        }
+
+        public static List<CompraEN> GetByIdProductoToEN(string p_dbCnxStr, int p_id)
+        {
+
+            List<CompraEN> ls = new List<CompraEN>();
+            List<Compra> lsProdu = new List<Compra>();
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+
+                lsProdu = CompraCAD.GetByIdProducto(cnx, p_id);
+
+            foreach (Compra c in lsProdu)
+                ls.Add(CompraBL.ConvertToEN(c));
+            return ls;
         }
 
         #endregion
