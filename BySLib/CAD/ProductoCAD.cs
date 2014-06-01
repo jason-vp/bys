@@ -53,6 +53,13 @@ namespace BySLib.EN
             update.descripcion = p_prod.descripcion;
             update.precio_compra = p_prod.precio_compra;
             update.precio_sal = p_prod.precio_sal;
+            update.subcat = p_prod.subcat;
+            update.estado = p_prod.estado;
+            update.fecha_fin = p_prod.fecha_fin;
+            update.cant_fin = p_prod.cant_fin;
+            update.cant_ini = p_prod.cant_ini;
+            update.foto = p_prod.foto;
+
             /*update. = p_prod.CustomName;
             update.CustomPrecioEuro = p_prod.CustomPrecioEuro;
             update.CustomPrecioDolar = p_prod.CustomPrecioDolar;

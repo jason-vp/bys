@@ -68,8 +68,8 @@ namespace BySWeb
             int id = Convert.ToInt32(Session["userId"]);
             UsuarioEN user = UsuarioBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), id);
             //Se comprueba que el password introducido sea correcto antes de confirmar los cambios.
-            //if (PasswordHash.CreateHash(Contraseña_Actual.Text) == user.Password)
-            //{
+            if (PasswordHash.ValidatePassword(Contraseña_Actual.Text, user.Password))
+            {
                     //sustitucion de los valores del objeto auxiliar con los datos del usuario de la BBDD
                     user.Nombre = tbNombre.Text;
                     user.Direccion = tbDireccion.Text;
@@ -83,11 +83,11 @@ namespace BySWeb
                     }
                     //Funcion de actualización de la BBDD.
                     UsuarioBL.UpdateFromEN(Utilities.Tools.GetDbCnxStr(), user);
-            // }
-            //else
-            //{
-            //    ValidatorPassword2.Visible = true;
-            //}
+            }
+            else
+            {
+                Label4.Visible = true;
+            }
         }
         //---------------------------------------------------------------------//
         //----------------------------VALIDACIONES-----------------------------//

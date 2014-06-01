@@ -252,7 +252,7 @@ namespace BySLib.BL
                 fecha_fin = prod.FechaFin,
                 usuario = prod.Propietario,
                 subcat = prod.Subcategoria,
-                FotosProducto = ConvertToEntitytFotosEn(prod.Fotos),
+                foto = prod.Foto,
                 eliminado = prod.Eliminado
 
             };
@@ -273,7 +273,7 @@ namespace BySLib.BL
                 FechaFin = prod.fecha_fin,
                 Propietario = prod.usuario,
                 Subcategoria = prod.subcat,
-                Fotos = ConvertToListFotosEn(prod.FotosProducto),
+                Foto = prod.foto,
                 Eliminado = prod.eliminado
 
             };

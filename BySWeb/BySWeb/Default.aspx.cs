@@ -16,8 +16,8 @@ namespace BySWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<ProductoEN> lProductosDestacados = /*ProductoBL.GetByDestacadosEN(Tools.GetDbCnxStr());*/null;
-            List<ProductoEN> lUltimosProductos = null;
+            List<ProductoEN> lProductosDestacados = ProductoBL.GetByDestacadosEN(Tools.GetDbCnxStr());
+            List<ProductoEN> lUltimosProductos = ProductoBL.GetByUltimosEN(Tools.GetDbCnxStr());
 
             //SubcategoriaEN sub = SubcategoriaBL.GetById(Tools.GetDbCnxStr(), 1); 
             
