@@ -10,6 +10,7 @@ namespace BySLib.BL
     #region CRUD'S
     public static class ProductoBL
     {
+        //Crea un producto a partir de un ProductoEN
         public static void Create(string dbCnxStr, ProductoEN prod)
         {
             using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(dbCnxStr))
@@ -17,13 +18,14 @@ namespace BySLib.BL
                 ProductoCAD.Create(cnx, ConvertFromEN(prod));
             }
         }
+        //Actualiza los datos de un producto a partir de un productoEN.
         public static bool UpdateFromEN(string p_dbCnxStr, ProductoEN p_com)
         {
             using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
                 return ProductoCAD.Update(cnx, ProductoBL.ConvertFromEN(p_com));
 
         }
-
+        //Elimina un producto de la BD poniendo la variable eliminado a false
         public static bool Delete(string p_dbCnxStr, int p_id)
         {
 
@@ -36,7 +38,7 @@ namespace BySLib.BL
 
     #endregion
         #region Getting Data
-
+        //Devuelve un producto EN a partir de un ID de producto.
         public static ProductoEN GetByIdToEN(string p_dbCnxStr, int p_id)
         {
             using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
@@ -44,6 +46,7 @@ namespace BySLib.BL
 
         }
 
+        //Devuelve una lista de de productoEn a partir de un string.
         public static List<ProductoEN> GetByBusquedaEN(string p_dbCnxStr, string p_bus)
         {
 
@@ -59,6 +62,8 @@ namespace BySLib.BL
             return ls;
         }
 
+
+        //Devuleve la lista de productos de una subcategoria 
         public static List<ProductoEN> GetBySubcategoriaEN(string p_dbCnxStr, int p_id)
         {
 
@@ -74,6 +79,7 @@ namespace BySLib.BL
             return ls;
         }
 
+        //Devuelve una lista de productos de una categoria.
         public static List<ProductoEN> GetByCategoriaEN(string p_dbCnxStr, int p_id)
         {
 
@@ -89,6 +95,7 @@ namespace BySLib.BL
             return ls;
         }
 
+        //Devuelve una lista de productos de un propietario.
         public static List<ProductoEN> GetByIdPropietarioEN(string p_dbCnxStr, int p_id)
         {
 
@@ -104,6 +111,7 @@ namespace BySLib.BL
             return ls;
         }
 
+        //Devuelve la lista de productos en los que a pujado un usuario
         public static List<ProductoEN> GetByPujadosIdPropietarioEN(string p_dbCnxStr, int p_id)
         {
 
@@ -119,6 +127,7 @@ namespace BySLib.BL
             return ls;
         }
 
+        //Devuelve una lista con los productos que ha comprado un usuario.
         public static List<ProductoEN> GetByCompradosIdPropietarioEN(string p_dbCnxStr, int p_id)
         {
 
@@ -133,7 +142,7 @@ namespace BySLib.BL
                 ls.Add(ProductoBL.ConvertToEN(c));
             return ls;
         }
-
+        //Devuelve una lista con los ultimos productos de la BD
         public static List<ProductoEN> GetByUltimosEN(string p_dbCnxStr)
         {
 
@@ -149,6 +158,7 @@ namespace BySLib.BL
             return ls;
         }
 
+        //Devuelve una lista de los productos destacados.
         public static List<ProductoEN> GetByDestacadosEN(string p_dbCnxStr)
         {
             List<ProductoEN> ls = new List<ProductoEN>();
@@ -169,9 +179,7 @@ namespace BySLib.BL
         #endregion
         #region Convert To DTO
 
-
-
-
+        //devuelve una lista de las fotos a partir de la BD.
         private static List<FotosProductoEN> ConvertToListFotosEn(EntitySet<FotosProducto> p_lsFotos)
         {
             if (p_lsFotos == null || p_lsFotos.Count <= 0) //TODO: aqui falla algo
@@ -183,6 +191,7 @@ namespace BySLib.BL
 
             return ls;
         }
+        //Convierte un lista de FotosProducto a partir de una lista de productoEN.
         private static EntitySet<FotosProducto> ConvertToEntitytFotosEn(List<FotosProductoEN> p_lsFotos)
         {
             if (p_lsFotos == null || p_lsFotos.Count <= 0)
@@ -194,9 +203,7 @@ namespace BySLib.BL
 
             return ls;
         }
-
-
-
+        //Devuelve una FOtnEN a partir de una ocurrencia de la BD.
         private static FotosProductoEN ConvertToFotosEN(FotosProducto p_fotos)
         {
             //#region Check Parameters
@@ -215,6 +222,7 @@ namespace BySLib.BL
 
         }
 
+        //Devuelve una FotoProducto a partir de una FotosProductoEN
         private static FotosProducto ConvertFromFotosEN(FotosProductoEN p_fotos)
         {
             //#region Check Parameters
@@ -232,11 +240,8 @@ namespace BySLib.BL
             };
 
         }
-        
 
-
-
-
+        //Devuelve un Producto a partir de un ProductoEN.
         internal static Producto ConvertFromEN(ProductoEN prod)
         {
             return new Producto()
@@ -258,6 +263,7 @@ namespace BySLib.BL
             };
         }
 
+        //Devuelve un ProductoEN a partir de un Producto.
         private static ProductoEN ConvertToEN(Producto prod)//revisar
         {
             return new ProductoEN()

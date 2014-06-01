@@ -21,6 +21,7 @@ namespace BySWeb
 
                     if (Request.QueryString["id"] != null)
                     {
+                        
                         int id = Int32.Parse(Request.QueryString["id"]);
                         ProductoEN prod = ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), id);
                         tbNombreProducto.Text = prod.Nombre;

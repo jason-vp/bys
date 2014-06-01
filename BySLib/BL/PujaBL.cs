@@ -6,6 +6,7 @@ namespace BySLib.BL
     public static class PujaBL
     {
         #region CRUD's
+        //Crea una puja a prtir de un PujaEN
         public static void CreateFromEN(string p_dbCnxStr, PujaEN p_cli)
         {
             using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
@@ -13,6 +14,7 @@ namespace BySLib.BL
 
         }
 
+        //Actualiza los datos de una puja a partir de un PujaEN
         public static bool UpdateFromEN(string p_dbCnxStr, PujaEN p_cli)
         {
             using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
@@ -23,7 +25,7 @@ namespace BySLib.BL
 
         #endregion
 
-
+        //Devuelve la ultima puja de un producto a partir de su id.
         public static PujaEN GetLastPujaByProductoId(string p_dbCnxStr, int idprod)
         {
             using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
@@ -31,7 +33,7 @@ namespace BySLib.BL
 
         }
 
-
+        //Devuelve una puja a partir de un PujaEN.
         internal static Puja ConvertFromEN(PujaEN prod)
         {
             return new Puja()
@@ -46,7 +48,7 @@ namespace BySLib.BL
             };
         }
 
-
+        //Devuelve un PujaEN a partir de una Puja
         private static PujaEN ConvertToEN(Puja prod)//revisar
         {
             if (prod == null)

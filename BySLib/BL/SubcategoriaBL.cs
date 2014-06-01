@@ -13,6 +13,7 @@ namespace BySLib.BL
 
         #region Getting Data
 
+        //Devuelve una subcategoria a partir de su ID
         public static SubcategoriaEN GetById(string p_dbCnxStr, int p_id)
         {
 
@@ -27,7 +28,7 @@ namespace BySLib.BL
         #endregion
 
         #region Convert To EN
-
+        //Devuelve una SubcategoriaEN a partir EN a partir de una Subcategoria.
         private static SubcategoriaEN ConvertToSubEN(Subcategoria p_sub)
         {
             //#region Check Parameters
@@ -47,7 +48,7 @@ namespace BySLib.BL
             };
 
         }
-
+        //devuelve una Subcategoria a partir de una SubcategoriaEN
         private static Subcategoria ConvertFromSubEN(SubcategoriaEN p_sub)
         {
             //#region Check Parameters

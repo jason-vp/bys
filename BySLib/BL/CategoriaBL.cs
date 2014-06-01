@@ -11,11 +11,9 @@ namespace BySLib.BL
 
     public static class CategoriaBL
     {
-
-
-
         #region Getting Data
 
+        //Obiene una categoria a partir de su ID
         public static CategoriaEN GetById(string p_dbCnxStr, int p_id)
         {
 
@@ -28,6 +26,7 @@ namespace BySLib.BL
 
         }
 
+        //Obtiene una lista de todas las categorias
         public static List<CategoriaEN> GetAll(string p_dbCnxStr)
         {
 
@@ -48,7 +47,7 @@ namespace BySLib.BL
         #endregion
 
         #region Convert To EN
-
+        //Devuelve la lista de las subcategorias de una clase padre que se pasa por parametro.
         private static List<SubcategoriaEN> ConvertToListSubcategoriaEn(EntitySet<Subcategoria> p_sub)
         {
             if (p_sub == null || p_sub.Count <= 0) //TODO: aqui falla algo
@@ -60,6 +59,7 @@ namespace BySLib.BL
 
             return ls;
         }
+        //Convierte una EntitySet en una Subcategoria.
         private static EntitySet<Subcategoria> ConvertToEntitytSubcategoriaEn(List<SubcategoriaEN> p_sub)
         {
             if (p_sub == null || p_sub.Count <= 0)
@@ -71,6 +71,7 @@ namespace BySLib.BL
 
             return ls;
         }
+        //Convierte un conjunto de datos en una subcategoria y la devuelve.
         private static SubcategoriaEN ConvertToSubEN(Subcategoria p_sub)
         {
             //#region Check Parameters
@@ -88,7 +89,7 @@ namespace BySLib.BL
             };
 
         }
-
+        //Convierte de una EN en una Subcategoria.
         private static Subcategoria ConvertFromSubEN(SubcategoriaEN p_sub)
         {
             //#region Check Parameters
@@ -106,7 +107,7 @@ namespace BySLib.BL
             };
 
         }
-
+        //
         private static CategoriaEN ConvertToCatEN(Categoria p_sub)
         {
             //#region Check Parameters
@@ -127,7 +128,7 @@ namespace BySLib.BL
             };
 
         }
-
+        //Convierte una CategoriaEN en una Categoria.
         private static Categoria ConvertFromCatEN(CategoriaEN p_sub)
         {
             //#region Check Parameters
