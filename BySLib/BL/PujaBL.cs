@@ -3,6 +3,7 @@ using BySLib.LINQ;
 
 namespace BySLib.BL
 {
+    //Capa de negocio de la puja
     public static class PujaBL
     {
         #region CRUD's

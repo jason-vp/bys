@@ -7,6 +7,7 @@ using BySLib.EN;
 
 namespace BySLib.BL
 {
+    //Capa de negocio de la provincia
     public static class ProvinciaBL
     {
         // Devuelve una ProvinciaEN a partir de un id.

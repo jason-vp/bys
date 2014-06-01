@@ -8,7 +8,7 @@ using System.Data.Linq;
 
 namespace BySLib.BL
 {
-
+    //Capa de negocio de la categoria
     public static class CategoriaBL
     {
         #region Getting Data

@@ -7,7 +7,7 @@ using BySLib.EN;
 
 namespace BySLib.BL
 {
-
+    //Capa de negocio de Subcategoria
     public static class SubcategoriaBL{
 
 

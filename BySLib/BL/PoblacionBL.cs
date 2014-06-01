@@ -6,6 +6,7 @@ using BySLib.LINQ;
 
 namespace BySLib.BL
 {
+    //Capa de negocio de la poblacion
     public static class PoblacionBL
     {
         //Obtiene una lista de poblaciones a partir de un codigo postal

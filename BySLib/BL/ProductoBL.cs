@@ -6,7 +6,7 @@ using BySLib.LINQ;
 
 namespace BySLib.BL
 {
-
+    //Capa de negocio del producto
     #region CRUD'S
     public static class ProductoBL
     {

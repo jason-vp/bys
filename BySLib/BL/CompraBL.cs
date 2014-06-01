@@ -8,6 +8,7 @@ using System.Data.Linq;
 
 namespace BySLib.BL
 {
+    //Capa de negocio de la clase compra
     public static class CompraBL
     {
         #region CRUD's
@@ -102,7 +103,7 @@ namespace BySLib.BL
         }
 
 
-        Devuelve una compra a partir de una CompraEN
+        //Devuelve una compra a partir de una CompraEN
         internal static Compra ConvertFromEN(CompraEN prod)
         {
             return new Compra()

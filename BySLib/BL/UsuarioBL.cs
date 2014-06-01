@@ -3,6 +3,7 @@ using BySLib.LINQ;
 
 namespace BySLib.BL
 {
+    //Capa de negocio del Usuario
     public class UsuarioBL
     {
         #region CRUD's
