@@ -44,6 +44,21 @@ namespace BySLib.BL
 
         }
 
+        public static List<ProductoEN> GetByBusquedaEN(string p_dbCnxStr, string p_bus)
+        {
+
+            List<ProductoEN> ls = new List<ProductoEN>();
+            List<Producto> lsProdu = new List<Producto>();
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+
+                lsProdu = ProductoCAD.GetByBusqueda(cnx, p_bus);
+
+            foreach (Producto c in lsProdu)
+                ls.Add(ProductoBL.ConvertToEN(c));
+            return ls;
+        }
+
         public static List<ProductoEN> GetBySubcategoriaEN(string p_dbCnxStr, int p_id)
         {
 

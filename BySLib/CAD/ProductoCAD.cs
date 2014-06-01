@@ -156,14 +156,16 @@ namespace BySLib.EN
 
         }
 
-        //public static List<Producto> GetByBusqueda(BySBDDataContext p_ctx, string p_bus)
-        //{
-        //    return (from t1 in p_ctx.Producto
-        //            where t1.usuario == p_bus
-        //            && t1.eliminado == false
-        //            select t1).ToList();
+        public static List<Producto> GetByBusqueda(BySBDDataContext p_ctx, string p_bus)
+        {
+            return (from t1 in p_ctx.Producto
+                    where (t1.nombre.Contains(p_bus) 
+                    || t1.descripcion.Contains(p_bus)) 
+                    && t1.eliminado == false
+                    && t1.estado == "Activo"
+                    select t1).ToList();
 
-        //}
+        }
 
         public static List<Producto> GetBySubcategoria(BySBDDataContext p_ctx, int p_idSub)
         {
