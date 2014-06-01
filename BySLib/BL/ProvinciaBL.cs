@@ -7,7 +7,7 @@ using BySLib.EN;
 
 namespace BySLib.BL
 {
-    public class ProvinciaBL
+    public static class ProvinciaBL
     {
 
         public static ProvinciaEN GetById(string p_dbCnxStr, int p_id)
