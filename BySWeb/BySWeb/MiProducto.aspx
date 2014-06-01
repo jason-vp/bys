@@ -77,12 +77,13 @@
             </p>
             <p style="width: 100%">
                 Categoría:
-                <asp:Label ID="lbcategoria" runat="server" Text="Label"></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;
+                 <asp:Label ID="lbCategoria" runat="server" Text="Label"></asp:Label>
             </p>
             <p style="width: 100%">
                 Subcategoría:
-                <asp:Label ID="lbSubcategoria" runat="server" Text="Label"></asp:Label>
+               <asp:Label ID="lbSubcategoria" runat="server" Text=""></asp:Label>
+                    <asp:DropDownList ID="ddpSubcategoria" runat="server"></asp:DropDownList>
+                
             </p>
         </div>
         <p>
