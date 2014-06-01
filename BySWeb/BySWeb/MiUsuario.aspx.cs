@@ -34,6 +34,26 @@ namespace BySWeb
                     Credito.Text = user.Credito.ToString();
                     //lbError.Text = "";
                     //PnlError.Visible = false;
+                    List<ProductoEN> misProductosPujados = ProductoBL.GetByPujadosIdPropietarioEN(Utilities.Tools.GetDbCnxStr(), id);
+                    List<ProductoEN> misPoductosSobastardos = ProductoBL.GetByIdPropietarioEN(Utilities.Tools.GetDbCnxStr(), id);
+                    List<ProductoEN> misProductosComprados = ProductoBL.GetByCompradosIdPropietarioEN(Utilities.Tools.GetDbCnxStr(), id);
+
+                    if (misProductosPujados != null){
+
+                        RPTproductosPujados.DataSource = misProductosPujados;
+                        RPTproductosPujados.DataBind();
+                    }
+                    if (misPoductosSobastardos != null){
+
+                        RPTproductosSobastardos.DataSource = misPoductosSobastardos;
+                        RPTproductosSobastardos.DataBind();
+                    }
+                    if (misProductosComprados != null){
+
+                        RPTproductosComprados.DataSource = misProductosComprados;
+                        RPTproductosComprados.DataBind();
+                    }
+
                 }
             }
             catch (Exception ex)

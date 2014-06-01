@@ -3,9 +3,11 @@ using BySLib.LINQ;
 
 namespace BySLib.BL
 {
+    //Capa de negocio del Usuario
     public class UsuarioBL
     {
         #region CRUD's
+        //creaun usuario a partir de un UsuarioEN
         public static void CreateFromEN(string p_dbCnxStr, UsuarioEN p_cli)
         {
             using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
@@ -13,6 +15,7 @@ namespace BySLib.BL
 
         }
 
+        //Actualiza los datos de un usuario a partir de un UsuarioEN.
         public static bool UpdateFromEN(string p_dbCnxStr, UsuarioEN p_cli)
         {
             using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
@@ -20,6 +23,7 @@ namespace BySLib.BL
 
         }
 
+        //elimina un usuario de la BD a partir de su ID
         public static bool Delete(string p_dbCnxStr, int p_id)
         {
 
@@ -32,6 +36,7 @@ namespace BySLib.BL
         #endregion
         #region Getting Data
 
+        //devuelve un usuario a partir de su ID
         public static UsuarioEN GetByIdToEN(string dbcnx, int id)
         {
 
@@ -43,7 +48,7 @@ namespace BySLib.BL
             }
 
         }
-
+        //devuelve un usuario a parti de su Nick.
         public static UsuarioEN GetUserByNick(string dbcnx, string nick)//revisar hash
         {
 
@@ -69,6 +74,7 @@ namespace BySLib.BL
 
 
         #endregion
+        //Devuelve un Usuario a partir de su UsuarioEN
         internal static Usuario ConvertFromEN(UsuarioEN usu)
         {
             return new Usuario
@@ -91,7 +97,7 @@ namespace BySLib.BL
 
             };
         }
-
+        //Devuelve un UsuarioEN a partir de un Usuario.
         private static UsuarioEN ConvertToEN(Usuario usu)//revisar
         {
             if(usu== null)

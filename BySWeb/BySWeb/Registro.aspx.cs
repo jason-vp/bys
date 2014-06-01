@@ -16,6 +16,7 @@ namespace BySWeb
 {
     public partial class Registro : System.Web.UI.Page
     {
+        //Carga la informacion de la pagina.
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -41,12 +42,11 @@ namespace BySWeb
         protected void Button_Enviar_Click(object sender, EventArgs e)
         {
 
-
+            //Comprobacion de las validaciones.
             try
             {
                 if (Page.IsValid)
                 {
-
                     using (UsuarioEN us = this.getUsuario())
                     {
                         if (FileUpload1.HasFile)
@@ -99,6 +99,9 @@ namespace BySWeb
             }
 
         }
+        //---------------------------------------------------------------------//
+        //----------------------------VALIDACIONES-----------------------------//
+        //---------------------------------------------------------------------//
 
         protected void ComprobarUsuario(object sender, ServerValidateEventArgs e)
         {
@@ -175,8 +178,13 @@ namespace BySWeb
                 e.IsValid = false;
             }
         }
+<<<<<<< HEAD
         protected void ComprobarCpostal(object sender, ServerValidateEventArgs e)
         {
+=======
+
+        protected void ComprobarCpostal(object sender, ServerValidateEventArgs e) {
+>>>>>>> ca2c494004a537f34c12b2f3232ff9ff8187cc43
 
             string cp = e.Value;
 
@@ -184,6 +192,7 @@ namespace BySWeb
                 e.IsValid = false;
 
         }
+<<<<<<< HEAD
 
         protected void rellenaLocProv(int CP)
         {
@@ -191,6 +200,13 @@ namespace BySWeb
             {
                 listaLocalidad.Items.Clear();
                 listaProvincias.Items.Clear();
+=======
+        //Funcion para rellenar localidades mediante AJAX.
+        protected void rellenaLocProv(int CP){
+
+            listaLocalidad.Items.Clear();
+            listaProvincias.Items.Clear();
+>>>>>>> ca2c494004a537f34c12b2f3232ff9ff8187cc43
 
                 List<PoblacionEN> listaLocalidades = PoblacionBL.GetByPostalCode(Utilities.Tools.GetDbCnxStr(), CP);
 

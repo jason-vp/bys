@@ -37,7 +37,7 @@ namespace BySLib.EN
         private int pujador =-1;
         private int producto = -1;
         private decimal valor = 0;
-        private string estado = "Mejor";
+        private string estado = "";
         private DateTime fecha = new DateTime();
         #endregion
 
