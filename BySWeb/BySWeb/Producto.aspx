@@ -126,7 +126,7 @@
                         </p>
                         <p>
                             &nbsp;<asp:Button ID="btnCompra" runat="server" Text="Comprar ahora!" 
-                                Height="25px" /></p>
+                                Height="25px" onclick="btnCompra_Click" /></p>
                     </asp:Panel>
                     </div>
                 </div>

@@ -179,6 +179,7 @@ namespace BySLib.EN
             return (from t1 in p_ctx.Producto
                     where t1.subcat == p_idSub
                     && t1.eliminado == false
+                    && t1.estado == "Activo"
                     select t1).ToList();
 
         }
@@ -190,6 +191,7 @@ namespace BySLib.EN
                     on t1.subcat equals t2.id
                     where t2.cat_padre == p_idCat
                     && t1.eliminado == false
+                    && t1.estado == "Activo"
                     select t1).ToList();
 
         }
