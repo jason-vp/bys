@@ -32,6 +32,13 @@ namespace BySWeb
             lblPuntUser.Text=user.Puntacion.ToString();
             imgUsuario.ImageUrl=user.RutaImg;
 
+            List<CompraEN> comentariosProducto = CompraBL.GetByIdProductoToEN(Tools.GetDbCnxStr(), id);
+
+            if (comentariosProducto != null)
+            {
+                RPTcomentariosProducto.DataSource = comentariosProducto;
+                RPTcomentariosProducto.DataBind();
+            }
         
         }
 

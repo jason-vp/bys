@@ -140,26 +140,26 @@
 
         <h3 style="margin-left:20px; margin-bottom:20px">COMENTARIOS:</h3>
 
-       <!--<asp:Repeater runat="server" ID="RPTcomentariosProducto">
+       <asp:Repeater runat="server" ID="RPTcomentariosProducto">
             <ItemTemplate>
                 <div class="comentario">
                     <p style="margin-left:20px">
-                        Usuario: <asp:HyperLink ID="usuarioComentario1" runat="server" NavigateUrl='<# string.Format("~/DetallesUsuario.aspx?id={0}", ((BySLib.EN.UsuarioEN)Container.DataItem).Id) %>' style="margin-right:15px">
-                                    <asp:Label ID="Label1" runat="server"> <# ((BySLib.EN.UsuarioEN)Container.DataItem).Nombre %></asp:Label>
+                        Usuario: <asp:HyperLink ID="usuarioComentario1" runat="server" NavigateUrl='<%# string.Format("~/DetallesUsuario.aspx?id={0}", ((BySLib.EN.CompraEN)Container.DataItem).Pujador) %>' style="margin-right:15px">
+                                    <asp:Label ID="Label1" runat="server"> <%# BySLib.BL.UsuarioBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr() ,((BySLib.EN.CompraEN)Container.DataItem).Pujador).Nick %></asp:Label>
                                  </asp:HyperLink>
                         Producto: <asp:HyperLink ID="productoComentario1" runat="server" style="margin-right:15px">
-                                    <asp:Label ID="Label2" runat="server"> <# ((BySLib.EN.ProductoEN)Container.DataItem).Nombre %></asp:Label>
+                                    <asp:Label ID="Label2" runat="server"> <%# BySLib.BL.ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), ((BySLib.EN.CompraEN)Container.DataItem).Producto).Nombre %></asp:Label>
                                   </asp:HyperLink>
-                        Puntuación:<asp:Label ID="lblPuntComent1" runat="server" style="margin-left:10px"><# ((BySLib.EN.ProductoEN)Container.DataItem)./*TODO*/ %></asp:Label>
+                        Puntuación:<asp:Label ID="lblPuntComent1" runat="server" style="margin-left:10px"><%# ((BySLib.EN.CompraEN)Container.DataItem).Puntuacion %></asp:Label>
                     </p>
                     <p style="margin-left:20px">
-                        Descripción:<asp:Label ID="lblDescripcionComent1" runat="server" Text="Entregadas en mano y pagado en negro, muy buen servicio." style="margin-left:20px"></asp:Label>
+                        Descripción:<asp:Label ID="lblDescripcionComent1" runat="server" style="margin-left:20px"> <%# ((BySLib.EN.CompraEN)Container.DataItem).Comentario %> </asp:Label>
                     </p>
                 </div>
             </ItemTemplate>
-        </asp:Repeater> -->
+        </asp:Repeater> 
 
-        <div class="comentario">
+       <!-- <div class="comentario">
             <p style="margin-left:20px">
                 Usuario: <asp:HyperLink ID="usuarioComentario1" runat="server" NavigateUrl="~/DetallesUsuario.aspx" style="margin-right:15px">Perico90</asp:HyperLink>
                 Producto: <asp:HyperLink ID="productoComentario1" runat="server" style="margin-right:15px">Barco velero</asp:HyperLink>
@@ -168,7 +168,7 @@
             <p style="margin-left:20px">
                 Descripción:<asp:Label ID="lblDescripcionComent1" runat="server" Text="Entregadas en mano y pagado en negro, muy buen servicio." style="margin-left:20px"></asp:Label>
             </p>
-        </div>
+        </div> -->
         
         <div>
             <h3 style="margin-left:20px; margin-bottom:20px">REALIZAR COMENTARIO:</h3>
