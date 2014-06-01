@@ -48,20 +48,24 @@ namespace BySWeb
 
         protected void Button_Enviar_Click(object sender, EventArgs e)
         {
-            try
+            if (Page.IsValid)
             {
-               
-                using (UsuarioEN us = this.getUsuario()) {
+                try
+                {
 
-                    UsuarioBL.CreateFromEN(Tools.GetDbCnxStr(), us);
-                
+                    using (UsuarioEN us = this.getUsuario())
+                    {
+
+                        UsuarioBL.CreateFromEN(Tools.GetDbCnxStr(), us);
+
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
+                catch (Exception ex)
+                {
 
-                PnlError.Visible = true;
-                lbError.Text = "Error al Crear el usuario";
+                    PnlError.Visible = true;
+                    lbError.Text = "Error al Crear el usuario";
+                }
             }
 
         }

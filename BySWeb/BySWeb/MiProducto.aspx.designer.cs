@@ -31,6 +31,15 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
         
         /// <summary>
+        /// Control LabelErrorEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelErrorEstado;
+        
+        /// <summary>
         /// Control Btn_Editar.
         /// </summary>
         /// <remarks>
