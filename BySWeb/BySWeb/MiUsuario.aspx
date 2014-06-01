@@ -5,6 +5,10 @@
         {
             font-size: 1.5em;
         }
+        .style2
+        {
+            color: #FF0000;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PlaceholderSidebar" runat="server">
@@ -82,7 +86,7 @@
         </strong>
         <div class="validator">
             <asp:CustomValidator ID="CustomValidator1" ControlToValidate="tbNombre"
-           OnServerValidate="ComprobarNombre" runat="server" ErrorMessage="Nombre incorrecto" 
+           OnServerValidate="ComprobarNombre" runat="server" ErrorMessage="El nombre contiene caracteres incorrectos. Introduce solo letras y espacios." 
            Display="Dynamic" ValidateEmptyText="true" ForeColor="Red"></asp:CustomValidator>
        </div>
     </p>
@@ -90,8 +94,11 @@
         <strong>Direccion
         </strong>&nbsp;
         <asp:TextBox ID="tbDireccion" runat="server" Width="300px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</p>
+    <p>
+        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+        ControlToValidate="tbDireccion"
+        ErrorMessage="Introduce una dirección" ForeColor="Red"></asp:RequiredFieldValidator>
     </p>
     <div class="validator">
             <asp:CustomValidator ID="CustomValidator2" ControlToValidate="tbDireccion"
@@ -111,17 +118,14 @@
         &nbsp;</p>
         <div class="validator">
              <asp:CustomValidator ID="ValidatorTelefono" ControlToValidate="tbtlf"
-            OnServerValidate="ComprobarTelefono" runat="server" ErrorMessage="Teléfono no válido" 
+            OnServerValidate="ComprobarTelefono" runat="server" ErrorMessage="Teléfono Incorrecto" 
             Display="Dynamic" ValidateEmptyText="true" ForeColor="Red"></asp:CustomValidator>
          </div>
     <p>
         &nbsp;</p>
     <p class="style1">
-        <strong>DETALLES DEL USUARIO</strong></p>
+        <strong>DETALLES DEL USUARIO&nbsp;&nbsp; </strong>&nbsp;&nbsp;&nbsp; <strong>&nbsp;</strong></p>
     <p>
-        <strong>Usuario&nbsp;<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-        &nbsp;&nbsp;&nbsp; </strong>
-&nbsp;&nbsp;&nbsp; <strong>&nbsp;</strong><p>
         <strong>Email&nbsp;&nbsp;&nbsp;&nbsp; </strong>
         <asp:TextBox ID="tbmail" runat="server" TextMode="Email" Width="150px"></asp:TextBox>
     &nbsp;&nbsp;&nbsp;&nbsp; <strong>Puntuacion&nbsp;&nbsp;&nbsp;&nbsp;
@@ -129,11 +133,8 @@
 &nbsp;&nbsp;&nbsp; Usuario&nbsp;&nbsp;&nbsp;&nbsp; 
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         </strong>
-        <div class="validator" style="right: 50px; position: inherit;">
-            <asp:CustomValidator ID="ValidatorEmail" ControlToValidate="tbmail"
-         OnServerValidate="ComprobarEmail" runat="server" ErrorMessage="Email no válido"
-         Display="Dynamic" ValidateEmptyText="true" ForeColor="Red"></asp:CustomValidator>
-        </div>
+        <div class="style2" style="right: 50px; position: inherit;">
+            El email introducido es incorrecto</div>
     </p>
     <p>
         <strong>Contraseña Actual&nbsp;&nbsp;&nbsp;&nbsp; </strong>
@@ -156,6 +157,10 @@
         <div class="validator"><asp:CustomValidator ID="ValidatorPassword2" ControlToValidate="tbcontrasenyanueva2"
          runat="server" ErrorMessage="La nueva contraseña no coincide" Display="Dynamic" 
                 ValidateEmptyText="false" ForeColor="Red"></asp:CustomValidator></div>
+
+    <p>
+        <asp:Label ID="Label4" runat="server" ForeColor="#CC0000" 
+            Text="La contraseña introducida no coincide con la actual" Visible="False"></asp:Label>
     </p>
     <p>
         <strong>Credito Actual&nbsp;&nbsp;&nbsp; </strong>&nbsp;<asp:TextBox 

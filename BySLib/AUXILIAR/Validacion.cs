@@ -32,8 +32,8 @@ namespace BySLib.AUXILIAR
 
         public static bool isNombreP(string s)
         {
-            string sPattern = "^[A-Za-z]*$";
-
+            string sPattern = "^[A-Za-z] ( ) *$";
+            
             return System.Text.RegularExpressions.Regex.IsMatch(s, sPattern);
         }
 
@@ -71,6 +71,16 @@ namespace BySLib.AUXILIAR
         {
             string sPattern = "^\\d{2}$";
 
+            return System.Text.RegularExpressions.Regex.IsMatch(s, sPattern);
+        }
+        public static bool isNombreDescProd(string s)
+        {
+            string sPattern = "^[A-Za-z] ( ) [0-9]*$";
+            return System.Text.RegularExpressions.Regex.IsMatch(s, sPattern);
+        }
+        public static bool isNumero(string s)
+        {
+            string sPattern = "[0-9]";
             return System.Text.RegularExpressions.Regex.IsMatch(s, sPattern);
         }
     }
