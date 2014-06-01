@@ -81,9 +81,9 @@
             </p>
             <p style="width: 100%">
                 Subcategoría:
-               <asp:Label ID="lbSubcategoria" runat="server" Text=""></asp:Label>
+               <asp:Label ID="lbSubcategoria" runat="server" ></asp:Label>
+               
                     <asp:DropDownList ID="ddpSubcategoria" runat="server"></asp:DropDownList>
-                
             </p>
         </div>
         <p>

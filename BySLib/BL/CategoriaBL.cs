@@ -137,10 +137,7 @@ namespace BySLib.BL
             return new CategoriaEN()
             {
                 Id = p_sub.id,
-                Nombre = p_sub.nombre,
-                Subcateg = ConvertToListSubcategoriaEn(p_sub.Subcategoria)
-                
-                
+                Nombre = p_sub.nombre
 
             };
 
@@ -158,8 +155,7 @@ namespace BySLib.BL
             return new Categoria()
             {
                 id = p_sub.Id,
-                nombre = p_sub.Nombre,
-                Subcategoria = ConvertToEntitytSubcategoriaEn(p_sub.Subcateg)
+                nombre = p_sub.Nombre
 
             };
 
