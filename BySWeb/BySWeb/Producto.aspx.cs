@@ -26,12 +26,16 @@ namespace BySWeb
                 fechaFinProducto.Text = prod.FechaFin.ToString();
                 EstadoProducto.Text = prod.Estado;
                 PujaEN ultimaPuja = PujaBL.GetLastPujaByProductoId(Tools.GetDbCnxStr(), id);
-                lblPujaActual.Text = ultimaPuja.Valor.ToString();
+                decimal valor = ultimaPuja.Valor;
+                if (valor == 0)
+                    valor = prod.PrecioSalida;
+                lblPujaActual.Text = valor.ToString();
                 lblPrecio.Text = prod.PrecioCompra.ToString();
-                imgProducto.ImageUrl = prod.Fotos[0].Ruta;
+                imgProducto.ImageUrl = prod.Foto;
                 //Barra lateral información del usuario propietario del producto
-                UsuarioEN user = UsuarioBL.GetByIdToEN(Tools.GetDbCnxStr(), id);
-                lblNombreProp.Text = user.Nombre.ToString();
+                UsuarioEN user = UsuarioBL.GetByIdToEN(Tools.GetDbCnxStr(), prod.Propietario);
+                hLinkDetallesUsuario.NavigateUrl = "/DetallesUsuario.aspx?id=" + prod.Propietario;
+                lblNombreProp.Text = user.Nick.ToString();
                 lblPuntUser.Text = user.Puntacion.ToString();
                 imgUsuario.ImageUrl = user.RutaImg;
                 /*
