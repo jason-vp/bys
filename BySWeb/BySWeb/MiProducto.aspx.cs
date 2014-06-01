@@ -47,6 +47,7 @@ namespace BySWeb
                             tbCompra.Text = prod.PrecioCompra.ToString();
                         }
                         if (prod.Estado == "Inactivo") Btn_Editar.Visible = true;
+                        else LabelErrorEstado.Visible = true;
                     }
                     else Btn_Crear.Visible = true;
                 }
@@ -66,9 +67,9 @@ namespace BySWeb
             ProductoEN prod = ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), Int32.Parse(Request.QueryString["id"]));
             prod.Nombre = tbNombreProducto.Text;
             prod.Descripcion = tbDescripcion.Text;
-            prod.PrecioSalida = Int32.Parse(tbPrecioSalida.Text);
-            prod.PrecioCompra = Int32.Parse(tbCompra.Text);
-            prod.CantidadRestante = Int32.Parse(tbCantidadRestante.Text);
+            prod.PrecioSalida = Convert.ToDecimal(tbPrecioSalida.Text);
+            prod.PrecioCompra = Convert.ToDecimal(tbCompra.Text);
+            prod.CantidadRestante = Convert.ToInt32(tbCantidadRestante.Text);
             //prod.Fotos=
             //funcion de edición en la bd a partir del objeto EN
             ProductoBL.UpdateFromEN(Utilities.Tools.GetDbCnxStr(), prod);
@@ -76,7 +77,10 @@ namespace BySWeb
 
         protected void Btn_Editar_Click(object sender, EventArgs e)
         {
-            editar();
+            if (Page.IsValid)
+            {
+                editar();
+            }
         }
 
         protected void crear()
@@ -88,8 +92,10 @@ namespace BySWeb
             prod.PrecioSalida = Int32.Parse(tbPrecioSalida.Text);
             prod.PrecioCompra = Int32.Parse(tbCompra.Text);
             prod.CantidadRestante = Int32.Parse(tbCantidadRestante.Text);
+            prod.Estado = "Inactivo";
+            prod.Propietario = Convert.ToInt32(Session["userId"]);
+            prod.Subcategoria = 1;
             ProductoBL.Create(Utilities.Tools.GetDbCnxStr(), prod);
-
         }
         //---------------------------------------------------------------------//
         //----------------------------VALIDACIONES-----------------------------//
@@ -105,6 +111,8 @@ namespace BySWeb
             {
                 e.IsValid = false;
             }
+            else
+                e.IsValid = true;
         }
         //Validación dela descripcion
         protected void ComprobarDescripcion(object sender, ServerValidateEventArgs e)
@@ -124,6 +132,14 @@ namespace BySWeb
             if (!Validacion.isNumero(precio))
             {
                 e.IsValid = false;
+            }
+        }
+
+        protected void Btn_Crear_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                crear();
             }
         }
         //protected void TextBox2_TextChanged(object sender, EventArgs e)

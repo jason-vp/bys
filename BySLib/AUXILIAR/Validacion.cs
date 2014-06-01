@@ -75,12 +75,12 @@ namespace BySLib.AUXILIAR
         }
         public static bool isNombreDescProd(string s)
         {
-            string sPattern = "^[A-Za-z] ( ) [0-9]*$";
+            string sPattern = "^[A-Za-z] ( ) [0-9]";
             return System.Text.RegularExpressions.Regex.IsMatch(s, sPattern);
         }
         public static bool isNumero(string s)
         {
-            string sPattern = "[0-9]";
+            string sPattern = "[0-9] (,) ";
             return System.Text.RegularExpressions.Regex.IsMatch(s, sPattern);
         }
     }
