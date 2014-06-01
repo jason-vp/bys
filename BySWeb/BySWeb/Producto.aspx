@@ -117,7 +117,7 @@
                             <asp:TextBox ID="tbPuja" runat="server" Width="63px"></asp:TextBox>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:Button ID="btnPuja" runat="server" Text="Pujar" Height="24px" Style="margin-top: 0px"
-                                Width="68px" /></p>
+                                Width="68px" onclick="btnPuja_Click" /></p>
                     </asp:Panel>
                     <asp:Panel ID="PnlCompra" runat="server" Visible="true">
                         <p>
