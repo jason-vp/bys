@@ -52,6 +52,21 @@ namespace BySLib.BL
 
         }
 
+         public static bool ExisteUser(string p_dbCnxStr, string p_nombre) {
+
+             using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+                 return UsuarioCAD.UserExist(cnx, p_nombre);
+        
+        }
+
+         public static bool ExisteEmail(string p_dbCnxStr, string p_email)
+         {
+
+             using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+                 return UsuarioCAD.ExistsByEmail(cnx, p_email);
+
+         }
+
 
         #endregion
         internal static Usuario ConvertFromEN(UsuarioEN usu)

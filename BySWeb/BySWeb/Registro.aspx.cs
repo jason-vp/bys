@@ -18,15 +18,10 @@ namespace BySWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
             try
             {
                 lbError.Text = "";
                 PnlError.Visible = false;
-               
-
-               
 
                 if (!this.IsPostBack)
                 {
@@ -35,38 +30,41 @@ namespace BySWeb
             }
             catch (Exception ex)
             {
-                
-                
             }
 
         }
 
         protected void TextBox2_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         protected void Button_Enviar_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)
+
+
+            try
             {
-                try
+                if (Page.IsValid)
                 {
 
                     using (UsuarioEN us = this.getUsuario())
                     {
-
+                        if (FileUpload1.HasFile)
+                        {
+                            FileUpload1.SaveAs(Server.MapPath(".") + @"/images/" + FileUpload1.FileName);
+                        }
+                        us.RutaImg = "/images/" + FileUpload1.FileName;
                         UsuarioBL.CreateFromEN(Tools.GetDbCnxStr(), us);
 
                     }
                 }
-                catch (Exception ex)
-                {
-
-                    PnlError.Visible = true;
-                    lbError.Text = "Error al Crear el usuario";
-                }
             }
+            catch (Exception ex)
+            {
+                PnlError.Visible = true;
+                lbError.Text = "Error al Crear el usuario";
+            }
+            
 
         }
 
@@ -74,36 +72,39 @@ namespace BySWeb
         {
             //filtrar validatedata
 
-            return new UsuarioEN
-            {
+                return new UsuarioEN
+                {
 
-                Nombre = this.tbNombre.Text.Trim(),
-                Nick = this.tbUsuarioEn.Text.Trim(),
-                Mail = tbmail.Text.Trim(),
-                Password =  PasswordHash.CreateHash(tbcontrasenya.Text.Trim()),
-                Telf = Convert.ToInt32(tbtlf.Text.Trim()),
-                Direccion = tbdireccion.Text.Trim(),
-                CodigoPostal = 1010,
-                Poblacion = "ALI"
-            };
+                    Nombre = this.tbNombre.Text.Trim(),
+                    Nick = this.tbUsuarioEn.Text.Trim(),
+                    Mail = tbmail.Text.Trim(),
+                    Password = PasswordHash.CreateHash(tbcontrasenya.Text.Trim()),
+                    Telf = Convert.ToInt32(tbtlf.Text.Trim()),
+                    Direccion = tbdireccion.Text.Trim(),
+                    CodigoPostal = Convert.ToInt32(tbCP.Text),
+                    Poblacion = listaLocalidad.SelectedValue
+                    
+                };
+                
+
+           
         }
 
         protected void TextB_CP_TextChanged(object sender, EventArgs e)
         {
-            if (tbCP.Text.Length == 5){
-
-               //llamada a la funcion AJAX
-
+            if (tbCP.Text.Length == 5)
+            {
+                //llamada a la funcion AJAX
                 rellenaLocProv(Int32.Parse(tbCP.Text));
             }
-            
+
         }
 
         protected void ComprobarUsuario(object sender, ServerValidateEventArgs e)
         {
             string nombre = e.Value;
 
-            if (!Validacion.isNombre(nombre))
+            if (UsuarioBL.ExisteUser(Tools.GetDbCnxStr(),nombre))
             {
                 e.IsValid = false;
             }
@@ -112,11 +113,7 @@ namespace BySWeb
         protected void ComprobarNombre(object sender, ServerValidateEventArgs e)
         {
             string nombre = e.Value;
-
-            if (!Validacion.isNombreP(nombre))
-            {
-                e.IsValid = false;
-            }
+            e.IsValid = true;
         }
 
         protected void ComprobarTelefono(object sender, ServerValidateEventArgs e)
@@ -143,7 +140,7 @@ namespace BySWeb
         {
             string email = e.Value;
 
-            if (!Validacion.isEmail(email))
+            if (!Validacion.isEmail(email) || UsuarioBL.ExisteEmail(Tools.GetDbCnxStr(), email))
             {
                 e.IsValid = false;
             }
@@ -178,34 +175,42 @@ namespace BySWeb
                 e.IsValid = false;
             }
         }
-        protected void ComprobarCpostal(object sender, ServerValidateEventArgs e) {
+        protected void ComprobarCpostal(object sender, ServerValidateEventArgs e)
+        {
 
             string cp = e.Value;
 
-            if(!Validacion.isCpostal(cp))
-                e.IsValid=false;
+            if (!Validacion.isCpostal(cp))
+                e.IsValid = false;
 
         }
 
-        protected void rellenaLocProv(int CP){
-
-            listaLocalidad.Items.Clear();
-            listaProvincias.Items.Clear();
-
-            List <PoblacionEN> listaLocalidades = PoblacionBL.GetByPostalCode(Utilities.Tools.GetDbCnxStr(), CP);
-
-            foreach (PoblacionEN c in listaLocalidades){
-                listaLocalidad.Items.Add(c.Nombre);
-            }
-            int idprov;
-            if (listaLocalidades != null)
+        protected void rellenaLocProv(int CP)
+        {
+            try
             {
+                listaLocalidad.Items.Clear();
+                listaProvincias.Items.Clear();
 
-                idprov = listaLocalidades[0].Cod_provincia;
-                listaProvincias.Items.Add(ProvinciaBL.GetById(Tools.GetDbCnxStr(),idprov).Nombre);
+                List<PoblacionEN> listaLocalidades = PoblacionBL.GetByPostalCode(Utilities.Tools.GetDbCnxStr(), CP);
+
+                foreach (PoblacionEN c in listaLocalidades)
+                {
+                    listaLocalidad.Items.Add(c.Nombre);
+                }
+                int idprov;
+                if (listaLocalidades != null)
+                {
+
+                    idprov = listaLocalidades[0].Cod_provincia;
+                    listaProvincias.Items.Add(ProvinciaBL.GetById(Tools.GetDbCnxStr(), idprov).Nombre);
+                }
             }
+            catch (Exception ex) {
 
+                
             
+            }
         }
         /**
         protected void list_provincia_DataBound(object sender, EventArgs e)

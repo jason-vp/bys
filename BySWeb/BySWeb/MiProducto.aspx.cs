@@ -94,17 +94,21 @@ namespace BySWeb
             prod.PrecioSalida = Convert.ToDecimal(tbPrecioSalida.Text);
             prod.PrecioCompra = Convert.ToDecimal(tbCompra.Text);
             prod.CantidadRestante = Convert.ToInt32(tbCantidadRestante.Text);
-            //prod.Fotos=
+            if (FileUpload1.HasFile)
+            {
+                FileUpload1.SaveAs(Server.MapPath(".") + @"/images/" + FileUpload1.FileName);
+            }
+            prod.Foto = "/images/" + FileUpload1.FileName;
             //funcion de edición en la bd a partir del objeto EN
             ProductoBL.UpdateFromEN(Utilities.Tools.GetDbCnxStr(), prod);
         }
 
-        protected void Btn_Editar_Click(object sender, EventArgs e)
+        protected void Btn_Editar_Click(object sender, EventArgs e)//revisar
         {
-            if (Page.IsValid)
-            {
+            //if (Page.IsValid)
+            //{
                 editar();
-            }
+            //}
         }
 
         protected void crear()
@@ -119,7 +123,14 @@ namespace BySWeb
             prod.Estado = "Inactivo";
             prod.Propietario = Convert.ToInt32(Session["userId"]);
             prod.Subcategoria = 1;
+            if (FileUpload1.HasFile)
+            {
+                FileUpload1.SaveAs(Server.MapPath(".") + @"/images/" + FileUpload1.FileName);
+            }
+            prod.Foto = "/images/" + FileUpload1.FileName;
             ProductoBL.Create(Utilities.Tools.GetDbCnxStr(), prod);
+
+
         }
         //---------------------------------------------------------------------//
         //----------------------------VALIDACIONES-----------------------------//

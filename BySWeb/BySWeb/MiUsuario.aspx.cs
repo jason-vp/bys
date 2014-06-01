@@ -81,6 +81,11 @@ namespace BySWeb
                     {
                         throw new Exception("Error Datos Incorrectos");
                     }
+                    if (FileUpload1.HasFile)
+                    {
+                        FileUpload1.SaveAs(Server.MapPath(".") + @"/images/" + FileUpload1.FileName);
+                    }
+                    user.RutaImg = "/images/" + FileUpload1.FileName;
                     //Funcion de actualización de la BBDD.
                     UsuarioBL.UpdateFromEN(Utilities.Tools.GetDbCnxStr(), user);
             }

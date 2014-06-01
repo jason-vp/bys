@@ -123,6 +123,14 @@ namespace BySLib
                     select t1).SingleOrDefault();
 
         }
+
+        public static bool UserExist(BySBDDataContext p_ctx, string p_nombre) {
+
+
+                return p_ctx.Usuario.Any(x => x.nick == p_nombre);
+        
+        
+        }
         
 
         /// <summary>
@@ -158,14 +166,14 @@ namespace BySLib
 
         #endregion
 
-        #region Public Methods
-        public static bool ExistsByContainsEmail(BySBDDataContext p_ctx, string p_email)
+      
+        public static bool ExistsByEmail(BySBDDataContext p_ctx, string p_email)
         {
 
-            return p_ctx.Usuario.Any(x => x.mail.Contains(p_email));
+            return p_ctx.Usuario.Any(x => x.mail == p_email);
         }
 
-        #endregion
+       
 
 
     }
