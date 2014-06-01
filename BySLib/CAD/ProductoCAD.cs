@@ -147,6 +147,57 @@ namespace BySLib.EN
 
         }
 
+        public static List<Producto> GetByIdPropietario(BySBDDataContext p_ctx, int p_idPro)
+        {
+            return (from t1 in p_ctx.Producto
+                    where t1.usuario == p_idPro
+                    && t1.eliminado == false
+                    select t1).ToList();
+
+        }
+
+        public static List<Producto> GetBySubcategoria(BySBDDataContext p_ctx, int p_idSub)
+        {
+            return (from t1 in p_ctx.Producto
+                    where t1.subcat == p_idSub
+                    && t1.eliminado == false
+                    select t1).ToList();
+
+        }
+
+        public static List<Producto> GetByCategoria(BySBDDataContext p_ctx, int p_idCat)
+        {
+            return (from t1 in p_ctx.Producto
+                    join t2 in p_ctx.Subcategoria
+                    on t1.subcat equals t2.id
+                    where t2.cat_padre == p_idCat
+                    && t1.eliminado == false
+                    select t1).ToList();
+
+        }
+
+        public static List<Producto> GetByPujadosIdPropietario(BySBDDataContext p_ctx, int p_idPro)
+        {
+            return (from t1 in p_ctx.Producto
+                    join t2 in p_ctx.Puja
+                    on t1.usuario equals t2.pujador
+                    where t1.usuario == p_idPro
+                    && t1.eliminado == false
+                    select t1).ToList();
+
+        }
+
+        public static List<Producto> GetByCompradosIdPropietario(BySBDDataContext p_ctx, int p_idPro)
+        {
+            return (from t1 in p_ctx.Producto
+                    join t2 in p_ctx.Compra
+                    on t1.usuario equals t2.comprador
+                    where t1.usuario == p_idPro
+                    && t1.eliminado == false
+                    select t1).ToList();
+
+        }
+
         public static List<Producto> GetByUltimosActivos(BySBDDataContext p_ctx)
         {
             return (from t1 in p_ctx.Producto

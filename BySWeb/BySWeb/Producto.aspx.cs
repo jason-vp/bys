@@ -31,6 +31,15 @@ namespace BySWeb
             lblNombreProp.Text = user.Nombre.ToString();
             lblPuntUser.Text=user.Puntacion.ToString();
             imgUsuario.ImageUrl=user.RutaImg;
+            /*
+            List<CategoriaEN> ls = new List<CategoriaEN>();
+            ls = CategoriaBL.GetAll(Tools.GetDbCnxStr());
+            foreach (CategoriaEN c in ls) {
+                DropDownList1.Items.Add(c);
+                
+
+            
+            }*/
 
             List<CompraEN> comentariosProducto = CompraBL.GetByIdProductoToEN(Tools.GetDbCnxStr(), id);
 

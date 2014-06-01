@@ -42,6 +42,8 @@ namespace BySLib.BL
                 Id = p_sub.id,
                 Nombre = p_sub.nombre,
                 Padre = p_sub.cat_padre
+                
+                
             };
 
         }
@@ -60,6 +62,7 @@ namespace BySLib.BL
                 id = p_sub.Id,
                 nombre = p_sub.Nombre,
                 cat_padre = p_sub.Padre
+                
             };
 
         }

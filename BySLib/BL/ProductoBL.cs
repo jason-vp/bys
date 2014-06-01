@@ -44,6 +44,81 @@ namespace BySLib.BL
 
         }
 
+        public static List<ProductoEN> GetBySubcategoriaEN(string p_dbCnxStr, int p_id)
+        {
+
+            List<ProductoEN> ls = new List<ProductoEN>();
+            List<Producto> lsProdu = new List<Producto>();
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+
+                lsProdu = ProductoCAD.GetBySubcategoria(cnx,p_id);
+
+            foreach (Producto c in lsProdu)
+                ls.Add(ProductoBL.ConvertToEN(c));
+            return ls;
+        }
+
+        public static List<ProductoEN> GetByCategoriaEN(string p_dbCnxStr, int p_id)
+        {
+
+            List<ProductoEN> ls = new List<ProductoEN>();
+            List<Producto> lsProdu = new List<Producto>();
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+
+                lsProdu = ProductoCAD.GetByCategoria(cnx, p_id);
+
+            foreach (Producto c in lsProdu)
+                ls.Add(ProductoBL.ConvertToEN(c));
+            return ls;
+        }
+
+        public static List<ProductoEN> GetByIdPropietarioEN(string p_dbCnxStr, int p_id)
+        {
+
+            List<ProductoEN> ls = new List<ProductoEN>();
+            List<Producto> lsProdu = new List<Producto>();
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+
+                lsProdu = ProductoCAD.GetByIdPropietario(cnx,p_id);
+
+            foreach (Producto c in lsProdu)
+                ls.Add(ProductoBL.ConvertToEN(c));
+            return ls;
+        }
+
+        public static List<ProductoEN> GetByPujadosIdPropietarioEN(string p_dbCnxStr, int p_id)
+        {
+
+            List<ProductoEN> ls = new List<ProductoEN>();
+            List<Producto> lsProdu = new List<Producto>();
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+
+                lsProdu = ProductoCAD.GetByPujadosIdPropietario(cnx, p_id);
+
+            foreach (Producto c in lsProdu)
+                ls.Add(ProductoBL.ConvertToEN(c));
+            return ls;
+        }
+
+        public static List<ProductoEN> GetByCompradosIdPropietarioEN(string p_dbCnxStr, int p_id)
+        {
+
+            List<ProductoEN> ls = new List<ProductoEN>();
+            List<Producto> lsProdu = new List<Producto>();
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+
+                lsProdu = ProductoCAD.GetByCompradosIdPropietario(cnx, p_id);
+
+            foreach (Producto c in lsProdu)
+                ls.Add(ProductoBL.ConvertToEN(c));
+            return ls;
+        }
+
         public static List<ProductoEN> GetByUltimosEN(string p_dbCnxStr)
         {
 
@@ -120,7 +195,7 @@ namespace BySLib.BL
             {
                 Id = p_fotos.id,
                 Ruta = p_fotos.ruta,
-                Idproducto = (int)p_fotos.producto//revisar
+                Idproducto = p_fotos.producto//revisar
             };
 
         }

@@ -53,7 +53,21 @@ namespace BySLib.EN
                     select t1).ToList();
 
         }
+        public static List<Subcategoria> GetAll(BySBDDataContext p_ctx)
+        {
+            //#region Check Parameters
 
+            //ParameterChecker.CheckNullParameter(MethodBase.GetCurrentMethod(),
+            //    p_ctx, 1, MemberInfoGetting.GetMemberName(() => p_ctx));
+            //ParameterChecker.CheckEqualBiggerZero(MethodBase.GetCurrentMethod(),
+            //    p_id, 2, MemberInfoGetting.GetMemberName(() => p_id));
+
+            //#endregion
+
+            return (from t1 in p_ctx.Subcategoria
+                    select t1).ToList();
+
+        }
        
        
     }
