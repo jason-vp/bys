@@ -7,6 +7,5 @@ C:\Users\Carlos\Documents\bys\BySLib\obj\Debug\BySLib.pdb
 C:\Users\TT\Documents\GitHub\bys\BySLib\bin\Debug\BySLib.dll.config
 C:\Users\TT\Documents\GitHub\bys\BySLib\bin\Debug\BySLib.dll
 C:\Users\TT\Documents\GitHub\bys\BySLib\bin\Debug\BySLib.pdb
-C:\Users\TT\Documents\GitHub\bys\BySLib\obj\Debug\BySLib.csprojResolveAssemblyReference.cache
 C:\Users\TT\Documents\GitHub\bys\BySLib\obj\Debug\BySLib.dll
 C:\Users\TT\Documents\GitHub\bys\BySLib\obj\Debug\BySLib.pdb

@@ -15,14 +15,15 @@ namespace BySWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            PopulateNewsItems(null);
+            if (Request.QueryString["t"] != null)
+                PopulateNewsItems(null);
 
         }
 
         protected List<ProductoEN> obtenerLista()
         {
             List<ProductoEN> l = null;
-            string n="";
+            string n = "";
 
             switch (Request.QueryString["t"])
             {
@@ -34,8 +35,9 @@ namespace BySWeb
 
                 //por categoría
                 case "c":
-                    n=Request.QueryString["n"];
+                    n = Request.QueryString["n"];
                     l = ProductoBL.GetByCategoriaEN(Tools.GetDbCnxStr(), Convert.ToInt32(n));
+
                     lbBusqueda.Text = "Categoría " + CategoriaBL.GetById(Tools.GetDbCnxStr(), Convert.ToInt32(n)).Nombre;
                     break;
                 //por subcategoria
@@ -44,11 +46,11 @@ namespace BySWeb
                     l = ProductoBL.GetBySubcategoriaEN(Tools.GetDbCnxStr(), Convert.ToInt32(n));
                     lbBusqueda.Text = "Categoría " + SubcategoriaBL.GetById(Tools.GetDbCnxStr(), Convert.ToInt32(n)).Nombre;
                     break;
-                
+
                 //busqueda
                 case "b":
                     n = Request.QueryString["n"];
-                    //l = ProductoBL.g (Tools.GetDbCnxStr(), Convert.ToInt32(n));
+                    l = ProductoBL.GetByBusquedaEN(Tools.GetDbCnxStr(), n);
                     lbBusqueda.Text = n;
                     break;
 
@@ -56,31 +58,35 @@ namespace BySWeb
                 case "m":
                     n = Request.QueryString["n"];
                     l = ProductoBL.GetByIdPropietarioEN(Tools.GetDbCnxStr(), Convert.ToInt32(n));
-                    lbBusqueda.Text = "Productos de " + n;
+                    lbBusqueda.Text = "Productos de " + UsuarioBL.GetByIdToEN(Tools.GetDbCnxStr(), Convert.ToInt32(n)).Nombre;
                     break;
 
                 //mis pujas
                 case "p":
-                    if(Session["LoggedIn"] == "true") {
+                    if (Session["LoggedIn"] == "true")
+                    {
 
-                    l = ProductoBL.GetByPujadosIdPropietarioEN(Tools.GetDbCnxStr(), Convert.ToInt32(Session["userId"]));
+                        l = ProductoBL.GetByPujadosIdPropietarioEN(Tools.GetDbCnxStr(), Convert.ToInt32(Session["userId"]));
                     }
-                    else {
+                    else
+                    {
                         lbError.Text = "Necesitas estar loggeado para ver esto";
-                        
+
                     }
                     lbBusqueda.Text = "Mis productos";
                     break;
 
                 //mis compras
                 case "mc":
-                    if(Session["LoggedIn"] == "true") {
+                    if (Session["LoggedIn"] == "true")
+                    {
 
-                    l = ProductoBL.GetByCompradosIdPropietarioEN(Tools.GetDbCnxStr(), Convert.ToInt32(Session["userId"]));
+                        l = ProductoBL.GetByCompradosIdPropietarioEN(Tools.GetDbCnxStr(), Convert.ToInt32(Session["userId"]));
                     }
-                    else {
+                    else
+                    {
                         lbError.Text = "Necesitas estar loggeado para ver esto";
-                        
+
                     }
                     lbBusqueda.Text = "Mis productos";
                     break;
@@ -143,6 +149,11 @@ namespace BySWeb
         void NavigationCommand(object sender, CommandEventArgs e)
         {
             PopulateNewsItems(int.Parse((string)e.CommandArgument));
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Listar.aspx?t=b&n=" + tbBuscar.Text);
         }
     }
 

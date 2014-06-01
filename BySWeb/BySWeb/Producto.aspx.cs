@@ -25,7 +25,7 @@ namespace BySWeb
             PujaEN ultimaPuja = PujaBL.GetLastPujaByProductoId(Tools.GetDbCnxStr(), id);
             lblPujaActual.Text= ultimaPuja.Valor.ToString();
             lblPrecio.Text=prod.PrecioCompra.ToString();
-            imgProducto.ImageUrl = prod.Fotos[0].Ruta;
+            imgProducto.ImageUrl = prod.Foto;
               //Barra lateral información del usuario propietario del producto
             UsuarioEN user = UsuarioBL.GetByIdToEN(Tools.GetDbCnxStr(), id);
             lblNombreProp.Text = user.Nombre.ToString();

@@ -23,7 +23,7 @@ namespace BySWeb
                 tbPrecioSalida.Text = prod.PrecioSalida.ToString();
                 tbCompra.Text = prod.PrecioCompra.ToString();
                 tbCantidadRestante.Text = prod.CantidadRestante.ToString();
-                ImageProducto.ImageUrl = prod.Fotos[0].Ruta;
+                ImageProducto.ImageUrl = prod.Foto;
                 SubcategoriaEN subcat = SubcategoriaBL.GetById(Utilities.Tools.GetDbCnxStr(), prod.Subcategoria );
                 //CategoriaEN cat = CategoriaBL.GetAll(Utilities.Tools.GetDbCnxStr());
                 
