@@ -13,6 +13,33 @@ namespace BySWeb {
     public partial class MiUsuario {
         
         /// <summary>
+        /// Control RPTproductosPujados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RPTproductosPujados;
+        
+        /// <summary>
+        /// Control RPTproductosSobastardos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RPTproductosSobastardos;
+        
+        /// <summary>
+        /// Control RPTproductosComprados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RPTproductosComprados;
+        
+        /// <summary>
         /// Control PnlError.
         /// </summary>
         /// <remarks>
