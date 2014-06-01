@@ -41,6 +41,8 @@ namespace BySLib.EN
         #region Private Properties
         private int id = -1;
         private string nombre = "";
+        private List<SubcategoriaEN> subcateg = new List<SubcategoriaEN>();
+
         #endregion
         #region public Properties
         /// <summary>
@@ -59,7 +61,11 @@ namespace BySLib.EN
             get { return nombre; }
             set { nombre = value; }
         }
-
+        public List<SubcategoriaEN> Subcateg
+        {
+            get { return subcateg; }
+            set { subcateg = value; }
+        }
         #endregion
 
 

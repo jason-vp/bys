@@ -10,7 +10,7 @@
 namespace BySWeb {
     
     
-    public partial class WebForm1 {
+    public partial class Listar {
         
         /// <summary>
         /// Control DropDownList1.
@@ -40,6 +40,15 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
+        /// Control lbBusqueda.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbBusqueda;
+        
+        /// <summary>
         /// Control Button2.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace BySWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
+        /// Control lbError.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbError;
         
         /// <summary>
         /// Control RPTproductosListados.
@@ -488,5 +506,14 @@ namespace BySWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label precioListados12;
+        
+        /// <summary>
+        /// Control PagingPanel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PagingPanel;
     }
 }

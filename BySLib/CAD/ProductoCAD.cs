@@ -12,15 +12,15 @@ using BySLib.LINQ;
 
 namespace BySLib.EN
 {
-	/// <summary>
-	/// Clase del producto que conecta con la BBDD
-	/// </summary>
-	public static class ProductoCAD
-	{
-		/// <summary>
-		/// Constante de la conexión a la BBDD
-		/// </summary>
-		//private const string ConnectionString = "data source=.\\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\\*.mdf;User Instance=true";
+    /// <summary>
+    /// Clase del producto que conecta con la BBDD
+    /// </summary>
+    public static class ProductoCAD
+    {
+        /// <summary>
+        /// Constante de la conexión a la BBDD
+        /// </summary>
+        //private const string ConnectionString = "data source=.\\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\\*.mdf;User Instance=true";
 
         #region CRUD'S
 
@@ -39,7 +39,7 @@ namespace BySLib.EN
         /// Método para actualizar el producto
         /// </summary>
         /// <returns>Devuelve si se ha actualizado correctamente</returns>
-		
+
         public static bool Update(BySBDDataContext p_ctx, Producto p_prod)
         {
 
@@ -147,11 +147,71 @@ namespace BySLib.EN
 
         }
 
+        public static List<Producto> GetByIdPropietario(BySBDDataContext p_ctx, int p_idPro)
+        {
+            return (from t1 in p_ctx.Producto
+                    where t1.usuario == p_idPro
+                    && t1.eliminado == false
+                    select t1).ToList();
+
+        }
+
+        //public static List<Producto> GetByBusqueda(BySBDDataContext p_ctx, string p_bus)
+        //{
+        //    return (from t1 in p_ctx.Producto
+        //            where t1.usuario == p_bus
+        //            && t1.eliminado == false
+        //            select t1).ToList();
+
+        //}
+
+        public static List<Producto> GetBySubcategoria(BySBDDataContext p_ctx, int p_idSub)
+        {
+            return (from t1 in p_ctx.Producto
+                    where t1.subcat == p_idSub
+                    && t1.eliminado == false
+                    select t1).ToList();
+
+        }
+
+        public static List<Producto> GetByCategoria(BySBDDataContext p_ctx, int p_idCat)
+        {
+            return (from t1 in p_ctx.Producto
+                    join t2 in p_ctx.Subcategoria
+                    on t1.subcat equals t2.id
+                    where t2.cat_padre == p_idCat
+                    && t1.eliminado == false
+                    select t1).ToList();
+
+        }
+
+        public static List<Producto> GetByPujadosIdPropietario(BySBDDataContext p_ctx, int p_idPro)
+        {
+            return (from t1 in p_ctx.Producto
+                    join t2 in p_ctx.Puja
+                    on t1.usuario equals t2.pujador
+                    where t1.usuario == p_idPro
+                    && t1.eliminado == false
+                    select t1).ToList();
+
+        }
+
+        public static List<Producto> GetByCompradosIdPropietario(BySBDDataContext p_ctx, int p_idPro)
+        {
+            return (from t1 in p_ctx.Producto
+                    join t2 in p_ctx.Compra
+                    on t1.usuario equals t2.comprador
+                    where t1.usuario == p_idPro
+                    && t1.eliminado == false
+                    select t1).ToList();
+
+        }
+
         public static List<Producto> GetByUltimosActivos(BySBDDataContext p_ctx)
         {
             return (from t1 in p_ctx.Producto
-                    where t1.eliminado == false 
-                    && t1.estado == "Activo" 
+                    where t1.eliminado == false
+                    && t1.estado == "Activo"
                     orderby t1.id descending
                     select t1).ToList();
 
