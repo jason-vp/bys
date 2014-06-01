@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BySLib.EN;
 using BySLib.BL;
+using BySLib.AUXILIAR;
 
 namespace BySWeb
 {
@@ -15,32 +16,40 @@ namespace BySWeb
         {
             try 
             {
-
-                int id = Int32.Parse(Request.QueryString["id"]);
-                ProductoEN prod = ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), id);
-                tbNombreProducto.Text = prod.Nombre;
-                tbDescripcion.Text = prod.Descripcion;
-                tbPrecioSalida.Text = prod.PrecioSalida.ToString();
-                tbCompra.Text = prod.PrecioCompra.ToString();
-                tbCantidadRestante.Text = prod.CantidadRestante.ToString();
-                ImageProducto.ImageUrl = prod.Fotos[0].Ruta;
-                SubcategoriaEN subcat = SubcategoriaBL.GetById(Utilities.Tools.GetDbCnxStr(), prod.Subcategoria );
-                //CategoriaEN cat = CategoriaBL.GetAll(Utilities.Tools.GetDbCnxStr());
-                
-               
-               
-                if (prod.PrecioCompra == -1)
+                if (!Page.IsPostBack)
                 {
-                    tbCompra.Text = "";
-                    chkCompraInmediata.Checked = false;
 
+                    if (Request.QueryString["id"] != null)
+                    {
+                        int id = Int32.Parse(Request.QueryString["id"]);
+                        ProductoEN prod = ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), id);
+                        tbNombreProducto.Text = prod.Nombre;
+                        tbDescripcion.Text = prod.Descripcion;
+                        tbPrecioSalida.Text = prod.PrecioSalida.ToString();
+                        tbCompra.Text = prod.PrecioCompra.ToString();
+                        tbCantidadRestante.Text = prod.CantidadRestante.ToString();
+                        ImageProducto.ImageUrl = prod.Fotos[0].Ruta;
+                        SubcategoriaEN subcat = SubcategoriaBL.GetById(Utilities.Tools.GetDbCnxStr(), prod.Subcategoria);
+                        CategoriaEN cat = CategoriaBL.GetById(Utilities.Tools.GetDbCnxStr(), subcat.Padre);
+                        tbFecha.Text = prod.FechaFin.ToString();
+                        lbcategoria.Text = cat.Nombre;
+                        lbSubcategoria.Text = subcat.Nombre;
+
+                        if (prod.PrecioCompra == -1)
+                        {
+                            tbCompra.Text = "";
+                            chkCompraInmediata.Checked = false;
+
+                        }
+                        else
+                        {
+                            chkCompraInmediata.Checked = true;
+                            tbCompra.Text = prod.PrecioCompra.ToString();
+                        }
+                        if (prod.Estado == "Inactivo") Btn_Editar.Visible = true;
+                    }
+                    else Btn_Crear.Visible = true;
                 }
-                else
-                {
-                    chkCompraInmediata.Checked = true;
-                    tbCompra.Text=prod.PrecioCompra.ToString();
-                }
-                
 
                 //if(!IsPostBack)
             }
@@ -65,6 +74,58 @@ namespace BySWeb
             ProductoBL.UpdateFromEN(Utilities.Tools.GetDbCnxStr(), prod);
         }
 
+        protected void Btn_Editar_Click(object sender, EventArgs e)
+        {
+            editar();
+        }
+
+        protected void crear()
+        {
+
+            ProductoEN prod = new ProductoEN();
+            prod.Nombre = tbNombreProducto.Text;
+            prod.Descripcion = tbDescripcion.Text;
+            prod.PrecioSalida = Int32.Parse(tbPrecioSalida.Text);
+            prod.PrecioCompra = Int32.Parse(tbCompra.Text);
+            prod.CantidadRestante = Int32.Parse(tbCantidadRestante.Text);
+            ProductoBL.Create(Utilities.Tools.GetDbCnxStr(), prod);
+
+        }
+        //---------------------------------------------------------------------//
+        //----------------------------VALIDACIONES-----------------------------//
+        //---------------------------------------------------------------------//
+        //Para más información sobre los criterios de validacion ir a la clase Validacion.
+
+        //Validacion del nombre de usuario
+        protected void ComprobarNombre(object sender, ServerValidateEventArgs e)
+        {
+            string nombre = e.Value;
+
+            if (!Validacion.isNombreDescProd(nombre))
+            {
+                e.IsValid = false;
+            }
+        }
+        //Validación dela descripcion
+        protected void ComprobarDescripcion(object sender, ServerValidateEventArgs e)
+        {
+            string desc= e.Value;
+
+            if (!Validacion.isNombreDescProd(desc))
+            {
+                e.IsValid = false;
+            }
+        }
+        //Validacion del precio de salida.
+        protected void ComprobarNumero(object sender, ServerValidateEventArgs e)
+        {
+            string precio = e.Value;
+
+            if (!Validacion.isNumero(precio))
+            {
+                e.IsValid = false;
+            }
+        }
         //protected void TextBox2_TextChanged(object sender, EventArgs e)
         //{
 
