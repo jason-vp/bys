@@ -17,8 +17,11 @@ namespace BySWeb
             {
                 if (!Page.IsPostBack)
                 {
+                    //Obtencion en la variable id del id de usuario de la sesion actual
                     int id = Convert.ToInt32(Session["userId"]);
+                    //Creacion de un objeto usuario con los datos del usuario de la BD
                     UsuarioEN user = UsuarioBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), id);
+                    //Asignacion de los valores de los datos del usuario a los campos de texto del formulario.
                     tbNombre.Text = user.Nombre;
                     tbmail.Text = user.Mail;
                     tbDireccion.Text = user.Direccion;
@@ -59,6 +62,7 @@ namespace BySWeb
             }
         }
 
+        //Función para editar un usuario existente.
         protected void editarUser()
         {
             int id = Convert.ToInt32(Session["userId"]);
@@ -85,7 +89,12 @@ namespace BySWeb
             //    ValidatorPassword2.Visible = true;
             //}
         }
+        //---------------------------------------------------------------------//
+        //----------------------------VALIDACIONES-----------------------------//
+        //---------------------------------------------------------------------//
+        //Para más información sobre los criterios de validacion ir a la clase Validacion.
 
+        //Validacion del nombre de usuario
         protected void ComprobarNombre(object sender, ServerValidateEventArgs e)
         {
             string nombre = e.Value;
@@ -95,7 +104,7 @@ namespace BySWeb
                 e.IsValid = false;
             }
         }
-
+        //Validación del teléfono
         protected void ComprobarTelefono(object sender, ServerValidateEventArgs e)
         {
             string telefono = e.Value;
@@ -105,7 +114,7 @@ namespace BySWeb
                 e.IsValid = false;
             }
         }
-
+        //Validacion de la dirección
         protected void ComprobarDireccion(object sender, ServerValidateEventArgs e)
         {
             string direccion = e.Value;
@@ -115,7 +124,7 @@ namespace BySWeb
                 e.IsValid = false;
             }
         }
-
+        //Validacion del mail
         protected void ComprobarEmail(object sender, ServerValidateEventArgs e)
         {
             string email = e.Value;
@@ -126,6 +135,8 @@ namespace BySWeb
             }
 
         }
+
+        //Validacion del password actual
         protected void ComprobarPassword(object sender, ServerValidateEventArgs e)
         {
             string pass = e.Value;
@@ -136,6 +147,7 @@ namespace BySWeb
             }
 
         }
+        //Validacion de password nuevo
         protected void ComprobarPassword2(object sender, ServerValidateEventArgs e)
         {
             string pass = e.Value;
