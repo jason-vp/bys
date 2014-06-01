@@ -28,8 +28,7 @@ namespace BySLib.BL
 
         }
 
-        public static List<CategoriaEN> GetAll(string p_dbCnxStr)
-        {
+        public static List<CategoriaEN> GetAll(string p_dbCnxStr) {
 
             List<CategoriaEN> ls = new List<CategoriaEN>();
             List<Categoria> lsProdu = new List<Categoria>();
@@ -41,9 +40,28 @@ namespace BySLib.BL
             foreach (Categoria c in lsProdu)
                 ls.Add(CategoriaBL.ConvertToCatEN(c));
             return ls;
-
-
+        
+        
+        
         }
+
+
+        //public static List<CategoriaEN> GetAll(string p_dbCnxStr)
+        //{
+
+        //    List<CategoriaEN> ls = new List<CategoriaEN>();
+        //    List<Categoria> lsProdu = new List<Categoria>();
+
+        //    using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+
+        //        lsProdu = CategoriaCAD.GetAll(cnx);
+
+        //    foreach (Categoria c in lsProdu)
+        //        ls.Add(CategoriaBL.ConvertToCatEN(c));
+        //    return ls;
+
+
+        //}
 
         #endregion
 

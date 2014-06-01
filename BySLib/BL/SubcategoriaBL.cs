@@ -24,6 +24,25 @@ namespace BySLib.BL
 
 
         }
+        public static List<SubcategoriaEN> GetAll(string p_dbCnxStr)
+        {
+
+            List<SubcategoriaEN> ls = new List<SubcategoriaEN>();
+            List<Subcategoria> lsProdu = new List<Subcategoria>();
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+
+                lsProdu = SubcategoriaCAD.GetAll(cnx);
+
+            foreach (Subcategoria c in lsProdu)
+                ls.Add(SubcategoriaBL.ConvertToSubEN(c));
+            return ls;
+
+
+
+        }
+
+
         #endregion
 
         #region Convert To EN
