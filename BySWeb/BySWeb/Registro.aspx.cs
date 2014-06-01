@@ -31,9 +31,6 @@ namespace BySWeb
                 if (!this.IsPostBack)
                 {
 
-
-                    this.tbCP.Text = "000000";
-
                 }
             }
             catch (Exception ex)
@@ -92,6 +89,7 @@ namespace BySWeb
             if (tbCP.Text.Length == 5){
 
                //llamada a la funcion AJAX
+
                 rellenaLocProv(Int32.Parse(tbCP.Text));
             }
             
@@ -186,8 +184,24 @@ namespace BySWeb
         }
 
         protected void rellenaLocProv(int CP){
-        
-            //private List<P> customers; 
+
+            listaLocalidad.Items.Clear();
+            listaProvincias.Items.Clear();
+
+            List <PoblacionEN> listaLocalidades = PoblacionBL.GetByPostalCode(Utilities.Tools.GetDbCnxStr(), CP);
+
+            foreach (PoblacionEN c in listaLocalidades){
+                listaLocalidad.Items.Add(c.Nombre);
+            }
+            int idprov;
+            if (listaLocalidades != null)
+            {
+
+                idprov = listaLocalidades[0].Cod_provincia;
+                listaProvincias.Items.Add(ProvinciaBL.GetById(Tools.GetDbCnxStr(),idprov).Nombre);
+            }
+
+            
         }
         /**
         protected void list_provincia_DataBound(object sender, EventArgs e)

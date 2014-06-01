@@ -95,20 +95,19 @@
         ErrorMessage="Introduce un nombre" ForeColor="#FF3399"></asp:RequiredFieldValidator>
     </p>
     <p>
-        CP:
-        <asp:TextBox ID="tbCP" runat="server" ontextchanged="TextB_CP_TextChanged" 
-            style = "margin-left:50px; margin-right:10px;" AutoPostBack="True"  ></asp:TextBox>
-        <div class="validator">
-            <asp:CustomValidator ID="ValidatorCP" ControlToValidate="tbCP"
-         OnServerValidate="ComprobarCpostal" runat="server" ErrorMessage="Código postal incorrecto" 
-         Display="Dynamic" ValidateEmptyText="true" ForeColor="Red"></asp:CustomValidator>
-        </div>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
-        ControlToValidate="tbCP"
-        ErrorMessage="Introduce un Código postal" ForeColor="#FF3399"></asp:RequiredFieldValidator>
-
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
+                CP:
+                <asp:TextBox ID="tbCP" runat="server" ontextchanged="TextB_CP_TextChanged" 
+                    style = "margin-left:50px; margin-right:10px;" AutoPostBack="True"  ></asp:TextBox>
+                <div class="validator">
+                    <asp:CustomValidator ID="ValidatorCP" ControlToValidate="tbCP"
+                 OnServerValidate="ComprobarCpostal" runat="server" ErrorMessage="Código postal incorrecto" 
+                 Display="Dynamic" ValidateEmptyText="true" ForeColor="Red"></asp:CustomValidator>
+                </div>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                ControlToValidate="tbCP"
+                ErrorMessage="Introduce un Código postal" ForeColor="#FF3399"></asp:RequiredFieldValidator>     
                 Provincia:
                 <asp:DropDownList
                     ID="listaProvincias" runat="server" style = "margin-left:15px; margin-right:50px;">

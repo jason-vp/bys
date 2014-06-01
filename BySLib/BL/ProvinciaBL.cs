@@ -7,10 +7,20 @@ using BySLib.EN;
 
 namespace BySLib.BL
 {
-    class ProvinciaBL
+    public class ProvinciaBL
     {
 
+        public static ProvinciaEN GetById(string p_dbCnxStr, int p_id)
+        {
 
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+            {
+                return ProvinciaBL.ConvertToEN(ProvinciaCAD.GetById(cnx, p_id));
+
+            }
+
+
+        }
         internal static Provincia ConvertFromEN(ProvinciaEN prod)
         {
             return new Provincia()
@@ -21,7 +31,7 @@ namespace BySLib.BL
             };
         }
 
-        private static ProvinciaEN ConvertToEN(Provincia prod)//revisar
+        public static ProvinciaEN ConvertToEN(Provincia prod)//revisar
         {
             return new ProvinciaEN()
             {
@@ -32,6 +42,8 @@ namespace BySLib.BL
 
             };
         }
+
+        
 
 
 
