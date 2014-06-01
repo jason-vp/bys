@@ -22,7 +22,7 @@ namespace BySWeb
                 ProductoEN prod = ProductoBL.GetByIdToEN(Tools.GetDbCnxStr(), id);
                 lblNombreProd.Text = prod.Nombre;
                 lblDescripcion.Text = prod.Descripcion;
-                lblCantidadRest.Text = prod.CantidadRestante.ToString();
+                lblCantidadRest.Text = prod.CantidadInicial.ToString();
                 fechaFinProducto.Text = prod.FechaFin.ToString();
                 EstadoProducto.Text = prod.Estado;
                 PujaEN ultimaPuja = PujaBL.GetLastPujaByProductoId(Tools.GetDbCnxStr(), id);

@@ -85,7 +85,7 @@
                         Text="Barco de 12 metros de eslora. Solo 3 años de uso. Muy cuidado.Barco de 12 metros de eslora. Solo 3 años de uso. Muy cuidadoBarco de 12 metros de eslora. Solo 3 años de uso. Muy cuidado"></asp:Label>
                 </p>
                         <p __designer:mapid="66">
-                            Cantidad Restante:<asp:Label ID="lblCantidadRest" runat="server"
+                            Cantidad:<asp:Label ID="lblCantidadRest" runat="server"
                                 Text="20"></asp:Label>
                         </p>
                 </div>
