@@ -86,7 +86,6 @@
                <asp:Label ID="lbSubcategoria" runat="server" ></asp:Label>
                
                     <asp:DropDownList ID="ddpSubcategoria" runat="server"></asp:DropDownList>
-                <asp:Label ID="lbSubcategoria" runat="server" Text="Label"></asp:Label>
             </p>
         </div>
         <p>

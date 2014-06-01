@@ -13,6 +13,25 @@ namespace BySLib.BL
 
         #region Getting Data
 
+        public static List<SubcategoriaEN> GetAll(string p_dbCnxStr)
+        {
+
+            List<SubcategoriaEN> ls = new List<SubcategoriaEN>();
+            List<Subcategoria> lsProdu = new List<Subcategoria>();
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+
+                lsProdu = SubcategoriaCAD.GetAll(cnx);
+
+            foreach (Subcategoria c in lsProdu)
+                ls.Add(SubcategoriaBL.ConvertToSubEN(c));
+            return ls;
+
+
+
+        }
+
+
         //Devuelve una subcategoria a partir de su ID
         public static SubcategoriaEN GetById(string p_dbCnxStr, int p_id)
         {
