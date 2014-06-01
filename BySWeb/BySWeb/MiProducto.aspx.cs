@@ -25,7 +25,7 @@ namespace BySWeb
                 tbCantidadRestante.Text = prod.CantidadRestante.ToString();
                 ImageProducto.ImageUrl = prod.Fotos[0].Ruta;
                 SubcategoriaEN subcat = SubcategoriaBL.GetById(Utilities.Tools.GetDbCnxStr(), prod.Subcategoria );
-                CategoriaEN cat = CategoriaBL.GetAll(Utilities.Tools.GetDbCnxStr(), subcat.Padre);
+                //CategoriaEN cat = CategoriaBL.GetAll(Utilities.Tools.GetDbCnxStr());
                 
                
                
