@@ -35,27 +35,27 @@ namespace BySWeb
                 //por categoría
                 case "c":
                     n=Request.QueryString["n"];
-                    l = ProductoBL.GetByCategoria(Tools.GetDbCnxStr(), Convert.ToInt32(n));
+                    l = ProductoBL.GetByCategoriaEN(Tools.GetDbCnxStr(), Convert.ToInt32(n));
                     lbBusqueda.Text = "Categoría " + CategoriaBL.GetById(Tools.GetDbCnxStr(), Convert.ToInt32(n)).Nombre;
                     break;
                 //por subcategoria
                 case "s":
                     n = Request.QueryString["n"];
-                    l = ProductoBL.GetBySubCategoria(Tools.GetDbCnxStr(), Convert.ToInt32(n));
+                    l = ProductoBL.GetBySubcategoriaEN(Tools.GetDbCnxStr(), Convert.ToInt32(n));
                     lbBusqueda.Text = "Categoría " + SubcategoriaBL.GetById(Tools.GetDbCnxStr(), Convert.ToInt32(n)).Nombre;
                     break;
                 
                 //busqueda
                 case "b":
                     n = Request.QueryString["n"];
-                    l = ProductoBL.GetByBusqueda(Tools.GetDbCnxStr(), Convert.ToInt32(n));
+                    //l = ProductoBL.g (Tools.GetDbCnxStr(), Convert.ToInt32(n));
                     lbBusqueda.Text = n;
                     break;
 
                 //productos
                 case "m":
                     n = Request.QueryString["n"];
-                    l = ProductoBL.getByPropietario(Tools.GetDbCnxStr(), Convert.ToInt32(n));
+                    l = ProductoBL.GetByIdPropietarioEN(Tools.GetDbCnxStr(), Convert.ToInt32(n));
                     lbBusqueda.Text = "Productos de " + n;
                     break;
 
@@ -63,7 +63,7 @@ namespace BySWeb
                 case "p":
                     if(Session["LoggedIn"] == "true") {
 
-                    l = ProductoBL.getByPropietarioPuja(Tools.GetDbCnxStr(), Convert.ToInt32(Session["userId"]));
+                    l = ProductoBL.GetByPujadosIdPropietarioEN(Tools.GetDbCnxStr(), Convert.ToInt32(Session["userId"]));
                     }
                     else {
                         lbError.Text = "Necesitas estar loggeado para ver esto";
@@ -76,7 +76,7 @@ namespace BySWeb
                 case "mc":
                     if(Session["LoggedIn"] == "true") {
 
-                    l = ProductoBL.getByPropietarioCompra(Tools.GetDbCnxStr(), Convert.ToInt32(Session["userId"]));
+                    l = ProductoBL.GetByCompradosIdPropietarioEN(Tools.GetDbCnxStr(), Convert.ToInt32(Session["userId"]));
                     }
                     else {
                         lbError.Text = "Necesitas estar loggeado para ver esto";
