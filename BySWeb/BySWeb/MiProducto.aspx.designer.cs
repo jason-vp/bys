@@ -157,13 +157,13 @@ namespace BySWeb {
         protected global::System.Web.UI.WebControls.TextBox tbFecha;
         
         /// <summary>
-        /// Control lbcategoria.
+        /// Control lbCategoria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbcategoria;
+        protected global::System.Web.UI.WebControls.Label lbCategoria;
         
         /// <summary>
         /// Control lbSubcategoria.
@@ -173,5 +173,14 @@ namespace BySWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbSubcategoria;
+        
+        /// <summary>
+        /// Control ddpSubcategoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddpSubcategoria;
     }
 }

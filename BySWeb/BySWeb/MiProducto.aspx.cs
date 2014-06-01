@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using BySLib.EN;
 using BySLib.BL;
 using BySLib.AUXILIAR;
+using BySWeb.Utilities;
 
 namespace BySWeb
 {
@@ -22,6 +23,7 @@ namespace BySWeb
                     if (Request.QueryString["id"] != null)
                     {
                         int id = Int32.Parse(Request.QueryString["id"]);
+
                         ProductoEN prod = ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), id);
                         tbNombreProducto.Text = prod.Nombre;
                         tbDescripcion.Text = prod.Descripcion;
@@ -31,9 +33,9 @@ namespace BySWeb
                         ImageProducto.ImageUrl = prod.Foto;
                         SubcategoriaEN subcat = SubcategoriaBL.GetById(Utilities.Tools.GetDbCnxStr(), prod.Subcategoria);
                         CategoriaEN cat = CategoriaBL.GetById(Utilities.Tools.GetDbCnxStr(), subcat.Padre);
-                        tbFecha.Text = prod.FechaFin.ToString();
-                        lbcategoria.Text = cat.Nombre;
+                        lbCategoria.Text = cat.Nombre;
                         lbSubcategoria.Text = subcat.Nombre;
+                        tbFecha.Text = prod.FechaFin.ToString();
 
                         if (prod.PrecioCompra == -1)
                         {
@@ -49,7 +51,29 @@ namespace BySWeb
                         if (prod.Estado == "Inactivo") Btn_Editar.Visible = true;
                         else LabelErrorEstado.Visible = true;
                     }
-                    else Btn_Crear.Visible = true;
+                    else {
+                        Btn_Crear.Visible = true;
+                        ddpSubcategoria.Visible= true;
+                        tbNombreProducto.Text = "prueba";
+                        ddpSubcategoria.Items.Clear();
+                        List<CategoriaEN> cats = CategoriaBL.GetAll(Tools.GetDbCnxStr());
+                        ddpSubcategoria.Items.Insert(0, "prueba");
+                        ddpSubcategoria.Items.Add("Prueba456987");
+                        ddpSubcategoria.Items.Add(new ListItem("jaja", "1"));
+                        
+                        ddpSubcategoria.Items.Add("ptur");
+                        foreach (CategoriaEN c in cats)
+                        {
+                            foreach (SubcategoriaEN s in c.Subcateg)
+                            {
+                                ddpSubcategoria.Items.Add(new ListItem(c.Nombre + " - " + s.Nombre, s.Id.ToString()));
+                            }
+                        }
+                        ddpSubcategoria.DataBind();
+                       
+                       // dpSubcategoria.DataSource = l;
+                       // dpSubcategoria.DataBind();
+                    }
                 }
 
                 //if(!IsPostBack)
