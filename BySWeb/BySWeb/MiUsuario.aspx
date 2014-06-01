@@ -15,48 +15,54 @@
     <p>Mis Pujas:</p>
         <asp:Repeater runat="server" ID="RPTproductosPujados">
         <HeaderTemplate>
-            <p>
+            <ul>
         </HeaderTemplate>
         <ItemTemplate>
+            <li>
             <asp:HyperLink ID="misPujas1" runat="server" style="margin-right:15px" NavigateUrl='<%# string.Format("~/Producto.aspx?id={0}", ((BySLib.EN.ProductoEN)Container.DataItem).Id) %>'>
-                <asp:Label ID="Label2" runat="server"> <%# BySLib.BL.ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), ((BySLib.EN.ProductoEN)Container.DataItem).Id).Nombre %></asp:Label>
+                <asp:Label ID="Label2" runat="server"> <%# ((BySLib.EN.ProductoEN)Container.DataItem).Nombre %></asp:Label>
             </asp:HyperLink>
+            </li>
         </ItemTemplate>
         <FooterTemplate>
-              </p>
-              <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Listar.aspx?t=p">Ver más...</asp:HyperLink>
+            </ul>
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Listar.aspx?t=p">Ver más...</asp:HyperLink>
         </FooterTemplate>
         </asp:Repeater> 
         
     <p>Mis Productos</p>
         <asp:Repeater runat="server" ID="RPTproductosSobastardos">
         <HeaderTemplate>
-            <p>
+            <ul>
         </HeaderTemplate>
         <ItemTemplate>
+            <li>
             <asp:HyperLink ID="misProductos1" runat="server" style="margin-right:15px" NavigateUrl='<%# string.Format("~/Producto.aspx?id={0}", ((BySLib.EN.ProductoEN)Container.DataItem).Id) %>'>
-                <asp:Label ID="Label2" runat="server"> <%# BySLib.BL.ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), ((BySLib.EN.ProductoEN)Container.DataItem).Id).Nombre %></asp:Label>
+                <asp:Label ID="Label2" runat="server"> <%# ((BySLib.EN.ProductoEN)Container.DataItem).Nombre%></asp:Label>
             </asp:HyperLink>
+            </li>
         </ItemTemplate>
         <FooterTemplate>
-              </p>
-              <asp:HyperLink ID="HyperLink1" runat="server">Ver más...</asp:HyperLink>
+            </ul>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# string.Format("~/Listar.aspx?p=m&n={0}",Session["userId"]) %>'>Ver más...</asp:HyperLink>
         </FooterTemplate>
         </asp:Repeater> 
         
     <p>Mis Compras</p>
         <asp:Repeater runat="server" ID="RPTproductosComprados">
         <HeaderTemplate>
-            <p>
+            <ul>
         </HeaderTemplate>
         <ItemTemplate>
+            <li>
             <asp:HyperLink ID="misCompras1" runat="server" style="margin-right:15px" NavigateUrl='<%# string.Format("~/Producto.aspx?id={0}", ((BySLib.EN.ProductoEN)Container.DataItem).Id) %>'>
-                <asp:Label ID="Label2" runat="server"> <%# BySLib.BL.ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), ((BySLib.EN.ProductoEN)Container.DataItem).Id).Nombre %></asp:Label>
+                <asp:Label ID="Label2" runat="server"> <%# ((BySLib.EN.ProductoEN)Container.DataItem).Nombre%></asp:Label>
             </asp:HyperLink>
+            </li>
         </ItemTemplate>
         <FooterTemplate>
-              </p>
-              <asp:HyperLink runat="server" NavigateUrl="~/Listar.aspx?t=mc">Ver más...</asp:HyperLink>
+            </ul>
+            <asp:HyperLink runat="server" NavigateUrl="~/Listar.aspx?t=mc">Ver más...</asp:HyperLink>
         </FooterTemplate>
         </asp:Repeater>
 

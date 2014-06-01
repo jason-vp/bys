@@ -45,7 +45,7 @@ namespace BySWeb
                 case "s":
                     n = Request.QueryString["n"];
                     l = ProductoBL.GetBySubcategoriaEN(Tools.GetDbCnxStr(), Convert.ToInt32(n));
-                    lbBusqueda.Text = "Categoría " + SubcategoriaBL.GetById(Tools.GetDbCnxStr(), Convert.ToInt32(n)).Nombre;
+                    lbBusqueda.Text = "SubCategoría " + SubcategoriaBL.GetById(Tools.GetDbCnxStr(), Convert.ToInt32(n)).Nombre;
                     break;
 
                 //busqueda
@@ -59,7 +59,7 @@ namespace BySWeb
                 case "m":
                     n = Request.QueryString["n"];
                     l = ProductoBL.GetByIdPropietarioEN(Tools.GetDbCnxStr(), Convert.ToInt32(n));
-                    lbBusqueda.Text = "Productos de " + UsuarioBL.GetByIdToEN(Tools.GetDbCnxStr(), Convert.ToInt32(n)).Nombre;
+                    lbBusqueda.Text = "Productos propiedad de " + UsuarioBL.GetByIdToEN(Tools.GetDbCnxStr(), Convert.ToInt32(n)).Nick;
                     break;
 
                 //mis pujas
@@ -74,7 +74,7 @@ namespace BySWeb
                         lbError.Text = "Necesitas estar loggeado para ver esto";
 
                     }
-                    lbBusqueda.Text = "Mis productos";
+                    lbBusqueda.Text = "Mis Pujas";
                     break;
 
                 //mis compras
@@ -89,7 +89,7 @@ namespace BySWeb
                         lbError.Text = "Necesitas estar loggeado para ver esto";
 
                     }
-                    lbBusqueda.Text = "Mis productos";
+                    lbBusqueda.Text = "Mis Compras";
                     break;
 
                 default:
@@ -155,6 +155,22 @@ namespace BySWeb
         protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Listar.aspx?t=b&n=" + tbBuscar.Text);
+        }
+
+        protected void btVer_Click(object sender, EventArgs e)
+        {
+            if(Session["LoggedIn"]!= null) {
+
+                if (rbCompras.Checked)
+                    Response.Redirect("/Listar.aspx?t=mc");
+                if (rbMisProductos.Checked)
+                    Response.Redirect("/Listar.aspx?t=m&n="+Session["userId"]);
+                if (rbPujas.Checked)
+                    Response.Redirect("/Listar.aspx?t=p");
+            }
+            else {
+                lbSide.Text = "Necesitas estar logeado.";
+            }
         }
     }
 

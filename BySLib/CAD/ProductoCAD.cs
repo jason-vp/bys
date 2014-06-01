@@ -198,8 +198,8 @@ namespace BySLib.EN
         {
             return (from t1 in p_ctx.Producto
                     join t2 in p_ctx.Puja
-                    on t1.usuario equals t2.pujador
-                    where t1.usuario == p_idPro
+                    on t1.id equals t2.producto
+                    where t2.pujador == p_idPro
                     && t1.eliminado == false
                     select t1).ToList();
 
@@ -209,8 +209,8 @@ namespace BySLib.EN
         {
             return (from t1 in p_ctx.Producto
                     join t2 in p_ctx.Compra
-                    on t1.usuario equals t2.comprador
-                    where t1.usuario == p_idPro
+                    on t1.id equals t2.producto
+                    where t2.comprador == p_idPro
                     && t1.eliminado == false
                     select t1).ToList();
 
