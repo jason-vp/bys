@@ -7,9 +7,10 @@ using BySLib.EN;
 
 namespace BySLib.BL
 {
+    //Capa de negocio de la provincia
     public static class ProvinciaBL
     {
-
+        // Devuelve una ProvinciaEN a partir de un id.
         public static ProvinciaEN GetById(string p_dbCnxStr, int p_id)
         {
 
@@ -21,6 +22,7 @@ namespace BySLib.BL
 
 
         }
+        //Devuelve una Provincia a partir de un ProvinciaEN.
         internal static Provincia ConvertFromEN(ProvinciaEN prod)
         {
             return new Provincia()
@@ -30,7 +32,7 @@ namespace BySLib.BL
 
             };
         }
-
+        //devuelve un provinciaEN a partir de una Provincia.
         public static ProvinciaEN ConvertToEN(Provincia prod)//revisar
         {
             return new ProvinciaEN()

@@ -8,9 +8,11 @@ using System.Data.Linq;
 
 namespace BySLib.BL
 {
+    //Capa de negocio de la clase compra
     public static class CompraBL
     {
         #region CRUD's
+        //Crea una compra a partir de una compraEN
         public static void Create(string dbCnxStr, CompraEN com)
         {
             using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(dbCnxStr))
@@ -18,7 +20,7 @@ namespace BySLib.BL
                 CompraCAD.Create(cnx, CompraBL.ConvertFromEN(com));
             }
         }
-
+        //Actualiza una compra a partir de un compraEN.
         public static bool UpdateFromEN(string p_dbCnxStr, CompraEN p_com)
         {
             using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
@@ -26,6 +28,7 @@ namespace BySLib.BL
 
         }
 
+        //Elimina una compra de la BD
         public static bool Delete(string p_dbCnxStr, CompraEN p_com)
         {
 
@@ -38,6 +41,7 @@ namespace BySLib.BL
         #endregion
 
         #region Getting Data
+        //Obtiene una lista de compraEN a partir de la id de un propietario.
         public static List<CompraEN> GetByIdPropietarioToEN(string p_dbCnxStr, int p_id)
         {
 
@@ -53,6 +57,7 @@ namespace BySLib.BL
             return ls;
         }
 
+        //Devuelve un objeto ProductoEN a partir de una ID
         public static List<CompraEN> GetByIdProductoToEN(string p_dbCnxStr, int p_id)
         {
 
@@ -72,7 +77,7 @@ namespace BySLib.BL
 
 
         #region Convert to EN
-
+        //devuelve una lista de CompraEN a partir de una lista de Compras
         private static List<CompraEN> ConvertToListCompraEn(List<Compra> p_lsCom)//revisar Gamba (es entityset o list)
         {
             if (p_lsCom == null || p_lsCom.Count <= 0)
@@ -84,6 +89,7 @@ namespace BySLib.BL
 
             return ls;
         }
+        //Devuelve un EntitySet de compra a partir de una CompraEN.
         private static EntitySet<Compra> ConvertToEntityCompraEn(List<CompraEN> p_lsFotos)
         {
             if (p_lsFotos == null || p_lsFotos.Count <= 0)
@@ -97,7 +103,7 @@ namespace BySLib.BL
         }
 
 
-
+        //Devuelve una compra a partir de una CompraEN
         internal static Compra ConvertFromEN(CompraEN prod)
         {
             return new Compra()
@@ -111,7 +117,7 @@ namespace BySLib.BL
 
             };
         }
-
+        //Devuelve una compraEN a partir de una Compra
         private static CompraEN ConvertToEN(Compra prod)//revisar
         {
             return new CompraEN()

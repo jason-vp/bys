@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using BySLib.EN;
 using BySLib.BL;
 using BySLib.AUXILIAR;
-using BySWeb.Utilities;
 
 namespace BySWeb
 {
@@ -22,8 +21,8 @@ namespace BySWeb
 
                     if (Request.QueryString["id"] != null)
                     {
+                        
                         int id = Int32.Parse(Request.QueryString["id"]);
-
                         ProductoEN prod = ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), id);
                         tbNombreProducto.Text = prod.Nombre;
                         tbDescripcion.Text = prod.Descripcion;
@@ -33,9 +32,9 @@ namespace BySWeb
                         ImageProducto.ImageUrl = prod.Foto;
                         SubcategoriaEN subcat = SubcategoriaBL.GetById(Utilities.Tools.GetDbCnxStr(), prod.Subcategoria);
                         CategoriaEN cat = CategoriaBL.GetById(Utilities.Tools.GetDbCnxStr(), subcat.Padre);
-                        lbCategoria.Text = cat.Nombre;
-                        lbSubcategoria.Text = subcat.Nombre;
                         tbFecha.Text = prod.FechaFin.ToString();
+                        lbcategoria.Text = cat.Nombre;
+                        lbSubcategoria.Text = subcat.Nombre;
 
                         if (prod.PrecioCompra == -1)
                         {

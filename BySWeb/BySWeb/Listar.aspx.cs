@@ -13,6 +13,7 @@ namespace BySWeb
 {
     public partial class Listar : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["t"] != null)
