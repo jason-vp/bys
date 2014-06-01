@@ -22,8 +22,8 @@ namespace BySWeb
 
                     if (Request.QueryString["id"] != null)
                     {
+                        
                         int id = Int32.Parse(Request.QueryString["id"]);
-
                         ProductoEN prod = ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), id);
                         tbNombreProducto.Text = prod.Nombre;
                         tbDescripcion.Text = prod.Descripcion;
@@ -33,9 +33,9 @@ namespace BySWeb
                         ImageProducto.ImageUrl = prod.Foto;
                         SubcategoriaEN subcat = SubcategoriaBL.GetById(Utilities.Tools.GetDbCnxStr(), prod.Subcategoria);
                         CategoriaEN cat = CategoriaBL.GetById(Utilities.Tools.GetDbCnxStr(), subcat.Padre);
-                        lbCategoria.Text = cat.Nombre;
-                        lbSubcategoria.Text = subcat.Nombre;
                         tbFecha.Text = prod.FechaFin.ToString();
+                        lbcategoria.Text = cat.Nombre;
+                        lbSubcategoria.Text = subcat.Nombre;
 
                         if (prod.PrecioCompra == -1)
                         {
@@ -56,23 +56,14 @@ namespace BySWeb
                         ddpSubcategoria.Visible= true;
                         tbNombreProducto.Text = "prueba";
                         ddpSubcategoria.Items.Clear();
+                        List<SubcategoriaEN> subcats = SubcategoriaBL.GetAll(Tools.GetDbCnxStr());
                         List<CategoriaEN> cats = CategoriaBL.GetAll(Tools.GetDbCnxStr());
-                        ddpSubcategoria.Items.Insert(0, "prueba");
-                        ddpSubcategoria.Items.Add("Prueba456987");
-                        ddpSubcategoria.Items.Add(new ListItem("jaja", "1"));
-                        
-                        ddpSubcategoria.Items.Add("ptur");
-                        foreach (CategoriaEN c in cats)
+                        foreach (SubcategoriaEN s in subcats)
                         {
-                            foreach (SubcategoriaEN s in c.Subcateg)
-                            {
-                                ddpSubcategoria.Items.Add(new ListItem(c.Nombre + " - " + s.Nombre, s.Id.ToString()));
-                            }
+                           
+                           ddpSubcategoria.Items.Add(new ListItem(cats[s.Padre-1].Nombre + " - " + s.Nombre, s.Id.ToString()));
                         }
-                        ddpSubcategoria.DataBind();
-                       
-                       // dpSubcategoria.DataSource = l;
-                       // dpSubcategoria.DataBind();
+
                     }
                 }
 
@@ -94,7 +85,14 @@ namespace BySWeb
             prod.PrecioSalida = Convert.ToDecimal(tbPrecioSalida.Text);
             prod.PrecioCompra = Convert.ToDecimal(tbCompra.Text);
             prod.CantidadRestante = Convert.ToInt32(tbCantidadRestante.Text);
-            //prod.Fotos=
+
+            if (this.FileUpload1.HasFile)
+            {
+                string ruta = Server.MapPath("~") + "/images/" + prod.Id + FileUpload1.FileName;
+                prod.Foto = "/images/" + prod.Id + FileUpload1.FileName;
+                FileUpload1.SaveAs(ruta);
+                
+            }
             //funcion de edición en la bd a partir del objeto EN
             ProductoBL.UpdateFromEN(Utilities.Tools.GetDbCnxStr(), prod);
         }
@@ -109,6 +107,7 @@ namespace BySWeb
 
         protected void crear()
         {
+            if(Session["LoggedIn"] == "true") {
 
             ProductoEN prod = new ProductoEN();
             prod.Nombre = tbNombreProducto.Text;
@@ -116,10 +115,16 @@ namespace BySWeb
             prod.PrecioSalida = Int32.Parse(tbPrecioSalida.Text);
             prod.PrecioCompra = Int32.Parse(tbCompra.Text);
             prod.CantidadRestante = Int32.Parse(tbCantidadRestante.Text);
-            prod.Estado = "Inactivo";
+            prod.Estado = "Activo";
             prod.Propietario = Convert.ToInt32(Session["userId"]);
-            prod.Subcategoria = 1;
+            prod.Subcategoria = Convert.ToInt32(ddpSubcategoria.SelectedValue);
             ProductoBL.Create(Utilities.Tools.GetDbCnxStr(), prod);
+            }
+            else
+	{
+                LabelErrorEstado.Text = "Necesitas estar logeado";
+
+	}
         }
         //---------------------------------------------------------------------//
         //----------------------------VALIDACIONES-----------------------------//

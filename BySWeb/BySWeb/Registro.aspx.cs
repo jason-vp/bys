@@ -16,6 +16,7 @@ namespace BySWeb
 {
     public partial class Registro : System.Web.UI.Page
     {
+        //Carga la informacion de la pagina.
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -48,11 +49,11 @@ namespace BySWeb
 
         protected void Button_Enviar_Click(object sender, EventArgs e)
         {
+            //Comprobacion de las validaciones.
             if (Page.IsValid)
             {
                 try
                 {
-
                     using (UsuarioEN us = this.getUsuario())
                     {
 
@@ -98,6 +99,9 @@ namespace BySWeb
             }
             
         }
+        //---------------------------------------------------------------------//
+        //----------------------------VALIDACIONES-----------------------------//
+        //---------------------------------------------------------------------//
 
         protected void ComprobarUsuario(object sender, ServerValidateEventArgs e)
         {
@@ -178,6 +182,7 @@ namespace BySWeb
                 e.IsValid = false;
             }
         }
+
         protected void ComprobarCpostal(object sender, ServerValidateEventArgs e) {
 
             string cp = e.Value;
@@ -186,7 +191,7 @@ namespace BySWeb
                 e.IsValid=false;
 
         }
-
+        //Funcion para rellenar localidades mediante AJAX.
         protected void rellenaLocProv(int CP){
 
             listaLocalidad.Items.Clear();

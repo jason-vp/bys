@@ -7,12 +7,32 @@ using BySLib.EN;
 
 namespace BySLib.BL
 {
-
+    //Capa de negocio de Subcategoria
     public static class SubcategoriaBL{
 
 
         #region Getting Data
 
+        public static List<SubcategoriaEN> GetAll(string p_dbCnxStr)
+        {
+
+            List<SubcategoriaEN> ls = new List<SubcategoriaEN>();
+            List<Subcategoria> lsProdu = new List<Subcategoria>();
+
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+
+                lsProdu = SubcategoriaCAD.GetAll(cnx);
+
+            foreach (Subcategoria c in lsProdu)
+                ls.Add(SubcategoriaBL.ConvertToSubEN(c));
+            return ls;
+
+
+
+        }
+
+
+        //Devuelve una subcategoria a partir de su ID
         public static SubcategoriaEN GetById(string p_dbCnxStr, int p_id)
         {
 
@@ -27,7 +47,7 @@ namespace BySLib.BL
         #endregion
 
         #region Convert To EN
-
+        //Devuelve una SubcategoriaEN a partir EN a partir de una Subcategoria.
         private static SubcategoriaEN ConvertToSubEN(Subcategoria p_sub)
         {
             //#region Check Parameters
@@ -47,7 +67,7 @@ namespace BySLib.BL
             };
 
         }
-
+        //devuelve una Subcategoria a partir de una SubcategoriaEN
         private static Subcategoria ConvertFromSubEN(SubcategoriaEN p_sub)
         {
             //#region Check Parameters

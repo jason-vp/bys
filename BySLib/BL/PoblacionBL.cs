@@ -6,9 +6,10 @@ using BySLib.LINQ;
 
 namespace BySLib.BL
 {
+    //Capa de negocio de la poblacion
     public static class PoblacionBL
     {
-
+        //Obtiene una lista de poblaciones a partir de un codigo postal
         public static List<PoblacionEN> GetByPostalCode(string dbcnx, int id)
         {
 
@@ -17,7 +18,7 @@ namespace BySLib.BL
 
         }
 
-
+        //Devuelve una lista de PoblacionEN a partir de una lista de Poblacion
         public static List<PoblacionEN> ConvertToListPoblacionEn(List<Poblacion> li_pob)
         {
             List<PoblacionEN> ls = new List<PoblacionEN>();
@@ -28,9 +29,7 @@ namespace BySLib.BL
             return ls;
         }
 
-
-
-
+        //Devuelve una Poblacion a partir de una PoblacionEN
         internal static Poblacion ConvertFromEN(PoblacionEN prod)
         {
             return new Poblacion()
@@ -41,7 +40,7 @@ namespace BySLib.BL
   
             };
         }
-
+        //Deielve una PoblacionEn a partir de una Poblacion
         private static PoblacionEN ConvertToEN(Poblacion prod)//revisar
         {
             return new PoblacionEN()
