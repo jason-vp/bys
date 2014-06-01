@@ -7,8 +7,8 @@
       <Column Name="valor" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Producto_Puja" Member="Producto1" ThisKey="producto" OtherKey="id" Type="Producto" IsForeignKey="true" />
       <Association Name="Usuario_Puja" Member="Usuario" ThisKey="pujador" OtherKey="id" Type="Usuario" IsForeignKey="true" />
+      <Association Name="Producto_Puja" Member="Producto1" ThisKey="producto" OtherKey="id" Type="Producto" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.FotosProducto" Member="FotosProducto">
@@ -27,8 +27,8 @@
       <Column Name="puntuacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="eliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Producto_Compra" Member="Producto1" ThisKey="producto" OtherKey="id" Type="Producto" IsForeignKey="true" />
       <Association Name="Usuario_Compra" Member="Usuario" ThisKey="comprador" OtherKey="id" Type="Usuario" IsForeignKey="true" />
+      <Association Name="Producto_Compra" Member="Producto1" ThisKey="producto" OtherKey="id" Type="Producto" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Provincia" Member="Provincia">
@@ -45,27 +45,6 @@
       <Column Name="nom_pob" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="Poblacion_Usuario" Member="Usuario" ThisKey="cod_postal,nom_pob" OtherKey="cod_postal,nomb_pob" Type="Usuario" />
       <Association Name="Provincia_Poblacion" Member="Provincia" ThisKey="cod_prov" OtherKey="cod_prov" Type="Provincia" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Producto" Member="Producto">
-    <Type Name="Producto">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="nombre" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="precio_sal" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-      <Column Name="precio_compra" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-      <Column Name="estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="cant_ini" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="cant_fin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="fecha_fin" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="subcat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="eliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Producto_Puja" Member="Puja" ThisKey="id" OtherKey="producto" Type="Puja" />
-      <Association Name="Producto_FotosProducto" Member="FotosProducto" ThisKey="id" OtherKey="producto" Type="FotosProducto" />
-      <Association Name="Producto_Compra" Member="Compra" ThisKey="id" OtherKey="producto" Type="Compra" />
-      <Association Name="Usuario_Producto" Member="Usuario1" ThisKey="usuario" OtherKey="id" Type="Usuario" IsForeignKey="true" />
-      <Association Name="Subcategoria_Producto" Member="Subcategoria" ThisKey="subcat" OtherKey="id" Type="Subcategoria" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Usuario" Member="Usuario">
@@ -105,6 +84,28 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Association Name="Categoria_Subcategoria" Member="Subcategoria" ThisKey="id" OtherKey="cat_padre" Type="Subcategoria" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Producto" Member="Producto">
+    <Type Name="Producto">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="precio_sal" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="precio_compra" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cant_ini" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cant_fin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_fin" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="subcat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="eliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="foto" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Producto_Puja" Member="Puja" ThisKey="id" OtherKey="producto" Type="Puja" />
+      <Association Name="Producto_FotosProducto" Member="FotosProducto" ThisKey="id" OtherKey="producto" Type="FotosProducto" />
+      <Association Name="Producto_Compra" Member="Compra" ThisKey="id" OtherKey="producto" Type="Compra" />
+      <Association Name="Subcategoria_Producto" Member="Subcategoria" ThisKey="subcat" OtherKey="id" Type="Subcategoria" IsForeignKey="true" />
+      <Association Name="Usuario_Producto" Member="Usuario1" ThisKey="usuario" OtherKey="id" Type="Usuario" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

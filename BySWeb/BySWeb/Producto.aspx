@@ -61,8 +61,8 @@
             ImageUrl="~/images/travelo.jpg" /></a>
     </div>
     <p>
-        <a href="/DetallesUsuario.aspx"><asp:Label ID="lblNombreProp" runat="server" 
-            Text="Pedrito" NavigateUrl="~/DetallesUsuario.aspx"></asp:Label></a></p>
+        <asp:HyperLink ID="hLinkDetallesUsuario" runat="server"><asp:Label ID="lblNombreProp" runat="server" 
+            Text="Pedrito" NavigateUrl="~/DetallesUsuario.aspx"></asp:Label></asp:HyperLink></p>
     <p>
         Puntuación:
         <asp:Label ID="lblPuntUser" runat="server" Text="8"></asp:Label></p>
@@ -117,7 +117,7 @@
                             <asp:TextBox ID="tbPuja" runat="server" Width="63px"></asp:TextBox>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:Button ID="btnPuja" runat="server" Text="Pujar" Height="24px" Style="margin-top: 0px"
-                                Width="68px" /></p>
+                                Width="68px" onclick="btnPuja_Click" /></p>
                     </asp:Panel>
                     <asp:Panel ID="PnlCompra" runat="server" Visible="true">
                         <p>

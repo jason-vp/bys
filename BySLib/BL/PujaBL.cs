@@ -24,6 +24,14 @@ namespace BySLib.BL
         #endregion
 
 
+        public static PujaEN GetLastPujaByProductoId(string p_dbCnxStr, int idprod)
+        {
+            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
+                return PujaBL.ConvertToEN(PujaCAD.GetByIdProducto(cnx, idprod));
+
+        }
+
+
         internal static Puja ConvertFromEN(PujaEN prod)
         {
             return new Puja()
@@ -39,16 +47,11 @@ namespace BySLib.BL
         }
 
 
-        public static PujaEN GetLastPujaByProductoId(string p_dbCnxStr, int idprod)
-        {
-            using (BySBDDataContext cnx = DataContextManager.GetOpenedContext(p_dbCnxStr))
-                return PujaBL.ConvertToEN(PujaCAD.GetByIdProducto(cnx, idprod));
-        
-        }
-
-
         private static PujaEN ConvertToEN(Puja prod)//revisar
         {
+            if (prod == null)
+                return new PujaEN();
+
             return new PujaEN()
             {
                 Producto = prod.producto,

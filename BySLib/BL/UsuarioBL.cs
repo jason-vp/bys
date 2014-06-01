@@ -79,6 +79,9 @@ namespace BySLib.BL
 
         private static UsuarioEN ConvertToEN(Usuario usu)//revisar
         {
+            if(usu== null)
+            return new UsuarioEN();
+
             return new UsuarioEN
             {
                 Id = usu.id,

@@ -51,6 +51,9 @@ namespace BySLib.EN
         private List<CompraEN> compras = new List<CompraEN>();
         private int subcategoria = -1;
         private bool eliminado = false;
+        private string foto = "";
+
+       
 
 
         #endregion
@@ -175,6 +178,12 @@ namespace BySLib.EN
         {
             get { return eliminado; }
             set { eliminado = value; }
+        }
+
+        public string Foto
+        {
+            get { return foto; }
+            set { foto = value; }
         }
 
         #endregion
