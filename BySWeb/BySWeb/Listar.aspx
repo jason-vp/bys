@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="BySWeb.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Listar.aspx.cs" Inherits="BySWeb.Listar" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PlaceholderSidebar" runat="server">
@@ -29,13 +29,14 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div style="min-height: 1100px">
-    <h2 class = "tituloh2">Resultados de: </h2>
+    <h2 class = "tituloh2">Resultados de: <asp:Label ID="lbBusqueda" runat="server"></asp:Label></h2>
     <div style="height: 30px;">
-    <p>Buscar por:&nbsp;&nbsp;&nbsp;&nbsp;
+    <p>Buscar por: &nbsp;&nbsp;&nbsp;&nbsp;
         <input id="Text1" type="text" />&nbsp;&nbsp;
         <asp:Button ID="Button2" runat="server" Text="Buscar" />
         </p>
     </div>
+    <asp:Label ID="lbError" runat="server"></asp:Label>
     <asp:Repeater runat="server" ID="RPTproductosListados">
         <ItemTemplate>
             <asp:HyperLink ID="productoDestacado1" runat="server" NavigateUrl= '<%# string.Format("~/Producto.aspx?id={0}", ((BySLib.EN.ProductoEN)Container.DataItem).Id) %>' ><div class = "imgportada">
@@ -158,6 +159,7 @@
 
         <p><asp:Label ID="precioListados12" runat="server" Text="Label">6.78 €</asp:Label></p>
     </div></asp:HyperLink> -->
-    <div style="height: 30px;">1&nbsp;<a href="">2</a>&nbsp;<a href="">3</a>&nbsp;<a href="">4</a>&nbsp;<a href="">5</a>&nbsp;<a href="">6</a>&nbsp;<a href="">7</a>&nbsp;<a href="">8</a>&nbsp;<a href="">6</a>&nbsp;<a href="">9</a>&nbsp;<a href="">10</a>&nbsp;<a href="">>></a>&nbsp;</div>
+    <asp:Panel ID="PagingPanel" runat="server"></asp:Panel>
+    <!--<div style="height: 30px;">1&nbsp;<a href="">2</a>&nbsp;<a href="">3</a>&nbsp;<a href="">4</a>&nbsp;<a href="">5</a>&nbsp;<a href="">6</a>&nbsp;<a href="">7</a>&nbsp;<a href="">8</a>&nbsp;<a href="">6</a>&nbsp;<a href="">9</a>&nbsp;<a href="">10</a>&nbsp;<a href="">>></a>&nbsp;</div>-->
     </div>
     </asp:Content>
