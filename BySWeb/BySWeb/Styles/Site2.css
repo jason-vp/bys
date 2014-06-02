@@ -384,7 +384,8 @@ div.accountInfo
     font-size: 11px;
 }
 
-#pnlLogin p 
-{
-    
+.verMas {
+    width: 100px; 
+    display: block; 
+    clear: both;
 }

@@ -12,6 +12,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PlaceholderSidebar" runat="server">
+    <p><asp:HyperLink runat="server" NavigateUrl="/MiProducto.aspx">Nuevo producto +</asp:HyperLink></p>
     <p>Mis Pujas:</p>
         <asp:Repeater runat="server" ID="RPTproductosPujados">
         <HeaderTemplate>
@@ -26,7 +27,8 @@
         </ItemTemplate>
         <FooterTemplate>
             </ul>
-            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Listar.aspx?t=p">Ver más...</asp:HyperLink>
+            </br>
+            <asp:HyperLink ID="HyperLink2" runat="server" cssClass = "verMas"  NavigateUrl="~/Listar.aspx?t=p">Ver más...</asp:HyperLink>
         </FooterTemplate>
         </asp:Repeater> 
         
@@ -44,7 +46,8 @@
         </ItemTemplate>
         <FooterTemplate>
             </ul>
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# string.Format("~/Listar.aspx?t=m&n={0}",Session["userId"]) %>'>Ver más...</asp:HyperLink>
+            </br>
+            <asp:HyperLink ID="HyperLink1" runat="server" cssClass = "verMas" NavigateUrl='<%# string.Format("~/Listar.aspx?t=m&n={0}",Session["userId"]) %>'>Ver más...</asp:HyperLink>
         </FooterTemplate>
         </asp:Repeater> 
         
@@ -62,7 +65,7 @@
         </ItemTemplate>
         <FooterTemplate>
             </ul>
-            <asp:HyperLink runat="server" NavigateUrl="~/Listar.aspx?t=mc">Ver más...</asp:HyperLink>
+            <asp:HyperLink runat="server" cssClass = "verMas" NavigateUrl="~/Listar.aspx?t=mc">Ver más...</asp:HyperLink>
         </FooterTemplate>
         </asp:Repeater>
 

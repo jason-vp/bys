@@ -20,6 +20,7 @@ namespace BySWeb
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            //Mostramos cuadro de logging o bienvenida según existencia de la sesión
             if (Session["LoggedIn"] == null)
             {
                 pnlLogin.Visible = true;
@@ -37,6 +38,37 @@ namespace BySWeb
             }
 
 
+            //comprobamos si existe la cookie para rellenar datos
+            if (!IsPostBack)
+            {
+                if (Request.Cookies["myCookie"] != null)
+                {
+                    HttpCookie cookie = Request.Cookies.Get("myCookie");
+                   Login1.UserName = cookie.Values["username"];
+
+
+                    Login1.RememberMeSet = (!String.IsNullOrEmpty(Login1.UserName));
+                }
+
+            Response.Cache.SetNoStore();
+            }
+        }
+
+        protected void Login1_LoggedIN(object sender, EventArgs e)
+        {
+            HttpCookie myCookie = new HttpCookie("myCookie");
+            Boolean remember = Login1.RememberMeSet;
+
+
+            //añadimos cookie de 30 dias
+            if (remember)
+            {
+                Int32 persistDays =30;
+                myCookie.Values.Add("username", Login1.UserName);
+                myCookie.Expires = DateTime.Now.AddDays(persistDays); 
+            }
+
+            Response.Cookies.Add(myCookie);
         }
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
@@ -56,6 +88,20 @@ namespace BySWeb
                 Session["userNick"] = user.Nick;
                 Session["userId"] = user.Id;
                 Session["LoggedIn"] = "true";
+
+                HttpCookie myCookie = new HttpCookie("myCookie");
+                Boolean remember = Login1.RememberMeSet;
+
+
+                //añadimos cookie de 30 dias
+                if (remember)
+                {
+                    Int32 persistDays = 30;
+                    myCookie.Values.Add("username", Login1.UserName);
+                    myCookie.Expires = DateTime.Now.AddDays(persistDays);
+                }
+
+                Response.Cookies.Add(myCookie);
 
                 
                 FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet);

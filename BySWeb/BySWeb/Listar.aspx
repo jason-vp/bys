@@ -24,7 +24,7 @@
     <div style="height: 30px;">
     <p>Buscar por: &nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="tbBuscar" runat="server"></asp:TextBox>&nbsp;&nbsp;
-        <asp:Button ID="Button2" runat="server" Text="Ver" Value="Ver" onclick="Button2_Click" />
+        <asp:Button ID="Button2" runat="server" Text="Ver" onclick="Button2_Click" />
         </p>
     </div>
     <asp:Label ID="lbError" runat="server"></asp:Label>
@@ -41,7 +41,7 @@
         </ItemTemplate>
     </asp:Repeater>
 
-    <asp:Panel ID="PagingPanel" runat="server" style="width: 500px"></asp:Panel>
+    <asp:Panel ID="PagingPanel" runat="server" style="clear:both;"></asp:Panel>
     
     </div>
     </asp:Content>

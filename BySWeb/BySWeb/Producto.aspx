@@ -56,14 +56,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="PlaceholderSidebar" runat="server">
     <div id="DivImgUser">
         <a href="DetallesUsuario.aspx">
-            <asp:Image ID="imgUsuario" runat="server" Height="87px" Width="95px" ImageUrl="~/images/travelo.jpg" /></a>
+            <asp:Image ID="imgUsuario" runat="server" Height="87px" Width="95px" ImageUrl="" /></a>
     </div>
     <p>
         <asp:HyperLink ID="hLinkDetallesUsuario" runat="server">
-            <asp:Label ID="lblNombreProp" runat="server" Text="Pedrito" ></asp:Label></asp:HyperLink></p>
+            <asp:Label ID="lblNombreProp" runat="server" Text="" ></asp:Label></asp:HyperLink></p>
     <p>
         Puntuación:
-        <asp:Label ID="lblPuntUser" runat="server" Text="8"></asp:Label></p>
+        <asp:Label ID="lblPuntUser" runat="server" ></asp:Label></p>
+        <p><asp:Hyperlink ID="hMiProducto" NavigateUrl="" runat="server"><asp:Label ID="lbMiProducto" runat="server"></asp:Label> </asp:Hyperlink></p>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">

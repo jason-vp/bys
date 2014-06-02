@@ -25,6 +25,34 @@ namespace BySWeb
 
                         int id = Int32.Parse(Request.QueryString["id"]);
                         ProductoEN prod = ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), id);
+                        //finalizar puja si ha llegado la fecha, poniendola inactiva o comprada
+                        //según la situación
+                        if (DateTime.Now >= prod.FechaFin && prod.Estado == "Activo")
+                        {
+                            PujaEN ultimaPuja = PujaBL.GetLastPujaByProductoId(Tools.GetDbCnxStr(), id);
+                            if (ultimaPuja.Propietario != -1)
+                            {
+                                CompraEN compra = new CompraEN();
+                                compra.Comentario = "";
+                                compra.Eliminado = false;
+                                compra.Fecha = DateTime.Now;
+                                compra.Producto = prod.Id;
+                                compra.Pujador = ultimaPuja.Propietario;
+                                compra.Puntuacion = 4;
+                                UsuarioEN comprador = UsuarioBL.GetByIdToEN(Tools.GetDbCnxStr(), ultimaPuja.Propietario);
+                                comprador.Credito -= ultimaPuja.Valor;
+                                UsuarioBL.UpdateFromEN(Tools.GetDbCnxStr(), comprador);
+                                CompraBL.Create(Tools.GetDbCnxStr(), compra);
+                                prod.Estado = "Vendido";
+                                ProductoBL.UpdateFromEN(Tools.GetDbCnxStr(), prod);
+
+                            }
+                            else
+                            {
+                                prod.Estado = "Inactivo";
+                                ProductoBL.UpdateFromEN(Tools.GetDbCnxStr(), prod);
+                            }
+                        }
                         tbNombreProducto.Text = prod.Nombre;
                         tbDescripcion.Text = prod.Descripcion;
                         tbPrecioSalida.Text = prod.PrecioSalida.ToString();
@@ -36,6 +64,7 @@ namespace BySWeb
                         tbFecha.Text = prod.FechaFin.ToString();
                         lbcategoria.Text = cat.Nombre;
                         lbSubcategoria.Text = subcat.Nombre;
+                        ddpSubcategoria.Visible = false;
 
                         if (prod.PrecioCompra == -1)
                         {
@@ -55,7 +84,6 @@ namespace BySWeb
                     {
                         Btn_Crear.Visible = true;
                         ddpSubcategoria.Visible = true;
-                        tbNombreProducto.Text = "prueba";
                         ddpSubcategoria.Items.Clear();
                         List<SubcategoriaEN> subcats = SubcategoriaBL.GetAll(Tools.GetDbCnxStr());
                         List<CategoriaEN> cats = CategoriaBL.GetAll(Tools.GetDbCnxStr());

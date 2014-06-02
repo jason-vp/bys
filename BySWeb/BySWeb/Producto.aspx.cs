@@ -20,12 +20,42 @@ namespace BySWeb
                 //Informacion sobre el producto de la interfaz de producto.
                 int id = Int32.Parse(Request.QueryString["id"]);
                 ProductoEN prod = ProductoBL.GetByIdToEN(Tools.GetDbCnxStr(), id);
+                PujaEN ultimaPuja = PujaBL.GetLastPujaByProductoId(Tools.GetDbCnxStr(), id);
+
+                //finalizar puja si ha llegado la fecha, poniendola inactiva o comprada
+                //según la situación
+                if (DateTime.Now >= prod.FechaFin && prod.Estado == "Activo")
+                {
+                    if (ultimaPuja.Propietario != -1)
+                    {
+                        CompraEN compra = new CompraEN();
+                        compra.Comentario = "";
+                        compra.Eliminado = false;
+                        compra.Fecha = DateTime.Now;
+                        compra.Producto = prod.Id;
+                        compra.Pujador = ultimaPuja.Propietario;
+                        compra.Puntuacion = 4;
+                        UsuarioEN comprador = UsuarioBL.GetByIdToEN(Tools.GetDbCnxStr(), ultimaPuja.Propietario);
+                        comprador.Credito -= ultimaPuja.Valor;
+                        UsuarioBL.UpdateFromEN(Tools.GetDbCnxStr(), comprador);
+                        CompraBL.Create(Tools.GetDbCnxStr(), compra);
+                        prod.Estado = "Vendido";
+                        ProductoBL.UpdateFromEN(Tools.GetDbCnxStr(), prod);
+
+                    }
+                    else
+                    {
+                        prod.Estado = "Inactivo";
+                        ProductoBL.UpdateFromEN(Tools.GetDbCnxStr(), prod);
+                    }
+                }
+
                 lblNombreProd.Text = prod.Nombre;
                 lblDescripcion.Text = prod.Descripcion;
                 lblCantidadRest.Text = prod.CantidadInicial.ToString();
                 fechaFinProducto.Text = prod.FechaFin.ToString();
                 EstadoProducto.Text = prod.Estado;
-                PujaEN ultimaPuja = PujaBL.GetLastPujaByProductoId(Tools.GetDbCnxStr(), id);
+                
                 decimal valor = ultimaPuja.Valor;
                 if (valor == 0)
                     valor = prod.PrecioSalida;
@@ -35,7 +65,8 @@ namespace BySWeb
                 //Barra lateral información del usuario propietario del producto
                 UsuarioEN user = UsuarioBL.GetByIdToEN(Tools.GetDbCnxStr(), prod.Propietario);
                 hLinkDetallesUsuario.NavigateUrl = "/DetallesUsuario.aspx?id=" + prod.Propietario;
-                if (prod.Estado == "Comprado")
+                imgUsuario.ImageUrl = "/DetallesUsuario.aspx?id=" + prod.Propietario;
+                if (prod.Estado == "Comprado" || prod.Estado == "Inactivo")
                 {
                     btnCompra.Visible = false;
                     btnPuja.Visible = false;
@@ -44,6 +75,19 @@ namespace BySWeb
                 lblNombreProp.Text = user.Nick.ToString();
                 lblPuntUser.Text = user.Puntacion.ToString();
                 imgUsuario.ImageUrl = user.RutaImg;
+                if (Session["LoggedIn"] != null && prod.Propietario == Convert.ToInt32(Session["userId"]))
+                {
+                    hMiProducto.NavigateUrl = "/MiProducto.aspx?id=" + prod.Id;
+                    lbMiProducto.Text = "Editar Mi Producto";
+                    hMiProducto.Visible = true;
+                    lbMiProducto.Visible = true;
+
+                }
+                else
+                {
+                    hMiProducto.Visible = false;
+                    lbMiProducto.Visible = false;
+                }
                 /*
                 List<CategoriaEN> ls = new List<CategoriaEN>();
                 ls = CategoriaBL.GetAll(Tools.GetDbCnxStr());
