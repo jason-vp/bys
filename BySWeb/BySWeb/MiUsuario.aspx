@@ -44,7 +44,7 @@
         </ItemTemplate>
         <FooterTemplate>
             </ul>
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# string.Format("~/Listar.aspx?p=m&n={0}",Session["userId"]) %>'>Ver más...</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# string.Format("~/Listar.aspx?t=m&n={0}",Session["userId"]) %>'>Ver más...</asp:HyperLink>
         </FooterTemplate>
         </asp:Repeater> 
         
@@ -181,7 +181,7 @@
         <asp:Button ID="Boton_Revertir_Datos" runat="server" Text="Descartar" 
             Width="100px" />
     </p>
-   
+   <!--
     <p class="style1">
         <strong>COMENTARIOS REALIZADOS</strong></p>
         <div class="comentario">
@@ -232,5 +232,5 @@
         &nbsp;</p>
         <asp:Button ID="Button_Editar_Comentario_2" runat="server" Text="Editar" 
             Width="100px" onclick="Boton_Editar_Datos_Click" />
-        </div>
+        </div>-->
 </asp:Content>

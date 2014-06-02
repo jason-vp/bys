@@ -111,8 +111,10 @@ namespace BySLib.EN
         public static Puja GetByIdProducto(BySBDDataContext p_ctx, int p_id)
         {
             return (from t1 in p_ctx.Puja
-                    where t1.producto == p_id                 
-                    select t1).SingleOrDefault();
+                    where t1.producto == p_id
+                    orderby t1.valor ascending
+                    select t1).ToList().LastOrDefault();
+
 
         }
 

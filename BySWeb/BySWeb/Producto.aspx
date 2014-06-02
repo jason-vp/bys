@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+﻿<%@ Page Title="Producto" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
     CodeBehind="Producto.aspx.cs" Inherits="BySWeb.Producto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
@@ -9,10 +9,9 @@
         }
         .divInfoProd
         {
-            width:100%;
-             align:left;
-            
-            }
+            width: 100%;
+            align: left;
+        }
         #contenedor
         {
             color: Black;
@@ -51,93 +50,89 @@
         #divLblDescrip
         {
             height: 100;
-            }
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PlaceholderSidebar" runat="server">
     <div id="DivImgUser">
-        <a href="DetallesUsuario.aspx"><asp:Image ID="imgUsuario" runat="server" 
-            Height="87px" Width="95px" 
-            ImageUrl="~/images/travelo.jpg" /></a>
+        <a href="DetallesUsuario.aspx">
+            <asp:Image ID="imgUsuario" runat="server" Height="87px" Width="95px" ImageUrl="~/images/travelo.jpg" /></a>
     </div>
     <p>
-        <asp:HyperLink ID="hLinkDetallesUsuario" runat="server"><asp:Label ID="lblNombreProp" runat="server" 
-            Text="Pedrito" NavigateUrl="~/DetallesUsuario.aspx"></asp:Label></asp:HyperLink></p>
+        <asp:HyperLink ID="hLinkDetallesUsuario" runat="server">
+            <asp:Label ID="lblNombreProp" runat="server" Text="Pedrito" ></asp:Label></asp:HyperLink></p>
     <p>
         Puntuación:
         <asp:Label ID="lblPuntUser" runat="server" Text="8"></asp:Label></p>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-<asp:ScriptManager ID="ScriptManager1" runat="server"> </asp:ScriptManager>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
     <div id="contenedor">
-        <h2 class="tiuloh2">Producto</h2>
+        <h2 class="tiuloh2">
+            Producto</h2>
         <div id="lateral">
-            <asp:Image ID="imgProducto" runat="server" Width="212px" Height="226px" 
-                ImageUrl="~/images/popeye.jpg" />
+            <asp:Image ID="imgProducto" runat="server" Width="212px" Height="226px" ImageUrl="~/images/popeye.jpg" />
         </div>
         <div id="principal">
             <div class="divInfoProd">
                 <p>
-                    <h3><asp:Label ID="lblNombreProd" runat="server" Text="Barco velero"></asp:Label></h3></p>
-                    <div class="divLblDescrip" align="left">
-                <p style="height:80px">
-                    <asp:Label ID="lblDescripcion" runat="server" 
-                        Text="Barco de 12 metros de eslora. Solo 3 años de uso. Muy cuidado.Barco de 12 metros de eslora. Solo 3 años de uso. Muy cuidadoBarco de 12 metros de eslora. Solo 3 años de uso. Muy cuidado"></asp:Label>
+                    <h3>
+                        <asp:Label ID="lblNombreProd" runat="server" Text="Barco velero"></asp:Label></h3>
                 </p>
-                        <p __designer:mapid="66">
-                            Cantidad Restante:<asp:Label ID="lblCantidadRest" runat="server"
-                                Text="20"></asp:Label>
-                        </p>
+                <div class="divLblDescrip" align="left">
+                    <p style="height: 80px">
+                        <asp:Label ID="lblDescripcion" runat="server" Text="Barco de 12 metros de eslora. Solo 3 años de uso. Muy cuidado.Barco de 12 metros de eslora. Solo 3 años de uso. Muy cuidadoBarco de 12 metros de eslora. Solo 3 años de uso. Muy cuidado"></asp:Label>
+                    </p>
+                    <p __designer:mapid="66">
+                        Cantidad:<asp:Label ID="lblCantidadRest" runat="server" Text="20"></asp:Label>
+                    </p>
                 </div>
-                
                 <p>
                     Fecha de fin:
                     <asp:Label ID="fechaFinProducto" runat="server" Text="12/12/2014 12:34"></asp:Label>
-
                 </p>
                 <p>
-                                    
-                    Estado: 
+                    Estado:
                     <asp:Label ID="EstadoProducto" runat="server" Text="Disponible"></asp:Label>
                 </p>
                 <div class="divLblDescrip" align="left">
-                <div id="DivFondogris">
-                    <asp:Panel ID="PnlPuja" runat="server"><p>
-                        &nbsp;<asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                          <ContentTemplate>
-                            Puja actual:
-                            <asp:Label ID="lblPujaActual" runat="server" Text="30"></asp:Label>
-                            &nbsp;<asp:ImageButton ID="ImageButton1" runat="server" 
-                                ImageUrl="~/images/refresh.gif" onclick="ImageButton1_Click" 
-                                  style="height: 16px" />
-                        </p></ContentTemplate>
-                        </asp:UpdatePanel>
-                        
-                        <p>
-                            <asp:TextBox ID="tbPuja" runat="server" Width="63px"></asp:TextBox>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:Button ID="btnPuja" runat="server" Text="Pujar" Height="24px" Style="margin-top: 0px"
-                                Width="68px" onclick="btnPuja_Click" /></p>
-                    </asp:Panel>
-                    <asp:Panel ID="PnlCompra" runat="server" Visible="true">
-                        <p>
-                            Precio:
-                            <asp:Label ID="lblPrecio" runat="server" Text="50"></asp:Label>
-                        </p>
-                        <p>
-                            &nbsp;<asp:Button ID="btnCompra" runat="server" Text="Comprar ahora!" 
-                                Height="25px" /></p>
-                    </asp:Panel>
+                    <div id="DivFondogris">
+                        <asp:Panel ID="PnlPuja" runat="server">
+                            <p>
+                                &nbsp;<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                    <ContentTemplate>
+                                        Puja actual:
+                                        <asp:Label ID="lblPujaActual" runat="server" Text="30"></asp:Label>
+                                        &nbsp;<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/images/refresh.gif"
+                                            OnClick="ImageButton1_Click" Style="height: 16px" />
+                                        </p></ContentTemplate>
+                                </asp:UpdatePanel>
+                                <p>
+                                    <asp:TextBox ID="tbPuja" runat="server" Width="63px"></asp:TextBox>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <asp:Button ID="btnPuja" runat="server" Text="Pujar" Height="24px" Style="margin-top: 0px"
+                                        Width="68px" OnClick="btnPuja_Click" /></p>
+                        </asp:Panel>
+                        <asp:Panel ID="PnlCompra" runat="server" Visible="true">
+                            <p>
+                                Precio:
+                                <asp:Label ID="lblPrecio" runat="server" Text="50"></asp:Label>
+                            </p>
+                            <p>
+                                &nbsp;<asp:Button ID="btnCompra" runat="server" Text="Comprar ahora!" Height="25px"
+                                    OnClick="btnCompra_Click" /></p>
+                        </asp:Panel>
                     </div>
                 </div>
+            </div>
         </div>
-    </div>
-    <asp:Panel ID="pnlError" runat="server" Visible="false">
-        <div class="divMensage">
-            <asp:Label ID="lbError" runat="server" Text="" Style="color: red"></asp:Label>
-        </div>
-    </asp:Panel>
-
+        <asp:Panel ID="pnlError" runat="server" Visible="false">
+            <div class="divMensage">
+                <asp:Label ID="lbError" runat="server" Text="" Style="color: red"></asp:Label>
+            </div>
+        </asp:Panel>
+        <!--
         <h3 style="margin-left:20px; margin-bottom:20px">COMENTARIOS:</h3>
 
        <asp:Repeater runat="server" ID="RPTcomentariosProducto">
@@ -168,7 +163,7 @@
             <p style="margin-left:20px">
                 Descripción:<asp:Label ID="lblDescripcionComent1" runat="server" Text="Entregadas en mano y pagado en negro, muy buen servicio." style="margin-left:20px"></asp:Label>
             </p>
-        </div> -->
+        </div> 
         
         <div>
             <h3 style="margin-left:20px; margin-bottom:20px">REALIZAR COMENTARIO:</h3>
@@ -186,9 +181,9 @@
                     </asp:DropDownList>
                 </p>
                 <p style="margin-left:20px">
-                Descripción: <asp:TextBox ID="TextBox3" runat="server" Height="100px" Width="700px" Value=""></asp:TextBox>
+                Descripción: <asp:TextBox ID="TextBox3" runat="server" Height="100px" Width="700px"></asp:TextBox>
                 </p>
                     <asp:Button ID="btnEnviarComent" runat="server" Text="Enviar" Width="100px" style="margin-left:20px" /> <!-- Hay que controlar la DIVitis -->
-                </div>
-        </div>
+    </div>
+
 </asp:Content>

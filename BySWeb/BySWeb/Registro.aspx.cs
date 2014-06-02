@@ -178,13 +178,9 @@ namespace BySWeb
                 e.IsValid = false;
             }
         }
-<<<<<<< HEAD
-        protected void ComprobarCpostal(object sender, ServerValidateEventArgs e)
-        {
-=======
 
         protected void ComprobarCpostal(object sender, ServerValidateEventArgs e) {
->>>>>>> ca2c494004a537f34c12b2f3232ff9ff8187cc43
+
 
             string cp = e.Value;
 
@@ -192,21 +188,15 @@ namespace BySWeb
                 e.IsValid = false;
 
         }
-<<<<<<< HEAD
 
-        protected void rellenaLocProv(int CP)
-        {
-            try
-            {
-                listaLocalidad.Items.Clear();
-                listaProvincias.Items.Clear();
-=======
+
+
         //Funcion para rellenar localidades mediante AJAX.
         protected void rellenaLocProv(int CP){
-
+            try{
             listaLocalidad.Items.Clear();
             listaProvincias.Items.Clear();
->>>>>>> ca2c494004a537f34c12b2f3232ff9ff8187cc43
+
 
                 List<PoblacionEN> listaLocalidades = PoblacionBL.GetByPostalCode(Utilities.Tools.GetDbCnxStr(), CP);
 

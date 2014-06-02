@@ -15,14 +15,14 @@ namespace BySWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            try 
+            try
             {
                 if (!Page.IsPostBack)
                 {
 
                     if (Request.QueryString["id"] != null)
                     {
-                        
+
                         int id = Int32.Parse(Request.QueryString["id"]);
                         ProductoEN prod = ProductoBL.GetByIdToEN(BySWeb.Utilities.Tools.GetDbCnxStr(), id);
                         tbNombreProducto.Text = prod.Nombre;
@@ -51,17 +51,18 @@ namespace BySWeb
                         if (prod.Estado == "Inactivo") Btn_Editar.Visible = true;
                         else LabelErrorEstado.Visible = true;
                     }
-                    else {
+                    else
+                    {
                         Btn_Crear.Visible = true;
-                        ddpSubcategoria.Visible= true;
+                        ddpSubcategoria.Visible = true;
                         tbNombreProducto.Text = "prueba";
                         ddpSubcategoria.Items.Clear();
                         List<SubcategoriaEN> subcats = SubcategoriaBL.GetAll(Tools.GetDbCnxStr());
                         List<CategoriaEN> cats = CategoriaBL.GetAll(Tools.GetDbCnxStr());
                         foreach (SubcategoriaEN s in subcats)
                         {
-                           
-                           ddpSubcategoria.Items.Add(new ListItem(cats[s.Padre-1].Nombre + " - " + s.Nombre, s.Id.ToString()));
+
+                            ddpSubcategoria.Items.Add(new ListItem(cats[s.Padre - 1].Nombre + " - " + s.Nombre, s.Id.ToString()));
                         }
 
                     }
@@ -70,8 +71,8 @@ namespace BySWeb
                 //if(!IsPostBack)
             }
             catch (Exception ex)
-            { 
-            
+            {
+
             }
         }
 
@@ -89,9 +90,9 @@ namespace BySWeb
             if (FileUpload1.HasFile)
             {
                 FileUpload1.SaveAs(Server.MapPath(".") + @"/images/" + FileUpload1.FileName);
-				prod.Foto = "/images/" + FileUpload1.FileName;
+                prod.Foto = "/images/" + FileUpload1.FileName;
             }
-            
+
 
             //funcion de edición en la bd a partir del objeto EN
             ProductoBL.UpdateFromEN(Utilities.Tools.GetDbCnxStr(), prod);
@@ -101,42 +102,40 @@ namespace BySWeb
         {
             //if (Page.IsValid)
             //{
-                editar();
+            editar();
             //}
         }
 
         protected void crear()
         {
-            if(Session["LoggedIn"] == "true") {
-
-            ProductoEN prod = new ProductoEN();
-            prod.Nombre = tbNombreProducto.Text;
-            prod.Descripcion = tbDescripcion.Text;
-            prod.PrecioSalida = Int32.Parse(tbPrecioSalida.Text);
-            prod.PrecioCompra = Int32.Parse(tbCompra.Text);
-            prod.CantidadRestante = Int32.Parse(tbCantidadRestante.Text);
-            prod.Estado = "Activo";
-            prod.Propietario = Convert.ToInt32(Session["userId"]);
-<<<<<<< HEAD
-            prod.Subcategoria = 1;
-            if (FileUpload1.HasFile)
+            if (Session["LoggedIn"] == "true")
             {
-                FileUpload1.SaveAs(Server.MapPath(".") + @"/images/" + FileUpload1.FileName);
-            }
-            prod.Foto = "/images/" + FileUpload1.FileName;
-            ProductoBL.Create(Utilities.Tools.GetDbCnxStr(), prod);
 
+                ProductoEN prod = new ProductoEN();
+                prod.Nombre = tbNombreProducto.Text;
+                prod.Descripcion = tbDescripcion.Text;
+                prod.PrecioSalida = Int32.Parse(tbPrecioSalida.Text);
+                prod.PrecioCompra = Int32.Parse(tbCompra.Text);
+                prod.CantidadRestante = Int32.Parse(tbCantidadRestante.Text);
+                prod.Estado = "Activo";
+                prod.Propietario = Convert.ToInt32(Session["userId"]);
 
-=======
-            prod.Subcategoria = Convert.ToInt32(ddpSubcategoria.SelectedValue);
-            ProductoBL.Create(Utilities.Tools.GetDbCnxStr(), prod);
+                prod.Subcategoria = 1;
+                if (FileUpload1.HasFile)
+                {
+                    FileUpload1.SaveAs(Server.MapPath(".") + @"/images/" + FileUpload1.FileName);
+                    prod.Foto = "/images/" + FileUpload1.FileName;
+                }
+
+                prod.Subcategoria = Convert.ToInt32(ddpSubcategoria.SelectedValue);
+                ProductoBL.Create(Utilities.Tools.GetDbCnxStr(), prod);
             }
             else
-	{
+            {
                 LabelErrorEstado.Text = "Necesitas estar logeado";
 
-	}
->>>>>>> ca2c494004a537f34c12b2f3232ff9ff8187cc43
+            }
+
         }
         //---------------------------------------------------------------------//
         //----------------------------VALIDACIONES-----------------------------//
@@ -158,7 +157,7 @@ namespace BySWeb
         //Validación dela descripcion
         protected void ComprobarDescripcion(object sender, ServerValidateEventArgs e)
         {
-            string desc= e.Value;
+            string desc = e.Value;
 
             if (!Validacion.isNombreDescProd(desc))
             {

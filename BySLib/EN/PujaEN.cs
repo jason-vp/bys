@@ -37,7 +37,7 @@ namespace BySLib.EN
         private int pujador =-1;
         private int producto = -1;
         private decimal valor = 0;
-        private string estado = "";
+        private string estado = "Mejor";
         private DateTime fecha = new DateTime();
         #endregion
 
@@ -89,40 +89,7 @@ namespace BySLib.EN
         }
         #endregion
 
-        		
-        /// <summary>
-        /// Obtiene todos las pujas de la DB
-        /// </summary>
-        /// <returns>Devuelve un array de producto con todos los productos leidos de la DB</returns>
-        static public PujaEN[] getPujas()
-        {
-            // Lee los productos de la DB y los devuelve
-            return null;// PujaCAD.obtenerTodasPujas();
-        }
-
-        /// <summary>
-        /// Obtiene una puja a traves de su id
-        /// </summary>
-        /// <param name="idProducto">El id del producto de la puja</param>
-        /// <param name="idPujador">El id del usuario de la puja</param>
-        /// <returns>Devuelve un Producto cuyo id se pasó por parámetro</returns>
-        static public PujaEN getPuja(int idProducto, int idPujador)
-        {
-            // busca la puja por los id en la DB
-            return null;// PujaCAD.obtenerPujaById(idProducto, idPujador);
-        }
-
-        /// <summary>
-        /// Comprueba si un puja existe en la DB
-        /// </summary>
-         /// <param name="idProducto">El id del producto de la puja</param>
-        /// <param name="idPujador">El id del usuario de la puja</param>
-        /// <returns>Devuelve verdadero si la puja existe en la BD</returns>
-        public static bool esPuja(int idProducto, int idPujador)
-        {
-            return false;// PujaCAD.esPuja(id);
-        }
-
+        
         /// <summary>
         /// Constructor con parámetros
         /// </summary>
@@ -148,27 +115,7 @@ namespace BySLib.EN
             // TODO: Complete member initialization
         }
 
-        /// <summary>
-        /// Confirma los cambios de la puja en la DB. Inserta o modifica.
-        /// </summary>
-        /// <returns>Devuelve true si se llevó a cabo la insercion/acatualizacion o false en caso contrario</returns>
-        public bool commitDB()
-        {
-            // Inserta en la DB si no existe y lo actualiza si ya existía
-           // PujaCAD cad = new PujaCAD(this);
-            return false;// cad.insertarActualizar();
-        }
-
-        /// <summary>
-        /// Borra la puja actual de la DB
-        /// </summary>
-        /// <returns>Devuelve true si se borró con éxito o false en caso contrario</returns>
-        public bool borrarDB()
-        {
-            // Borra el Producto actual de la DB
-            //PujaCAD cad = new PujaCAD(this);
-            return false;//cad.borrar();
-        }
+       
 
     }
 }
